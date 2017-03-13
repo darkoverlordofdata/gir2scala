@@ -1,0 +1,243 @@
+{
+    "module": {
+        "Atk": {
+            "source": "/usr/share/gir-1.0/Atk-1.0.gir",
+            "output": "src/atk-1.0.scala",
+            "import": ["GObject"]
+        },
+        "Gda": {
+            "source": "/usr/share/gir-1.0/Gda-5.0.gir",
+            "output": "src/gda-5.0.scala",
+            "import": ["GObject", "GLib"],
+            "patch": {
+                "Connection": {
+                    "statement_execute_non_select": "statement_execute_non_select(stmt: Statement, params: Set, last_insert_row?: Set):Number"
+                }
+            }
+
+        },
+        "Gio": {
+            "source": "/usr/share/gir-1.0/Gio-2.0.gir",
+            "output": "src/gio-2.0.scala",
+            "patch": "patches/gio.scala",
+            "import": ["GObject", "GLib"]
+        },
+        "GLib": {
+            "source": "/usr/share/gir-1.0/GLib-2.0.gir",
+            "output": "src/glib-2.0.scala",
+            "add": {
+                "Application": {
+                    "run": "run(argv:Any)"
+                }
+            }
+        },
+        "GObject": {
+            "source": "/usr/share/gir-1.0/GObject-2.0.gir",
+            "output": "src/gobject-2.0.scala",
+            "patch": "patches/gobject.scala",
+            "static": {
+                "Object": {
+                    "newv": "def newv(args:Any*):Object"
+                }
+            },
+            "add": {
+                "Object": {
+                    "connect": "def connect(message:String, cb:js.Function): Unit",
+                    "get_valist": "def get_valist(args:Any*):Unit",
+                    "get_property": "def get_property(args:Any*):Any",
+                    "replace_data": "def replace_data(args:Any*):Any",
+                    "set_property": "def set_property(args:Any*):Unit",
+                    "set_valist": "def set_valist(args:Any*):Unit"
+                }
+            }
+        },
+        
+        "GtkSource": {
+            "source": "/usr/share/gir-1.0/GtkSource-3.0.gir",
+            "output": "src/gtksource-3.0.scala",
+            "import": ["GObject", "Gio", "Gdk", "Gtk"]
+        },
+        "Gtk": {
+            "source": "/usr/share/gir-1.0/Gtk-3.0.gir",
+            "output": "src/gtk-3.0.scala",
+            "import": ["GObject", "GLib", "Gio", "Gdk", "Atk","Pango"],
+            "add": {
+                "Application": {
+                    "add_action": "def add_action(action:Any)"
+                },
+                "FileChooserDialog": {
+                    "set_select_multiple": "def set_select_multiple(select:Boolean)"
+                },
+                "ListStore": {
+                    "get_value": "def get_value(iter:Any, index:Number):Any"
+                },
+                "Settings": {
+                    "gtk_application_prefer_dark_theme": "var gtk_application_prefer_dark_theme:Boolean",
+                    "gtk_theme_name": "var gtk_theme_name:String"
+                    
+                }
+            },
+            "static": {
+                "CheckButton": {
+                    "new_with_label": "def new_with_label(args:Any*):CheckButton"
+                },
+                "CheckMenuItem": {
+                    "new_with_label": "def new_with_label(args:Any*):CheckMenuItem"
+                },
+                "LinkButton": {
+                    "new_with_label": "def new_with_label(args:Any*):LinkButton"
+                },
+                "ListStore": {
+                    "newv": "def newv(args:Any*):ListStore"
+                },
+                "RadioButton": {
+                    "new_with_label": "def new_with_label(args:Any*):RadioButton",
+                    "new_with_mnemonic": "def new_with_mnemonic(args:Any*):RadioButton"
+                },
+                "RadioMenuItem": {
+                    "new_with_label": "def new_with_label(args:Any*):RadioMenuItem",
+                    "new_with_mnemonic": "def new_with_mnemonic(args:Any*):RadioMenuItem"
+                },
+                "RadioToolButton": {
+                    "new_with_label": "def new_with_label(args:Any*):RadioToolButton",
+                    "new_from_stock": "def new_from_stock(args:Any*):RadioToolButton"
+                },
+                "TreeStore": {
+                    "newv": "def newv(args:Any*):TreeStore"
+                },
+                "ToggleToolButton": {
+                    "new_from_stock": "def new_from_stock(args:Any*):ToggleToolButton"
+                }
+            },
+            "patch" : {
+                "Bin": {
+                    "mnemonic_activate": "def mnemonic_activate(args:Any*):Boolean"
+                },
+                "Container": {
+                    "remove" : "def remove(args:Any*):Unit",
+                    "child_notify": "override def child_notify(args:Any*):Unit"
+                },
+                "ComboBoxText": {
+                    "remove" : "override def remove(args:Any*):Unit"
+                },
+                "CssProvider": {
+                    "load_from_data": "def load_from_data(args:Any*):Boolean"
+                },
+                "ListStore": {
+                    "append": "def append():Any",
+                    "set_column_types": "def set_column_types(types:Number[]):Unit"
+                },
+                "MenuButton": {
+                    "get_direction": "override def get_direction():Number",
+                    "set_direction": "override def set_direction(dir:Number):Unit"
+                },
+                "MenuItem": {
+                    "activate": "override def activate():Any"
+                },
+                "Statusbar": {
+                    "remove" : "override def remove(args:Any*):Unit"
+                },
+                "Style": {
+                    "get_valist": "override def get_valist(args:Any*):Unit"
+                },
+                "StyleContext": {
+                    "get_property": "override def get_property(args:Any*):Any",
+                    "get_valist": "override def get_valist(args:Any*):Unit"
+                },
+                "StyleProperties": {
+                    "get_property": "override def get_property(args:Any*):Any",
+                    "get_valist": "override def get_valist(args:Any*):Unit",
+                    "set_property": "override def set_property(args:Any*):Unit",
+                    "set_valist": "override def set_valist(args:Any*):Unit"
+                },
+                "Switch": {
+                    "get_state": "override def get_state():Number",
+                    "set_state": "override def set_state(state:Number)"
+                },
+                "TextView": {
+                    "get_window": "override def get_window(win?:Number):Gdk.Window"
+                },
+                "TreeSelection": {
+                    "get_selected": "def get_selected():Any"
+                },
+                "ThemingEngine": {
+                    "get_property": "override def get_property(args:Any*):Any",
+                    "get_valist": "override def get_valist(args:Any*):Unit"
+                },
+                "ToggleButton": {
+                    "get_direction": "def get_direction():Number",
+                    "set_direction": "def set_direction(dir:Number):Unit"
+                },
+                "Toolbar": {
+                    "get_style": "override def get_style():Number",
+                    "set_style": "override def set_style(style:Number)"
+                },
+                "ToolPalette": {
+                    "get_style": "override def get_style():Number",
+                    "set_style": "override def set_style(style:Number)"
+                },
+                "Widget": {
+                    "activate": "def activate():Any",
+                    "child_notify": "def child_notify(args:Any*):Unit",
+                    "get_state": "def get_state():Number",
+                    "get_settings": "def get_settings():Any",
+                    "get_style": "def get_style():Number",
+                    "get_window": "def get_window(win?:Number):Gdk.Window",
+                    "get_direction": "def get_direction():Number",
+                    "set_direction": "def set_direction(dir:Number):Unit",
+                    "set_state": "def set_state(state:Number)",
+                    "set_style": "def set_style(style:Number)"
+                },
+                "Window": {
+                    "mnemonic_activate": "def mnemonic_activate(args:Any*):boolean"
+                }
+            }
+        },
+        "Gdk": {
+            "source": "/usr/share/gir-1.0/Gdk-3.0.gir",
+            "output": "src/gdk-3.0.scala",
+            "import": ["GObject", "Gio", "Pango"]
+        },
+        "Pango": {
+            "source": "/usr/share/gir-1.0/Pango-1.0.gir",
+            "output": "src/pango-1.0.scala",
+            "import": ["GObject"]
+        },
+        "Soup": {
+            "source": "/usr/share/gir-1.0/Soup-2.4.gir",
+            "output": "src/soup-2.4.scala",
+            "import": ["GObject", "Gio", "GLib"],
+            "patch": {
+                "Message": {
+                    "set_response": "def set_response(content_type:String, resp_use: MemoryUse, resp_body:String, resp_length:Number):Unit"
+                }
+            }
+        },
+        "WebKit": {
+            "source": "/usr/share/gir-1.0/WebKit-3.0.gir",
+            "output": "src/webkit-3.0.scala",
+            "import": ["GObject", "Gio", "Gtk", "Soup"],
+            "patch": {
+                "DOMCharacterData": {
+                    "replace_data": "override def replace_data(args:Any*):Any"
+                },
+                "DOMCSSStyleDeclaration": {
+                    "set_property": "override def set_property(args:Any*):Unit"
+                },
+                "DOMElement": {
+                    "remove": "def remove(index?:Number):Unit"
+                },
+                "DOMHTMLSelectElement": {
+                    "remove": "override def remove(index?:Number):Unit"
+                },
+                "DOMObject": {
+                    "set_property": "def set_property(args:Any*):Unit"
+                },
+                "WebView": {
+                    "get_settings": "override def get_settings():Any"
+                }
+
+            }
+        }
+    }
+}

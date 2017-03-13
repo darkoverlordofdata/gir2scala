@@ -1,0 +1,513 @@
+#!/usr/bin/env node
+/**
+ * gir2dts
+ * 
+ * Convert Gnome Gir bindings file to typescript declarations
+ * 
+ */
+const fs = require('fs')
+const os = require('os')
+const util = require('util')
+const {execSync} = require('child_process')
+const {parseString} = require('xml2js')
+
+const cfg = require('./gir2facade.json')
+const sym = {}
+const gir = {}
+let count = Object.keys(cfg.module).length
+
+for (let name in cfg.module) {
+    let src = fs.readFileSync(cfg.module[name].source, {encoding: 'utf8'})
+    // provide a closure so we know which request completed
+    ;(function(name, src){
+        parseString(src, (err, res) => { 
+            gir[name] = res 
+            count--
+            console.log(`${count} ${name}`)
+            if (count <= 0) build(cfg, gir)
+        })
+    })(name, src)
+}
+
+function build(cfg, gir) {
+
+    // for (let name in gir) {
+    //     getSymbols(name, gir[name])
+    // }
+    for (let name in cfg.module) {
+        let out = []
+        out.push(generateModule(name, gir[name], cfg.module[name]))
+        fs.writeFileSync(cfg.module[name].output, out.join('\n'))
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+// pass 1 - generate a symbol table of all known identifiers
+////////////////////////////////////////////////////////////////////////////////////////////
+function getSymbols(module, gir) {
+
+    let ns = gir.repository.namespace[0]
+    if (ns.function) 
+        for (let func of ns.function) {
+            let name = getName(func.$['name'])
+            sym[`${module}.${name}`] = `${module}.${name}`
+        }
+    if (ns.enumeration)
+        for (let enumeration of ns.enumeration) {
+            let name = enumeration.$['name']
+            sym[`${module}.${name}`] = `${module}.${name}`
+        }
+    if (ns.bitfield)
+        for (let bitfield of ns.bitfield) {
+            let name = bitfield.$['name']
+            sym[`${module}.${name}`] = `${module}.${name}`
+        }
+    if (ns.class)
+        for (let klass of ns.class) {
+            let name = klass.$['name']
+            sym[`${module}.${name}`] = `${module}.${name}`
+        }
+}
+////////////////////////////////////////////////////////////////////////////////////////////
+// pass 2 - process each file
+////////////////////////////////////////////////////////////////////////////////////////////
+function generateModule(name, gir, module) {
+    out = ['/**']
+    out.push(` * ${name}.scala`)
+    out.push(' *')
+    out.push(' */')
+    out.push(`package org.gnome`)
+    out.push('')
+    out.push('import scala.scalajs.js')
+    out.push('import js.annotation._')    
+    out.push('')
+    out.push(`@JSName("imports.gi.${name}")`)
+    out.push('@js.native')
+    out.push(`object ${name} extends js.Object {`)
+
+    switch (typeof module.patch) {
+        case 'string':
+            out.push(fs.readFileSync(module.patch, {encoding: 'utf8'}))
+            addGirInfo(name, gir, {}, module.add, module.static, out)
+            break
+        case 'object':
+            addGirInfo(name, gir, module.patch, module.add, module.static, out)
+            break
+        default:
+            addGirInfo(name, gir, module.patch, module.add, module.static, out)
+    }
+    out.push('}')
+    return out.join('\n') // fixups:
+        .replace(/\*: Any/g, "Any*")
+        .replace(/object:/g, "object0:")
+        .replace(/type:/g, "type0:")
+        .replace(/\_\:/g, "0:")
+        .replace(/, Any\*\)/g, ", rest:Any*)")
+        .replace(/def def /g, "def ")
+        .replace(/\:Number\[\]/g,":js.Array[Any]")
+        .replace(/def\:/g, "def0:")
+        .replace(/\(Any\*\)/g, "(args:Any*)")
+        .replace(/\?\:/g, ":")
+        .replace(/val\:/g, "val0:")
+        .replace(/static def/g, "def")
+        .replace(/\:any/g, ":Any")
+        .replace(/boolean/g, "Boolean")
+        .replace(/\: string/g, ": String")
+        .replace(/MemoryUse/g, "Any")
+        .replace(/argc\: Any, argv\: js.Array\[String\]/g, "args:Any*")
+        .replace(/args:Any\*, parameter_string\: String, entries\: js.Array\[Any\], translation_domain\: String/g, "args:Any*")
+        .replace(/\) \= js\.native/g, "):Unit = js.native")
+        .replace(/def override def /g, "override def ")
+        .replace("def run(args:Any*):Any", "def run(args:Any):Unit")
+        //argc: Any, argv: js.Array[String]
+}
+
+
+function addGirInfo(modName, gir, patch, add, static, out) {
+
+    let ns = gir.repository.namespace[0]
+
+    // Constants
+    if (ns.constant)
+        for (let constant of ns.constant) {
+            let name = constant.$['name'] 
+            out.push(`    val ${name}:${getType(modName, constant)} = js.native`)
+        }
+
+    // Get the requested functions
+    if (ns.function) 
+        for (let func of ns.function) {
+            let name = getName(func.$['name'])
+            
+            try {
+                let def = []
+                def.push(`    def ${name}(`)
+                if (func.parameters) {
+                    if (func.parameters[0].parameter)
+                        for (let parameter of func.parameters[0].parameter) {
+                            let name = getName(parameter.$['name'])
+                            if (name === '...') name = '*'
+                            def.push(`${name}: ${getType(modName, parameter)}`)
+                            def.push(', ')
+                        }
+                }
+                if (def[def.length-1] === ', ')
+                    def[def.length-1] = ")"
+                else
+                    def.push(')')
+                def.push(getReturnType(modName, func))
+                def.push(' = js.native')
+                out.push(def.join(''))
+            } catch (e) {
+                console.log(e.message)
+            }
+        }
+
+//    val IconSize:js.Dynamic = js.native
+
+
+    // Get the requested enums        
+    if (ns.enumeration)
+        for (let enumeration of ns.enumeration) {
+            let name = enumeration.$['name']
+            // out.push(`    val ${name}:js.Dynamic = js.native`)
+
+            try {
+                out.push('    @js.native')
+                out.push(`    object ${name} extends js.Object {`)
+                for (let member of enumeration.member) {
+                    let name = member.$['name'].toUpperCase()
+                    if (name[0] >= '0' && name[0] <= '9') name = "_"+name
+                    out.push(`        val ${name}:js.Dynamic = js.native`)
+                }
+                out.push('    }')
+            } catch (e) {
+                console.log(e.message)
+            }
+            
+        }
+
+    // Bitfield is a type of enum
+    if (ns.bitfield)
+        for (let bitfield of ns.bitfield) {
+            let name = bitfield.$['name']
+            // out.push(`    val ${name}:js.Dynamic = js.native`)
+
+            try {
+                out.push('    @js.native')
+                out.push(`    object ${name} extends js.Object {`)
+                for (let member of bitfield.member) {
+                    let name = member.$['name'].toUpperCase()
+                    if (name[0] >= '0' && name[0] <= '9') name = "_"+name
+                    out.push(`        val ${name}:js.Dynamic = js.native`)
+                }
+                out.push('    }')
+            } catch (e) {
+                console.log(e.message)
+            }
+        }
+
+    // Get the requested classes
+    if (ns.class)
+        for (let klass of ns.class) {
+            let name = klass.$['name']
+            let klass_name = klass.$['name']
+            let pt = patch ? patch[name] : null
+            let ad = add ? add[name] : null
+            let st = static ? static[name] : null
+            let statics = []
+            try {
+                let def = []
+                def.push(`    @js.native\n`)
+                def.push(`    class ${name}`)
+
+                if (name === "Object" && modName === "GObject")                                
+                    klass.$['parent'] = 'js.Object'
+
+                if (klass.$['parent'] && klass.$['parent'] === 'Object')
+                    klass.$['parent'] = 'GObject.Object'
+
+                if (klass.$['parent']) 
+                    def.push(` extends ${klass.$['parent']}`)
+                else
+                    def.push(` extends GObject.Object`)
+                    
+                def.push(' {')
+                out.push(def.join(''))
+
+                /**
+                 * Static methods (functions)
+                 */
+                if (klass.function) {
+                    for (let func of klass.function) {
+                        if (func.$['name'] === "new") continue // Use standard constructor
+                        if (func.$['name'] === "newv") continue // FIXME!
+                        let line = []
+                            //static
+                            if (st && st[func.$['name']]) {
+                                line.push('        '+st[func.$['name']]+' = js.native')
+                            } else {
+                                line.push(`        def ${func.$['name']}(`)
+                                if (func.parameters) {
+                                    if (func.parameters[0].parameter)
+                                        for (let parameter of func.parameters[0].parameter) {
+                                            let name = getName(parameter.$['name'])
+                                            if (name === '...') name = '*'
+                                            line.push(`${name}: ${getType(modName, parameter)}`)
+                                            line.push(', ')
+                                        }
+                                }
+                                if (line[line.length-1] === ', ')
+                                    line[line.length-1] = ")"
+                                else
+                                    line.push(')')
+                                line.push(getReturnType(modName, func))
+                            }
+                            line.push(' = js.native')
+                        // }
+                        statics.push(line.join(''))
+                    }
+                    
+                }
+                /**
+                 * Constructors
+                 */
+                if (klass.constructor[0]) {
+                    out.push("        def this(config: js.Any) = this()")
+                    for (let ctor in klass.constructor) {
+                        let constructor = klass.constructor[ctor]
+                        if (typeof constructor === 'object') {
+                            if (constructor.$['name'] === 'new') continue
+                            let line = []
+                            if (pt && pt[constructor.$['name']]) {
+                                let text = pt[constructor.$['name']]
+                                out.push('        '+pt[constructor.$['name']]+'= js.native')
+                            } else {
+                                //static
+                                if (st && st[constructor.$['name']]) {
+                                    line.push('        '+st[constructor.$['name']]+' = js.native')
+                                } else {
+                                    line.push(`        def ${constructor.$['name']}(`)
+                                    if (constructor.parameters) {
+                                        for (let parameter of constructor.parameters[0].parameter) {
+                                            let name = getName(parameter.$['name'])
+                                            if (name === '...') name = '*'
+                                            line.push(`${name}: ${getType(modName, parameter)}`)
+                                            line.push(', ')
+                                        }
+                                    }
+                                    if (line[line.length-1] === ', ')
+                                        line[line.length-1] = `):${name}`
+                                    else
+                                        line.push(`):${name}`)
+                                    line.push(' = js.native')
+                                }
+                                statics.push(line.join(''))
+                                line = []
+                            }
+                            if (line.length) out.push(line.join(''))
+                        }
+                    }
+
+                }
+
+                // if (name === "Object") {
+                //     console.log(name + " "+ JSON.stringify(ad, null, 2))
+                // }
+                // if (name === "Settings") {
+                //     console.log(name + " "+ JSON.stringify(ad, null, 2))
+                // }
+                if (ad) {
+                    for (let mn in ad) {
+                        out.push('        '+ad[mn]+' = js.native')
+                    }
+
+                }
+
+                /**
+                 * Methods
+                 */
+                if (klass.method) {
+                    for (let method of klass.method) {
+                        let line = []
+                        if (pt && pt[method.$['name']]) {
+                            let text = pt[method.$['name']]
+                            out.push('        def '+pt[method.$['name']]+' = js.native')
+                        } else {
+                            line.push(`        ${oname(modName, klass_name, method.$['name'])}(`)
+                            if (method.parameters) {
+                                if (method.parameters[0].parameter)
+                                    for (let parameter of method.parameters[0].parameter) {
+                                        let name = getName(parameter.$['name'])
+                                        if (name === '...') name = '*'
+                                        line.push(`${name}: ${getType(modName, parameter)}`)
+                                        line.push(', ')
+                                    }
+                            }
+                            if (line[line.length-1] === ', ')
+                                line[line.length-1] = ")"
+                            else
+                                line.push(')')
+                            line.push(getReturnType(modName, method))
+                            line.push(' = js.native')
+                        }
+                        out.push(line.join(''))
+                    }
+                }
+                
+                out.push('    }')
+                if (statics.length) {
+                    let obj = []
+                    obj.push(`    @js.native\n`)
+                    obj.push(`    object ${name} extends js.Object`)
+                    // if (klass.$['parent']) 
+                    //     obj.push(` extends ${klass.$['parent']}`)
+                    obj.push(' {')
+                    out.push(obj.join(''))
+                    out.push(statics.join('\n'))
+                    out.push('    }')
+
+                }
+                
+            } catch (e) {
+                console.log(e.message)
+            }
+        }
+        
+    return out.join("\n")
+}
+
+/* Fixup: reserved keyword is identifier name */
+function getName(name) {
+    switch(name) {
+        case 'in': return 'in0'
+        case 'function': return 'function0'
+        case 'true': return 'true0'
+        case 'false': return 'false0'
+        case 'break': return 'break0'
+    }
+    return name
+}
+
+function ret(type, isArray) {
+    return isArray ? `[${type}]` : type
+}
+/* Decode the type */
+function getType(modName, parameter) {
+    let [name, isArray] = ['', '']
+
+    if (parameter.array) {
+        isArray = '[]'
+        if (parameter.array[0].type) {
+            name = parameter.array[0].type[0].$['name']
+        }
+    } else if (parameter.type) {
+        name = parameter.type[0].$['name']
+    }
+
+    let x = name.split(' ')
+    if (x.length === 1) 
+        name = x[0]
+    else    
+        name = x[1]
+
+    switch(name) {
+        case '':         return isArray ? 'js.Array[Any]' : 'Any'
+        case 'utf8':     return isArray ? 'js.Array[String]' : 'String'
+        case 'none':     return isArray ? 'js.Array[Unit]' : 'Unit'
+        case 'double':   return isArray ? 'js.Array[Any]' : 'Any'
+        case 'guint32':   return isArray ? 'js.Array[Any]' : 'Any'
+        case 'guint16':   return isArray ? 'js.Array[Any]' : 'Any'
+        case 'gint16':   return isArray ? 'js.Array[Any]' : 'Any'
+        case 'gunichar':   return isArray ? 'js.Array[Any]' : 'Any'
+        case 'gint8':   return isArray ? 'js.Array[Any]' : 'Any'
+        case 'gint32':   return isArray ? 'js.Array[Any]' : 'Any'
+        case 'gushort':   return isArray ? 'js.Array[Any]' : 'Any'
+        case 'gfloat':   return isArray ? 'js.Array[Any]' : 'Any'
+        case 'gboolean': return isArray ? 'js.Array[Boolean]' : 'Boolean'
+        case 'gpointer': return isArray ? 'js.Array[Object]' : 'Object'
+        case 'gchar':    return isArray ? 'js.Array[Any]' : 'Any'
+        case 'guint':    return isArray ? 'js.Array[Any]' : 'Any'
+        case 'glong':    return isArray ? 'js.Array[Any]' : 'Any'
+        case 'gulong':   return isArray ? 'js.Array[Any]' : 'Any'
+        case 'gint':     return isArray ? 'js.Array[Any]' : 'Any'
+        case 'guint8':   return isArray ? 'js.Array[Any]' : 'Any'
+        case 'guint64':  return isArray ? 'js.Array[Any]' : 'Any'
+        case 'gint64':   return isArray ? 'js.Array[Any]' : 'Any'
+        case 'gdouble':  return isArray ? 'js.Array[Any]' : 'Any'
+        case 'gssize':   return isArray ? 'js.Array[Any]' : 'Any'
+        case 'gsize':    return isArray ? 'js.Array[Any]' : 'Any'
+        case 'long':    return isArray ? 'js.Array[Any]' : 'Any'
+        case 'object':   return isArray ? 'js.Array[Any]' : 'Any'
+        case 'va_list':  return isArray ? 'js.Array[Any]' : 'Any'
+        default:
+            if (sym[name] || sym[`${modName}.${name}`]) 
+                return isArray ? `js.Array[${name}]` : name
+            else
+                return isArray ? 'js.Array[Any]' : 'Any'
+    }
+    return '_unknown'+isArray
+}
+
+/* Process the return type */
+function getReturnType(modName, method) {
+    if (method['return-value']) {
+        return ':'+getType(modName, method['return-value'][0])
+    } else return ''
+
+}
+
+function oname(modName, className, method) {
+    //console.log(modName+' '+className+' '+method)
+    let overrides = {
+        'Gda': {
+            'DataModelIter': ['is_valid']
+        },
+        'Gdk': {
+            'Cursor': ['ref', 'unref']
+        },
+        'Gio': {
+            'DataInputStream': ['read_byte']
+        },
+        'GObject': {
+            'ParamSpec': ['get_qdata', 'ref', 'ref_sink', 'set_qdata', 'set_qdata_full', 'steal_qdata', 'unref']
+
+        },
+        'Gtk': {
+            'ComboBoxText': ['remove'],
+            'Container': ['child_notify'],
+            'Invisible': ['get_screen'],
+            'MenuButton': ['get_direction', 'set_direction'],
+            'MenuItem': ['activate'],
+            'Statusbar': ['remove'],
+            'Style': ['get_valist'],
+            'StyleContext': ['get_property', 'get_valist'],
+            'StyleProperties': ['get_property', 'get_valist', 'set_property', 'set_valist'],
+            'Switch': ['get_state', 'set_state'],
+            'TextView': ['get_window'], 
+            'ThemingEngine': ['get_property', 'get_valist'],
+            'ToolItem': ['set_tooltip_markup', 'set_tooltip_text'],
+            'ToolPalette': ['get_style', 'set_style'], 
+            'Toolbar': ['get_style', 'set_style'],
+            'Window': ['get_opacity', 'get_screen', 'set_opacity']
+        },
+        'WebKit': {
+            'DOMCSSStyleDeclaration': ['set_property'],
+            'DOMCharacterData': ['replace_data'],
+            'DOMElement': ['get_attributes', 'has_attributes'],
+            'DOMHTMLDocument': ['get_compat_mode'],
+            'DOMHTMLElement': ['get_class_list', 'get_class_name', 'get_id', 'set_class_name', 'set_id'],
+            'DOMHTMLOptionsCollection': ['get_length', 'named_item'],
+            'DOMHTMLSelectElement': ['remove'],
+            'DOMProcessingInstruction': ['get_data', 'set_data'],
+            'WebView': ['get_settings']
+
+        }
+    }
+    if (overrides[modName]) {
+        if (overrides[modName][className]) {
+            if (overrides[modName][className].indexOf(method) !== -1) return `override def ${method}`
+        }
+    }
+    return `def ${method}`
+}

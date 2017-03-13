@@ -1,0 +1,29 @@
+{
+  "name": "gir2dts",
+  "version": "0.1.0",
+  "description": "Convert gir metadata to *.d.ts format",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darkoverlordofdata/gir2dts.git"
+  },
+  "keywords": [
+    "typescript",
+    "gtk"
+  ],
+  "author": "darkoverlordofdata",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/darkoverlordofdata/gir2dts/issues"
+  },
+  "homepage": "https://github.com/darkoverlordofdata/gir2dts#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "xml2js": "^0.4.17"
+  }
+}
