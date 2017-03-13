@@ -1,7 +1,7 @@
 {
-  "name": "gir2dts",
+  "name": "gir2facade",
   "version": "0.1.0",
-  "description": "Convert gir metadata to *.d.ts format",
+  "description": "Convert gir metadata to scala facade",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,18 +9,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/darkoverlordofdata/gir2dts.git"
+    "url": "https://github.com/darkoverlordofdata/gir2facade.git"
   },
   "keywords": [
-    "typescript",
+    "scalajs",
     "gtk"
   ],
   "author": "darkoverlordofdata",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/darkoverlordofdata/gir2dts/issues"
+    "url": "https://github.com/darkoverlordofdata/gir2facade/issues"
   },
-  "homepage": "https://github.com/darkoverlordofdata/gir2dts#readme",
+  "homepage": "https://github.com/darkoverlordofdata/gir2facade#readme",
   "dependencies": {
   },
   "devDependencies": {

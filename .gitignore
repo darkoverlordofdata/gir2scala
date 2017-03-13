@@ -1,6 +1,8 @@
 .tscache
+.ensime*
 dist
 build
 node_modules
 bower_components
 packages
+target

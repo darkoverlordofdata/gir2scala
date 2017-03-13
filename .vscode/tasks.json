@@ -11,7 +11,7 @@
         {
             "isBuildCommand": true,
             "taskName": "build",
-            "args": ["/usr/bin/time tsc"]
+            "args": ["sbt fastOptJS && /bin/cat src/js/prolog.js target/scala-2.11/example-jsdeps.js target/scala-2.11/example-fastopt.js src/js/main.js > bin/example && chmod +x bin/example"]
         }
     ]
 }
