@@ -3,7 +3,6 @@ package org.example
 import scala.scalajs.js
 import js.Dynamic.{ global => g }
 import js.Dynamic.{ literal => l }
-import org.gnome.Gtk
 import org.gnome.Gio
 import org.gnome.Lang
 

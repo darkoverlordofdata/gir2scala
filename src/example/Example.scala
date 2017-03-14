@@ -6,18 +6,18 @@ import js.Dynamic.{ literal => l }
 import org.gnome.Gtk
 import org.gnome.Gio
 
-class Ouroboros {
+class Example {
 
     val application = new Gtk.Application(
         l(  
             flags           = Gio.ApplicationFlags.FLAGS_NONE,
-            application_id  = "com.darkoverlordofdata.ouroboros"
+            application_id  = "com.darkoverlordofdata.example"
         )
     )
 
     lazy val appWindow = new AppWindow(this,
         l(  
-            title           = "Ouroboros",
+            title           = "Example",
             application     = application, 
             window_position = Gtk.WindowPosition.CENTER
         )
@@ -71,7 +71,7 @@ class Ouroboros {
         val about = new Gtk.AboutDialog()
         about.set_logo_icon_name(null)
         about.set_transient_for(this.window)
-        about.set_program_name("Ouroboros")
+        about.set_program_name("Example")
         about.set_version("1.0")
 
         about.set_website("https://commons.wikimedia.org/w/index.php?curid=2856329")

@@ -5,12 +5,14 @@ import js.Dynamic.{ global => g }
 import js.Dynamic.{ literal => l }
 import org.gnome.Gtk
 
-class AppWindow (val parent: Ouroboros, val params: js.Any) {
+class AppWindow (val parent: Example, val params: js.Any) {
 
     lazy val window = new Gtk.ApplicationWindow(params)
-    lazy val headerbar = new Gtk.HeaderBar(l(title = "Ouroboros", show_close_button = true))
+    lazy val headerbar = new Gtk.HeaderBar(l(title = "Example", show_close_button = true))
 
-    def buildUI() {
+    var config: Any = null
+
+    def buildUI():Unit = {
         headerbar.pack_start(buildOpen())
         window.set_default_size(940, 729)
         window.set_titlebar(headerbar)
@@ -50,7 +52,7 @@ class AppWindow (val parent: Ouroboros, val params: js.Any) {
     }
 
     def setConfig(config:Any) {
-
+        this.config = config
     }
 
 }

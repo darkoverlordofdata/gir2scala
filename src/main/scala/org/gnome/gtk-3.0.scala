@@ -1787,7 +1787,7 @@ object Gtk extends js.Object {
         def add_objects_from_file(filename: String, object_ids: js.Array[String]):Any = js.native
         def add_objects_from_resource(resource_path: String, object_ids: js.Array[String]):Any = js.native
         def add_objects_from_string(buffer: String, length: Any, object_ids: js.Array[String]):Any = js.native
-        def connect_signals(user_data: Object):Unit = js.native
+        def connect_signals(handler: Any, user_data: Any):Unit = js.native
         def connect_signals_full(func: Any, user_data: Object):Unit = js.native
         def expose_object(name: String, object0: Any):Unit = js.native
         def get_application():Any = js.native
