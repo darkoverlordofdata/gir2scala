@@ -2293,8 +2293,8 @@ object Gdk extends js.Object {
     def atom_intern(atom_name: String, only_if_exists: Boolean):Any = js.native
     def atom_intern_static_string(atom_name: String):Any = js.native
     def beep():Unit = js.native
-    def cairo_create(window: Any):Any = js.native
-    def cairo_draw_from_gl(cr: Any, window: Any, source: Any, source_type0: Any, buffer_scale: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def cairo_create(window: Window):Any = js.native
+    def cairo_draw_from_gl(cr: Any, window: Window, source: Any, source_type0: Any, buffer_scale: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
     def cairo_get_clip_rectangle(cr: Any, rect: Any):Boolean = js.native
     def cairo_rectangle(cr: Any, rectangle: Any):Unit = js.native
     def cairo_region(cr: Any, region: Any):Unit = js.native
@@ -2302,21 +2302,21 @@ object Gdk extends js.Object {
     def cairo_set_source_color(cr: Any, color: Any):Unit = js.native
     def cairo_set_source_pixbuf(cr: Any, pixbuf: Any, pixbuf_x: Any, pixbuf_y: Any):Unit = js.native
     def cairo_set_source_rgba(cr: Any, rgba: Any):Unit = js.native
-    def cairo_set_source_window(cr: Any, window: Any, x: Any, y: Any):Unit = js.native
-    def cairo_surface_create_from_pixbuf(pixbuf: Any, scale: Any, for_window: Any):Any = js.native
+    def cairo_set_source_window(cr: Any, window: Window, x: Any, y: Any):Unit = js.native
+    def cairo_surface_create_from_pixbuf(pixbuf: Any, scale: Any, for_window: Window):Any = js.native
     def color_parse(spec: String, color: Any):Boolean = js.native
     def disable_multidevice():Unit = js.native
-    def drag_abort(context: Any, time0: Any):Unit = js.native
-    def drag_begin(window: Any, targets: Any):Any = js.native
-    def drag_begin_for_device(window: Any, device: Any, targets: Any):Any = js.native
-    def drag_drop(context: Any, time0: Any):Unit = js.native
-    def drag_drop_succeeded(context: Any):Boolean = js.native
-    def drag_find_window_for_screen(context: Any, drag_window: Any, screen: Any, x_root: Any, y_root: Any, dest_window: Any, protocol: Any):Unit = js.native
-    def drag_get_selection(context: Any):Any = js.native
-    def drag_motion(context: Any, dest_window: Any, protocol: Any, x_root: Any, y_root: Any, suggested_action: Any, possible_actions: Any, time0: Any):Boolean = js.native
-    def drag_status(context: Any, action: Any, time0: Any):Unit = js.native
-    def drop_finish(context: Any, success: Boolean, time0: Any):Unit = js.native
-    def drop_reply(context: Any, accepted: Boolean, time0: Any):Unit = js.native
+    def drag_abort(context: DragContext, time0: Any):Unit = js.native
+    def drag_begin(window: Window, targets: Any):DragContext = js.native
+    def drag_begin_for_device(window: Window, device: Device, targets: Any):DragContext = js.native
+    def drag_drop(context: DragContext, time0: Any):Unit = js.native
+    def drag_drop_succeeded(context: DragContext):Boolean = js.native
+    def drag_find_window_for_screen(context: DragContext, drag_window: Window, screen: Screen, x_root: Any, y_root: Any, dest_window: Window, protocol: Double):Unit = js.native
+    def drag_get_selection(context: DragContext):Any = js.native
+    def drag_motion(context: DragContext, dest_window: Window, protocol: Double, x_root: Any, y_root: Any, suggested_action: Double, possible_actions: Double, time0: Any):Boolean = js.native
+    def drag_status(context: DragContext, action: Double, time0: Any):Unit = js.native
+    def drop_finish(context: DragContext, success: Boolean, time0: Any):Unit = js.native
+    def drop_reply(context: DragContext, accepted: Boolean, time0: Any):Unit = js.native
     def error_trap_pop():Any = js.native
     def error_trap_pop_ignored():Unit = js.native
     def error_trap_push():Unit = js.native
@@ -2329,7 +2329,7 @@ object Gdk extends js.Object {
     def events_get_distance(event1: Any, event2: Any, distance: Any):Boolean = js.native
     def events_pending():Boolean = js.native
     def flush():Unit = js.native
-    def get_default_root_window():Any = js.native
+    def get_default_root_window():Window = js.native
     def get_display():String = js.native
     def get_display_arg_name():String = js.native
     def get_program_class():String = js.native
@@ -2337,7 +2337,7 @@ object Gdk extends js.Object {
     def gl_error_quark():Any = js.native
     def init(args:Any*):Unit = js.native
     def init_check(args:Any*):Boolean = js.native
-    def keyboard_grab(window: Any, owner_events: Boolean, time0: Any):Any = js.native
+    def keyboard_grab(window: Window, owner_events: Boolean, time0: Any):Double = js.native
     def keyboard_ungrab(time0: Any):Unit = js.native
     def keyval_convert_case(symbol: Any, lower: Any, upper: Any):Unit = js.native
     def keyval_from_name(keyval_name: String):Any = js.native
@@ -2350,43 +2350,43 @@ object Gdk extends js.Object {
     def list_visuals():Any = js.native
     def notify_startup_complete():Unit = js.native
     def notify_startup_complete_with_id(startup_id: String):Unit = js.native
-    def offscreen_window_get_embedder(window: Any):Any = js.native
-    def offscreen_window_get_surface(window: Any):Any = js.native
-    def offscreen_window_set_embedder(window: Any, embedder: Any):Unit = js.native
-    def pango_context_get():Any = js.native
-    def pango_context_get_for_screen(screen: Any):Any = js.native
-    def pango_layout_get_clip_region(layout: Any, x_origin: Any, y_origin: Any, index_ranges: Any, n_ranges: Any):Any = js.native
+    def offscreen_window_get_embedder(window: Window):Window = js.native
+    def offscreen_window_get_surface(window: Window):Any = js.native
+    def offscreen_window_set_embedder(window: Window, embedder: Window):Unit = js.native
+    def pango_context_get():Pango.Context = js.native
+    def pango_context_get_for_screen(screen: Screen):Pango.Context = js.native
+    def pango_layout_get_clip_region(layout: Pango.Layout, x_origin: Any, y_origin: Any, index_ranges: Any, n_ranges: Any):Any = js.native
     def pango_layout_line_get_clip_region(line: Any, x_origin: Any, y_origin: Any, index_ranges: js.Array[Any], n_ranges: Any):Any = js.native
     def parse_args(args:Any*):Unit = js.native
     def pixbuf_get_from_surface(surface: Any, src_x: Any, src_y: Any, width: Any, height: Any):Any = js.native
-    def pixbuf_get_from_window(window: Any, src_x: Any, src_y: Any, width: Any, height: Any):Any = js.native
-    def pointer_grab(window: Any, owner_events: Boolean, event_mask: Any, confine_to: Any, cursor: Any, time0: Any):Any = js.native
+    def pixbuf_get_from_window(window: Window, src_x: Any, src_y: Any, width: Any, height: Any):Any = js.native
+    def pointer_grab(window: Window, owner_events: Boolean, event_mask: Double, confine_to: Window, cursor: Cursor, time0: Any):Double = js.native
     def pointer_is_grabbed():Boolean = js.native
     def pointer_ungrab(time0: Any):Unit = js.native
     def pre_parse_libgtk_only():Unit = js.native
-    def property_change(window: Any, property: Any, type0: Any, format: Any, mode: Any, data: Any, nelements: Any):Unit = js.native
-    def property_delete(window: Any, property: Any):Unit = js.native
-    def property_get(window: Any, property: Any, type0: Any, offset: Any, length: Any, pdelete: Any, actual_property_type0: Any, actual_format: Any, actual_length: Any, data: js.Array[Any]):Boolean = js.native
+    def property_change(window: Window, property: Any, type0: Any, format: Any, mode: Double, data: Any, nelements: Any):Unit = js.native
+    def property_delete(window: Window, property: Any):Unit = js.native
+    def property_get(window: Window, property: Any, type0: Any, offset: Any, length: Any, pdelete: Any, actual_property_type0: Any, actual_format: Any, actual_length: Any, data: js.Array[Any]):Boolean = js.native
     def query_depths(depths: js.Array[Any], count: Any):Unit = js.native
-    def query_visual_types(visual_types: js.Array[Any], count: Any):Unit = js.native
-    def selection_convert(requestor: Any, selection: Any, target: Any, time0: Any):Unit = js.native
-    def selection_owner_get(selection: Any):Any = js.native
-    def selection_owner_get_for_display(display: Any, selection: Any):Any = js.native
-    def selection_owner_set(owner: Any, selection: Any, time0: Any, send_event: Boolean):Boolean = js.native
-    def selection_owner_set_for_display(display: Any, owner: Any, selection: Any, time0: Any, send_event: Boolean):Boolean = js.native
-    def selection_property_get(requestor: Any, data: Any, prop_type0: Any, prop_format: Any):Any = js.native
-    def selection_send_notify(requestor: Any, selection: Any, target: Any, property: Any, time0: Any):Unit = js.native
-    def selection_send_notify_for_display(display: Any, requestor: Any, selection: Any, target: Any, property: Any, time0: Any):Unit = js.native
+    def query_visual_types(visual_types: js.Array[Double], count: Any):Unit = js.native
+    def selection_convert(requestor: Window, selection: Any, target: Any, time0: Any):Unit = js.native
+    def selection_owner_get(selection: Any):Window = js.native
+    def selection_owner_get_for_display(display: Display, selection: Any):Window = js.native
+    def selection_owner_set(owner: Window, selection: Any, time0: Any, send_event: Boolean):Boolean = js.native
+    def selection_owner_set_for_display(display: Display, owner: Window, selection: Any, time0: Any, send_event: Boolean):Boolean = js.native
+    def selection_property_get(requestor: Window, data: Any, prop_type0: Any, prop_format: Any):Any = js.native
+    def selection_send_notify(requestor: Window, selection: Any, target: Any, property: Any, time0: Any):Unit = js.native
+    def selection_send_notify_for_display(display: Display, requestor: Window, selection: Any, target: Any, property: Any, time0: Any):Unit = js.native
     def set_allowed_backends(backends: String):Unit = js.native
     def set_double_click_time(msec: Any):Unit = js.native
     def set_program_class(program_class: String):Unit = js.native
     def set_show_events(show_events: Boolean):Unit = js.native
     def setting_get(name: String, value: Any):Boolean = js.native
-    def synthesize_window_state(window: Any, unset_flags: Any, set_flags: Any):Unit = js.native
-    def test_render_sync(window: Any):Unit = js.native
-    def test_simulate_button(window: Any, x: Any, y: Any, button: Any, modifiers: Any, button_pressrelease: Any):Boolean = js.native
-    def test_simulate_key(window: Any, x: Any, y: Any, keyval0: Any, modifiers: Any, key_pressrelease: Any):Boolean = js.native
-    def text_property_to_utf8_list_for_display(display: Any, encoding: Any, format: Any, text: js.Array[Any], length: Any, list: js.Array[String]):Any = js.native
+    def synthesize_window_state(window: Window, unset_flags: Double, set_flags: Double):Unit = js.native
+    def test_render_sync(window: Window):Unit = js.native
+    def test_simulate_button(window: Window, x: Any, y: Any, button: Any, modifiers: Double, button_pressrelease: Double):Boolean = js.native
+    def test_simulate_key(window: Window, x: Any, y: Any, keyval0: Any, modifiers: Double, key_pressrelease: Double):Boolean = js.native
+    def text_property_to_utf8_list_for_display(display: Display, encoding: Any, format: Any, text: js.Array[Any], length: Any, list: js.Array[String]):Any = js.native
     def threads_add_idle(function0: Any, data: Object):Any = js.native
     def threads_add_idle_full(priority: Any, function0: Any, data: Object, notify: Any):Any = js.native
     def threads_add_timeout(interval0: Any, function0: Any, data: Object):Any = js.native
@@ -2401,591 +2401,591 @@ object Gdk extends js.Object {
     def utf8_to_string_target(str: String):String = js.native
     @js.native
     object AxisUse extends js.Object {
-        val IGNORE:js.Dynamic = js.native
-        val X:js.Dynamic = js.native
-        val Y:js.Dynamic = js.native
-        val PRESSURE:js.Dynamic = js.native
-        val XTILT:js.Dynamic = js.native
-        val YTILT:js.Dynamic = js.native
-        val WHEEL:js.Dynamic = js.native
-        val LAST:js.Dynamic = js.native
+        val IGNORE:Double = js.native
+        val X:Double = js.native
+        val Y:Double = js.native
+        val PRESSURE:Double = js.native
+        val XTILT:Double = js.native
+        val YTILT:Double = js.native
+        val WHEEL:Double = js.native
+        val LAST:Double = js.native
     }
     @js.native
     object ByteOrder extends js.Object {
-        val LSB_FIRST:js.Dynamic = js.native
-        val MSB_FIRST:js.Dynamic = js.native
+        val LSB_FIRST:Double = js.native
+        val MSB_FIRST:Double = js.native
     }
     @js.native
     object CrossingMode extends js.Object {
-        val NORMAL:js.Dynamic = js.native
-        val GRAB:js.Dynamic = js.native
-        val UNGRAB:js.Dynamic = js.native
-        val GTK_GRAB:js.Dynamic = js.native
-        val GTK_UNGRAB:js.Dynamic = js.native
-        val STATE_CHANGED:js.Dynamic = js.native
-        val TOUCH_BEGIN:js.Dynamic = js.native
-        val TOUCH_END:js.Dynamic = js.native
-        val DEVICE_SWITCH:js.Dynamic = js.native
+        val NORMAL:Double = js.native
+        val GRAB:Double = js.native
+        val UNGRAB:Double = js.native
+        val GTK_GRAB:Double = js.native
+        val GTK_UNGRAB:Double = js.native
+        val STATE_CHANGED:Double = js.native
+        val TOUCH_BEGIN:Double = js.native
+        val TOUCH_END:Double = js.native
+        val DEVICE_SWITCH:Double = js.native
     }
     @js.native
     object CursorType extends js.Object {
-        val X_CURSOR:js.Dynamic = js.native
-        val ARROW:js.Dynamic = js.native
-        val BASED_ARROW_DOWN:js.Dynamic = js.native
-        val BASED_ARROW_UP:js.Dynamic = js.native
-        val BOAT:js.Dynamic = js.native
-        val BOGOSITY:js.Dynamic = js.native
-        val BOTTOM_LEFT_CORNER:js.Dynamic = js.native
-        val BOTTOM_RIGHT_CORNER:js.Dynamic = js.native
-        val BOTTOM_SIDE:js.Dynamic = js.native
-        val BOTTOM_TEE:js.Dynamic = js.native
-        val BOX_SPIRAL:js.Dynamic = js.native
-        val CENTER_PTR:js.Dynamic = js.native
-        val CIRCLE:js.Dynamic = js.native
-        val CLOCK:js.Dynamic = js.native
-        val COFFEE_MUG:js.Dynamic = js.native
-        val CROSS:js.Dynamic = js.native
-        val CROSS_REVERSE:js.Dynamic = js.native
-        val CROSSHAIR:js.Dynamic = js.native
-        val DIAMOND_CROSS:js.Dynamic = js.native
-        val DOT:js.Dynamic = js.native
-        val DOTBOX:js.Dynamic = js.native
-        val DOUBLE_ARROW:js.Dynamic = js.native
-        val DRAFT_LARGE:js.Dynamic = js.native
-        val DRAFT_SMALL:js.Dynamic = js.native
-        val DRAPED_BOX:js.Dynamic = js.native
-        val EXCHANGE:js.Dynamic = js.native
-        val FLEUR:js.Dynamic = js.native
-        val GOBBLER:js.Dynamic = js.native
-        val GUMBY:js.Dynamic = js.native
-        val HAND1:js.Dynamic = js.native
-        val HAND2:js.Dynamic = js.native
-        val HEART:js.Dynamic = js.native
-        val ICON:js.Dynamic = js.native
-        val IRON_CROSS:js.Dynamic = js.native
-        val LEFT_PTR:js.Dynamic = js.native
-        val LEFT_SIDE:js.Dynamic = js.native
-        val LEFT_TEE:js.Dynamic = js.native
-        val LEFTBUTTON:js.Dynamic = js.native
-        val LL_ANGLE:js.Dynamic = js.native
-        val LR_ANGLE:js.Dynamic = js.native
-        val MAN:js.Dynamic = js.native
-        val MIDDLEBUTTON:js.Dynamic = js.native
-        val MOUSE:js.Dynamic = js.native
-        val PENCIL:js.Dynamic = js.native
-        val PIRATE:js.Dynamic = js.native
-        val PLUS:js.Dynamic = js.native
-        val QUESTION_ARROW:js.Dynamic = js.native
-        val RIGHT_PTR:js.Dynamic = js.native
-        val RIGHT_SIDE:js.Dynamic = js.native
-        val RIGHT_TEE:js.Dynamic = js.native
-        val RIGHTBUTTON:js.Dynamic = js.native
-        val RTL_LOGO:js.Dynamic = js.native
-        val SAILBOAT:js.Dynamic = js.native
-        val SB_DOWN_ARROW:js.Dynamic = js.native
-        val SB_H_DOUBLE_ARROW:js.Dynamic = js.native
-        val SB_LEFT_ARROW:js.Dynamic = js.native
-        val SB_RIGHT_ARROW:js.Dynamic = js.native
-        val SB_UP_ARROW:js.Dynamic = js.native
-        val SB_V_DOUBLE_ARROW:js.Dynamic = js.native
-        val SHUTTLE:js.Dynamic = js.native
-        val SIZING:js.Dynamic = js.native
-        val SPIDER:js.Dynamic = js.native
-        val SPRAYCAN:js.Dynamic = js.native
-        val STAR:js.Dynamic = js.native
-        val TARGET:js.Dynamic = js.native
-        val TCROSS:js.Dynamic = js.native
-        val TOP_LEFT_ARROW:js.Dynamic = js.native
-        val TOP_LEFT_CORNER:js.Dynamic = js.native
-        val TOP_RIGHT_CORNER:js.Dynamic = js.native
-        val TOP_SIDE:js.Dynamic = js.native
-        val TOP_TEE:js.Dynamic = js.native
-        val TREK:js.Dynamic = js.native
-        val UL_ANGLE:js.Dynamic = js.native
-        val UMBRELLA:js.Dynamic = js.native
-        val UR_ANGLE:js.Dynamic = js.native
-        val WATCH:js.Dynamic = js.native
-        val XTERM:js.Dynamic = js.native
-        val LAST_CURSOR:js.Dynamic = js.native
-        val BLANK_CURSOR:js.Dynamic = js.native
-        val CURSOR_IS_PIXMAP:js.Dynamic = js.native
+        val X_CURSOR:Double = js.native
+        val ARROW:Double = js.native
+        val BASED_ARROW_DOWN:Double = js.native
+        val BASED_ARROW_UP:Double = js.native
+        val BOAT:Double = js.native
+        val BOGOSITY:Double = js.native
+        val BOTTOM_LEFT_CORNER:Double = js.native
+        val BOTTOM_RIGHT_CORNER:Double = js.native
+        val BOTTOM_SIDE:Double = js.native
+        val BOTTOM_TEE:Double = js.native
+        val BOX_SPIRAL:Double = js.native
+        val CENTER_PTR:Double = js.native
+        val CIRCLE:Double = js.native
+        val CLOCK:Double = js.native
+        val COFFEE_MUG:Double = js.native
+        val CROSS:Double = js.native
+        val CROSS_REVERSE:Double = js.native
+        val CROSSHAIR:Double = js.native
+        val DIAMOND_CROSS:Double = js.native
+        val DOT:Double = js.native
+        val DOTBOX:Double = js.native
+        val DOUBLE_ARROW:Double = js.native
+        val DRAFT_LARGE:Double = js.native
+        val DRAFT_SMALL:Double = js.native
+        val DRAPED_BOX:Double = js.native
+        val EXCHANGE:Double = js.native
+        val FLEUR:Double = js.native
+        val GOBBLER:Double = js.native
+        val GUMBY:Double = js.native
+        val HAND1:Double = js.native
+        val HAND2:Double = js.native
+        val HEART:Double = js.native
+        val ICON:Double = js.native
+        val IRON_CROSS:Double = js.native
+        val LEFT_PTR:Double = js.native
+        val LEFT_SIDE:Double = js.native
+        val LEFT_TEE:Double = js.native
+        val LEFTBUTTON:Double = js.native
+        val LL_ANGLE:Double = js.native
+        val LR_ANGLE:Double = js.native
+        val MAN:Double = js.native
+        val MIDDLEBUTTON:Double = js.native
+        val MOUSE:Double = js.native
+        val PENCIL:Double = js.native
+        val PIRATE:Double = js.native
+        val PLUS:Double = js.native
+        val QUESTION_ARROW:Double = js.native
+        val RIGHT_PTR:Double = js.native
+        val RIGHT_SIDE:Double = js.native
+        val RIGHT_TEE:Double = js.native
+        val RIGHTBUTTON:Double = js.native
+        val RTL_LOGO:Double = js.native
+        val SAILBOAT:Double = js.native
+        val SB_DOWN_ARROW:Double = js.native
+        val SB_H_DOUBLE_ARROW:Double = js.native
+        val SB_LEFT_ARROW:Double = js.native
+        val SB_RIGHT_ARROW:Double = js.native
+        val SB_UP_ARROW:Double = js.native
+        val SB_V_DOUBLE_ARROW:Double = js.native
+        val SHUTTLE:Double = js.native
+        val SIZING:Double = js.native
+        val SPIDER:Double = js.native
+        val SPRAYCAN:Double = js.native
+        val STAR:Double = js.native
+        val TARGET:Double = js.native
+        val TCROSS:Double = js.native
+        val TOP_LEFT_ARROW:Double = js.native
+        val TOP_LEFT_CORNER:Double = js.native
+        val TOP_RIGHT_CORNER:Double = js.native
+        val TOP_SIDE:Double = js.native
+        val TOP_TEE:Double = js.native
+        val TREK:Double = js.native
+        val UL_ANGLE:Double = js.native
+        val UMBRELLA:Double = js.native
+        val UR_ANGLE:Double = js.native
+        val WATCH:Double = js.native
+        val XTERM:Double = js.native
+        val LAST_CURSOR:Double = js.native
+        val BLANK_CURSOR:Double = js.native
+        val CURSOR_IS_PIXMAP:Double = js.native
     }
     @js.native
     object DeviceType extends js.Object {
-        val MASTER:js.Dynamic = js.native
-        val SLAVE:js.Dynamic = js.native
-        val FLOATING:js.Dynamic = js.native
+        val MASTER:Double = js.native
+        val SLAVE:Double = js.native
+        val FLOATING:Double = js.native
     }
     @js.native
     object DragProtocol extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val MOTIF:js.Dynamic = js.native
-        val XDND:js.Dynamic = js.native
-        val ROOTWIN:js.Dynamic = js.native
-        val WIN32_DROPFILES:js.Dynamic = js.native
-        val OLE2:js.Dynamic = js.native
-        val LOCAL:js.Dynamic = js.native
-        val WAYLAND:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val MOTIF:Double = js.native
+        val XDND:Double = js.native
+        val ROOTWIN:Double = js.native
+        val WIN32_DROPFILES:Double = js.native
+        val OLE2:Double = js.native
+        val LOCAL:Double = js.native
+        val WAYLAND:Double = js.native
     }
     @js.native
     object EventType extends js.Object {
-        val NOTHING:js.Dynamic = js.native
-        val DELETE:js.Dynamic = js.native
-        val DESTROY:js.Dynamic = js.native
-        val EXPOSE:js.Dynamic = js.native
-        val MOTION_NOTIFY:js.Dynamic = js.native
-        val BUTTON_PRESS:js.Dynamic = js.native
-        val _2BUTTON_PRESS:js.Dynamic = js.native
-        val DOUBLE_BUTTON_PRESS:js.Dynamic = js.native
-        val _3BUTTON_PRESS:js.Dynamic = js.native
-        val TRIPLE_BUTTON_PRESS:js.Dynamic = js.native
-        val BUTTON_RELEASE:js.Dynamic = js.native
-        val KEY_PRESS:js.Dynamic = js.native
-        val KEY_RELEASE:js.Dynamic = js.native
-        val ENTER_NOTIFY:js.Dynamic = js.native
-        val LEAVE_NOTIFY:js.Dynamic = js.native
-        val FOCUS_CHANGE:js.Dynamic = js.native
-        val CONFIGURE:js.Dynamic = js.native
-        val MAP:js.Dynamic = js.native
-        val UNMAP:js.Dynamic = js.native
-        val PROPERTY_NOTIFY:js.Dynamic = js.native
-        val SELECTION_CLEAR:js.Dynamic = js.native
-        val SELECTION_REQUEST:js.Dynamic = js.native
-        val SELECTION_NOTIFY:js.Dynamic = js.native
-        val PROXIMITY_IN:js.Dynamic = js.native
-        val PROXIMITY_OUT:js.Dynamic = js.native
-        val DRAG_ENTER:js.Dynamic = js.native
-        val DRAG_LEAVE:js.Dynamic = js.native
-        val DRAG_MOTION:js.Dynamic = js.native
-        val DRAG_STATUS:js.Dynamic = js.native
-        val DROP_START:js.Dynamic = js.native
-        val DROP_FINISHED:js.Dynamic = js.native
-        val CLIENT_EVENT:js.Dynamic = js.native
-        val VISIBILITY_NOTIFY:js.Dynamic = js.native
-        val SCROLL:js.Dynamic = js.native
-        val WINDOW_STATE:js.Dynamic = js.native
-        val SETTING:js.Dynamic = js.native
-        val OWNER_CHANGE:js.Dynamic = js.native
-        val GRAB_BROKEN:js.Dynamic = js.native
-        val DAMAGE:js.Dynamic = js.native
-        val TOUCH_BEGIN:js.Dynamic = js.native
-        val TOUCH_UPDATE:js.Dynamic = js.native
-        val TOUCH_END:js.Dynamic = js.native
-        val TOUCH_CANCEL:js.Dynamic = js.native
-        val TOUCHPAD_SWIPE:js.Dynamic = js.native
-        val TOUCHPAD_PINCH:js.Dynamic = js.native
-        val EVENT_LAST:js.Dynamic = js.native
+        val NOTHING:Double = js.native
+        val DELETE:Double = js.native
+        val DESTROY:Double = js.native
+        val EXPOSE:Double = js.native
+        val MOTION_NOTIFY:Double = js.native
+        val BUTTON_PRESS:Double = js.native
+        val _2BUTTON_PRESS:Double = js.native
+        val DOUBLE_BUTTON_PRESS:Double = js.native
+        val _3BUTTON_PRESS:Double = js.native
+        val TRIPLE_BUTTON_PRESS:Double = js.native
+        val BUTTON_RELEASE:Double = js.native
+        val KEY_PRESS:Double = js.native
+        val KEY_RELEASE:Double = js.native
+        val ENTER_NOTIFY:Double = js.native
+        val LEAVE_NOTIFY:Double = js.native
+        val FOCUS_CHANGE:Double = js.native
+        val CONFIGURE:Double = js.native
+        val MAP:Double = js.native
+        val UNMAP:Double = js.native
+        val PROPERTY_NOTIFY:Double = js.native
+        val SELECTION_CLEAR:Double = js.native
+        val SELECTION_REQUEST:Double = js.native
+        val SELECTION_NOTIFY:Double = js.native
+        val PROXIMITY_IN:Double = js.native
+        val PROXIMITY_OUT:Double = js.native
+        val DRAG_ENTER:Double = js.native
+        val DRAG_LEAVE:Double = js.native
+        val DRAG_MOTION:Double = js.native
+        val DRAG_STATUS:Double = js.native
+        val DROP_START:Double = js.native
+        val DROP_FINISHED:Double = js.native
+        val CLIENT_EVENT:Double = js.native
+        val VISIBILITY_NOTIFY:Double = js.native
+        val SCROLL:Double = js.native
+        val WINDOW_STATE:Double = js.native
+        val SETTING:Double = js.native
+        val OWNER_CHANGE:Double = js.native
+        val GRAB_BROKEN:Double = js.native
+        val DAMAGE:Double = js.native
+        val TOUCH_BEGIN:Double = js.native
+        val TOUCH_UPDATE:Double = js.native
+        val TOUCH_END:Double = js.native
+        val TOUCH_CANCEL:Double = js.native
+        val TOUCHPAD_SWIPE:Double = js.native
+        val TOUCHPAD_PINCH:Double = js.native
+        val EVENT_LAST:Double = js.native
     }
     @js.native
     object FilterReturn extends js.Object {
-        val CONTINUE:js.Dynamic = js.native
-        val TRANSLATE:js.Dynamic = js.native
-        val REMOVE:js.Dynamic = js.native
+        val CONTINUE:Double = js.native
+        val TRANSLATE:Double = js.native
+        val REMOVE:Double = js.native
     }
     @js.native
     object FullscreenMode extends js.Object {
-        val CURRENT_MONITOR:js.Dynamic = js.native
-        val ALL_MONITORS:js.Dynamic = js.native
+        val CURRENT_MONITOR:Double = js.native
+        val ALL_MONITORS:Double = js.native
     }
     @js.native
     object GLError extends js.Object {
-        val NOT_AVAILABLE:js.Dynamic = js.native
-        val UNSUPPORTED_FORMAT:js.Dynamic = js.native
-        val UNSUPPORTED_PROFILE:js.Dynamic = js.native
+        val NOT_AVAILABLE:Double = js.native
+        val UNSUPPORTED_FORMAT:Double = js.native
+        val UNSUPPORTED_PROFILE:Double = js.native
     }
     @js.native
     object GrabOwnership extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val WINDOW:js.Dynamic = js.native
-        val APPLICATION:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val WINDOW:Double = js.native
+        val APPLICATION:Double = js.native
     }
     @js.native
     object GrabStatus extends js.Object {
-        val SUCCESS:js.Dynamic = js.native
-        val ALREADY_GRABBED:js.Dynamic = js.native
-        val INVALID_TIME:js.Dynamic = js.native
-        val NOT_VIEWABLE:js.Dynamic = js.native
-        val FROZEN:js.Dynamic = js.native
-        val FAILED:js.Dynamic = js.native
+        val SUCCESS:Double = js.native
+        val ALREADY_GRABBED:Double = js.native
+        val INVALID_TIME:Double = js.native
+        val NOT_VIEWABLE:Double = js.native
+        val FROZEN:Double = js.native
+        val FAILED:Double = js.native
     }
     @js.native
     object Gravity extends js.Object {
-        val NORTH_WEST:js.Dynamic = js.native
-        val NORTH:js.Dynamic = js.native
-        val NORTH_EAST:js.Dynamic = js.native
-        val WEST:js.Dynamic = js.native
-        val CENTER:js.Dynamic = js.native
-        val EAST:js.Dynamic = js.native
-        val SOUTH_WEST:js.Dynamic = js.native
-        val SOUTH:js.Dynamic = js.native
-        val SOUTH_EAST:js.Dynamic = js.native
-        val STATIC:js.Dynamic = js.native
+        val NORTH_WEST:Double = js.native
+        val NORTH:Double = js.native
+        val NORTH_EAST:Double = js.native
+        val WEST:Double = js.native
+        val CENTER:Double = js.native
+        val EAST:Double = js.native
+        val SOUTH_WEST:Double = js.native
+        val SOUTH:Double = js.native
+        val SOUTH_EAST:Double = js.native
+        val STATIC:Double = js.native
     }
     @js.native
     object InputMode extends js.Object {
-        val DISABLED:js.Dynamic = js.native
-        val SCREEN:js.Dynamic = js.native
-        val WINDOW:js.Dynamic = js.native
+        val DISABLED:Double = js.native
+        val SCREEN:Double = js.native
+        val WINDOW:Double = js.native
     }
     @js.native
     object InputSource extends js.Object {
-        val MOUSE:js.Dynamic = js.native
-        val PEN:js.Dynamic = js.native
-        val ERASER:js.Dynamic = js.native
-        val CURSOR:js.Dynamic = js.native
-        val KEYBOARD:js.Dynamic = js.native
-        val TOUCHSCREEN:js.Dynamic = js.native
-        val TOUCHPAD:js.Dynamic = js.native
+        val MOUSE:Double = js.native
+        val PEN:Double = js.native
+        val ERASER:Double = js.native
+        val CURSOR:Double = js.native
+        val KEYBOARD:Double = js.native
+        val TOUCHSCREEN:Double = js.native
+        val TOUCHPAD:Double = js.native
     }
     @js.native
     object ModifierIntent extends js.Object {
-        val PRIMARY_ACCELERATOR:js.Dynamic = js.native
-        val CONTEXT_MENU:js.Dynamic = js.native
-        val EXTEND_SELECTION:js.Dynamic = js.native
-        val MODIFY_SELECTION:js.Dynamic = js.native
-        val NO_TEXT_INPUT:js.Dynamic = js.native
-        val SHIFT_GROUP:js.Dynamic = js.native
-        val DEFAULT_MOD_MASK:js.Dynamic = js.native
+        val PRIMARY_ACCELERATOR:Double = js.native
+        val CONTEXT_MENU:Double = js.native
+        val EXTEND_SELECTION:Double = js.native
+        val MODIFY_SELECTION:Double = js.native
+        val NO_TEXT_INPUT:Double = js.native
+        val SHIFT_GROUP:Double = js.native
+        val DEFAULT_MOD_MASK:Double = js.native
     }
     @js.native
     object NotifyType extends js.Object {
-        val ANCESTOR:js.Dynamic = js.native
-        val VIRTUAL:js.Dynamic = js.native
-        val INFERIOR:js.Dynamic = js.native
-        val NONLINEAR:js.Dynamic = js.native
-        val NONLINEAR_VIRTUAL:js.Dynamic = js.native
-        val UNKNOWN:js.Dynamic = js.native
+        val ANCESTOR:Double = js.native
+        val VIRTUAL:Double = js.native
+        val INFERIOR:Double = js.native
+        val NONLINEAR:Double = js.native
+        val NONLINEAR_VIRTUAL:Double = js.native
+        val UNKNOWN:Double = js.native
     }
     @js.native
     object OwnerChange extends js.Object {
-        val NEW_OWNER:js.Dynamic = js.native
-        val DESTROY:js.Dynamic = js.native
-        val CLOSE:js.Dynamic = js.native
+        val NEW_OWNER:Double = js.native
+        val DESTROY:Double = js.native
+        val CLOSE:Double = js.native
     }
     @js.native
     object PropMode extends js.Object {
-        val REPLACE:js.Dynamic = js.native
-        val PREPEND:js.Dynamic = js.native
-        val APPEND:js.Dynamic = js.native
+        val REPLACE:Double = js.native
+        val PREPEND:Double = js.native
+        val APPEND:Double = js.native
     }
     @js.native
     object PropertyState extends js.Object {
-        val NEW_VALUE:js.Dynamic = js.native
-        val DELETE:js.Dynamic = js.native
+        val NEW_VALUE:Double = js.native
+        val DELETE:Double = js.native
     }
     @js.native
     object ScrollDirection extends js.Object {
-        val UP:js.Dynamic = js.native
-        val DOWN:js.Dynamic = js.native
-        val LEFT:js.Dynamic = js.native
-        val RIGHT:js.Dynamic = js.native
-        val SMOOTH:js.Dynamic = js.native
+        val UP:Double = js.native
+        val DOWN:Double = js.native
+        val LEFT:Double = js.native
+        val RIGHT:Double = js.native
+        val SMOOTH:Double = js.native
     }
     @js.native
     object SettingAction extends js.Object {
-        val NEW:js.Dynamic = js.native
-        val CHANGED:js.Dynamic = js.native
-        val DELETED:js.Dynamic = js.native
+        val NEW:Double = js.native
+        val CHANGED:Double = js.native
+        val DELETED:Double = js.native
     }
     @js.native
     object Status extends js.Object {
-        val OK:js.Dynamic = js.native
-        val ERROR:js.Dynamic = js.native
-        val ERROR_PARAM:js.Dynamic = js.native
-        val ERROR_FILE:js.Dynamic = js.native
-        val ERROR_MEM:js.Dynamic = js.native
+        val OK:Double = js.native
+        val ERROR:Double = js.native
+        val ERROR_PARAM:Double = js.native
+        val ERROR_FILE:Double = js.native
+        val ERROR_MEM:Double = js.native
     }
     @js.native
     object TouchpadGesturePhase extends js.Object {
-        val BEGIN:js.Dynamic = js.native
-        val UPDATE:js.Dynamic = js.native
-        val END:js.Dynamic = js.native
-        val CANCEL:js.Dynamic = js.native
+        val BEGIN:Double = js.native
+        val UPDATE:Double = js.native
+        val END:Double = js.native
+        val CANCEL:Double = js.native
     }
     @js.native
     object VisibilityState extends js.Object {
-        val UNOBSCURED:js.Dynamic = js.native
-        val PARTIAL:js.Dynamic = js.native
-        val FULLY_OBSCURED:js.Dynamic = js.native
+        val UNOBSCURED:Double = js.native
+        val PARTIAL:Double = js.native
+        val FULLY_OBSCURED:Double = js.native
     }
     @js.native
     object VisualType extends js.Object {
-        val STATIC_GRAY:js.Dynamic = js.native
-        val GRAYSCALE:js.Dynamic = js.native
-        val STATIC_COLOR:js.Dynamic = js.native
-        val PSEUDO_COLOR:js.Dynamic = js.native
-        val TRUE_COLOR:js.Dynamic = js.native
-        val DIRECT_COLOR:js.Dynamic = js.native
+        val STATIC_GRAY:Double = js.native
+        val GRAYSCALE:Double = js.native
+        val STATIC_COLOR:Double = js.native
+        val PSEUDO_COLOR:Double = js.native
+        val TRUE_COLOR:Double = js.native
+        val DIRECT_COLOR:Double = js.native
     }
     @js.native
     object WindowEdge extends js.Object {
-        val NORTH_WEST:js.Dynamic = js.native
-        val NORTH:js.Dynamic = js.native
-        val NORTH_EAST:js.Dynamic = js.native
-        val WEST:js.Dynamic = js.native
-        val EAST:js.Dynamic = js.native
-        val SOUTH_WEST:js.Dynamic = js.native
-        val SOUTH:js.Dynamic = js.native
-        val SOUTH_EAST:js.Dynamic = js.native
+        val NORTH_WEST:Double = js.native
+        val NORTH:Double = js.native
+        val NORTH_EAST:Double = js.native
+        val WEST:Double = js.native
+        val EAST:Double = js.native
+        val SOUTH_WEST:Double = js.native
+        val SOUTH:Double = js.native
+        val SOUTH_EAST:Double = js.native
     }
     @js.native
     object WindowType extends js.Object {
-        val ROOT:js.Dynamic = js.native
-        val TOPLEVEL:js.Dynamic = js.native
-        val CHILD:js.Dynamic = js.native
-        val TEMP:js.Dynamic = js.native
-        val FOREIGN:js.Dynamic = js.native
-        val OFFSCREEN:js.Dynamic = js.native
-        val SUBSURFACE:js.Dynamic = js.native
+        val ROOT:Double = js.native
+        val TOPLEVEL:Double = js.native
+        val CHILD:Double = js.native
+        val TEMP:Double = js.native
+        val FOREIGN:Double = js.native
+        val OFFSCREEN:Double = js.native
+        val SUBSURFACE:Double = js.native
     }
     @js.native
     object WindowTypeHint extends js.Object {
-        val NORMAL:js.Dynamic = js.native
-        val DIALOG:js.Dynamic = js.native
-        val MENU:js.Dynamic = js.native
-        val TOOLBAR:js.Dynamic = js.native
-        val SPLASHSCREEN:js.Dynamic = js.native
-        val UTILITY:js.Dynamic = js.native
-        val DOCK:js.Dynamic = js.native
-        val DESKTOP:js.Dynamic = js.native
-        val DROPDOWN_MENU:js.Dynamic = js.native
-        val POPUP_MENU:js.Dynamic = js.native
-        val TOOLTIP:js.Dynamic = js.native
-        val NOTIFICATION:js.Dynamic = js.native
-        val COMBO:js.Dynamic = js.native
-        val DND:js.Dynamic = js.native
+        val NORMAL:Double = js.native
+        val DIALOG:Double = js.native
+        val MENU:Double = js.native
+        val TOOLBAR:Double = js.native
+        val SPLASHSCREEN:Double = js.native
+        val UTILITY:Double = js.native
+        val DOCK:Double = js.native
+        val DESKTOP:Double = js.native
+        val DROPDOWN_MENU:Double = js.native
+        val POPUP_MENU:Double = js.native
+        val TOOLTIP:Double = js.native
+        val NOTIFICATION:Double = js.native
+        val COMBO:Double = js.native
+        val DND:Double = js.native
     }
     @js.native
     object WindowWindowClass extends js.Object {
-        val INPUT_OUTPUT:js.Dynamic = js.native
-        val INPUT_ONLY:js.Dynamic = js.native
+        val INPUT_OUTPUT:Double = js.native
+        val INPUT_ONLY:Double = js.native
     }
     @js.native
     object DragAction extends js.Object {
-        val DEFAULT:js.Dynamic = js.native
-        val COPY:js.Dynamic = js.native
-        val MOVE:js.Dynamic = js.native
-        val LINK:js.Dynamic = js.native
-        val PRIVATE:js.Dynamic = js.native
-        val ASK:js.Dynamic = js.native
+        val DEFAULT:Double = js.native
+        val COPY:Double = js.native
+        val MOVE:Double = js.native
+        val LINK:Double = js.native
+        val PRIVATE:Double = js.native
+        val ASK:Double = js.native
     }
     @js.native
     object EventMask extends js.Object {
-        val EXPOSURE_MASK:js.Dynamic = js.native
-        val POINTER_MOTION_MASK:js.Dynamic = js.native
-        val POINTER_MOTION_HINT_MASK:js.Dynamic = js.native
-        val BUTTON_MOTION_MASK:js.Dynamic = js.native
-        val BUTTON1_MOTION_MASK:js.Dynamic = js.native
-        val BUTTON2_MOTION_MASK:js.Dynamic = js.native
-        val BUTTON3_MOTION_MASK:js.Dynamic = js.native
-        val BUTTON_PRESS_MASK:js.Dynamic = js.native
-        val BUTTON_RELEASE_MASK:js.Dynamic = js.native
-        val KEY_PRESS_MASK:js.Dynamic = js.native
-        val KEY_RELEASE_MASK:js.Dynamic = js.native
-        val ENTER_NOTIFY_MASK:js.Dynamic = js.native
-        val LEAVE_NOTIFY_MASK:js.Dynamic = js.native
-        val FOCUS_CHANGE_MASK:js.Dynamic = js.native
-        val STRUCTURE_MASK:js.Dynamic = js.native
-        val PROPERTY_CHANGE_MASK:js.Dynamic = js.native
-        val VISIBILITY_NOTIFY_MASK:js.Dynamic = js.native
-        val PROXIMITY_IN_MASK:js.Dynamic = js.native
-        val PROXIMITY_OUT_MASK:js.Dynamic = js.native
-        val SUBSTRUCTURE_MASK:js.Dynamic = js.native
-        val SCROLL_MASK:js.Dynamic = js.native
-        val TOUCH_MASK:js.Dynamic = js.native
-        val SMOOTH_SCROLL_MASK:js.Dynamic = js.native
-        val TOUCHPAD_GESTURE_MASK:js.Dynamic = js.native
-        val ALL_EVENTS_MASK:js.Dynamic = js.native
+        val EXPOSURE_MASK:Double = js.native
+        val POINTER_MOTION_MASK:Double = js.native
+        val POINTER_MOTION_HINT_MASK:Double = js.native
+        val BUTTON_MOTION_MASK:Double = js.native
+        val BUTTON1_MOTION_MASK:Double = js.native
+        val BUTTON2_MOTION_MASK:Double = js.native
+        val BUTTON3_MOTION_MASK:Double = js.native
+        val BUTTON_PRESS_MASK:Double = js.native
+        val BUTTON_RELEASE_MASK:Double = js.native
+        val KEY_PRESS_MASK:Double = js.native
+        val KEY_RELEASE_MASK:Double = js.native
+        val ENTER_NOTIFY_MASK:Double = js.native
+        val LEAVE_NOTIFY_MASK:Double = js.native
+        val FOCUS_CHANGE_MASK:Double = js.native
+        val STRUCTURE_MASK:Double = js.native
+        val PROPERTY_CHANGE_MASK:Double = js.native
+        val VISIBILITY_NOTIFY_MASK:Double = js.native
+        val PROXIMITY_IN_MASK:Double = js.native
+        val PROXIMITY_OUT_MASK:Double = js.native
+        val SUBSTRUCTURE_MASK:Double = js.native
+        val SCROLL_MASK:Double = js.native
+        val TOUCH_MASK:Double = js.native
+        val SMOOTH_SCROLL_MASK:Double = js.native
+        val TOUCHPAD_GESTURE_MASK:Double = js.native
+        val ALL_EVENTS_MASK:Double = js.native
     }
     @js.native
     object FrameClockPhase extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val FLUSH_EVENTS:js.Dynamic = js.native
-        val BEFORE_PAINT:js.Dynamic = js.native
-        val UPDATE:js.Dynamic = js.native
-        val LAYOUT:js.Dynamic = js.native
-        val PAINT:js.Dynamic = js.native
-        val RESUME_EVENTS:js.Dynamic = js.native
-        val AFTER_PAINT:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val FLUSH_EVENTS:Double = js.native
+        val BEFORE_PAINT:Double = js.native
+        val UPDATE:Double = js.native
+        val LAYOUT:Double = js.native
+        val PAINT:Double = js.native
+        val RESUME_EVENTS:Double = js.native
+        val AFTER_PAINT:Double = js.native
     }
     @js.native
     object ModifierType extends js.Object {
-        val SHIFT_MASK:js.Dynamic = js.native
-        val LOCK_MASK:js.Dynamic = js.native
-        val CONTROL_MASK:js.Dynamic = js.native
-        val MOD1_MASK:js.Dynamic = js.native
-        val MOD2_MASK:js.Dynamic = js.native
-        val MOD3_MASK:js.Dynamic = js.native
-        val MOD4_MASK:js.Dynamic = js.native
-        val MOD5_MASK:js.Dynamic = js.native
-        val BUTTON1_MASK:js.Dynamic = js.native
-        val BUTTON2_MASK:js.Dynamic = js.native
-        val BUTTON3_MASK:js.Dynamic = js.native
-        val BUTTON4_MASK:js.Dynamic = js.native
-        val BUTTON5_MASK:js.Dynamic = js.native
-        val MODIFIER_RESERVED_13_MASK:js.Dynamic = js.native
-        val MODIFIER_RESERVED_14_MASK:js.Dynamic = js.native
-        val MODIFIER_RESERVED_15_MASK:js.Dynamic = js.native
-        val MODIFIER_RESERVED_16_MASK:js.Dynamic = js.native
-        val MODIFIER_RESERVED_17_MASK:js.Dynamic = js.native
-        val MODIFIER_RESERVED_18_MASK:js.Dynamic = js.native
-        val MODIFIER_RESERVED_19_MASK:js.Dynamic = js.native
-        val MODIFIER_RESERVED_20_MASK:js.Dynamic = js.native
-        val MODIFIER_RESERVED_21_MASK:js.Dynamic = js.native
-        val MODIFIER_RESERVED_22_MASK:js.Dynamic = js.native
-        val MODIFIER_RESERVED_23_MASK:js.Dynamic = js.native
-        val MODIFIER_RESERVED_24_MASK:js.Dynamic = js.native
-        val MODIFIER_RESERVED_25_MASK:js.Dynamic = js.native
-        val SUPER_MASK:js.Dynamic = js.native
-        val HYPER_MASK:js.Dynamic = js.native
-        val META_MASK:js.Dynamic = js.native
-        val MODIFIER_RESERVED_29_MASK:js.Dynamic = js.native
-        val RELEASE_MASK:js.Dynamic = js.native
-        val MODIFIER_MASK:js.Dynamic = js.native
+        val SHIFT_MASK:Double = js.native
+        val LOCK_MASK:Double = js.native
+        val CONTROL_MASK:Double = js.native
+        val MOD1_MASK:Double = js.native
+        val MOD2_MASK:Double = js.native
+        val MOD3_MASK:Double = js.native
+        val MOD4_MASK:Double = js.native
+        val MOD5_MASK:Double = js.native
+        val BUTTON1_MASK:Double = js.native
+        val BUTTON2_MASK:Double = js.native
+        val BUTTON3_MASK:Double = js.native
+        val BUTTON4_MASK:Double = js.native
+        val BUTTON5_MASK:Double = js.native
+        val MODIFIER_RESERVED_13_MASK:Double = js.native
+        val MODIFIER_RESERVED_14_MASK:Double = js.native
+        val MODIFIER_RESERVED_15_MASK:Double = js.native
+        val MODIFIER_RESERVED_16_MASK:Double = js.native
+        val MODIFIER_RESERVED_17_MASK:Double = js.native
+        val MODIFIER_RESERVED_18_MASK:Double = js.native
+        val MODIFIER_RESERVED_19_MASK:Double = js.native
+        val MODIFIER_RESERVED_20_MASK:Double = js.native
+        val MODIFIER_RESERVED_21_MASK:Double = js.native
+        val MODIFIER_RESERVED_22_MASK:Double = js.native
+        val MODIFIER_RESERVED_23_MASK:Double = js.native
+        val MODIFIER_RESERVED_24_MASK:Double = js.native
+        val MODIFIER_RESERVED_25_MASK:Double = js.native
+        val SUPER_MASK:Double = js.native
+        val HYPER_MASK:Double = js.native
+        val META_MASK:Double = js.native
+        val MODIFIER_RESERVED_29_MASK:Double = js.native
+        val RELEASE_MASK:Double = js.native
+        val MODIFIER_MASK:Double = js.native
     }
     @js.native
     object WMDecoration extends js.Object {
-        val ALL:js.Dynamic = js.native
-        val BORDER:js.Dynamic = js.native
-        val RESIZEH:js.Dynamic = js.native
-        val TITLE:js.Dynamic = js.native
-        val MENU:js.Dynamic = js.native
-        val MINIMIZE:js.Dynamic = js.native
-        val MAXIMIZE:js.Dynamic = js.native
+        val ALL:Double = js.native
+        val BORDER:Double = js.native
+        val RESIZEH:Double = js.native
+        val TITLE:Double = js.native
+        val MENU:Double = js.native
+        val MINIMIZE:Double = js.native
+        val MAXIMIZE:Double = js.native
     }
     @js.native
     object WMFunction extends js.Object {
-        val ALL:js.Dynamic = js.native
-        val RESIZE:js.Dynamic = js.native
-        val MOVE:js.Dynamic = js.native
-        val MINIMIZE:js.Dynamic = js.native
-        val MAXIMIZE:js.Dynamic = js.native
-        val CLOSE:js.Dynamic = js.native
+        val ALL:Double = js.native
+        val RESIZE:Double = js.native
+        val MOVE:Double = js.native
+        val MINIMIZE:Double = js.native
+        val MAXIMIZE:Double = js.native
+        val CLOSE:Double = js.native
     }
     @js.native
     object WindowAttributesType extends js.Object {
-        val TITLE:js.Dynamic = js.native
-        val X:js.Dynamic = js.native
-        val Y:js.Dynamic = js.native
-        val CURSOR:js.Dynamic = js.native
-        val VISUAL:js.Dynamic = js.native
-        val WMCLASS:js.Dynamic = js.native
-        val NOREDIR:js.Dynamic = js.native
-        val TYPE_HINT:js.Dynamic = js.native
+        val TITLE:Double = js.native
+        val X:Double = js.native
+        val Y:Double = js.native
+        val CURSOR:Double = js.native
+        val VISUAL:Double = js.native
+        val WMCLASS:Double = js.native
+        val NOREDIR:Double = js.native
+        val TYPE_HINT:Double = js.native
     }
     @js.native
     object WindowHints extends js.Object {
-        val POS:js.Dynamic = js.native
-        val MIN_SIZE:js.Dynamic = js.native
-        val MAX_SIZE:js.Dynamic = js.native
-        val BASE_SIZE:js.Dynamic = js.native
-        val ASPECT:js.Dynamic = js.native
-        val RESIZE_INC:js.Dynamic = js.native
-        val WIN_GRAVITY:js.Dynamic = js.native
-        val USER_POS:js.Dynamic = js.native
-        val USER_SIZE:js.Dynamic = js.native
+        val POS:Double = js.native
+        val MIN_SIZE:Double = js.native
+        val MAX_SIZE:Double = js.native
+        val BASE_SIZE:Double = js.native
+        val ASPECT:Double = js.native
+        val RESIZE_INC:Double = js.native
+        val WIN_GRAVITY:Double = js.native
+        val USER_POS:Double = js.native
+        val USER_SIZE:Double = js.native
     }
     @js.native
     object WindowState extends js.Object {
-        val WITHDRAWN:js.Dynamic = js.native
-        val ICONIFIED:js.Dynamic = js.native
-        val MAXIMIZED:js.Dynamic = js.native
-        val STICKY:js.Dynamic = js.native
-        val FULLSCREEN:js.Dynamic = js.native
-        val ABOVE:js.Dynamic = js.native
-        val BELOW:js.Dynamic = js.native
-        val FOCUSED:js.Dynamic = js.native
-        val TILED:js.Dynamic = js.native
+        val WITHDRAWN:Double = js.native
+        val ICONIFIED:Double = js.native
+        val MAXIMIZED:Double = js.native
+        val STICKY:Double = js.native
+        val FULLSCREEN:Double = js.native
+        val ABOVE:Double = js.native
+        val BELOW:Double = js.native
+        val FOCUSED:Double = js.native
+        val TILED:Double = js.native
     }
     @js.native
     class AppLaunchContext extends Gio.AppLaunchContext {
         def this(config: js.Any) = this()
         def set_desktop(desktop: Any):Unit = js.native
-        def set_display(display: Any):Unit = js.native
+        def set_display(display: Display):Unit = js.native
         def set_icon(icon: Any):Unit = js.native
         def set_icon_name(icon_name: String):Unit = js.native
-        def set_screen(screen: Any):Unit = js.native
+        def set_screen(screen: Screen):Unit = js.native
         def set_timestamp(timestamp: Any):Unit = js.native
     }
     @js.native
     class Cursor extends GObject.Object {
         def this(config: js.Any) = this()
-        def get_cursor_type():Any = js.native
-        def get_display():Any = js.native
+        def get_cursor_type():Double = js.native
+        def get_display():Display = js.native
         def get_image():Any = js.native
         def get_surface(x_hot: Any, y_hot: Any):Any = js.native
-        override def ref():Any = js.native
+        override def ref():Cursor = js.native
         override def unref():Unit = js.native
     }
     @js.native
     object Cursor extends js.Object {
-        def new_for_display(display: Any, cursor_type0: Any):Cursor = js.native
-        def new_from_name(display: Any, name: String):Cursor = js.native
-        def new_from_pixbuf(display: Any, pixbuf: Any, x: Any, y: Any):Cursor = js.native
-        def new_from_surface(display: Any, surface: Any, x: Any, y: Any):Cursor = js.native
+        def new_for_display(display: Display, cursor_type0: Double):Cursor = js.native
+        def new_from_name(display: Display, name: String):Cursor = js.native
+        def new_from_pixbuf(display: Display, pixbuf: Any, x: Any, y: Any):Cursor = js.native
+        def new_from_surface(display: Display, surface: Any, x: Any, y: Any):Cursor = js.native
     }
     @js.native
     class Device extends GObject.Object {
-        def get_associated_device():Any = js.native
-        def get_axis(axes: js.Array[Any], use: Any, value: Any):Boolean = js.native
-        def get_axis_use(index0: Any):Any = js.native
+        def get_associated_device():Device = js.native
+        def get_axis(axes: js.Array[Any], use: Double, value: Any):Boolean = js.native
+        def get_axis_use(index0: Any):Double = js.native
         def get_axis_value(axes: js.Array[Any], axis_label: Any, value: Any):Boolean = js.native
-        def get_device_type():Any = js.native
-        def get_display():Any = js.native
+        def get_device_type():Double = js.native
+        def get_display():Display = js.native
         def get_has_cursor():Boolean = js.native
-        def get_history(window: Any, start: Any, stop: Any, events: js.Array[Any], n_events: Any):Boolean = js.native
-        def get_key(index0: Any, keyval0: Any, modifiers: Any):Boolean = js.native
-        def get_last_event_window():Any = js.native
-        def get_mode():Any = js.native
+        def get_history(window: Window, start: Any, stop: Any, events: js.Array[Any], n_events: Any):Boolean = js.native
+        def get_key(index0: Any, keyval0: Any, modifiers: Double):Boolean = js.native
+        def get_last_event_window():Window = js.native
+        def get_mode():Double = js.native
         def get_n_axes():Any = js.native
         def get_n_keys():Any = js.native
         def get_name():String = js.native
-        def get_position(screen: Any, x: Any, y: Any):Unit = js.native
-        def get_position_double(screen: Any, x: Any, y: Any):Unit = js.native
+        def get_position(screen: Screen, x: Any, y: Any):Unit = js.native
+        def get_position_double(screen: Screen, x: Any, y: Any):Unit = js.native
         def get_product_id():String = js.native
-        def get_source():Any = js.native
-        def get_state(window: Any, axes: js.Array[Any], mask: Any):Unit = js.native
+        def get_source():Double = js.native
+        def get_state(window: Window, axes: js.Array[Any], mask: Double):Unit = js.native
         def get_vendor_id():String = js.native
-        def get_window_at_position(win_x: Any, win_y: Any):Any = js.native
-        def get_window_at_position_double(win_x: Any, win_y: Any):Any = js.native
-        def grab(window: Any, grab_ownership: Any, owner_events: Boolean, event_mask: Any, cursor: Any, time0: Any):Any = js.native
+        def get_window_at_position(win_x: Any, win_y: Any):Window = js.native
+        def get_window_at_position_double(win_x: Any, win_y: Any):Window = js.native
+        def grab(window: Window, grab_ownership: Double, owner_events: Boolean, event_mask: Double, cursor: Cursor, time0: Any):Double = js.native
         def list_axes():Any = js.native
         def list_slave_devices():Any = js.native
-        def set_axis_use(index0: Any, use: Any):Unit = js.native
-        def set_key(index0: Any, keyval0: Any, modifiers: Any):Unit = js.native
-        def set_mode(mode: Any):Boolean = js.native
+        def set_axis_use(index0: Any, use: Double):Unit = js.native
+        def set_key(index0: Any, keyval0: Any, modifiers: Double):Unit = js.native
+        def set_mode(mode: Double):Boolean = js.native
         def ungrab(time0: Any):Unit = js.native
-        def warp(screen: Any, x: Any, y: Any):Unit = js.native
+        def warp(screen: Screen, x: Any, y: Any):Unit = js.native
     }
     @js.native
     object Device extends js.Object {
         def free_history(events: js.Array[Any], n_events: Any):Unit = js.native
-        def grab_info_libgtk_only(display: Any, device: Any, grab_window: Any, owner_events: Boolean):Boolean = js.native
+        def grab_info_libgtk_only(display: Display, device: Device, grab_window: Window, owner_events: Boolean):Boolean = js.native
     }
     @js.native
     class DeviceManager extends GObject.Object {
-        def get_client_pointer():Any = js.native
-        def get_display():Any = js.native
-        def list_devices(type0: Any):Any = js.native
+        def get_client_pointer():Device = js.native
+        def get_display():Display = js.native
+        def list_devices(type0: Double):Any = js.native
     }
     @js.native
     class Display extends GObject.Object {
         def beep():Unit = js.native
         def close():Unit = js.native
-        def device_is_grabbed(device: Any):Boolean = js.native
+        def device_is_grabbed(device: Device):Boolean = js.native
         def flush():Unit = js.native
-        def get_app_launch_context():Any = js.native
+        def get_app_launch_context():AppLaunchContext = js.native
         def get_default_cursor_size():Any = js.native
-        def get_default_group():Any = js.native
-        def get_default_screen():Any = js.native
-        def get_device_manager():Any = js.native
+        def get_default_group():Window = js.native
+        def get_default_screen():Screen = js.native
+        def get_device_manager():DeviceManager = js.native
         def get_event():Any = js.native
         def get_maximal_cursor_size(width: Any, height: Any):Unit = js.native
         def get_n_screens():Any = js.native
         def get_name():String = js.native
-        def get_pointer(screen: Any, x: Any, y: Any, mask: Any):Unit = js.native
-        def get_screen(screen_num: Any):Any = js.native
-        def get_window_at_pointer(win_x: Any, win_y: Any):Any = js.native
+        def get_pointer(screen: Screen, x: Any, y: Any, mask: Double):Unit = js.native
+        def get_screen(screen_num: Any):Screen = js.native
+        def get_window_at_pointer(win_x: Any, win_y: Any):Window = js.native
         def has_pending():Boolean = js.native
         def is_closed():Boolean = js.native
         def keyboard_ungrab(time0: Any):Unit = js.native
@@ -2998,7 +2998,7 @@ object Gdk extends js.Object {
         def request_selection_notification(selection: Any):Boolean = js.native
         def set_double_click_distance(distance: Any):Unit = js.native
         def set_double_click_time(msec: Any):Unit = js.native
-        def store_clipboard(clipboard_window: Any, time0: Any, targets: js.Array[Any], n_targets: Any):Unit = js.native
+        def store_clipboard(clipboard_window: Window, time0: Any, targets: js.Array[Any], n_targets: Any):Unit = js.native
         def supports_clipboard_persistence():Boolean = js.native
         def supports_composite():Boolean = js.native
         def supports_cursor_alpha():Boolean = js.native
@@ -3007,36 +3007,36 @@ object Gdk extends js.Object {
         def supports_selection_notification():Boolean = js.native
         def supports_shapes():Boolean = js.native
         def sync():Unit = js.native
-        def warp_pointer(screen: Any, x: Any, y: Any):Unit = js.native
+        def warp_pointer(screen: Screen, x: Any, y: Any):Unit = js.native
     }
     @js.native
     object Display extends js.Object {
-        def get_default():Any = js.native
-        def open(display_name: String):Any = js.native
-        def open_default_libgtk_only():Any = js.native
+        def get_default():Display = js.native
+        def open(display_name: String):Display = js.native
+        def open_default_libgtk_only():Display = js.native
     }
     @js.native
     class DisplayManager extends GObject.Object {
-        def get_default_display():Any = js.native
+        def get_default_display():Display = js.native
         def list_displays():Any = js.native
-        def open_display(name: String):Any = js.native
-        def set_default_display(display: Any):Unit = js.native
+        def open_display(name: String):Display = js.native
+        def set_default_display(display: Display):Unit = js.native
     }
     @js.native
     object DisplayManager extends js.Object {
-        def get():Any = js.native
+        def get():DisplayManager = js.native
     }
     @js.native
     class DragContext extends GObject.Object {
-        def get_actions():Any = js.native
-        def get_dest_window():Any = js.native
-        def get_device():Any = js.native
-        def get_protocol():Any = js.native
-        def get_selected_action():Any = js.native
-        def get_source_window():Any = js.native
-        def get_suggested_action():Any = js.native
+        def get_actions():Double = js.native
+        def get_dest_window():Window = js.native
+        def get_device():Device = js.native
+        def get_protocol():Double = js.native
+        def get_selected_action():Double = js.native
+        def get_source_window():Window = js.native
+        def get_suggested_action():Double = js.native
         def list_targets():Any = js.native
-        def set_device(device: Any):Unit = js.native
+        def set_device(device: Device):Unit = js.native
     }
     @js.native
     class FrameClock extends GObject.Object {
@@ -3048,17 +3048,17 @@ object Gdk extends js.Object {
         def get_history_start():Any = js.native
         def get_refresh_info(base_time: Any, refresh_interval_return: Any, presentation_time_return: Any):Unit = js.native
         def get_timings(frame_counter: Any):Any = js.native
-        def request_phase(phase: Any):Unit = js.native
+        def request_phase(phase: Double):Unit = js.native
     }
     @js.native
     class GLContext extends GObject.Object {
         def get_debug_enabled():Boolean = js.native
-        def get_display():Any = js.native
+        def get_display():Display = js.native
         def get_forward_compatible():Boolean = js.native
         def get_required_version(major: Any, minor: Any):Unit = js.native
-        def get_shared_context():Any = js.native
+        def get_shared_context():GLContext = js.native
         def get_version(major: Any, minor: Any):Unit = js.native
-        def get_window():Any = js.native
+        def get_window():Window = js.native
         def make_current():Unit = js.native
         def realize():Boolean = js.native
         def set_debug_enabled(enabled: Boolean):Unit = js.native
@@ -3068,38 +3068,38 @@ object Gdk extends js.Object {
     @js.native
     object GLContext extends js.Object {
         def clear_current():Unit = js.native
-        def get_current():Any = js.native
+        def get_current():GLContext = js.native
     }
     @js.native
     class Keymap extends GObject.Object {
-        def add_virtual_modifiers(state: Any):Unit = js.native
+        def add_virtual_modifiers(state: Double):Unit = js.native
         def get_caps_lock_state():Boolean = js.native
-        def get_direction():Any = js.native
+        def get_direction():Double = js.native
         def get_entries_for_keycode(hardware_keycode: Any, keys: js.Array[Any], keyvals: js.Array[Any], n_entries: Any):Boolean = js.native
         def get_entries_for_keyval(keyval0: Any, keys: js.Array[Any], n_keys: Any):Boolean = js.native
-        def get_modifier_mask(intent: Any):Any = js.native
+        def get_modifier_mask(intent: Double):Double = js.native
         def get_modifier_state():Any = js.native
         def get_num_lock_state():Boolean = js.native
         def get_scroll_lock_state():Boolean = js.native
         def have_bidi_layouts():Boolean = js.native
         def lookup_key(key: Any):Any = js.native
-        def map_virtual_modifiers(state: Any):Boolean = js.native
-        def translate_keyboard_state(hardware_keycode: Any, state: Any, group: Any, keyval0: Any, effective_group: Any, level: Any, consumed_modifiers: Any):Boolean = js.native
+        def map_virtual_modifiers(state: Double):Boolean = js.native
+        def translate_keyboard_state(hardware_keycode: Any, state: Double, group: Any, keyval0: Any, effective_group: Any, level: Any, consumed_modifiers: Double):Boolean = js.native
     }
     @js.native
     object Keymap extends js.Object {
-        def get_default():Any = js.native
-        def get_for_display(display: Any):Any = js.native
+        def get_default():Keymap = js.native
+        def get_for_display(display: Display):Keymap = js.native
     }
     @js.native
     class Screen extends GObject.Object {
-        def get_active_window():Any = js.native
-        def get_display():Any = js.native
+        def get_active_window():Window = js.native
+        def get_display():Display = js.native
         def get_font_options():Any = js.native
         def get_height():Any = js.native
         def get_height_mm():Any = js.native
         def get_monitor_at_point(x: Any, y: Any):Any = js.native
-        def get_monitor_at_window(window: Any):Any = js.native
+        def get_monitor_at_window(window: Window):Any = js.native
         def get_monitor_geometry(monitor_num: Any, dest: Any):Unit = js.native
         def get_monitor_height_mm(monitor_num: Any):Any = js.native
         def get_monitor_plug_name(monitor_num: Any):String = js.native
@@ -3110,10 +3110,10 @@ object Gdk extends js.Object {
         def get_number():Any = js.native
         def get_primary_monitor():Any = js.native
         def get_resolution():Any = js.native
-        def get_rgba_visual():Any = js.native
-        def get_root_window():Any = js.native
+        def get_rgba_visual():Visual = js.native
+        def get_root_window():Window = js.native
         def get_setting(name: String, value: Any):Boolean = js.native
-        def get_system_visual():Any = js.native
+        def get_system_visual():Visual = js.native
         def get_toplevel_windows():Any = js.native
         def get_width():Any = js.native
         def get_width_mm():Any = js.native
@@ -3126,7 +3126,7 @@ object Gdk extends js.Object {
     }
     @js.native
     object Screen extends js.Object {
-        def get_default():Any = js.native
+        def get_default():Screen = js.native
         def height():Any = js.native
         def height_mm():Any = js.native
         def width():Any = js.native
@@ -3136,23 +3136,23 @@ object Gdk extends js.Object {
     class Visual extends GObject.Object {
         def get_bits_per_rgb():Any = js.native
         def get_blue_pixel_details(mask: Any, shift: Any, precision: Any):Unit = js.native
-        def get_byte_order():Any = js.native
+        def get_byte_order():Double = js.native
         def get_colormap_size():Any = js.native
         def get_depth():Any = js.native
         def get_green_pixel_details(mask: Any, shift: Any, precision: Any):Unit = js.native
         def get_red_pixel_details(mask: Any, shift: Any, precision: Any):Unit = js.native
-        def get_screen():Any = js.native
-        def get_visual_type():Any = js.native
+        def get_screen():Screen = js.native
+        def get_visual_type():Double = js.native
     }
     @js.native
     object Visual extends js.Object {
-        def get_best():Any = js.native
+        def get_best():Visual = js.native
         def get_best_depth():Any = js.native
-        def get_best_type():Any = js.native
-        def get_best_with_both(depth: Any, visual_type0: Any):Any = js.native
-        def get_best_with_depth(depth: Any):Any = js.native
-        def get_best_with_type(visual_type0: Any):Any = js.native
-        def get_system():Any = js.native
+        def get_best_type():Double = js.native
+        def get_best_with_both(depth: Any, visual_type0: Double):Visual = js.native
+        def get_best_with_depth(depth: Any):Visual = js.native
+        def get_best_with_type(visual_type0: Double):Visual = js.native
+        def get_system():Visual = js.native
     }
     @js.native
     class Window extends GObject.Object {
@@ -3160,15 +3160,15 @@ object Gdk extends js.Object {
         def add_filter(function0: Any, data: Object):Unit = js.native
         def beep():Unit = js.native
         def begin_move_drag(button: Any, root_x: Any, root_y: Any, timestamp: Any):Unit = js.native
-        def begin_move_drag_for_device(device: Any, button: Any, root_x: Any, root_y: Any, timestamp: Any):Unit = js.native
+        def begin_move_drag_for_device(device: Device, button: Any, root_x: Any, root_y: Any, timestamp: Any):Unit = js.native
         def begin_paint_rect(rectangle: Any):Unit = js.native
         def begin_paint_region(region: Any):Unit = js.native
-        def begin_resize_drag(edge: Any, button: Any, root_x: Any, root_y: Any, timestamp: Any):Unit = js.native
-        def begin_resize_drag_for_device(edge: Any, device: Any, button: Any, root_x: Any, root_y: Any, timestamp: Any):Unit = js.native
+        def begin_resize_drag(edge: Double, button: Any, root_x: Any, root_y: Any, timestamp: Any):Unit = js.native
+        def begin_resize_drag_for_device(edge: Double, device: Device, button: Any, root_x: Any, root_y: Any, timestamp: Any):Unit = js.native
         def configure_finished():Unit = js.native
         def coords_from_parent(parent_x: Any, parent_y: Any, x: Any, y: Any):Unit = js.native
         def coords_to_parent(x: Any, y: Any, parent_x: Any, parent_y: Any):Unit = js.native
-        def create_gl_context():Any = js.native
+        def create_gl_context():GLContext = js.native
         def create_similar_image_surface(format: Any, width: Any, height: Any, scale: Any):Any = js.native
         def create_similar_surface(content: Any, width: Any, height: Any):Any = js.native
         def deiconify():Unit = js.native
@@ -3190,46 +3190,46 @@ object Gdk extends js.Object {
         def get_children_with_user_data(user_data: Object):Any = js.native
         def get_clip_region():Any = js.native
         def get_composited():Boolean = js.native
-        def get_cursor():Any = js.native
-        def get_decorations(decorations: Any):Boolean = js.native
-        def get_device_cursor(device: Any):Any = js.native
-        def get_device_events(device: Any):Any = js.native
-        def get_device_position(device: Any, x: Any, y: Any, mask: Any):Any = js.native
-        def get_device_position_double(device: Any, x: Any, y: Any, mask: Any):Any = js.native
-        def get_display():Any = js.native
-        def get_drag_protocol(target: Any):Any = js.native
-        def get_effective_parent():Any = js.native
-        def get_effective_toplevel():Any = js.native
+        def get_cursor():Cursor = js.native
+        def get_decorations(decorations: Double):Boolean = js.native
+        def get_device_cursor(device: Device):Cursor = js.native
+        def get_device_events(device: Device):Double = js.native
+        def get_device_position(device: Device, x: Any, y: Any, mask: Double):Window = js.native
+        def get_device_position_double(device: Device, x: Any, y: Any, mask: Double):Window = js.native
+        def get_display():Display = js.native
+        def get_drag_protocol(target: Window):Double = js.native
+        def get_effective_parent():Window = js.native
+        def get_effective_toplevel():Window = js.native
         def get_event_compression():Boolean = js.native
-        def get_events():Any = js.native
+        def get_events():Double = js.native
         def get_focus_on_map():Boolean = js.native
-        def get_frame_clock():Any = js.native
+        def get_frame_clock():FrameClock = js.native
         def get_frame_extents(rect: Any):Unit = js.native
-        def get_fullscreen_mode():Any = js.native
+        def get_fullscreen_mode():Double = js.native
         def get_geometry(x: Any, y: Any, width: Any, height: Any):Unit = js.native
-        def get_group():Any = js.native
+        def get_group():Window = js.native
         def get_height():Any = js.native
         def get_modal_hint():Boolean = js.native
         def get_origin(x: Any, y: Any):Any = js.native
-        def get_parent():Any = js.native
+        def get_parent():Window = js.native
         def get_pass_through():Boolean = js.native
-        def get_pointer(x: Any, y: Any, mask: Any):Any = js.native
+        def get_pointer(x: Any, y: Any, mask: Double):Window = js.native
         def get_position(x: Any, y: Any):Unit = js.native
         def get_root_coords(x: Any, y: Any, root_x: Any, root_y: Any):Unit = js.native
         def get_root_origin(x: Any, y: Any):Unit = js.native
         def get_scale_factor():Any = js.native
-        def get_screen():Any = js.native
-        def get_source_events(source: Any):Any = js.native
-        def get_state():Any = js.native
+        def get_screen():Screen = js.native
+        def get_source_events(source: Double):Double = js.native
+        def get_state():Double = js.native
         def get_support_multidevice():Boolean = js.native
-        def get_toplevel():Any = js.native
-        def get_type_hint():Any = js.native
+        def get_toplevel():Window = js.native
+        def get_type_hint():Double = js.native
         def get_update_area():Any = js.native
         def get_user_data(data: Object):Unit = js.native
         def get_visible_region():Any = js.native
-        def get_visual():Any = js.native
+        def get_visual():Visual = js.native
         def get_width():Any = js.native
-        def get_window_type():Any = js.native
+        def get_window_type():Double = js.native
         def has_native():Boolean = js.native
         def hide():Unit = js.native
         def iconify():Unit = js.native
@@ -3255,9 +3255,9 @@ object Gdk extends js.Object {
         def raise():Unit = js.native
         def register_dnd():Unit = js.native
         def remove_filter(function0: Any, data: Object):Unit = js.native
-        def reparent(new_parent: Any, x: Any, y: Any):Unit = js.native
+        def reparent(new_parent: Window, x: Any, y: Any):Unit = js.native
         def resize(width: Any, height: Any):Unit = js.native
-        def restack(sibling: Any, above: Boolean):Unit = js.native
+        def restack(sibling: Window, above: Boolean):Unit = js.native
         def scroll(dx: Any, dy: Any):Unit = js.native
         def set_accept_focus(accept_focus: Boolean):Unit = js.native
         def set_background(color: Any):Unit = js.native
@@ -3266,17 +3266,17 @@ object Gdk extends js.Object {
         def set_child_input_shapes():Unit = js.native
         def set_child_shapes():Unit = js.native
         def set_composited(composited: Boolean):Unit = js.native
-        def set_cursor(cursor: Any):Unit = js.native
-        def set_decorations(decorations: Any):Unit = js.native
-        def set_device_cursor(device: Any, cursor: Any):Unit = js.native
-        def set_device_events(device: Any, event_mask: Any):Unit = js.native
+        def set_cursor(cursor: Cursor):Unit = js.native
+        def set_decorations(decorations: Double):Unit = js.native
+        def set_device_cursor(device: Device, cursor: Cursor):Unit = js.native
+        def set_device_events(device: Device, event_mask: Double):Unit = js.native
         def set_event_compression(event_compression: Boolean):Unit = js.native
-        def set_events(event_mask: Any):Unit = js.native
+        def set_events(event_mask: Double):Unit = js.native
         def set_focus_on_map(focus_on_map: Boolean):Unit = js.native
-        def set_fullscreen_mode(mode: Any):Unit = js.native
-        def set_functions(functions: Any):Unit = js.native
-        def set_geometry_hints(geometry: Any, geom_mask: Any):Unit = js.native
-        def set_group(leader: Any):Unit = js.native
+        def set_fullscreen_mode(mode: Double):Unit = js.native
+        def set_functions(functions: Double):Unit = js.native
+        def set_geometry_hints(geometry: Any, geom_mask: Double):Unit = js.native
+        def set_group(leader: Window):Unit = js.native
         def set_icon_list(pixbufs: Any):Unit = js.native
         def set_icon_name(name: String):Unit = js.native
         def set_invalidate_handler(handler: Any):Unit = js.native
@@ -3291,15 +3291,15 @@ object Gdk extends js.Object {
         def set_shadow_width(left: Any, right: Any, top: Any, bottom: Any):Unit = js.native
         def set_skip_pager_hint(skips_pager: Boolean):Unit = js.native
         def set_skip_taskbar_hint(skips_taskbar: Boolean):Unit = js.native
-        def set_source_events(source: Any, event_mask: Any):Unit = js.native
+        def set_source_events(source: Double, event_mask: Double):Unit = js.native
         def set_startup_id(startup_id: String):Unit = js.native
         def set_static_gravities(use_static: Boolean):Boolean = js.native
         def set_support_multidevice(support_multidevice: Boolean):Unit = js.native
         def set_title(title: String):Unit = js.native
-        def set_transient_for(parent: Any):Unit = js.native
-        def set_type_hint(hint: Any):Unit = js.native
+        def set_transient_for(parent: Window):Unit = js.native
+        def set_type_hint(hint: Double):Unit = js.native
         def set_urgency_hint(urgent: Boolean):Unit = js.native
-        def set_user_data(user_data: Any):Unit = js.native
+        def set_user_data(user_data: GObject.Object):Unit = js.native
         def shape_combine_region(shape_region: Any, offset_x: Any, offset_y: Any):Unit = js.native
         def show():Unit = js.native
         def show_unraised():Unit = js.native
@@ -3314,8 +3314,8 @@ object Gdk extends js.Object {
     }
     @js.native
     object Window extends js.Object {
-        def at_pointer(win_x: Any, win_y: Any):Any = js.native
-        def constrain_size(geometry: Any, flags: Any, width: Any, height: Any, new_width: Any, new_height: Any):Unit = js.native
+        def at_pointer(win_x: Any, win_y: Any):Window = js.native
+        def constrain_size(geometry: Any, flags: Double, width: Any, height: Any, new_width: Any, new_height: Any):Unit = js.native
         def process_all_updates():Unit = js.native
         def set_debug_updates(setting: Boolean):Unit = js.native
     }

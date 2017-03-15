@@ -9,4 +9,7 @@
         def make_directory(obj:Any): Boolean = js.native
         def delete(obj:Any): Boolean = js.native
         def create(flags:Any, obj: Any): Any = js.native
+        def get_basename(): String = js.native
+        def get_path(): String = js.native
+        def get_parent():File = js.native
     }

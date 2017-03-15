@@ -19,18 +19,18 @@ object WebKit extends js.Object {
     def application_cache_get_maximum_size():Any = js.native
     def application_cache_set_maximum_size(size: Any):Unit = js.native
     def check_version(major: Any, minor: Any, micro: Any):Boolean = js.native
-    def context_menu_item_get_action(item: Any):Any = js.native
-    def geolocation_policy_allow(decision: Any):Unit = js.native
-    def geolocation_policy_deny(decision: Any):Unit = js.native
-    def get_cache_model():Any = js.native
-    def get_default_session():Any = js.native
+    def context_menu_item_get_action(item: Gtk.MenuItem):Double = js.native
+    def geolocation_policy_allow(decision: GeolocationPolicyDecision):Unit = js.native
+    def geolocation_policy_deny(decision: GeolocationPolicyDecision):Unit = js.native
+    def get_cache_model():Double = js.native
+    def get_default_session():Soup.Session = js.native
     def get_default_web_database_quota():Any = js.native
-    def get_favicon_database():Any = js.native
-    def get_icon_database():Any = js.native
-    def get_security_policy_for_uri_scheme(scheme: String):Any = js.native
-    def get_text_checker():Any = js.native
+    def get_favicon_database():FaviconDatabase = js.native
+    def get_icon_database():IconDatabase = js.native
+    def get_security_policy_for_uri_scheme(scheme: String):Double = js.native
+    def get_text_checker():GObject.Object = js.native
     def get_web_database_directory_path():String = js.native
-    def get_web_plugin_database():Any = js.native
+    def get_web_plugin_database():WebPluginDatabase = js.native
     def major_version():Any = js.native
     def micro_version():Any = js.native
     def minor_version():Any = js.native
@@ -38,178 +38,178 @@ object WebKit extends js.Object {
     def plugin_error_quark():Any = js.native
     def policy_error_quark():Any = js.native
     def remove_all_web_databases():Unit = js.native
-    def set_cache_model(cache_model: Any):Unit = js.native
+    def set_cache_model(cache_model: Double):Unit = js.native
     def set_default_web_database_quota(defaultQuota: Any):Unit = js.native
-    def set_security_policy_for_uri_scheme(scheme: String, policy: Any):Unit = js.native
-    def set_text_checker(checker: Any):Unit = js.native
+    def set_security_policy_for_uri_scheme(scheme: String, policy: Double):Unit = js.native
+    def set_text_checker(checker: GObject.Object):Unit = js.native
     def set_web_database_directory_path(path: String):Unit = js.native
     @js.native
     object CacheModel extends js.Object {
-        val DEFAULT:js.Dynamic = js.native
-        val DOCUMENT_VIEWER:js.Dynamic = js.native
-        val WEB_BROWSER:js.Dynamic = js.native
-        val DOCUMENT_BROWSER:js.Dynamic = js.native
+        val DEFAULT:Double = js.native
+        val DOCUMENT_VIEWER:Double = js.native
+        val WEB_BROWSER:Double = js.native
+        val DOCUMENT_BROWSER:Double = js.native
     }
     @js.native
     object ContextMenuAction extends js.Object {
-        val NO_ACTION:js.Dynamic = js.native
-        val OPEN_LINK:js.Dynamic = js.native
-        val OPEN_LINK_IN_NEW_WINDOW:js.Dynamic = js.native
-        val DOWNLOAD_LINK_TO_DISK:js.Dynamic = js.native
-        val COPY_LINK_TO_CLIPBOARD:js.Dynamic = js.native
-        val OPEN_IMAGE_IN_NEW_WINDOW:js.Dynamic = js.native
-        val DOWNLOAD_IMAGE_TO_DISK:js.Dynamic = js.native
-        val COPY_IMAGE_TO_CLIPBOARD:js.Dynamic = js.native
-        val COPY_IMAGE_URL_TO_CLIPBOARD:js.Dynamic = js.native
-        val OPEN_FRAME_IN_NEW_WINDOW:js.Dynamic = js.native
-        val GO_BACK:js.Dynamic = js.native
-        val GO_FORWARD:js.Dynamic = js.native
-        val STOP:js.Dynamic = js.native
-        val RELOAD:js.Dynamic = js.native
-        val COPY:js.Dynamic = js.native
-        val CUT:js.Dynamic = js.native
-        val PASTE:js.Dynamic = js.native
-        val DELETE:js.Dynamic = js.native
-        val SELECT_ALL:js.Dynamic = js.native
-        val INPUT_METHODS:js.Dynamic = js.native
-        val UNICODE:js.Dynamic = js.native
-        val SPELLING_GUESS:js.Dynamic = js.native
-        val NO_GUESSES_FOUND:js.Dynamic = js.native
-        val IGNORE_SPELLING:js.Dynamic = js.native
-        val LEARN_SPELLING:js.Dynamic = js.native
-        val IGNORE_GRAMMAR:js.Dynamic = js.native
-        val FONT_MENU:js.Dynamic = js.native
-        val BOLD:js.Dynamic = js.native
-        val ITALIC:js.Dynamic = js.native
-        val UNDERLINE:js.Dynamic = js.native
-        val OUTLINE:js.Dynamic = js.native
-        val INSPECT_ELEMENT:js.Dynamic = js.native
-        val OPEN_MEDIA_IN_NEW_WINDOW:js.Dynamic = js.native
-        val COPY_MEDIA_LINK_TO_CLIPBOARD:js.Dynamic = js.native
-        val TOGGLE_MEDIA_CONTROLS:js.Dynamic = js.native
-        val TOGGLE_MEDIA_LOOP:js.Dynamic = js.native
-        val ENTER_VIDEO_FULLSCREEN:js.Dynamic = js.native
-        val MEDIA_PLAY_PAUSE:js.Dynamic = js.native
-        val MEDIA_MUTE:js.Dynamic = js.native
+        val NO_ACTION:Double = js.native
+        val OPEN_LINK:Double = js.native
+        val OPEN_LINK_IN_NEW_WINDOW:Double = js.native
+        val DOWNLOAD_LINK_TO_DISK:Double = js.native
+        val COPY_LINK_TO_CLIPBOARD:Double = js.native
+        val OPEN_IMAGE_IN_NEW_WINDOW:Double = js.native
+        val DOWNLOAD_IMAGE_TO_DISK:Double = js.native
+        val COPY_IMAGE_TO_CLIPBOARD:Double = js.native
+        val COPY_IMAGE_URL_TO_CLIPBOARD:Double = js.native
+        val OPEN_FRAME_IN_NEW_WINDOW:Double = js.native
+        val GO_BACK:Double = js.native
+        val GO_FORWARD:Double = js.native
+        val STOP:Double = js.native
+        val RELOAD:Double = js.native
+        val COPY:Double = js.native
+        val CUT:Double = js.native
+        val PASTE:Double = js.native
+        val DELETE:Double = js.native
+        val SELECT_ALL:Double = js.native
+        val INPUT_METHODS:Double = js.native
+        val UNICODE:Double = js.native
+        val SPELLING_GUESS:Double = js.native
+        val NO_GUESSES_FOUND:Double = js.native
+        val IGNORE_SPELLING:Double = js.native
+        val LEARN_SPELLING:Double = js.native
+        val IGNORE_GRAMMAR:Double = js.native
+        val FONT_MENU:Double = js.native
+        val BOLD:Double = js.native
+        val ITALIC:Double = js.native
+        val UNDERLINE:Double = js.native
+        val OUTLINE:Double = js.native
+        val INSPECT_ELEMENT:Double = js.native
+        val OPEN_MEDIA_IN_NEW_WINDOW:Double = js.native
+        val COPY_MEDIA_LINK_TO_CLIPBOARD:Double = js.native
+        val TOGGLE_MEDIA_CONTROLS:Double = js.native
+        val TOGGLE_MEDIA_LOOP:Double = js.native
+        val ENTER_VIDEO_FULLSCREEN:Double = js.native
+        val MEDIA_PLAY_PAUSE:Double = js.native
+        val MEDIA_MUTE:Double = js.native
     }
     @js.native
     object DownloadError extends js.Object {
-        val CANCELLED_BY_USER:js.Dynamic = js.native
-        val DESTINATION:js.Dynamic = js.native
-        val NETWORK:js.Dynamic = js.native
+        val CANCELLED_BY_USER:Double = js.native
+        val DESTINATION:Double = js.native
+        val NETWORK:Double = js.native
     }
     @js.native
     object DownloadStatus extends js.Object {
-        val ERROR:js.Dynamic = js.native
-        val CREATED:js.Dynamic = js.native
-        val STARTED:js.Dynamic = js.native
-        val CANCELLED:js.Dynamic = js.native
-        val FINISHED:js.Dynamic = js.native
+        val ERROR:Double = js.native
+        val CREATED:Double = js.native
+        val STARTED:Double = js.native
+        val CANCELLED:Double = js.native
+        val FINISHED:Double = js.native
     }
     @js.native
     object EditingBehavior extends js.Object {
-        val MAC:js.Dynamic = js.native
-        val WINDOWS:js.Dynamic = js.native
-        val UNIX:js.Dynamic = js.native
+        val MAC:Double = js.native
+        val WINDOWS:Double = js.native
+        val UNIX:Double = js.native
     }
     @js.native
     object InsertAction extends js.Object {
-        val TYPED:js.Dynamic = js.native
-        val PASTED:js.Dynamic = js.native
-        val DROPPED:js.Dynamic = js.native
+        val TYPED:Double = js.native
+        val PASTED:Double = js.native
+        val DROPPED:Double = js.native
     }
     @js.native
     object LoadStatus extends js.Object {
-        val PROVISIONAL:js.Dynamic = js.native
-        val COMMITTED:js.Dynamic = js.native
-        val FINISHED:js.Dynamic = js.native
-        val FIRST_VISUALLY_NON_EMPTY_LAYOUT:js.Dynamic = js.native
-        val FAILED:js.Dynamic = js.native
+        val PROVISIONAL:Double = js.native
+        val COMMITTED:Double = js.native
+        val FINISHED:Double = js.native
+        val FIRST_VISUALLY_NON_EMPTY_LAYOUT:Double = js.native
+        val FAILED:Double = js.native
     }
     @js.native
     object NavigationResponse extends js.Object {
-        val ACCEPT:js.Dynamic = js.native
-        val IGNORE:js.Dynamic = js.native
-        val DOWNLOAD:js.Dynamic = js.native
+        val ACCEPT:Double = js.native
+        val IGNORE:Double = js.native
+        val DOWNLOAD:Double = js.native
     }
     @js.native
     object NetworkError extends js.Object {
-        val FAILED:js.Dynamic = js.native
-        val TRANSPORT:js.Dynamic = js.native
-        val UNKNOWN_PROTOCOL:js.Dynamic = js.native
-        val CANCELLED:js.Dynamic = js.native
-        val FILE_DOES_NOT_EXIST:js.Dynamic = js.native
+        val FAILED:Double = js.native
+        val TRANSPORT:Double = js.native
+        val UNKNOWN_PROTOCOL:Double = js.native
+        val CANCELLED:Double = js.native
+        val FILE_DOES_NOT_EXIST:Double = js.native
     }
     @js.native
     object PluginError extends js.Object {
-        val FAILED:js.Dynamic = js.native
-        val CANNOT_FIND_PLUGIN:js.Dynamic = js.native
-        val CANNOT_LOAD_PLUGIN:js.Dynamic = js.native
-        val JAVA_UNAVAILABLE:js.Dynamic = js.native
-        val CONNECTION_CANCELLED:js.Dynamic = js.native
-        val WILL_HANDLE_LOAD:js.Dynamic = js.native
+        val FAILED:Double = js.native
+        val CANNOT_FIND_PLUGIN:Double = js.native
+        val CANNOT_LOAD_PLUGIN:Double = js.native
+        val JAVA_UNAVAILABLE:Double = js.native
+        val CONNECTION_CANCELLED:Double = js.native
+        val WILL_HANDLE_LOAD:Double = js.native
     }
     @js.native
     object PolicyError extends js.Object {
-        val FAILED:js.Dynamic = js.native
-        val CANNOT_SHOW_MIME_TYPE:js.Dynamic = js.native
-        val CANNOT_SHOW_URL:js.Dynamic = js.native
-        val FRAME_LOAD_INTERRUPTED_BY_POLICY_CHANGE:js.Dynamic = js.native
-        val CANNOT_USE_RESTRICTED_PORT:js.Dynamic = js.native
+        val FAILED:Double = js.native
+        val CANNOT_SHOW_MIME_TYPE:Double = js.native
+        val CANNOT_SHOW_URL:Double = js.native
+        val FRAME_LOAD_INTERRUPTED_BY_POLICY_CHANGE:Double = js.native
+        val CANNOT_USE_RESTRICTED_PORT:Double = js.native
     }
     @js.native
     object SelectionAffinity extends js.Object {
-        val UPSTREAM:js.Dynamic = js.native
-        val DOWNSTREAM:js.Dynamic = js.native
+        val UPSTREAM:Double = js.native
+        val DOWNSTREAM:Double = js.native
     }
     @js.native
     object WebNavigationReason extends js.Object {
-        val LINK_CLICKED:js.Dynamic = js.native
-        val FORM_SUBMITTED:js.Dynamic = js.native
-        val BACK_FORWARD:js.Dynamic = js.native
-        val RELOAD:js.Dynamic = js.native
-        val FORM_RESUBMITTED:js.Dynamic = js.native
-        val OTHER:js.Dynamic = js.native
+        val LINK_CLICKED:Double = js.native
+        val FORM_SUBMITTED:Double = js.native
+        val BACK_FORWARD:Double = js.native
+        val RELOAD:Double = js.native
+        val FORM_RESUBMITTED:Double = js.native
+        val OTHER:Double = js.native
     }
     @js.native
     object WebViewTargetInfo extends js.Object {
-        val HTML:js.Dynamic = js.native
-        val TEXT:js.Dynamic = js.native
-        val IMAGE:js.Dynamic = js.native
-        val URI_LIST:js.Dynamic = js.native
-        val NETSCAPE_URL:js.Dynamic = js.native
+        val HTML:Double = js.native
+        val TEXT:Double = js.native
+        val IMAGE:Double = js.native
+        val URI_LIST:Double = js.native
+        val NETSCAPE_URL:Double = js.native
     }
     @js.native
     object WebViewViewMode extends js.Object {
-        val WINDOWED:js.Dynamic = js.native
-        val FLOATING:js.Dynamic = js.native
-        val FULLSCREEN:js.Dynamic = js.native
-        val MAXIMIZED:js.Dynamic = js.native
-        val MINIMIZED:js.Dynamic = js.native
+        val WINDOWED:Double = js.native
+        val FLOATING:Double = js.native
+        val FULLSCREEN:Double = js.native
+        val MAXIMIZED:Double = js.native
+        val MINIMIZED:Double = js.native
     }
     @js.native
     object HitTestResultContext extends js.Object {
-        val DOCUMENT:js.Dynamic = js.native
-        val LINK:js.Dynamic = js.native
-        val IMAGE:js.Dynamic = js.native
-        val MEDIA:js.Dynamic = js.native
-        val SELECTION:js.Dynamic = js.native
-        val EDITABLE:js.Dynamic = js.native
+        val DOCUMENT:Double = js.native
+        val LINK:Double = js.native
+        val IMAGE:Double = js.native
+        val MEDIA:Double = js.native
+        val SELECTION:Double = js.native
+        val EDITABLE:Double = js.native
     }
     @js.native
     object SecurityPolicy extends js.Object {
-        val LOCAL:js.Dynamic = js.native
-        val NO_ACCESS_TO_OTHER_SCHEME:js.Dynamic = js.native
-        val DISPLAY_ISOLATED:js.Dynamic = js.native
-        val SECURE:js.Dynamic = js.native
-        val CORS_ENABLED:js.Dynamic = js.native
-        val EMPTY_DOCUMENT:js.Dynamic = js.native
+        val LOCAL:Double = js.native
+        val NO_ACCESS_TO_OTHER_SCHEME:Double = js.native
+        val DISPLAY_ISOLATED:Double = js.native
+        val SECURE:Double = js.native
+        val CORS_ENABLED:Double = js.native
+        val EMPTY_DOCUMENT:Double = js.native
     }
     @js.native
     class DOMAttr extends DOMNode {
         def get_is_id():Boolean = js.native
         def get_name():String = js.native
-        def get_owner_element():Any = js.native
+        def get_owner_element():DOMElement = js.native
         def get_specified():Boolean = js.native
         def get_value():String = js.native
         def set_value(value: String):Unit = js.native
@@ -225,10 +225,10 @@ object WebKit extends js.Object {
     }
     @js.native
     class DOMAudioTrackList extends DOMObject {
-        def dispatch_event(evt: Any):Boolean = js.native
+        def dispatch_event(evt: DOMEvent):Boolean = js.native
         def get_length():Any = js.native
-        def get_track_by_id(id: String):Any = js.native
-        def item(index: Any):Any = js.native
+        def get_track_by_id(id: String):DOMAudioTrack = js.native
+        def item(index: Any):DOMAudioTrack = js.native
     }
     @js.native
     class DOMBarInfo extends DOMObject {
@@ -243,7 +243,7 @@ object WebKit extends js.Object {
     }
     @js.native
     class DOMBatteryManager extends DOMObject {
-        def dispatch_event(event: Any):Boolean = js.native
+        def dispatch_event(event: DOMEvent):Boolean = js.native
         def get_charging():Boolean = js.native
         def get_charging_time():Any = js.native
         def get_discharging_time():Any = js.native
@@ -252,8 +252,8 @@ object WebKit extends js.Object {
     @js.native
     class DOMBlob extends DOMObject {
         def get_size():Any = js.native
-        def slice(start: Any, end: Any, contentType: String):Any = js.native
-        def webkit_slice(start: Any, end: Any, content_type0: String):Any = js.native
+        def slice(start: Any, end: Any, contentType: String):DOMBlob = js.native
+        def webkit_slice(start: Any, end: Any, content_type0: String):DOMBlob = js.native
     }
     @js.native
     class DOMCDATASection extends DOMText {
@@ -261,21 +261,21 @@ object WebKit extends js.Object {
     @js.native
     class DOMCSSRule extends DOMObject {
         def get_css_text():String = js.native
-        def get_parent_rule():Any = js.native
-        def get_parent_style_sheet():Any = js.native
+        def get_parent_rule():DOMCSSRule = js.native
+        def get_parent_style_sheet():DOMCSSStyleSheet = js.native
         def set_css_text(value: String):Unit = js.native
     }
     @js.native
     class DOMCSSRuleList extends DOMObject {
         def get_length():Any = js.native
-        def item(index: Any):Any = js.native
+        def item(index: Any):DOMCSSRule = js.native
     }
     @js.native
     class DOMCSSStyleDeclaration extends DOMObject {
         def get_css_text():String = js.native
         def get_length():Any = js.native
-        def get_parent_rule():Any = js.native
-        def get_property_css_value(propertyName: String):Any = js.native
+        def get_parent_rule():DOMCSSRule = js.native
+        def get_property_css_value(propertyName: String):DOMCSSValue = js.native
         def get_property_priority(propertyName: String):String = js.native
         def get_property_shorthand(propertyName: String):String = js.native
         def get_property_value(propertyName: String):String = js.native
@@ -290,9 +290,9 @@ object WebKit extends js.Object {
     class DOMCSSStyleSheet extends DOMStyleSheet {
         def add_rule(selector: String, style: String, index: Any):Any = js.native
         def delete_rule(index: Any):Unit = js.native
-        def get_css_rules():Any = js.native
-        def get_owner_rule():Any = js.native
-        def get_rules():Any = js.native
+        def get_css_rules():DOMCSSRuleList = js.native
+        def get_owner_rule():DOMCSSRule = js.native
+        def get_rules():DOMCSSRuleList = js.native
         def insert_rule(rule: String, index: Any):Any = js.native
         def remove_rule(index: Any):Unit = js.native
     }
@@ -327,36 +327,36 @@ object WebKit extends js.Object {
     @js.native
     class DOMDOMApplicationCache extends DOMObject {
         def abort():Unit = js.native
-        def dispatch_event(evt: Any):Boolean = js.native
+        def dispatch_event(evt: DOMEvent):Boolean = js.native
         def get_status():Any = js.native
         def swap_cache():Unit = js.native
         def update():Unit = js.native
     }
     @js.native
     class DOMDOMImplementation extends DOMObject {
-        def create_css_style_sheet(title: String, media: String):Any = js.native
-        def create_document(namespaceURI: String, qualifiedName: String, doctype0: Any):Any = js.native
-        def create_document_type(qualifiedName: String, publicId: String, systemId: String):Any = js.native
-        def create_html_document(title: String):Any = js.native
+        def create_css_style_sheet(title: String, media: String):DOMCSSStyleSheet = js.native
+        def create_document(namespaceURI: String, qualifiedName: String, doctype0: DOMDocumentType):DOMDocument = js.native
+        def create_document_type(qualifiedName: String, publicId: String, systemId: String):DOMDocumentType = js.native
+        def create_html_document(title: String):DOMHTMLDocument = js.native
         def has_feature(feature: String, version: String):Boolean = js.native
     }
     @js.native
     class DOMDOMMimeType extends DOMObject {
         def get_description():String = js.native
-        def get_enabled_plugin():Any = js.native
+        def get_enabled_plugin():DOMDOMPlugin = js.native
         def get_suffixes():String = js.native
     }
     @js.native
     class DOMDOMMimeTypeArray extends DOMObject {
         def get_length():Any = js.native
-        def item(index: Any):Any = js.native
-        def named_item(name: String):Any = js.native
+        def item(index: Any):DOMDOMMimeType = js.native
+        def named_item(name: String):DOMDOMMimeType = js.native
     }
     @js.native
     class DOMDOMNamedFlowCollection extends DOMObject {
         def get_length():Any = js.native
-        def item(index: Any):Any = js.native
-        def named_item(name: String):Any = js.native
+        def item(index: Any):DOMWebKitNamedFlow = js.native
+        def named_item(name: String):DOMWebKitNamedFlow = js.native
     }
     @js.native
     class DOMDOMPlugin extends DOMObject {
@@ -364,14 +364,14 @@ object WebKit extends js.Object {
         def get_filename():String = js.native
         def get_length():Any = js.native
         def get_name():String = js.native
-        def item(index: Any):Any = js.native
-        def named_item(name: String):Any = js.native
+        def item(index: Any):DOMDOMMimeType = js.native
+        def named_item(name: String):DOMDOMMimeType = js.native
     }
     @js.native
     class DOMDOMPluginArray extends DOMObject {
         def get_length():Any = js.native
-        def item(index: Any):Any = js.native
-        def named_item(name: String):Any = js.native
+        def item(index: Any):DOMDOMPlugin = js.native
+        def named_item(name: String):DOMDOMPlugin = js.native
         def refresh(reload: Boolean):Unit = js.native
     }
     @js.native
@@ -390,34 +390,34 @@ object WebKit extends js.Object {
         def get_allows_inline_script():Boolean = js.native
         def get_allows_inline_style():Boolean = js.native
         def get_is_active():Boolean = js.native
-        def get_report_ur_is():Any = js.native
+        def get_report_ur_is():DOMDOMStringList = js.native
     }
     @js.native
     class DOMDOMSelection extends DOMObject {
-        def add_range(range: Any):Unit = js.native
-        def collapse(node: Any, index: Any):Unit = js.native
+        def add_range(range: DOMRange):Unit = js.native
+        def collapse(node: DOMNode, index: Any):Unit = js.native
         def collapse_to_end():Unit = js.native
         def collapse_to_start():Unit = js.native
-        def contains_node(node: Any, allowPartial: Boolean):Boolean = js.native
+        def contains_node(node: DOMNode, allowPartial: Boolean):Boolean = js.native
         def delete_from_document():Unit = js.native
         def empty():Unit = js.native
-        def extend(node: Any, offset: Any):Unit = js.native
-        def get_anchor_node():Any = js.native
+        def extend(node: DOMNode, offset: Any):Unit = js.native
+        def get_anchor_node():DOMNode = js.native
         def get_anchor_offset():Any = js.native
-        def get_base_node():Any = js.native
+        def get_base_node():DOMNode = js.native
         def get_base_offset():Any = js.native
-        def get_extent_node():Any = js.native
+        def get_extent_node():DOMNode = js.native
         def get_extent_offset():Any = js.native
-        def get_focus_node():Any = js.native
+        def get_focus_node():DOMNode = js.native
         def get_focus_offset():Any = js.native
         def get_is_collapsed():Boolean = js.native
-        def get_range_at(index: Any):Any = js.native
+        def get_range_at(index: Any):DOMRange = js.native
         def get_range_count():Any = js.native
         def modify(alter: String, direction: String, granularity: String):Unit = js.native
         def remove_all_ranges():Unit = js.native
-        def select_all_children(node: Any):Unit = js.native
-        def set_base_and_extent(baseNode: Any, baseOffset: Any, extentNode: Any, extentOffset: Any):Unit = js.native
-        def set_position(node: Any, offset: Any):Unit = js.native
+        def select_all_children(node: DOMNode):Unit = js.native
+        def set_base_and_extent(baseNode: DOMNode, baseOffset: Any, extentNode: DOMNode, extentOffset: Any):Unit = js.native
+        def set_position(node: DOMNode, offset: Any):Unit = js.native
     }
     @js.native
     class DOMDOMSettableTokenList extends DOMDOMTokenList {
@@ -454,57 +454,57 @@ object WebKit extends js.Object {
         def clear_timeout(handle: Any):Unit = js.native
         def close():Unit = js.native
         def confirm(message: String):Boolean = js.native
-        def dispatch_event(evt: Any):Boolean = js.native
+        def dispatch_event(evt: DOMEvent):Boolean = js.native
         def find(string: String, caseSensitive: Boolean, backwards: Boolean, wrap: Boolean, wholeWord: Boolean, searchInFrames: Boolean, showDialog: Boolean):Boolean = js.native
         def focus():Unit = js.native
-        def get_application_cache():Any = js.native
-        def get_client_information():Any = js.native
+        def get_application_cache():DOMDOMApplicationCache = js.native
+        def get_client_information():DOMNavigator = js.native
         def get_closed():Boolean = js.native
-        def get_computed_style(element: Any, pseudoElement: String):Any = js.native
-        def get_console():Any = js.native
-        def get_css():Any = js.native
+        def get_computed_style(element: DOMElement, pseudoElement: String):DOMCSSStyleDeclaration = js.native
+        def get_console():DOMConsole = js.native
+        def get_css():DOMDOMWindowCSS = js.native
         def get_default_status():String = js.native
         def get_device_pixel_ratio():Any = js.native
-        def get_document():Any = js.native
-        def get_frame_element():Any = js.native
-        def get_frames():Any = js.native
-        def get_history():Any = js.native
+        def get_document():DOMDocument = js.native
+        def get_frame_element():DOMElement = js.native
+        def get_frames():DOMDOMWindow = js.native
+        def get_history():DOMHistory = js.native
         def get_inner_height():Any = js.native
         def get_inner_width():Any = js.native
         def get_length():Any = js.native
-        def get_local_storage():Any = js.native
-        def get_locationbar():Any = js.native
-        def get_menubar():Any = js.native
+        def get_local_storage():DOMStorage = js.native
+        def get_locationbar():DOMBarProp = js.native
+        def get_menubar():DOMBarProp = js.native
         def get_name():String = js.native
-        def get_navigator():Any = js.native
+        def get_navigator():DOMNavigator = js.native
         def get_offscreen_buffering():Boolean = js.native
-        def get_opener():Any = js.native
+        def get_opener():DOMDOMWindow = js.native
         def get_outer_height():Any = js.native
         def get_outer_width():Any = js.native
         def get_page_x_offset():Any = js.native
         def get_page_y_offset():Any = js.native
-        def get_parent():Any = js.native
-        def get_performance():Any = js.native
-        def get_personalbar():Any = js.native
-        def get_screen():Any = js.native
+        def get_parent():DOMDOMWindow = js.native
+        def get_performance():DOMPerformance = js.native
+        def get_personalbar():DOMBarProp = js.native
+        def get_screen():DOMScreen = js.native
         def get_screen_left():Any = js.native
         def get_screen_top():Any = js.native
         def get_screen_x():Any = js.native
         def get_screen_y():Any = js.native
         def get_scroll_x():Any = js.native
         def get_scroll_y():Any = js.native
-        def get_scrollbars():Any = js.native
-        def get_selection():Any = js.native
-        def get_self():Any = js.native
-        def get_session_storage():Any = js.native
+        def get_scrollbars():DOMBarProp = js.native
+        def get_selection():DOMDOMSelection = js.native
+        def get_self():DOMDOMWindow = js.native
+        def get_session_storage():DOMStorage = js.native
         def get_status():String = js.native
-        def get_statusbar():Any = js.native
-        def get_style_media():Any = js.native
-        def get_toolbar():Any = js.native
-        def get_top():Any = js.native
-        def get_webkit_storage_info():Any = js.native
-        def get_window():Any = js.native
-        def match_media(query: String):Any = js.native
+        def get_statusbar():DOMBarProp = js.native
+        def get_style_media():DOMStyleMedia = js.native
+        def get_toolbar():DOMBarProp = js.native
+        def get_top():DOMDOMWindow = js.native
+        def get_webkit_storage_info():DOMStorageInfo = js.native
+        def get_window():DOMDOMWindow = js.native
+        def match_media(query: String):DOMMediaQueryList = js.native
         def move_by(x: Any, y: Any):Unit = js.native
         def move_to(x: Any, y: Any):Unit = js.native
         def print():Unit = js.native
@@ -521,8 +521,8 @@ object WebKit extends js.Object {
         def stop():Unit = js.native
         def webkit_cancel_animation_frame(id: Any):Unit = js.native
         def webkit_cancel_request_animation_frame(id: Any):Unit = js.native
-        def webkit_convert_point_from_node_to_page(node: Any, p: Any):Any = js.native
-        def webkit_convert_point_from_page_to_node(node: Any, p: Any):Any = js.native
+        def webkit_convert_point_from_node_to_page(node: DOMNode, p: DOMWebKitPoint):DOMWebKitPoint = js.native
+        def webkit_convert_point_from_page_to_node(node: DOMNode, p: DOMWebKitPoint):DOMWebKitPoint = js.native
     }
     @js.native
     class DOMDOMWindowCSS extends DOMObject {
@@ -534,86 +534,86 @@ object WebKit extends js.Object {
     }
     @js.native
     class DOMDocument extends DOMNode {
-        def adopt_node(source: Any):Any = js.native
-        def caret_range_from_point(x: Any, y: Any):Any = js.native
-        def create_attribute(name: String):Any = js.native
-        def create_attribute_ns(namespaceURI: String, qualifiedName: String):Any = js.native
-        def create_cdata_section(data: String):Any = js.native
-        def create_comment(data: String):Any = js.native
-        def create_css_style_declaration():Any = js.native
-        def create_document_fragment():Any = js.native
-        def create_element(tagName: String):Any = js.native
-        def create_element_ns(namespaceURI: String, qualifiedName: String):Any = js.native
-        def create_entity_reference(name: String):Any = js.native
-        def create_event(eventType: String):Any = js.native
-        def create_expression(expression: String, resolver: Any):Any = js.native
-        def create_node_iterator(root: Any, whatToShow: Any, filter: Any, expandEntityReferences: Boolean):Any = js.native
-        def create_ns_resolver(nodeResolver: Any):Any = js.native
-        def create_processing_instruction(target: String, data: String):Any = js.native
-        def create_range():Any = js.native
-        def create_text_node(data: String):Any = js.native
-        def create_touch(window: Any, target: Any, identifier: Any, pageX: Any, pageY: Any, screenX: Any, screenY: Any, webkitRadiusX: Any, webkitRadiusY: Any, webkitRotationAngle: Any, webkitForce: Any):Any = js.native
-        def create_tree_walker(root: Any, whatToShow: Any, filter: Any, expandEntityReferences: Boolean):Any = js.native
-        def element_from_point(x: Any, y: Any):Any = js.native
-        def evaluate(expression: String, contextNode: Any, resolver: Any, type0: Any, inResult: Any):Any = js.native
+        def adopt_node(source: DOMNode):DOMNode = js.native
+        def caret_range_from_point(x: Any, y: Any):DOMRange = js.native
+        def create_attribute(name: String):DOMAttr = js.native
+        def create_attribute_ns(namespaceURI: String, qualifiedName: String):DOMAttr = js.native
+        def create_cdata_section(data: String):DOMCDATASection = js.native
+        def create_comment(data: String):DOMComment = js.native
+        def create_css_style_declaration():DOMCSSStyleDeclaration = js.native
+        def create_document_fragment():DOMDocumentFragment = js.native
+        def create_element(tagName: String):DOMElement = js.native
+        def create_element_ns(namespaceURI: String, qualifiedName: String):DOMElement = js.native
+        def create_entity_reference(name: String):DOMEntityReference = js.native
+        def create_event(eventType: String):DOMEvent = js.native
+        def create_expression(expression: String, resolver: DOMXPathNSResolver):DOMXPathExpression = js.native
+        def create_node_iterator(root: DOMNode, whatToShow: Any, filter: DOMNodeFilter, expandEntityReferences: Boolean):DOMNodeIterator = js.native
+        def create_ns_resolver(nodeResolver: DOMNode):DOMXPathNSResolver = js.native
+        def create_processing_instruction(target: String, data: String):DOMProcessingInstruction = js.native
+        def create_range():DOMRange = js.native
+        def create_text_node(data: String):DOMText = js.native
+        def create_touch(window: DOMDOMWindow, target: Any, identifier: Any, pageX: Any, pageY: Any, screenX: Any, screenY: Any, webkitRadiusX: Any, webkitRadiusY: Any, webkitRotationAngle: Any, webkitForce: Any):DOMTouch = js.native
+        def create_tree_walker(root: DOMNode, whatToShow: Any, filter: DOMNodeFilter, expandEntityReferences: Boolean):DOMTreeWalker = js.native
+        def element_from_point(x: Any, y: Any):DOMElement = js.native
+        def evaluate(expression: String, contextNode: DOMNode, resolver: DOMXPathNSResolver, type0: Any, inResult: DOMXPathResult):DOMXPathResult = js.native
         def exec_command(command: String, userInterface: Boolean, value: String):Boolean = js.native
-        def get_anchors():Any = js.native
-        def get_applets():Any = js.native
-        def get_body():Any = js.native
+        def get_anchors():DOMHTMLCollection = js.native
+        def get_applets():DOMHTMLCollection = js.native
+        def get_body():DOMHTMLElement = js.native
         def get_character_set():String = js.native
         def get_charset():String = js.native
         def get_compat_mode():String = js.native
         def get_cookie():String = js.native
-        def get_current_script():Any = js.native
+        def get_current_script():DOMHTMLScriptElement = js.native
         def get_default_charset():String = js.native
-        def get_default_view():Any = js.native
-        def get_doctype():Any = js.native
-        def get_document_element():Any = js.native
+        def get_default_view():DOMDOMWindow = js.native
+        def get_doctype():DOMDocumentType = js.native
+        def get_document_element():DOMElement = js.native
         def get_document_uri():String = js.native
         def get_domain():String = js.native
-        def get_element_by_id(elementId: String):Any = js.native
-        def get_elements_by_class_name(tagname: String):Any = js.native
-        def get_elements_by_name(elementName: String):Any = js.native
-        def get_elements_by_tag_name(tagname: String):Any = js.native
-        def get_elements_by_tag_name_ns(namespaceURI: String, localName: String):Any = js.native
-        def get_forms():Any = js.native
-        def get_head():Any = js.native
+        def get_element_by_id(elementId: String):DOMElement = js.native
+        def get_elements_by_class_name(tagname: String):DOMNodeList = js.native
+        def get_elements_by_name(elementName: String):DOMNodeList = js.native
+        def get_elements_by_tag_name(tagname: String):DOMNodeList = js.native
+        def get_elements_by_tag_name_ns(namespaceURI: String, localName: String):DOMNodeList = js.native
+        def get_forms():DOMHTMLCollection = js.native
+        def get_head():DOMHTMLHeadElement = js.native
         def get_hidden():Boolean = js.native
-        def get_images():Any = js.native
-        def get_implementation():Any = js.native
+        def get_images():DOMHTMLCollection = js.native
+        def get_implementation():DOMDOMImplementation = js.native
         def get_input_encoding():String = js.native
         def get_last_modified():String = js.native
-        def get_links():Any = js.native
-        def get_override_style(element: Any, pseudoElement: String):Any = js.native
+        def get_links():DOMHTMLCollection = js.native
+        def get_override_style(element: DOMElement, pseudoElement: String):DOMCSSStyleDeclaration = js.native
         def get_preferred_stylesheet_set():String = js.native
         def get_ready_state():String = js.native
         def get_referrer():String = js.native
-        def get_security_policy():Any = js.native
+        def get_security_policy():DOMDOMSecurityPolicy = js.native
         def get_selected_stylesheet_set():String = js.native
-        def get_style_sheets():Any = js.native
+        def get_style_sheets():DOMStyleSheetList = js.native
         def get_title():String = js.native
         def get_url():String = js.native
         def get_visibility_state():String = js.native
-        def get_webkit_current_full_screen_element():Any = js.native
+        def get_webkit_current_full_screen_element():DOMElement = js.native
         def get_webkit_full_screen_keyboard_input_allowed():Boolean = js.native
-        def get_webkit_fullscreen_element():Any = js.native
+        def get_webkit_fullscreen_element():DOMElement = js.native
         def get_webkit_fullscreen_enabled():Boolean = js.native
         def get_webkit_hidden():Boolean = js.native
         def get_webkit_is_full_screen():Boolean = js.native
-        def get_webkit_pointer_lock_element():Any = js.native
+        def get_webkit_pointer_lock_element():DOMElement = js.native
         def get_webkit_visibility_state():String = js.native
         def get_xml_encoding():String = js.native
         def get_xml_standalone():Boolean = js.native
         def get_xml_version():String = js.native
-        def import_node(importedNode: Any, deep: Boolean):Any = js.native
+        def import_node(importedNode: DOMNode, deep: Boolean):DOMNode = js.native
         def query_command_enabled(command: String):Boolean = js.native
         def query_command_indeterm(command: String):Boolean = js.native
         def query_command_state(command: String):Boolean = js.native
         def query_command_supported(command: String):Boolean = js.native
         def query_command_value(command: String):String = js.native
-        def query_selector(selectors: String):Any = js.native
-        def query_selector_all(selectors: String):Any = js.native
-        def set_body(value: Any):Unit = js.native
+        def query_selector(selectors: String):DOMElement = js.native
+        def query_selector_all(selectors: String):DOMNodeList = js.native
+        def set_body(value: DOMHTMLElement):Unit = js.native
         def set_charset(value: String):Unit = js.native
         def set_cookie(value: String):Unit = js.native
         def set_document_uri(value: String):Unit = js.native
@@ -624,19 +624,19 @@ object WebKit extends js.Object {
         def webkit_cancel_full_screen():Unit = js.native
         def webkit_exit_fullscreen():Unit = js.native
         def webkit_exit_pointer_lock():Unit = js.native
-        def webkit_get_named_flows():Any = js.native
+        def webkit_get_named_flows():DOMDOMNamedFlowCollection = js.native
     }
     @js.native
     class DOMDocumentFragment extends DOMNode {
-        def query_selector(selectors: String):Any = js.native
-        def query_selector_all(selectors: String):Any = js.native
+        def query_selector(selectors: String):DOMElement = js.native
+        def query_selector_all(selectors: String):DOMNodeList = js.native
     }
     @js.native
     class DOMDocumentType extends DOMNode {
-        def get_entities():Any = js.native
+        def get_entities():DOMNamedNodeMap = js.native
         def get_internal_subset():String = js.native
         def get_name():String = js.native
-        def get_notations():Any = js.native
+        def get_notations():DOMNamedNodeMap = js.native
         def get_public_id():String = js.native
         def get_system_id():String = js.native
         def remove():Unit = js.native
@@ -646,55 +646,55 @@ object WebKit extends js.Object {
         def blur():Unit = js.native
         def focus():Unit = js.native
         def get_attribute(name: String):String = js.native
-        def get_attribute_node(name: String):Any = js.native
-        def get_attribute_node_ns(namespaceURI: String, localName: String):Any = js.native
+        def get_attribute_node(name: String):DOMAttr = js.native
+        def get_attribute_node_ns(namespaceURI: String, localName: String):DOMAttr = js.native
         def get_attribute_ns(namespaceURI: String, localName: String):String = js.native
-        override def get_attributes():Any = js.native
+        override def get_attributes():DOMNamedNodeMap = js.native
         def get_child_element_count():Any = js.native
-        def get_class_list():Any = js.native
+        def get_class_list():DOMDOMTokenList = js.native
         def get_class_name():String = js.native
         def get_client_height():Any = js.native
         def get_client_left():Any = js.native
         def get_client_top():Any = js.native
         def get_client_width():Any = js.native
-        def get_elements_by_class_name(name: String):Any = js.native
-        def get_elements_by_tag_name(name: String):Any = js.native
-        def get_elements_by_tag_name_ns(namespaceURI: String, localName: String):Any = js.native
-        def get_first_element_child():Any = js.native
+        def get_elements_by_class_name(name: String):DOMNodeList = js.native
+        def get_elements_by_tag_name(name: String):DOMNodeList = js.native
+        def get_elements_by_tag_name_ns(namespaceURI: String, localName: String):DOMNodeList = js.native
+        def get_first_element_child():DOMElement = js.native
         def get_id():String = js.native
-        def get_last_element_child():Any = js.native
-        def get_next_element_sibling():Any = js.native
+        def get_last_element_child():DOMElement = js.native
+        def get_next_element_sibling():DOMElement = js.native
         def get_offset_height():Any = js.native
         def get_offset_left():Any = js.native
-        def get_offset_parent():Any = js.native
+        def get_offset_parent():DOMElement = js.native
         def get_offset_top():Any = js.native
         def get_offset_width():Any = js.native
-        def get_previous_element_sibling():Any = js.native
+        def get_previous_element_sibling():DOMElement = js.native
         def get_scroll_height():Any = js.native
         def get_scroll_left():Any = js.native
         def get_scroll_top():Any = js.native
         def get_scroll_width():Any = js.native
-        def get_style():Any = js.native
+        def get_style():DOMCSSStyleDeclaration = js.native
         def get_tag_name():String = js.native
         def get_webkit_region_overflow():String = js.native
         def get_webkit_region_overset():String = js.native
         def has_attribute(name: String):Boolean = js.native
         def has_attribute_ns(namespaceURI: String, localName: String):Boolean = js.native
         override def has_attributes():Boolean = js.native
-        def query_selector(selectors: String):Any = js.native
-        def query_selector_all(selectors: String):Any = js.native
+        def query_selector(selectors: String):DOMElement = js.native
+        def query_selector_all(selectors: String):DOMNodeList = js.native
         def remove(index:Number):Unit = js.native
 
         def remove_attribute(name: String):Unit = js.native
-        def remove_attribute_node(oldAttr: Any):Any = js.native
+        def remove_attribute_node(oldAttr: DOMAttr):DOMAttr = js.native
         def remove_attribute_ns(namespaceURI: String, localName: String):Unit = js.native
         def scroll_by_lines(lines: Any):Unit = js.native
         def scroll_by_pages(pages: Any):Unit = js.native
         def scroll_into_view(alignWithTop: Boolean):Unit = js.native
         def scroll_into_view_if_needed(centerIfNeeded: Boolean):Unit = js.native
         def set_attribute(name: String, value: String):Unit = js.native
-        def set_attribute_node(newAttr: Any):Any = js.native
-        def set_attribute_node_ns(newAttr: Any):Any = js.native
+        def set_attribute_node(newAttr: DOMAttr):DOMAttr = js.native
+        def set_attribute_node_ns(newAttr: DOMAttr):DOMAttr = js.native
         def set_attribute_ns(namespaceURI: String, qualifiedName: String, value: String):Unit = js.native
         def set_class_name(value: String):Unit = js.native
         def set_id(value: String):Unit = js.native
@@ -735,7 +735,7 @@ object WebKit extends js.Object {
     @js.native
     class DOMFileList extends DOMObject {
         def get_length():Any = js.native
-        def item(index: Any):Any = js.native
+        def item(index: Any):DOMFile = js.native
     }
     @js.native
     class DOMGamepad extends DOMObject {
@@ -746,7 +746,7 @@ object WebKit extends js.Object {
     @js.native
     class DOMGamepadList extends DOMObject {
         def get_length():Any = js.native
-        def item(index: Any):Any = js.native
+        def item(index: Any):DOMGamepad = js.native
     }
     @js.native
     class DOMGeolocation extends DOMObject {
@@ -886,16 +886,16 @@ object WebKit extends js.Object {
         def check_validity():Boolean = js.native
         def get_autofocus():Boolean = js.native
         def get_disabled():Boolean = js.native
-        def get_form():Any = js.native
+        def get_form():DOMHTMLFormElement = js.native
         def get_form_action():String = js.native
         def get_form_enctype():String = js.native
         def get_form_method():String = js.native
         def get_form_no_validate():Boolean = js.native
         def get_form_target():String = js.native
-        def get_labels():Any = js.native
+        def get_labels():DOMNodeList = js.native
         def get_name():String = js.native
         def get_validation_message():String = js.native
-        def get_validity():Any = js.native
+        def get_validity():DOMValidityState = js.native
         def get_value():String = js.native
         def get_will_validate():Boolean = js.native
         def set_autofocus(value: Boolean):Unit = js.native
@@ -919,8 +919,8 @@ object WebKit extends js.Object {
     @js.native
     class DOMHTMLCollection extends DOMObject {
         def get_length():Any = js.native
-        def item(index: Any):Any = js.native
-        def named_item(name: String):Any = js.native
+        def item(index: Any):DOMNode = js.native
+        def named_item(name: String):DOMNode = js.native
     }
     @js.native
     class DOMHTMLDListElement extends DOMHTMLElement {
@@ -947,18 +947,18 @@ object WebKit extends js.Object {
         def capture_events():Unit = js.native
         def clear():Unit = js.native
         def close():Unit = js.native
-        def get_active_element():Any = js.native
+        def get_active_element():DOMElement = js.native
         def get_alink_color():String = js.native
         def get_bg_color():String = js.native
         override def get_compat_mode():String = js.native
         def get_design_mode():String = js.native
         def get_dir():String = js.native
-        def get_embeds():Any = js.native
+        def get_embeds():DOMHTMLCollection = js.native
         def get_fg_color():String = js.native
         def get_height():Any = js.native
         def get_link_color():String = js.native
-        def get_plugins():Any = js.native
-        def get_scripts():Any = js.native
+        def get_plugins():DOMHTMLCollection = js.native
+        def get_scripts():DOMHTMLCollection = js.native
         def get_vlink_color():String = js.native
         def get_width():Any = js.native
         def has_focus():Boolean = js.native
@@ -976,8 +976,8 @@ object WebKit extends js.Object {
     class DOMHTMLElement extends DOMElement {
         def click():Unit = js.native
         def get_access_key():String = js.native
-        def get_children():Any = js.native
-        override def get_class_list():Any = js.native
+        def get_children():DOMHTMLCollection = js.native
+        override def get_class_list():DOMDOMTokenList = js.native
         override def get_class_name():String = js.native
         def get_content_editable():String = js.native
         def get_dir():String = js.native
@@ -988,8 +988,8 @@ object WebKit extends js.Object {
         def get_inner_text():String = js.native
         def get_is_content_editable():Boolean = js.native
         def get_item_id():String = js.native
-        def get_item_prop():Any = js.native
-        def get_item_ref():Any = js.native
+        def get_item_prop():DOMDOMSettableTokenList = js.native
+        def get_item_ref():DOMDOMSettableTokenList = js.native
         def get_item_scope():Boolean = js.native
         def get_item_type():Object = js.native
         def get_lang():String = js.native
@@ -1000,7 +1000,7 @@ object WebKit extends js.Object {
         def get_title():String = js.native
         def get_translate():Boolean = js.native
         def get_webkitdropzone():String = js.native
-        def insert_adjacent_element(where: String, element: Any):Any = js.native
+        def insert_adjacent_element(where: String, element: DOMElement):DOMElement = js.native
         def insert_adjacent_html(where: String, html: String):Unit = js.native
         def insert_adjacent_text(where: String, text: String):Unit = js.native
         def set_access_key(value: String):Unit = js.native
@@ -1040,11 +1040,11 @@ object WebKit extends js.Object {
     class DOMHTMLFieldSetElement extends DOMHTMLElement {
         def check_validity():Boolean = js.native
         def get_disabled():Boolean = js.native
-        def get_elements():Any = js.native
-        def get_form():Any = js.native
+        def get_elements():DOMHTMLCollection = js.native
+        def get_form():DOMHTMLFormElement = js.native
         def get_name():String = js.native
         def get_validation_message():String = js.native
-        def get_validity():Any = js.native
+        def get_validity():DOMValidityState = js.native
         def get_will_validate():Boolean = js.native
         def set_custom_validity(error: String):Unit = js.native
         def set_disabled(value: Boolean):Unit = js.native
@@ -1069,7 +1069,7 @@ object WebKit extends js.Object {
         def get_autocapitalize():String = js.native
         def get_autocomplete():String = js.native
         def get_autocorrect():Boolean = js.native
-        def get_elements():Any = js.native
+        def get_elements():DOMHTMLCollection = js.native
         def get_encoding():String = js.native
         def get_enctype():String = js.native
         def get_length():Any = js.native
@@ -1093,8 +1093,8 @@ object WebKit extends js.Object {
     }
     @js.native
     class DOMHTMLFrameElement extends DOMHTMLElement {
-        def get_content_document():Any = js.native
-        def get_content_window():Any = js.native
+        def get_content_document():DOMDocument = js.native
+        def get_content_window():DOMDOMWindow = js.native
         def get_frame_border():String = js.native
         def get_height():Any = js.native
         def get_long_desc():String = js.native
@@ -1152,8 +1152,8 @@ object WebKit extends js.Object {
     @js.native
     class DOMHTMLIFrameElement extends DOMHTMLElement {
         def get_align():String = js.native
-        def get_content_document():Any = js.native
-        def get_content_window():Any = js.native
+        def get_content_document():DOMDocument = js.native
+        def get_content_window():DOMDOMWindow = js.native
         def get_frame_border():String = js.native
         def get_height():String = js.native
         def get_long_desc():String = js.native
@@ -1234,8 +1234,8 @@ object WebKit extends js.Object {
         def get_default_value():String = js.native
         def get_dir_name():String = js.native
         def get_disabled():Boolean = js.native
-        def get_files():Any = js.native
-        def get_form():Any = js.native
+        def get_files():DOMFileList = js.native
+        def get_form():DOMHTMLFormElement = js.native
         def get_form_action():String = js.native
         def get_form_enctype():String = js.native
         def get_form_method():String = js.native
@@ -1244,8 +1244,8 @@ object WebKit extends js.Object {
         def get_height():Any = js.native
         def get_incremental():Boolean = js.native
         def get_indeterminate():Boolean = js.native
-        def get_labels():Any = js.native
-        def get_list():Any = js.native
+        def get_labels():DOMNodeList = js.native
+        def get_list():DOMHTMLElement = js.native
         def get_max():String = js.native
         def get_max_length():Any = js.native
         def get_min():String = js.native
@@ -1260,7 +1260,7 @@ object WebKit extends js.Object {
         def get_step():String = js.native
         def get_use_map():String = js.native
         def get_validation_message():String = js.native
-        def get_validity():Any = js.native
+        def get_validity():DOMValidityState = js.native
         def get_value():String = js.native
         def get_value_as_number():Any = js.native
         def get_webkit_grammar():Boolean = js.native
@@ -1284,7 +1284,7 @@ object WebKit extends js.Object {
         def set_default_value(value: String):Unit = js.native
         def set_dir_name(value: String):Unit = js.native
         def set_disabled(value: Boolean):Unit = js.native
-        def set_files(value: Any):Unit = js.native
+        def set_files(value: DOMFileList):Unit = js.native
         def set_form_action(value: String):Unit = js.native
         def set_form_enctype(value: String):Unit = js.native
         def set_form_method(value: String):Unit = js.native
@@ -1323,12 +1323,12 @@ object WebKit extends js.Object {
         def get_autofocus():Boolean = js.native
         def get_challenge():String = js.native
         def get_disabled():Boolean = js.native
-        def get_form():Any = js.native
+        def get_form():DOMHTMLFormElement = js.native
         def get_keytype():String = js.native
-        def get_labels():Any = js.native
+        def get_labels():DOMNodeList = js.native
         def get_name():String = js.native
         def get_validation_message():String = js.native
-        def get_validity():Any = js.native
+        def get_validity():DOMValidityState = js.native
         def get_will_validate():Boolean = js.native
         def set_autofocus(value: Boolean):Unit = js.native
         def set_challenge(value: String):Unit = js.native
@@ -1344,15 +1344,15 @@ object WebKit extends js.Object {
     }
     @js.native
     class DOMHTMLLabelElement extends DOMHTMLElement {
-        def get_control():Any = js.native
-        def get_form():Any = js.native
+        def get_control():DOMHTMLElement = js.native
+        def get_form():DOMHTMLFormElement = js.native
         def get_html_for():String = js.native
         def set_html_for(value: String):Unit = js.native
     }
     @js.native
     class DOMHTMLLegendElement extends DOMHTMLElement {
         def get_align():String = js.native
-        def get_form():Any = js.native
+        def get_form():DOMHTMLFormElement = js.native
         def set_align(value: String):Unit = js.native
     }
     @js.native
@@ -1364,7 +1364,7 @@ object WebKit extends js.Object {
         def get_media():String = js.native
         def get_rel():String = js.native
         def get_rev():String = js.native
-        def get_sheet():Any = js.native
+        def get_sheet():DOMStyleSheet = js.native
         def get_target():String = js.native
         def set_charset(value: String):Unit = js.native
         def set_disabled(value: Boolean):Unit = js.native
@@ -1377,7 +1377,7 @@ object WebKit extends js.Object {
     }
     @js.native
     class DOMHTMLMapElement extends DOMHTMLElement {
-        def get_areas():Any = js.native
+        def get_areas():DOMHTMLCollection = js.native
         def get_name():String = js.native
         def set_name(value: String):Unit = js.native
     }
@@ -1410,13 +1410,13 @@ object WebKit extends js.Object {
     }
     @js.native
     class DOMHTMLMediaElement extends DOMHTMLElement {
-        def add_text_track(kind: String, label: String, language: String):Any = js.native
+        def add_text_track(kind: String, label: String, language: String):DOMTextTrack = js.native
         def can_play_type(type0: String):String = js.native
         def fast_seek(time: Any):Unit = js.native
-        def get_audio_tracks():Any = js.native
+        def get_audio_tracks():DOMAudioTrackList = js.native
         def get_autoplay():Boolean = js.native
-        def get_buffered():Any = js.native
-        def get_controller():Any = js.native
+        def get_buffered():DOMTimeRanges = js.native
+        def get_controller():DOMMediaController = js.native
         def get_controls():Boolean = js.native
         def get_current_src():String = js.native
         def get_current_time():Any = js.native
@@ -1424,7 +1424,7 @@ object WebKit extends js.Object {
         def get_default_playback_rate():Any = js.native
         def get_duration():Any = js.native
         def get_ended():Boolean = js.native
-        def get_error():Any = js.native
+        def get_error():DOMMediaError = js.native
         def get_initial_time():Any = js.native
         def get_loop():Boolean = js.native
         def get_media_group():String = js.native
@@ -1432,15 +1432,15 @@ object WebKit extends js.Object {
         def get_network_state():Any = js.native
         def get_paused():Boolean = js.native
         def get_playback_rate():Any = js.native
-        def get_played():Any = js.native
+        def get_played():DOMTimeRanges = js.native
         def get_preload():String = js.native
         def get_ready_state():Any = js.native
-        def get_seekable():Any = js.native
+        def get_seekable():DOMTimeRanges = js.native
         def get_seeking():Boolean = js.native
         def get_src():String = js.native
         def get_start_time():Any = js.native
-        def get_text_tracks():Any = js.native
-        def get_video_tracks():Any = js.native
+        def get_text_tracks():DOMTextTrackList = js.native
+        def get_video_tracks():DOMVideoTrackList = js.native
         def get_volume():Any = js.native
         def get_webkit_audio_decoded_byte_count():Any = js.native
         def get_webkit_closed_captions_visible():Boolean = js.native
@@ -1508,17 +1508,17 @@ object WebKit extends js.Object {
         def get_code():String = js.native
         def get_code_base():String = js.native
         def get_code_type():String = js.native
-        def get_content_document():Any = js.native
+        def get_content_document():DOMDocument = js.native
         def get_data():String = js.native
         def get_declare():Boolean = js.native
-        def get_form():Any = js.native
+        def get_form():DOMHTMLFormElement = js.native
         def get_height():String = js.native
         def get_hspace():Any = js.native
         def get_name():String = js.native
         def get_standby():String = js.native
         def get_use_map():String = js.native
         def get_validation_message():String = js.native
-        def get_validity():Any = js.native
+        def get_validity():DOMValidityState = js.native
         def get_vspace():Any = js.native
         def get_width():String = js.native
         def get_will_validate():Boolean = js.native
@@ -1550,7 +1550,7 @@ object WebKit extends js.Object {
     class DOMHTMLOptionElement extends DOMHTMLElement {
         def get_default_selected():Boolean = js.native
         def get_disabled():Boolean = js.native
-        def get_form():Any = js.native
+        def get_form():DOMHTMLFormElement = js.native
         def get_index():Any = js.native
         def get_label():String = js.native
         def get_selected():Boolean = js.native
@@ -1566,7 +1566,7 @@ object WebKit extends js.Object {
     class DOMHTMLOptionsCollection extends DOMHTMLCollection {
         override def get_length():Any = js.native
         def get_selected_index():Any = js.native
-        override def named_item(name: String):Any = js.native
+        override def named_item(name: String):DOMNode = js.native
         def set_selected_index(value: Any):Unit = js.native
     }
     @js.native
@@ -1596,8 +1596,8 @@ object WebKit extends js.Object {
     @js.native
     object DOMHTMLPropertiesCollection extends js.Object {
         def get_length(self: Object):Any = js.native
-        def get_names(self: Object):Any = js.native
-        def item(self: Object, index: Any):Any = js.native
+        def get_names(self: Object):DOMDOMStringList = js.native
+        def item(self: Object, index: Any):DOMNode = js.native
         def named_item(self: Object, name: String):Object = js.native
     }
     @js.native
@@ -1628,26 +1628,26 @@ object WebKit extends js.Object {
     }
     @js.native
     class DOMHTMLSelectElement extends DOMHTMLElement {
-        def add(element: Any, before: Any):Unit = js.native
+        def add(element: DOMHTMLElement, before: DOMHTMLElement):Unit = js.native
         def check_validity():Boolean = js.native
         def get_autofocus():Boolean = js.native
         def get_disabled():Boolean = js.native
-        def get_form():Any = js.native
-        def get_labels():Any = js.native
+        def get_form():DOMHTMLFormElement = js.native
+        def get_labels():DOMNodeList = js.native
         def get_length():Any = js.native
         def get_multiple():Boolean = js.native
         def get_name():String = js.native
-        def get_options():Any = js.native
+        def get_options():DOMHTMLOptionsCollection = js.native
         def get_required():Boolean = js.native
         def get_selected_index():Any = js.native
-        def get_selected_options():Any = js.native
+        def get_selected_options():DOMHTMLCollection = js.native
         def get_size():Any = js.native
         def get_validation_message():String = js.native
-        def get_validity():Any = js.native
+        def get_validity():DOMValidityState = js.native
         def get_value():String = js.native
         def get_will_validate():Boolean = js.native
-        def item(index: Any):Any = js.native
-        def named_item(name: String):Any = js.native
+        def item(index: Any):DOMNode = js.native
+        def named_item(name: String):DOMNode = js.native
         override def remove(index:Number):Unit = js.native
 
         def set_autofocus(value: Boolean):Unit = js.native
@@ -1666,7 +1666,7 @@ object WebKit extends js.Object {
         def get_disabled():Boolean = js.native
         def get_media():String = js.native
         def get_scoped():Boolean = js.native
-        def get_sheet():Any = js.native
+        def get_sheet():DOMStyleSheet = js.native
         def set_disabled(value: Boolean):Unit = js.native
         def set_media(value: String):Unit = js.native
         def set_scoped(value: Boolean):Unit = js.native
@@ -1725,10 +1725,10 @@ object WebKit extends js.Object {
     }
     @js.native
     class DOMHTMLTableElement extends DOMHTMLElement {
-        def create_caption():Any = js.native
-        def create_t_body():Any = js.native
-        def create_t_foot():Any = js.native
-        def create_t_head():Any = js.native
+        def create_caption():DOMHTMLElement = js.native
+        def create_t_body():DOMHTMLElement = js.native
+        def create_t_foot():DOMHTMLElement = js.native
+        def create_t_head():DOMHTMLElement = js.native
         def delete_caption():Unit = js.native
         def delete_row(index: Any):Unit = js.native
         def delete_t_foot():Unit = js.native
@@ -1736,29 +1736,29 @@ object WebKit extends js.Object {
         def get_align():String = js.native
         def get_bg_color():String = js.native
         def get_border():String = js.native
-        def get_caption():Any = js.native
+        def get_caption():DOMHTMLTableCaptionElement = js.native
         def get_cell_padding():String = js.native
         def get_cell_spacing():String = js.native
         def get_frame():String = js.native
-        def get_rows():Any = js.native
+        def get_rows():DOMHTMLCollection = js.native
         def get_rules():String = js.native
         def get_summary():String = js.native
-        def get_t_bodies():Any = js.native
-        def get_t_foot():Any = js.native
-        def get_t_head():Any = js.native
+        def get_t_bodies():DOMHTMLCollection = js.native
+        def get_t_foot():DOMHTMLTableSectionElement = js.native
+        def get_t_head():DOMHTMLTableSectionElement = js.native
         def get_width():String = js.native
-        def insert_row(index: Any):Any = js.native
+        def insert_row(index: Any):DOMHTMLElement = js.native
         def set_align(value: String):Unit = js.native
         def set_bg_color(value: String):Unit = js.native
         def set_border(value: String):Unit = js.native
-        def set_caption(value: Any):Unit = js.native
+        def set_caption(value: DOMHTMLTableCaptionElement):Unit = js.native
         def set_cell_padding(value: String):Unit = js.native
         def set_cell_spacing(value: String):Unit = js.native
         def set_frame(value: String):Unit = js.native
         def set_rules(value: String):Unit = js.native
         def set_summary(value: String):Unit = js.native
-        def set_t_foot(value: Any):Unit = js.native
-        def set_t_head(value: Any):Unit = js.native
+        def set_t_foot(value: DOMHTMLTableSectionElement):Unit = js.native
+        def set_t_head(value: DOMHTMLTableSectionElement):Unit = js.native
         def set_width(value: String):Unit = js.native
     }
     @js.native
@@ -1766,13 +1766,13 @@ object WebKit extends js.Object {
         def delete_cell(index: Any):Unit = js.native
         def get_align():String = js.native
         def get_bg_color():String = js.native
-        def get_cells():Any = js.native
+        def get_cells():DOMHTMLCollection = js.native
         def get_ch():String = js.native
         def get_ch_off():String = js.native
         def get_row_index():Any = js.native
         def get_section_row_index():Any = js.native
         def get_v_align():String = js.native
-        def insert_cell(index: Any):Any = js.native
+        def insert_cell(index: Any):DOMHTMLElement = js.native
         def set_align(value: String):Unit = js.native
         def set_bg_color(value: String):Unit = js.native
         def set_ch(value: String):Unit = js.native
@@ -1785,9 +1785,9 @@ object WebKit extends js.Object {
         def get_align():String = js.native
         def get_ch():String = js.native
         def get_ch_off():String = js.native
-        def get_rows():Any = js.native
+        def get_rows():DOMHTMLCollection = js.native
         def get_v_align():String = js.native
-        def insert_row(index: Any):Any = js.native
+        def insert_row(index: Any):DOMHTMLElement = js.native
         def set_align(value: String):Unit = js.native
         def set_ch(value: String):Unit = js.native
         def set_ch_off(value: String):Unit = js.native
@@ -1803,8 +1803,8 @@ object WebKit extends js.Object {
         def get_default_value():String = js.native
         def get_dir_name():String = js.native
         def get_disabled():Boolean = js.native
-        def get_form():Any = js.native
-        def get_labels():Any = js.native
+        def get_form():DOMHTMLFormElement = js.native
+        def get_labels():DOMNodeList = js.native
         def get_max_length():Any = js.native
         def get_name():String = js.native
         def get_placeholder():String = js.native
@@ -1816,7 +1816,7 @@ object WebKit extends js.Object {
         def get_selection_start():Any = js.native
         def get_text_length():Any = js.native
         def get_validation_message():String = js.native
-        def get_validity():Any = js.native
+        def get_validity():DOMValidityState = js.native
         def get_value():String = js.native
         def get_will_validate():Boolean = js.native
         def get_wrap():String = js.native
@@ -1892,11 +1892,11 @@ object WebKit extends js.Object {
         def get_meta_key():Boolean = js.native
         def get_modifier_state(keyIdentifierArg: String):Boolean = js.native
         def get_shift_key():Boolean = js.native
-        def init_keyboard_event(type0: String, canBubble: Boolean, cancelable: Boolean, view: Any, keyIdentifier: String, location: Any, ctrlKey: Boolean, altKey: Boolean, shiftKey: Boolean, metaKey: Boolean, altGraphKey: Boolean):Unit = js.native
+        def init_keyboard_event(type0: String, canBubble: Boolean, cancelable: Boolean, view: DOMDOMWindow, keyIdentifier: String, location: Any, ctrlKey: Boolean, altKey: Boolean, shiftKey: Boolean, metaKey: Boolean, altGraphKey: Boolean):Unit = js.native
     }
     @js.native
     class DOMLocation extends DOMObject {
-        def get_ancestor_origins():Any = js.native
+        def get_ancestor_origins():DOMDOMStringList = js.native
         def get_hash():String = js.native
         def get_host():String = js.native
         def get_hostname():String = js.native
@@ -1909,7 +1909,7 @@ object WebKit extends js.Object {
     }
     @js.native
     class DOMMediaController extends DOMObject {
-        def get_buffered():Any = js.native
+        def get_buffered():DOMTimeRanges = js.native
         def get_current_time():Any = js.native
         def get_default_playback_rate():Any = js.native
         def get_duration():Any = js.native
@@ -1917,8 +1917,8 @@ object WebKit extends js.Object {
         def get_paused():Boolean = js.native
         def get_playback_rate():Any = js.native
         def get_playback_state():String = js.native
-        def get_played():Any = js.native
-        def get_seekable():Any = js.native
+        def get_played():DOMTimeRanges = js.native
+        def get_seekable():DOMTimeRanges = js.native
         def get_volume():Any = js.native
         def pause():Unit = js.native
         def play():Unit = js.native
@@ -1969,7 +1969,7 @@ object WebKit extends js.Object {
         def get_client_x():Any = js.native
         def get_client_y():Any = js.native
         def get_ctrl_key():Boolean = js.native
-        def get_from_element():Any = js.native
+        def get_from_element():DOMNode = js.native
         def get_meta_key():Boolean = js.native
         def get_offset_x():Any = js.native
         def get_offset_y():Any = js.native
@@ -1977,23 +1977,23 @@ object WebKit extends js.Object {
         def get_screen_x():Any = js.native
         def get_screen_y():Any = js.native
         def get_shift_key():Boolean = js.native
-        def get_to_element():Any = js.native
+        def get_to_element():DOMNode = js.native
         def get_webkit_movement_x():Any = js.native
         def get_webkit_movement_y():Any = js.native
         def get_x():Any = js.native
         def get_y():Any = js.native
-        def init_mouse_event(type0: String, canBubble: Boolean, cancelable: Boolean, view: Any, detail: Any, screenX: Any, screenY: Any, clientX: Any, clientY: Any, ctrlKey: Boolean, altKey: Boolean, shiftKey: Boolean, metaKey: Boolean, button: Any, relatedTarget: Any):Unit = js.native
+        def init_mouse_event(type0: String, canBubble: Boolean, cancelable: Boolean, view: DOMDOMWindow, detail: Any, screenX: Any, screenY: Any, clientX: Any, clientY: Any, ctrlKey: Boolean, altKey: Boolean, shiftKey: Boolean, metaKey: Boolean, button: Any, relatedTarget: Any):Unit = js.native
     }
     @js.native
     class DOMNamedNodeMap extends DOMObject {
         def get_length():Any = js.native
-        def get_named_item(name: String):Any = js.native
-        def get_named_item_ns(namespaceURI: String, localName: String):Any = js.native
-        def item(index: Any):Any = js.native
-        def remove_named_item(name: String):Any = js.native
-        def remove_named_item_ns(namespaceURI: String, localName: String):Any = js.native
-        def set_named_item(node: Any):Any = js.native
-        def set_named_item_ns(node: Any):Any = js.native
+        def get_named_item(name: String):DOMNode = js.native
+        def get_named_item_ns(namespaceURI: String, localName: String):DOMNode = js.native
+        def item(index: Any):DOMNode = js.native
+        def remove_named_item(name: String):DOMNode = js.native
+        def remove_named_item_ns(namespaceURI: String, localName: String):DOMNode = js.native
+        def set_named_item(node: DOMNode):DOMNode = js.native
+        def set_named_item_ns(node: DOMNode):DOMNode = js.native
     }
     @js.native
     class DOMNavigator extends DOMObject {
@@ -2001,87 +2001,87 @@ object WebKit extends js.Object {
         def get_app_name():String = js.native
         def get_app_version():String = js.native
         def get_cookie_enabled():Boolean = js.native
-        def get_geolocation():Any = js.native
+        def get_geolocation():DOMGeolocation = js.native
         def get_language():String = js.native
-        def get_mime_types():Any = js.native
+        def get_mime_types():DOMDOMMimeTypeArray = js.native
         def get_on_line():Boolean = js.native
         def get_platform():String = js.native
-        def get_plugins():Any = js.native
+        def get_plugins():DOMDOMPluginArray = js.native
         def get_product():String = js.native
         def get_product_sub():String = js.native
         def get_storage_updates():Unit = js.native
         def get_user_agent():String = js.native
         def get_vendor():String = js.native
         def get_vendor_sub():String = js.native
-        def get_webkit_battery():Any = js.native
-        def get_webkit_persistent_storage():Any = js.native
-        def get_webkit_temporary_storage():Any = js.native
+        def get_webkit_battery():DOMBatteryManager = js.native
+        def get_webkit_persistent_storage():DOMStorageQuota = js.native
+        def get_webkit_temporary_storage():DOMStorageQuota = js.native
         def is_protocol_handler_registered(scheme: String, url: String):String = js.native
         def java_enabled():Boolean = js.native
         def register_protocol_handler(scheme: String, url: String, title: String):Unit = js.native
         def unregister_protocol_handler(scheme: String, url: String):Unit = js.native
-        def webkit_get_gamepads():Any = js.native
+        def webkit_get_gamepads():DOMGamepadList = js.native
     }
     @js.native
     class DOMNode extends DOMObject {
-        def append_child(newChild: Any):Any = js.native
-        def clone_node(deep: Boolean):Any = js.native
-        def compare_document_position(other: Any):Any = js.native
-        def contains(other: Any):Boolean = js.native
-        def dispatch_event(event: Any):Boolean = js.native
-        def get_attributes():Any = js.native
+        def append_child(newChild: DOMNode):DOMNode = js.native
+        def clone_node(deep: Boolean):DOMNode = js.native
+        def compare_document_position(other: DOMNode):Any = js.native
+        def contains(other: DOMNode):Boolean = js.native
+        def dispatch_event(event: DOMEvent):Boolean = js.native
+        def get_attributes():DOMNamedNodeMap = js.native
         def get_base_uri():String = js.native
-        def get_child_nodes():Any = js.native
-        def get_first_child():Any = js.native
-        def get_last_child():Any = js.native
+        def get_child_nodes():DOMNodeList = js.native
+        def get_first_child():DOMNode = js.native
+        def get_last_child():DOMNode = js.native
         def get_local_name():String = js.native
         def get_namespace_uri():String = js.native
-        def get_next_sibling():Any = js.native
+        def get_next_sibling():DOMNode = js.native
         def get_node_name():String = js.native
         def get_node_type():Any = js.native
         def get_node_value():String = js.native
-        def get_owner_document():Any = js.native
-        def get_parent_element():Any = js.native
-        def get_parent_node():Any = js.native
+        def get_owner_document():DOMDocument = js.native
+        def get_parent_element():DOMElement = js.native
+        def get_parent_node():DOMNode = js.native
         def get_prefix():String = js.native
-        def get_previous_sibling():Any = js.native
+        def get_previous_sibling():DOMNode = js.native
         def get_text_content():String = js.native
         def has_attributes():Boolean = js.native
         def has_child_nodes():Boolean = js.native
-        def insert_before(newChild: Any, refChild: Any):Any = js.native
+        def insert_before(newChild: DOMNode, refChild: DOMNode):DOMNode = js.native
         def is_default_namespace(namespaceURI: String):Boolean = js.native
-        def is_equal_node(other: Any):Boolean = js.native
-        def is_same_node(other: Any):Boolean = js.native
+        def is_equal_node(other: DOMNode):Boolean = js.native
+        def is_same_node(other: DOMNode):Boolean = js.native
         def is_supported(feature: String, version: String):Boolean = js.native
         def lookup_namespace_uri(prefix: String):String = js.native
         def lookup_prefix(namespaceURI: String):String = js.native
         def normalize():Unit = js.native
-        def remove_child(oldChild: Any):Any = js.native
-        def replace_child(newChild: Any, oldChild: Any):Any = js.native
+        def remove_child(oldChild: DOMNode):DOMNode = js.native
+        def replace_child(newChild: DOMNode, oldChild: DOMNode):DOMNode = js.native
         def set_node_value(value: String):Unit = js.native
         def set_prefix(value: String):Unit = js.native
         def set_text_content(value: String):Unit = js.native
     }
     @js.native
     class DOMNodeFilter extends DOMObject {
-        def accept_node(n: Any):Any = js.native
+        def accept_node(n: DOMNode):Any = js.native
     }
     @js.native
     class DOMNodeIterator extends DOMObject {
         def detach():Unit = js.native
         def get_expand_entity_references():Boolean = js.native
-        def get_filter():Any = js.native
+        def get_filter():DOMNodeFilter = js.native
         def get_pointer_before_reference_node():Boolean = js.native
-        def get_reference_node():Any = js.native
-        def get_root():Any = js.native
+        def get_reference_node():DOMNode = js.native
+        def get_root():DOMNode = js.native
         def get_what_to_show():Any = js.native
-        def next_node():Any = js.native
-        def previous_node():Any = js.native
+        def next_node():DOMNode = js.native
+        def previous_node():DOMNode = js.native
     }
     @js.native
     class DOMNodeList extends DOMObject {
         def get_length():Any = js.native
-        def item(index: Any):Any = js.native
+        def item(index: Any):DOMNode = js.native
     }
     @js.native
     class DOMObject extends GObject.Object {
@@ -2089,8 +2089,8 @@ object WebKit extends js.Object {
     @js.native
     class DOMPerformance extends DOMObject {
         def get_memory():Object = js.native
-        def get_navigation():Any = js.native
-        def get_timing():Any = js.native
+        def get_navigation():DOMPerformanceNavigation = js.native
+        def get_timing():DOMPerformanceTiming = js.native
         def now():Any = js.native
     }
     @js.native
@@ -2103,7 +2103,7 @@ object WebKit extends js.Object {
     @js.native
     class DOMPerformanceEntryList extends DOMObject {
         def get_length():Any = js.native
-        def item(index: Any):Any = js.native
+        def item(index: Any):DOMPerformanceEntry = js.native
     }
     @js.native
     class DOMPerformanceNavigation extends DOMObject {
@@ -2136,7 +2136,7 @@ object WebKit extends js.Object {
     @js.native
     class DOMProcessingInstruction extends DOMCharacterData {
         override def get_data():String = js.native
-        def get_sheet():Any = js.native
+        def get_sheet():DOMStyleSheet = js.native
         def get_target():String = js.native
         override def set_data(value: String):Unit = js.native
     }
@@ -2146,40 +2146,40 @@ object WebKit extends js.Object {
     @js.native
     object DOMPropertyNodeList extends js.Object {
         def get_length(self: Object):Any = js.native
-        def item(self: Object, index: Any):Any = js.native
+        def item(self: Object, index: Any):DOMNode = js.native
     }
     @js.native
     class DOMRange extends DOMObject {
-        def clone_contents():Any = js.native
-        def clone_range():Any = js.native
+        def clone_contents():DOMDocumentFragment = js.native
+        def clone_range():DOMRange = js.native
         def collapse(toStart: Boolean):Unit = js.native
-        def compare_boundary_points(how: Any, sourceRange: Any):Any = js.native
-        def compare_node(refNode: Any):Any = js.native
-        def compare_point(refNode: Any, offset: Any):Any = js.native
-        def create_contextual_fragment(html: String):Any = js.native
+        def compare_boundary_points(how: Any, sourceRange: DOMRange):Any = js.native
+        def compare_node(refNode: DOMNode):Any = js.native
+        def compare_point(refNode: DOMNode, offset: Any):Any = js.native
+        def create_contextual_fragment(html: String):DOMDocumentFragment = js.native
         def delete_contents():Unit = js.native
         def detach():Unit = js.native
         def expand(unit: String):Unit = js.native
-        def extract_contents():Any = js.native
+        def extract_contents():DOMDocumentFragment = js.native
         def get_collapsed():Boolean = js.native
-        def get_common_ancestor_container():Any = js.native
-        def get_end_container():Any = js.native
+        def get_common_ancestor_container():DOMNode = js.native
+        def get_end_container():DOMNode = js.native
         def get_end_offset():Any = js.native
-        def get_start_container():Any = js.native
+        def get_start_container():DOMNode = js.native
         def get_start_offset():Any = js.native
         def get_text():String = js.native
-        def insert_node(newNode: Any):Unit = js.native
-        def intersects_node(refNode: Any):Boolean = js.native
-        def is_point_in_range(refNode: Any, offset: Any):Boolean = js.native
-        def select_node(refNode: Any):Unit = js.native
-        def select_node_contents(refNode: Any):Unit = js.native
-        def set_end(refNode: Any, offset: Any):Unit = js.native
-        def set_end_after(refNode: Any):Unit = js.native
-        def set_end_before(refNode: Any):Unit = js.native
-        def set_start(refNode: Any, offset: Any):Unit = js.native
-        def set_start_after(refNode: Any):Unit = js.native
-        def set_start_before(refNode: Any):Unit = js.native
-        def surround_contents(newParent: Any):Unit = js.native
+        def insert_node(newNode: DOMNode):Unit = js.native
+        def intersects_node(refNode: DOMNode):Boolean = js.native
+        def is_point_in_range(refNode: DOMNode, offset: Any):Boolean = js.native
+        def select_node(refNode: DOMNode):Unit = js.native
+        def select_node_contents(refNode: DOMNode):Unit = js.native
+        def set_end(refNode: DOMNode, offset: Any):Unit = js.native
+        def set_end_after(refNode: DOMNode):Unit = js.native
+        def set_end_before(refNode: DOMNode):Unit = js.native
+        def set_start(refNode: DOMNode, offset: Any):Unit = js.native
+        def set_start_after(refNode: DOMNode):Unit = js.native
+        def set_start_before(refNode: DOMNode):Unit = js.native
+        def surround_contents(newParent: DOMNode):Unit = js.native
         def to_string():String = js.native
     }
     @js.native
@@ -2195,16 +2195,16 @@ object WebKit extends js.Object {
     }
     @js.native
     class DOMShadowRoot extends DOMDocumentFragment {
-        def element_from_point(x: Any, y: Any):Any = js.native
-        def get_active_element():Any = js.native
+        def element_from_point(x: Any, y: Any):DOMElement = js.native
+        def get_active_element():DOMElement = js.native
         def get_apply_author_styles():Boolean = js.native
-        def get_element_by_id(elementId: String):Any = js.native
-        def get_elements_by_class_name(className: String):Any = js.native
-        def get_elements_by_tag_name(tagName: String):Any = js.native
-        def get_elements_by_tag_name_ns(namespaceURI: String, localName: String):Any = js.native
+        def get_element_by_id(elementId: String):DOMElement = js.native
+        def get_elements_by_class_name(className: String):DOMNodeList = js.native
+        def get_elements_by_tag_name(tagName: String):DOMNodeList = js.native
+        def get_elements_by_tag_name_ns(namespaceURI: String, localName: String):DOMNodeList = js.native
         def get_inner_html():String = js.native
         def get_reset_style_inheritance():Boolean = js.native
-        def get_selection():Any = js.native
+        def get_selection():DOMDOMSelection = js.native
         def set_apply_author_styles(value: Boolean):Unit = js.native
         def set_inner_html(value: String):Unit = js.native
         def set_reset_style_inheritance(value: Boolean):Unit = js.native
@@ -2232,42 +2232,42 @@ object WebKit extends js.Object {
     class DOMStyleSheet extends DOMObject {
         def get_disabled():Boolean = js.native
         def get_href():String = js.native
-        def get_media():Any = js.native
-        def get_owner_node():Any = js.native
-        def get_parent_style_sheet():Any = js.native
+        def get_media():DOMMediaList = js.native
+        def get_owner_node():DOMNode = js.native
+        def get_parent_style_sheet():DOMStyleSheet = js.native
         def get_title():String = js.native
         def set_disabled(value: Boolean):Unit = js.native
     }
     @js.native
     class DOMStyleSheetList extends DOMObject {
         def get_length():Any = js.native
-        def item(index: Any):Any = js.native
+        def item(index: Any):DOMStyleSheet = js.native
     }
     @js.native
     class DOMText extends DOMCharacterData {
         def get_whole_text():String = js.native
-        def replace_whole_text(content: String):Any = js.native
-        def split_text(offset: Any):Any = js.native
+        def replace_whole_text(content: String):DOMText = js.native
+        def split_text(offset: Any):DOMText = js.native
     }
     @js.native
     class DOMTextTrack extends DOMObject {
-        def add_cue(cue: Any):Unit = js.native
-        def dispatch_event(evt: Any):Boolean = js.native
-        def get_active_cues():Any = js.native
-        def get_cues():Any = js.native
+        def add_cue(cue: DOMTextTrackCue):Unit = js.native
+        def dispatch_event(evt: DOMEvent):Boolean = js.native
+        def get_active_cues():DOMTextTrackCueList = js.native
+        def get_cues():DOMTextTrackCueList = js.native
         def get_id():String = js.native
         def get_kind():String = js.native
         def get_label():String = js.native
         def get_language():String = js.native
         def get_mode():String = js.native
-        def remove_cue(cue: Any):Unit = js.native
+        def remove_cue(cue: DOMTextTrackCue):Unit = js.native
         def set_mode(value: String):Unit = js.native
     }
     @js.native
     class DOMTextTrackCue extends DOMObject {
-        def dispatch_event(evt: Any):Boolean = js.native
+        def dispatch_event(evt: DOMEvent):Boolean = js.native
         def get_align():String = js.native
-        def get_cue_as_html():Any = js.native
+        def get_cue_as_html():DOMDocumentFragment = js.native
         def get_end_time():Any = js.native
         def get_id():String = js.native
         def get_line():Any = js.native
@@ -2277,7 +2277,7 @@ object WebKit extends js.Object {
         def get_snap_to_lines():Boolean = js.native
         def get_start_time():Any = js.native
         def get_text():String = js.native
-        def get_track():Any = js.native
+        def get_track():DOMTextTrack = js.native
         def get_vertical():String = js.native
         def set_align(value: String):Unit = js.native
         def set_end_time(value: Any):Unit = js.native
@@ -2293,16 +2293,16 @@ object WebKit extends js.Object {
     }
     @js.native
     class DOMTextTrackCueList extends DOMObject {
-        def get_cue_by_id(id: String):Any = js.native
+        def get_cue_by_id(id: String):DOMTextTrackCue = js.native
         def get_length():Any = js.native
-        def item(index: Any):Any = js.native
+        def item(index: Any):DOMTextTrackCue = js.native
     }
     @js.native
     class DOMTextTrackList extends DOMObject {
-        def dispatch_event(evt: Any):Boolean = js.native
+        def dispatch_event(evt: DOMEvent):Boolean = js.native
         def get_length():Any = js.native
-        def get_track_by_id(id: String):Any = js.native
-        def item(index: Any):Any = js.native
+        def get_track_by_id(id: String):DOMTextTrack = js.native
+        def item(index: Any):DOMTextTrack = js.native
     }
     @js.native
     class DOMTimeRanges extends DOMObject {
@@ -2330,19 +2330,19 @@ object WebKit extends js.Object {
     }
     @js.native
     class DOMTreeWalker extends DOMObject {
-        def first_child():Any = js.native
-        def get_current_node():Any = js.native
+        def first_child():DOMNode = js.native
+        def get_current_node():DOMNode = js.native
         def get_expand_entity_references():Boolean = js.native
-        def get_filter():Any = js.native
-        def get_root():Any = js.native
+        def get_filter():DOMNodeFilter = js.native
+        def get_root():DOMNode = js.native
         def get_what_to_show():Any = js.native
-        def last_child():Any = js.native
-        def next_node():Any = js.native
-        def next_sibling():Any = js.native
-        def parent_node():Any = js.native
-        def previous_node():Any = js.native
-        def previous_sibling():Any = js.native
-        def set_current_node(value: Any):Unit = js.native
+        def last_child():DOMNode = js.native
+        def next_node():DOMNode = js.native
+        def next_sibling():DOMNode = js.native
+        def parent_node():DOMNode = js.native
+        def previous_node():DOMNode = js.native
+        def previous_sibling():DOMNode = js.native
+        def set_current_node(value: DOMNode):Unit = js.native
     }
     @js.native
     class DOMUIEvent extends DOMEvent {
@@ -2353,9 +2353,9 @@ object WebKit extends js.Object {
         def get_layer_y():Any = js.native
         def get_page_x():Any = js.native
         def get_page_y():Any = js.native
-        def get_view():Any = js.native
+        def get_view():DOMDOMWindow = js.native
         def get_which():Any = js.native
-        def init_ui_event(type0: String, canBubble: Boolean, cancelable: Boolean, view: Any, detail: Any):Unit = js.native
+        def init_ui_event(type0: String, canBubble: Boolean, cancelable: Boolean, view: DOMDOMWindow, detail: Any):Unit = js.native
     }
     @js.native
     class DOMValidityState extends DOMObject {
@@ -2389,23 +2389,23 @@ object WebKit extends js.Object {
     }
     @js.native
     class DOMVideoTrackList extends DOMObject {
-        def dispatch_event(evt: Any):Boolean = js.native
+        def dispatch_event(evt: DOMEvent):Boolean = js.native
         def get_length():Any = js.native
-        def get_track_by_id(id: String):Any = js.native
-        def item(index: Any):Any = js.native
+        def get_track_by_id(id: String):DOMVideoTrack = js.native
+        def item(index: Any):DOMVideoTrack = js.native
     }
     @js.native
     class DOMWebKitNamedFlow extends DOMObject {
-        def dispatch_event(event: Any):Boolean = js.native
-        def get_content():Any = js.native
-        def get_content_nodes():Any = js.native
+        def dispatch_event(event: DOMEvent):Boolean = js.native
+        def get_content():DOMNodeList = js.native
+        def get_content_nodes():DOMNodeList = js.native
         def get_first_empty_region_index():Any = js.native
         def get_name():String = js.native
         def get_overflow():Boolean = js.native
         def get_overset():Boolean = js.native
-        def get_regions():Any = js.native
-        def get_regions_by_content(contentNode: Any):Any = js.native
-        def get_regions_by_content_node(content_node: Any):Any = js.native
+        def get_regions():DOMNodeList = js.native
+        def get_regions_by_content(contentNode: DOMNode):DOMNodeList = js.native
+        def get_regions_by_content_node(content_node: DOMNode):DOMNodeList = js.native
     }
     @js.native
     class DOMWebKitPoint extends DOMObject {
@@ -2424,11 +2424,11 @@ object WebKit extends js.Object {
         def get_wheel_delta():Any = js.native
         def get_wheel_delta_x():Any = js.native
         def get_wheel_delta_y():Any = js.native
-        def init_wheel_event(wheelDeltaX: Any, wheelDeltaY: Any, view: Any, screenX: Any, screenY: Any, clientX: Any, clientY: Any, ctrlKey: Boolean, altKey: Boolean, shiftKey: Boolean, metaKey: Boolean):Unit = js.native
+        def init_wheel_event(wheelDeltaX: Any, wheelDeltaY: Any, view: DOMDOMWindow, screenX: Any, screenY: Any, clientX: Any, clientY: Any, ctrlKey: Boolean, altKey: Boolean, shiftKey: Boolean, metaKey: Boolean):Unit = js.native
     }
     @js.native
     class DOMXPathExpression extends DOMObject {
-        def evaluate(contextNode: Any, type0: Any, inResult: Any):Any = js.native
+        def evaluate(contextNode: DOMNode, type0: Any, inResult: DOMXPathResult):DOMXPathResult = js.native
     }
     @js.native
     class DOMXPathNSResolver extends DOMObject {
@@ -2440,11 +2440,11 @@ object WebKit extends js.Object {
         def get_invalid_iterator_state():Boolean = js.native
         def get_number_value():Any = js.native
         def get_result_type():Any = js.native
-        def get_single_node_value():Any = js.native
+        def get_single_node_value():DOMNode = js.native
         def get_snapshot_length():Any = js.native
         def get_string_value():String = js.native
-        def iterate_next():Any = js.native
-        def snapshot_item(index: Any):Any = js.native
+        def iterate_next():DOMNode = js.native
+        def snapshot_item(index: Any):DOMNode = js.native
     }
     @js.native
     class Download extends GObject.Object {
@@ -2453,10 +2453,10 @@ object WebKit extends js.Object {
         def get_current_size():Any = js.native
         def get_destination_uri():String = js.native
         def get_elapsed_time():Any = js.native
-        def get_network_request():Any = js.native
-        def get_network_response():Any = js.native
+        def get_network_request():NetworkRequest = js.native
+        def get_network_response():NetworkResponse = js.native
         def get_progress():Any = js.native
-        def get_status():Any = js.native
+        def get_status():Double = js.native
         def get_suggested_filename():String = js.native
         def get_total_size():Any = js.native
         def get_uri():String = js.native
@@ -2466,7 +2466,7 @@ object WebKit extends js.Object {
     @js.native
     class FaviconDatabase extends GObject.Object {
         def clear():Unit = js.native
-        def get_favicon_pixbuf(page_uri: String, width: Any, height: Any, cancellable: Any, callback: Any, user_data: Object):Unit = js.native
+        def get_favicon_pixbuf(page_uri: String, width: Any, height: Any, cancellable: Gio.Cancellable, callback: Any, user_data: Object):Unit = js.native
         def get_favicon_pixbuf_finish(result: Any):Any = js.native
         def get_favicon_uri(page_uri: String):String = js.native
         def get_path():String = js.native
@@ -2476,7 +2476,7 @@ object WebKit extends js.Object {
     @js.native
     class FileChooserRequest extends GObject.Object {
         def get_mime_types():js.Array[String] = js.native
-        def get_mime_types_filter():Any = js.native
+        def get_mime_types_filter():Gtk.FileFilter = js.native
         def get_select_multiple():Boolean = js.native
         def get_selected_files():js.Array[String] = js.native
         def select_files(files: js.Array[String]):Unit = js.native
@@ -2498,14 +2498,14 @@ object WebKit extends js.Object {
     @js.native
     class NetworkRequest extends GObject.Object {
         def this(config: js.Any) = this()
-        def get_message():Any = js.native
+        def get_message():Soup.Message = js.native
         def get_uri():String = js.native
         def set_uri(uri: String):Unit = js.native
     }
     @js.native
     class NetworkResponse extends GObject.Object {
         def this(config: js.Any) = this()
-        def get_message():Any = js.native
+        def get_message():Soup.Message = js.native
         def get_suggested_filename():String = js.native
         def get_uri():String = js.native
         def set_uri(uri: String):Unit = js.native
@@ -2530,43 +2530,43 @@ object WebKit extends js.Object {
     @js.native
     class WebBackForwardList extends GObject.Object {
         def this(config: js.Any) = this()
-        def add_item(history_item: Any):Unit = js.native
+        def add_item(history_item: WebHistoryItem):Unit = js.native
         def clear():Unit = js.native
-        def contains_item(history_item: Any):Boolean = js.native
-        def get_back_item():Any = js.native
+        def contains_item(history_item: WebHistoryItem):Boolean = js.native
+        def get_back_item():WebHistoryItem = js.native
         def get_back_length():Any = js.native
         def get_back_list_with_limit(limit: Any):Any = js.native
-        def get_current_item():Any = js.native
-        def get_forward_item():Any = js.native
+        def get_current_item():WebHistoryItem = js.native
+        def get_forward_item():WebHistoryItem = js.native
         def get_forward_length():Any = js.native
         def get_forward_list_with_limit(limit: Any):Any = js.native
         def get_limit():Any = js.native
-        def get_nth_item(index: Any):Any = js.native
+        def get_nth_item(index: Any):WebHistoryItem = js.native
         def go_back():Unit = js.native
         def go_forward():Unit = js.native
-        def go_to_item(history_item: Any):Unit = js.native
+        def go_to_item(history_item: WebHistoryItem):Unit = js.native
         def set_limit(limit: Any):Unit = js.native
     }
     @js.native
     object WebBackForwardList extends js.Object {
-        def new_with_web_view(web_view: Any):WebBackForwardList = js.native
+        def new_with_web_view(web_view: WebView):WebBackForwardList = js.native
     }
     @js.native
     class WebDataSource extends GObject.Object {
         def this(config: js.Any) = this()
         def get_data():Any = js.native
         def get_encoding():String = js.native
-        def get_initial_request():Any = js.native
-        def get_main_resource():Any = js.native
-        def get_request():Any = js.native
+        def get_initial_request():NetworkRequest = js.native
+        def get_main_resource():WebResource = js.native
+        def get_request():NetworkRequest = js.native
         def get_subresources():Any = js.native
         def get_unreachable_uri():String = js.native
-        def get_web_frame():Any = js.native
+        def get_web_frame():WebFrame = js.native
         def is_loading():Boolean = js.native
     }
     @js.native
     object WebDataSource extends js.Object {
-        def new_with_request(request: Any):WebDataSource = js.native
+        def new_with_request(request: NetworkRequest):WebDataSource = js.native
     }
     @js.native
     class WebDatabase extends GObject.Object {
@@ -2574,35 +2574,35 @@ object WebKit extends js.Object {
         def get_expected_size():Any = js.native
         def get_filename():String = js.native
         def get_name():String = js.native
-        def get_security_origin():Any = js.native
+        def get_security_origin():SecurityOrigin = js.native
         def get_size():Any = js.native
         def remove():Unit = js.native
     }
     @js.native
     class WebFrame extends GObject.Object {
         def this(config: js.Any) = this()
-        def find_frame(name: String):Any = js.native
-        def get_data_source():Any = js.native
-        def get_dom_document():Any = js.native
+        def find_frame(name: String):WebFrame = js.native
+        def get_data_source():WebDataSource = js.native
+        def get_dom_document():DOMDocument = js.native
         def get_global_context():Any = js.native
-        def get_horizontal_scrollbar_policy():Any = js.native
-        def get_load_status():Any = js.native
+        def get_horizontal_scrollbar_policy():Double = js.native
+        def get_load_status():Double = js.native
         def get_name():String = js.native
-        def get_network_response():Any = js.native
-        def get_parent():Any = js.native
-        def get_provisional_data_source():Any = js.native
-        def get_range_for_word_around_caret():Any = js.native
-        def get_security_origin():Any = js.native
+        def get_network_response():NetworkResponse = js.native
+        def get_parent():WebFrame = js.native
+        def get_provisional_data_source():WebDataSource = js.native
+        def get_range_for_word_around_caret():DOMRange = js.native
+        def get_security_origin():SecurityOrigin = js.native
         def get_title():String = js.native
         def get_uri():String = js.native
-        def get_vertical_scrollbar_policy():Any = js.native
-        def get_web_view():Any = js.native
+        def get_vertical_scrollbar_policy():Double = js.native
+        def get_web_view():WebView = js.native
         def load_alternate_string(content: String, base_url: String, unreachable_url: String):Unit = js.native
-        def load_request(request: Any):Unit = js.native
+        def load_request(request: NetworkRequest):Unit = js.native
         def load_string(content: String, mime_type0: String, encoding: String, base_uri: String):Unit = js.native
         def load_uri(uri: String):Unit = js.native
         def print():Unit = js.native
-        def print_full(operation: Any, action: Any):Any = js.native
+        def print_full(operation: Gtk.PrintOperation, action: Double):Double = js.native
         def reload():Unit = js.native
         def replace_selection(text: String):Unit = js.native
         def stop_loading():Unit = js.native
@@ -2610,7 +2610,7 @@ object WebKit extends js.Object {
     @js.native
     class WebHistoryItem extends GObject.Object {
         def this(config: js.Any) = this()
-        def copy():Any = js.native
+        def copy():WebHistoryItem = js.native
         def get_alternate_title():String = js.native
         def get_last_visited_time():Any = js.native
         def get_original_uri():String = js.native
@@ -2626,9 +2626,9 @@ object WebKit extends js.Object {
     class WebInspector extends GObject.Object {
         def close():Unit = js.native
         def get_inspected_uri():String = js.native
-        def get_web_view():Any = js.native
+        def get_web_view():WebView = js.native
         def inspect_coordinates(x: Any, y: Any):Unit = js.native
-        def inspect_node(node: Any):Unit = js.native
+        def inspect_node(node: DOMNode):Unit = js.native
         def show():Unit = js.native
     }
     @js.native
@@ -2636,10 +2636,10 @@ object WebKit extends js.Object {
         def get_button():Any = js.native
         def get_modifier_state():Any = js.native
         def get_original_uri():String = js.native
-        def get_reason():Any = js.native
+        def get_reason():Double = js.native
         def get_target_frame():String = js.native
         def set_original_uri(originalUri: String):Unit = js.native
-        def set_reason(reason: Any):Unit = js.native
+        def set_reason(reason: Double):Unit = js.native
     }
     @js.native
     class WebPlugin extends GObject.Object {
@@ -2652,7 +2652,7 @@ object WebKit extends js.Object {
     }
     @js.native
     class WebPluginDatabase extends GObject.Object {
-        def get_plugin_for_mimetype(mime_type0: String):Any = js.native
+        def get_plugin_for_mimetype(mime_type0: String):WebPlugin = js.native
         def get_plugins():Any = js.native
         def refresh():Unit = js.native
     }
@@ -2678,7 +2678,7 @@ object WebKit extends js.Object {
     @js.native
     class WebSettings extends GObject.Object {
         def this(config: js.Any) = this()
-        def copy():Any = js.native
+        def copy():WebSettings = js.native
         def get_user_agent():String = js.native
     }
     @js.native
@@ -2697,20 +2697,20 @@ object WebKit extends js.Object {
         def cut_clipboard():Unit = js.native
         def delete_selection():Unit = js.native
         def execute_script(script: String):Unit = js.native
-        def get_back_forward_list():Any = js.native
+        def get_back_forward_list():WebBackForwardList = js.native
         def get_copy_target_list():Any = js.native
         def get_custom_encoding():String = js.native
-        def get_dom_document():Any = js.native
+        def get_dom_document():DOMDocument = js.native
         def get_editable():Boolean = js.native
         def get_encoding():String = js.native
-        def get_focused_frame():Any = js.native
+        def get_focused_frame():WebFrame = js.native
         def get_full_content_zoom():Boolean = js.native
-        def get_hit_test_result(event: Any):Any = js.native
+        def get_hit_test_result(event: Any):HitTestResult = js.native
         def get_icon_pixbuf():Any = js.native
         def get_icon_uri():String = js.native
-        def get_inspector():Any = js.native
-        def get_load_status():Any = js.native
-        def get_main_frame():Any = js.native
+        def get_inspector():WebInspector = js.native
+        def get_load_status():Double = js.native
+        def get_main_frame():WebFrame = js.native
         def get_paste_target_list():Any = js.native
         def get_progress():Any = js.native
         override def get_settings():Any = js.native
@@ -2719,22 +2719,22 @@ object WebKit extends js.Object {
         def get_title():String = js.native
         def get_transparent():Boolean = js.native
         def get_uri():String = js.native
-        def get_view_mode():Any = js.native
+        def get_view_mode():Double = js.native
         def get_view_source_mode():Boolean = js.native
-        def get_viewport_attributes():Any = js.native
-        def get_window_features():Any = js.native
+        def get_viewport_attributes():ViewportAttributes = js.native
+        def get_window_features():WebWindowFeatures = js.native
         def get_zoom_level():Any = js.native
         def go_back():Unit = js.native
         def go_back_or_forward(steps: Any):Unit = js.native
         def go_forward():Unit = js.native
-        def go_to_back_forward_item(item: Any):Boolean = js.native
+        def go_to_back_forward_item(item: WebHistoryItem):Boolean = js.native
         def has_selection():Boolean = js.native
         def load_html_string(content: String, base_uri: String):Unit = js.native
-        def load_request(request: Any):Unit = js.native
+        def load_request(request: NetworkRequest):Unit = js.native
         def load_string(content: String, mime_type0: String, encoding: String, base_uri: String):Unit = js.native
         def load_uri(uri: String):Unit = js.native
         def mark_text_matches(string: String, case_sensitive: Boolean, limit: Any):Any = js.native
-        def move_cursor(step: Any, count: Any):Unit = js.native
+        def move_cursor(step: Double, count: Any):Unit = js.native
         def open(uri: String):Unit = js.native
         def paste_clipboard():Unit = js.native
         def redo():Unit = js.native
@@ -2747,9 +2747,9 @@ object WebKit extends js.Object {
         def set_full_content_zoom(full_content_zoom: Boolean):Unit = js.native
         def set_highlight_text_matches(highlight: Boolean):Unit = js.native
         def set_maintains_back_forward_list(flag: Boolean):Unit = js.native
-        def set_settings(settings: Any):Unit = js.native
+        def set_settings(settings: WebSettings):Unit = js.native
         def set_transparent(flag: Boolean):Unit = js.native
-        def set_view_mode(mode: Any):Unit = js.native
+        def set_view_mode(mode: Double):Unit = js.native
         def set_view_source_mode(view_source_mode: Boolean):Unit = js.native
         def set_zoom_level(zoom_level: Any):Unit = js.native
         def stop_loading():Unit = js.native
@@ -2762,6 +2762,6 @@ object WebKit extends js.Object {
     @js.native
     class WebWindowFeatures extends GObject.Object {
         def this(config: js.Any) = this()
-        def equal(features2: Any):Boolean = js.native
+        def equal(features2: WebWindowFeatures):Boolean = js.native
     }
 }

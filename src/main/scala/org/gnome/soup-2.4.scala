@@ -159,25 +159,25 @@ object Soup extends js.Object {
     val XMLRPC_OLD_H:Any = js.native
     def add_completion(async_context: Any, function0: Any, data: Object):Any = js.native
     def add_idle(async_context: Any, function0: Any, data: Object):Any = js.native
-    def add_io_watch(async_context: Any, chan: Any, condition: Any, function0: Any, data: Object):Any = js.native
+    def add_io_watch(async_context: Any, chan: Any, condition: Double, function0: Any, data: Object):Any = js.native
     def add_timeout(async_context: Any, interval0: Any, function0: Any, data: Object):Any = js.native
     def cookie_parse(header: String, origin: Any):Any = js.native
     def cookies_free(cookies: Any):Unit = js.native
-    def cookies_from_request(msg: Any):Any = js.native
-    def cookies_from_response(msg: Any):Any = js.native
+    def cookies_from_request(msg: Message):Any = js.native
+    def cookies_from_response(msg: Message):Any = js.native
     def cookies_to_cookie_header(cookies: Any):String = js.native
-    def cookies_to_request(cookies: Any, msg: Any):Unit = js.native
-    def cookies_to_response(cookies: Any, msg: Any):Unit = js.native
+    def cookies_to_request(cookies: Any, msg: Message):Unit = js.native
+    def cookies_to_response(cookies: Any, msg: Message):Unit = js.native
     def form_decode(encoded_form: String):Any = js.native
-    def form_decode_multipart(msg: Any, file_control_name: String, filename: String, content_type0: String, file: Any):Any = js.native
+    def form_decode_multipart(msg: Message, file_control_name: String, filename: String, content_type0: String, file: Any):Any = js.native
     def form_encode(first_field: String, rest:Any*):String = js.native
     def form_encode_datalist(form_data_set: Any):String = js.native
     def form_encode_hash(form_data_set: Any):String = js.native
     def form_encode_valist(first_field: String, args: Any):String = js.native
-    def form_request_new(method: String, uri: String, first_field: String, rest:Any*):Any = js.native
-    def form_request_new_from_datalist(method: String, uri: String, form_data_set: Any):Any = js.native
-    def form_request_new_from_hash(method: String, uri: String, form_data_set: Any):Any = js.native
-    def form_request_new_from_multipart(uri: String, multipart: Any):Any = js.native
+    def form_request_new(method: String, uri: String, first_field: String, rest:Any*):Message = js.native
+    def form_request_new_from_datalist(method: String, uri: String, form_data_set: Any):Message = js.native
+    def form_request_new_from_hash(method: String, uri: String, form_data_set: Any):Message = js.native
+    def form_request_new_from_multipart(uri: String, multipart: Any):Message = js.native
     def header_contains(header: String, token: String):Boolean = js.native
     def header_free_list(list: Any):Unit = js.native
     def header_free_param_list(param_list: Any):Unit = js.native
@@ -188,9 +188,9 @@ object Soup extends js.Object {
     def header_parse_quality_list(header: String, unacceptable: Any):Any = js.native
     def header_parse_semi_param_list(header: String):Any = js.native
     def headers_parse(str: String, len: Any, dest: Any):Boolean = js.native
-    def headers_parse_request(str: String, len: Any, req_headers: Any, req_method: String, req_path: String, ver: Any):Any = js.native
-    def headers_parse_response(str: String, len: Any, headers: Any, ver: Any, status_code: Any, reason_phrase: String):Boolean = js.native
-    def headers_parse_status_line(status_line: String, ver: Any, status_code: Any, reason_phrase: String):Boolean = js.native
+    def headers_parse_request(str: String, len: Any, req_headers: Any, req_method: String, req_path: String, ver: Double):Any = js.native
+    def headers_parse_response(str: String, len: Any, headers: Any, ver: Double, status_code: Any, reason_phrase: String):Boolean = js.native
+    def headers_parse_status_line(status_line: String, ver: Double, status_code: Any, reason_phrase: String):Boolean = js.native
     def http_error_quark():Any = js.native
     def message_headers_iter_init(iter: Any, hdrs: Any):Unit = js.native
     def request_error_quark():Any = js.native
@@ -220,11 +220,11 @@ object Soup extends js.Object {
     def value_hash_lookup_vals(hash: Any, first_key: String, rest:Any*):Boolean = js.native
     def value_hash_new():Any = js.native
     def value_hash_new_with_vals(first_key: String, rest:Any*):Any = js.native
-    def websocket_client_prepare_handshake(msg: Any, origin: String, protocols: js.Array[String]):Unit = js.native
-    def websocket_client_verify_handshake(msg: Any):Boolean = js.native
+    def websocket_client_prepare_handshake(msg: Message, origin: String, protocols: js.Array[String]):Unit = js.native
+    def websocket_client_verify_handshake(msg: Message):Boolean = js.native
     def websocket_error_get_quark():Any = js.native
-    def websocket_server_check_handshake(msg: Any, origin: String, protocols: js.Array[String]):Boolean = js.native
-    def websocket_server_process_handshake(msg: Any, expected_origin: String, protocols: js.Array[String]):Boolean = js.native
+    def websocket_server_check_handshake(msg: Message, origin: String, protocols: js.Array[String]):Boolean = js.native
+    def websocket_server_process_handshake(msg: Message, expected_origin: String, protocols: js.Array[String]):Boolean = js.native
     def xmlrpc_build_fault(fault_code: Any, fault_format: String, rest:Any*):String = js.native
     def xmlrpc_build_method_call(method_name: String, params: js.Array[Any], n_params: Any):String = js.native
     def xmlrpc_build_method_response(value: Any):String = js.native
@@ -234,352 +234,352 @@ object Soup extends js.Object {
     def xmlrpc_extract_method_call(method_call: String, length: Any, method_name: String, rest:Any*):Boolean = js.native
     def xmlrpc_extract_method_response(method_response: String, length: Any, error: Any, type0: Any, rest:Any*):Boolean = js.native
     def xmlrpc_fault_quark():Any = js.native
-    def xmlrpc_message_new(uri: String, method_name: String, params: Any):Any = js.native
-    def xmlrpc_message_set_fault(msg: Any, fault_code: Any, fault_format: String, rest:Any*):Unit = js.native
-    def xmlrpc_message_set_response(msg: Any, value: Any):Boolean = js.native
+    def xmlrpc_message_new(uri: String, method_name: String, params: Any):Message = js.native
+    def xmlrpc_message_set_fault(msg: Message, fault_code: Any, fault_format: String, rest:Any*):Unit = js.native
+    def xmlrpc_message_set_response(msg: Message, value: Any):Boolean = js.native
     def xmlrpc_parse_method_call(method_call: String, length: Any, method_name: String, params: Any):Boolean = js.native
     def xmlrpc_parse_method_response(method_response: String, length: Any, value: Any):Boolean = js.native
     def xmlrpc_parse_request(method_call: String, length: Any, params: Any):String = js.native
     def xmlrpc_parse_response(method_response: String, length: Any, signature: String):Any = js.native
-    def xmlrpc_request_new(uri: String, method_name: String, rest:Any*):Any = js.native
-    def xmlrpc_set_fault(msg: Any, fault_code: Any, fault_format: String, rest:Any*):Unit = js.native
-    def xmlrpc_set_response(msg: Any, type0: Any, rest:Any*):Unit = js.native
+    def xmlrpc_request_new(uri: String, method_name: String, rest:Any*):Message = js.native
+    def xmlrpc_set_fault(msg: Message, fault_code: Any, fault_format: String, rest:Any*):Unit = js.native
+    def xmlrpc_set_response(msg: Message, type0: Any, rest:Any*):Unit = js.native
     def xmlrpc_variant_get_datetime(variant: Any):Any = js.native
     def xmlrpc_variant_new_datetime(date: Any):Any = js.native
     @js.native
     object AddressFamily extends js.Object {
-        val INVALID:js.Dynamic = js.native
-        val IPV4:js.Dynamic = js.native
-        val IPV6:js.Dynamic = js.native
+        val INVALID:Double = js.native
+        val IPV4:Double = js.native
+        val IPV6:Double = js.native
     }
     @js.native
     object CacheResponse extends js.Object {
-        val FRESH:js.Dynamic = js.native
-        val NEEDS_VALIDATION:js.Dynamic = js.native
-        val STALE:js.Dynamic = js.native
+        val FRESH:Double = js.native
+        val NEEDS_VALIDATION:Double = js.native
+        val STALE:Double = js.native
     }
     @js.native
     object CacheType extends js.Object {
-        val SINGLE_USER:js.Dynamic = js.native
-        val SHARED:js.Dynamic = js.native
+        val SINGLE_USER:Double = js.native
+        val SHARED:Double = js.native
     }
     @js.native
     object ConnectionState extends js.Object {
-        val NEW:js.Dynamic = js.native
-        val CONNECTING:js.Dynamic = js.native
-        val IDLE:js.Dynamic = js.native
-        val IN_USE:js.Dynamic = js.native
-        val REMOTE_DISCONNECTED:js.Dynamic = js.native
-        val DISCONNECTED:js.Dynamic = js.native
+        val NEW:Double = js.native
+        val CONNECTING:Double = js.native
+        val IDLE:Double = js.native
+        val IN_USE:Double = js.native
+        val REMOTE_DISCONNECTED:Double = js.native
+        val DISCONNECTED:Double = js.native
     }
     @js.native
     object CookieJarAcceptPolicy extends js.Object {
-        val ALWAYS:js.Dynamic = js.native
-        val NEVER:js.Dynamic = js.native
-        val NO_THIRD_PARTY:js.Dynamic = js.native
+        val ALWAYS:Double = js.native
+        val NEVER:Double = js.native
+        val NO_THIRD_PARTY:Double = js.native
     }
     @js.native
     object DateFormat extends js.Object {
-        val HTTP:js.Dynamic = js.native
-        val COOKIE:js.Dynamic = js.native
-        val RFC2822:js.Dynamic = js.native
-        val ISO8601_COMPACT:js.Dynamic = js.native
-        val ISO8601_FULL:js.Dynamic = js.native
-        val ISO8601:js.Dynamic = js.native
-        val ISO8601_XMLRPC:js.Dynamic = js.native
+        val HTTP:Double = js.native
+        val COOKIE:Double = js.native
+        val RFC2822:Double = js.native
+        val ISO8601_COMPACT:Double = js.native
+        val ISO8601_FULL:Double = js.native
+        val ISO8601:Double = js.native
+        val ISO8601_XMLRPC:Double = js.native
     }
     @js.native
     object Encoding extends js.Object {
-        val UNRECOGNIZED:js.Dynamic = js.native
-        val NONE:js.Dynamic = js.native
-        val CONTENT_LENGTH:js.Dynamic = js.native
-        val EOF:js.Dynamic = js.native
-        val CHUNKED:js.Dynamic = js.native
-        val BYTERANGES:js.Dynamic = js.native
+        val UNRECOGNIZED:Double = js.native
+        val NONE:Double = js.native
+        val CONTENT_LENGTH:Double = js.native
+        val EOF:Double = js.native
+        val CHUNKED:Double = js.native
+        val BYTERANGES:Double = js.native
     }
     @js.native
     object HTTPVersion extends js.Object {
-        val HTTP_1_0:js.Dynamic = js.native
-        val HTTP_1_1:js.Dynamic = js.native
+        val HTTP_1_0:Double = js.native
+        val HTTP_1_1:Double = js.native
     }
     @js.native
     object KnownStatusCode extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val CANCELLED:js.Dynamic = js.native
-        val CANT_RESOLVE:js.Dynamic = js.native
-        val CANT_RESOLVE_PROXY:js.Dynamic = js.native
-        val CANT_CONNECT:js.Dynamic = js.native
-        val CANT_CONNECT_PROXY:js.Dynamic = js.native
-        val SSL_FAILED:js.Dynamic = js.native
-        val IO_ERROR:js.Dynamic = js.native
-        val MALFORMED:js.Dynamic = js.native
-        val TRY_AGAIN:js.Dynamic = js.native
-        val TOO_MANY_REDIRECTS:js.Dynamic = js.native
-        val TLS_FAILED:js.Dynamic = js.native
-        val CONTINUE:js.Dynamic = js.native
-        val SWITCHING_PROTOCOLS:js.Dynamic = js.native
-        val PROCESSING:js.Dynamic = js.native
-        val OK:js.Dynamic = js.native
-        val CREATED:js.Dynamic = js.native
-        val ACCEPTED:js.Dynamic = js.native
-        val NON_AUTHORITATIVE:js.Dynamic = js.native
-        val NO_CONTENT:js.Dynamic = js.native
-        val RESET_CONTENT:js.Dynamic = js.native
-        val PARTIAL_CONTENT:js.Dynamic = js.native
-        val MULTI_STATUS:js.Dynamic = js.native
-        val MULTIPLE_CHOICES:js.Dynamic = js.native
-        val MOVED_PERMANENTLY:js.Dynamic = js.native
-        val FOUND:js.Dynamic = js.native
-        val MOVED_TEMPORARILY:js.Dynamic = js.native
-        val SEE_OTHER:js.Dynamic = js.native
-        val NOT_MODIFIED:js.Dynamic = js.native
-        val USE_PROXY:js.Dynamic = js.native
-        val NOT_APPEARING_IN_THIS_PROTOCOL:js.Dynamic = js.native
-        val TEMPORARY_REDIRECT:js.Dynamic = js.native
-        val BAD_REQUEST:js.Dynamic = js.native
-        val UNAUTHORIZED:js.Dynamic = js.native
-        val PAYMENT_REQUIRED:js.Dynamic = js.native
-        val FORBIDDEN:js.Dynamic = js.native
-        val NOT_FOUND:js.Dynamic = js.native
-        val METHOD_NOT_ALLOWED:js.Dynamic = js.native
-        val NOT_ACCEPTABLE:js.Dynamic = js.native
-        val PROXY_AUTHENTICATION_REQUIRED:js.Dynamic = js.native
-        val PROXY_UNAUTHORIZED:js.Dynamic = js.native
-        val REQUEST_TIMEOUT:js.Dynamic = js.native
-        val CONFLICT:js.Dynamic = js.native
-        val GONE:js.Dynamic = js.native
-        val LENGTH_REQUIRED:js.Dynamic = js.native
-        val PRECONDITION_FAILED:js.Dynamic = js.native
-        val REQUEST_ENTITY_TOO_LARGE:js.Dynamic = js.native
-        val REQUEST_URI_TOO_LONG:js.Dynamic = js.native
-        val UNSUPPORTED_MEDIA_TYPE:js.Dynamic = js.native
-        val REQUESTED_RANGE_NOT_SATISFIABLE:js.Dynamic = js.native
-        val INVALID_RANGE:js.Dynamic = js.native
-        val EXPECTATION_FAILED:js.Dynamic = js.native
-        val UNPROCESSABLE_ENTITY:js.Dynamic = js.native
-        val LOCKED:js.Dynamic = js.native
-        val FAILED_DEPENDENCY:js.Dynamic = js.native
-        val INTERNAL_SERVER_ERROR:js.Dynamic = js.native
-        val NOT_IMPLEMENTED:js.Dynamic = js.native
-        val BAD_GATEWAY:js.Dynamic = js.native
-        val SERVICE_UNAVAILABLE:js.Dynamic = js.native
-        val GATEWAY_TIMEOUT:js.Dynamic = js.native
-        val HTTP_VERSION_NOT_SUPPORTED:js.Dynamic = js.native
-        val INSUFFICIENT_STORAGE:js.Dynamic = js.native
-        val NOT_EXTENDED:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val CANCELLED:Double = js.native
+        val CANT_RESOLVE:Double = js.native
+        val CANT_RESOLVE_PROXY:Double = js.native
+        val CANT_CONNECT:Double = js.native
+        val CANT_CONNECT_PROXY:Double = js.native
+        val SSL_FAILED:Double = js.native
+        val IO_ERROR:Double = js.native
+        val MALFORMED:Double = js.native
+        val TRY_AGAIN:Double = js.native
+        val TOO_MANY_REDIRECTS:Double = js.native
+        val TLS_FAILED:Double = js.native
+        val CONTINUE:Double = js.native
+        val SWITCHING_PROTOCOLS:Double = js.native
+        val PROCESSING:Double = js.native
+        val OK:Double = js.native
+        val CREATED:Double = js.native
+        val ACCEPTED:Double = js.native
+        val NON_AUTHORITATIVE:Double = js.native
+        val NO_CONTENT:Double = js.native
+        val RESET_CONTENT:Double = js.native
+        val PARTIAL_CONTENT:Double = js.native
+        val MULTI_STATUS:Double = js.native
+        val MULTIPLE_CHOICES:Double = js.native
+        val MOVED_PERMANENTLY:Double = js.native
+        val FOUND:Double = js.native
+        val MOVED_TEMPORARILY:Double = js.native
+        val SEE_OTHER:Double = js.native
+        val NOT_MODIFIED:Double = js.native
+        val USE_PROXY:Double = js.native
+        val NOT_APPEARING_IN_THIS_PROTOCOL:Double = js.native
+        val TEMPORARY_REDIRECT:Double = js.native
+        val BAD_REQUEST:Double = js.native
+        val UNAUTHORIZED:Double = js.native
+        val PAYMENT_REQUIRED:Double = js.native
+        val FORBIDDEN:Double = js.native
+        val NOT_FOUND:Double = js.native
+        val METHOD_NOT_ALLOWED:Double = js.native
+        val NOT_ACCEPTABLE:Double = js.native
+        val PROXY_AUTHENTICATION_REQUIRED:Double = js.native
+        val PROXY_UNAUTHORIZED:Double = js.native
+        val REQUEST_TIMEOUT:Double = js.native
+        val CONFLICT:Double = js.native
+        val GONE:Double = js.native
+        val LENGTH_REQUIRED:Double = js.native
+        val PRECONDITION_FAILED:Double = js.native
+        val REQUEST_ENTITY_TOO_LARGE:Double = js.native
+        val REQUEST_URI_TOO_LONG:Double = js.native
+        val UNSUPPORTED_MEDIA_TYPE:Double = js.native
+        val REQUESTED_RANGE_NOT_SATISFIABLE:Double = js.native
+        val INVALID_RANGE:Double = js.native
+        val EXPECTATION_FAILED:Double = js.native
+        val UNPROCESSABLE_ENTITY:Double = js.native
+        val LOCKED:Double = js.native
+        val FAILED_DEPENDENCY:Double = js.native
+        val INTERNAL_SERVER_ERROR:Double = js.native
+        val NOT_IMPLEMENTED:Double = js.native
+        val BAD_GATEWAY:Double = js.native
+        val SERVICE_UNAVAILABLE:Double = js.native
+        val GATEWAY_TIMEOUT:Double = js.native
+        val HTTP_VERSION_NOT_SUPPORTED:Double = js.native
+        val INSUFFICIENT_STORAGE:Double = js.native
+        val NOT_EXTENDED:Double = js.native
     }
     @js.native
     object LoggerLogLevel extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val MINIMAL:js.Dynamic = js.native
-        val HEADERS:js.Dynamic = js.native
-        val BODY:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val MINIMAL:Double = js.native
+        val HEADERS:Double = js.native
+        val BODY:Double = js.native
     }
     @js.native
     object Any extends js.Object {
-        val STATIC:js.Dynamic = js.native
-        val TAKE:js.Dynamic = js.native
-        val COPY:js.Dynamic = js.native
-        val TEMPORARY:js.Dynamic = js.native
+        val STATIC:Double = js.native
+        val TAKE:Double = js.native
+        val COPY:Double = js.native
+        val TEMPORARY:Double = js.native
     }
     @js.native
     object MessageHeadersType extends js.Object {
-        val REQUEST:js.Dynamic = js.native
-        val RESPONSE:js.Dynamic = js.native
-        val MULTIPART:js.Dynamic = js.native
+        val REQUEST:Double = js.native
+        val RESPONSE:Double = js.native
+        val MULTIPART:Double = js.native
     }
     @js.native
     object MessagePriority extends js.Object {
-        val VERY_LOW:js.Dynamic = js.native
-        val LOW:js.Dynamic = js.native
-        val NORMAL:js.Dynamic = js.native
-        val HIGH:js.Dynamic = js.native
-        val VERY_HIGH:js.Dynamic = js.native
+        val VERY_LOW:Double = js.native
+        val LOW:Double = js.native
+        val NORMAL:Double = js.native
+        val HIGH:Double = js.native
+        val VERY_HIGH:Double = js.native
     }
     @js.native
     object RequestError extends js.Object {
-        val BAD_URI:js.Dynamic = js.native
-        val UNSUPPORTED_URI_SCHEME:js.Dynamic = js.native
-        val PARSING:js.Dynamic = js.native
-        val ENCODING:js.Dynamic = js.native
+        val BAD_URI:Double = js.native
+        val UNSUPPORTED_URI_SCHEME:Double = js.native
+        val PARSING:Double = js.native
+        val ENCODING:Double = js.native
     }
     @js.native
     object RequesterError extends js.Object {
-        val BAD_URI:js.Dynamic = js.native
-        val UNSUPPORTED_URI_SCHEME:js.Dynamic = js.native
+        val BAD_URI:Double = js.native
+        val UNSUPPORTED_URI_SCHEME:Double = js.native
     }
     @js.native
     object SocketIOStatus extends js.Object {
-        val OK:js.Dynamic = js.native
-        val WOULD_BLOCK:js.Dynamic = js.native
-        val EOF:js.Dynamic = js.native
-        val ERROR:js.Dynamic = js.native
+        val OK:Double = js.native
+        val WOULD_BLOCK:Double = js.native
+        val EOF:Double = js.native
+        val ERROR:Double = js.native
     }
     @js.native
     object Status extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val CANCELLED:js.Dynamic = js.native
-        val CANT_RESOLVE:js.Dynamic = js.native
-        val CANT_RESOLVE_PROXY:js.Dynamic = js.native
-        val CANT_CONNECT:js.Dynamic = js.native
-        val CANT_CONNECT_PROXY:js.Dynamic = js.native
-        val SSL_FAILED:js.Dynamic = js.native
-        val IO_ERROR:js.Dynamic = js.native
-        val MALFORMED:js.Dynamic = js.native
-        val TRY_AGAIN:js.Dynamic = js.native
-        val TOO_MANY_REDIRECTS:js.Dynamic = js.native
-        val TLS_FAILED:js.Dynamic = js.native
-        val CONTINUE:js.Dynamic = js.native
-        val SWITCHING_PROTOCOLS:js.Dynamic = js.native
-        val PROCESSING:js.Dynamic = js.native
-        val OK:js.Dynamic = js.native
-        val CREATED:js.Dynamic = js.native
-        val ACCEPTED:js.Dynamic = js.native
-        val NON_AUTHORITATIVE:js.Dynamic = js.native
-        val NO_CONTENT:js.Dynamic = js.native
-        val RESET_CONTENT:js.Dynamic = js.native
-        val PARTIAL_CONTENT:js.Dynamic = js.native
-        val MULTI_STATUS:js.Dynamic = js.native
-        val MULTIPLE_CHOICES:js.Dynamic = js.native
-        val MOVED_PERMANENTLY:js.Dynamic = js.native
-        val FOUND:js.Dynamic = js.native
-        val MOVED_TEMPORARILY:js.Dynamic = js.native
-        val SEE_OTHER:js.Dynamic = js.native
-        val NOT_MODIFIED:js.Dynamic = js.native
-        val USE_PROXY:js.Dynamic = js.native
-        val NOT_APPEARING_IN_THIS_PROTOCOL:js.Dynamic = js.native
-        val TEMPORARY_REDIRECT:js.Dynamic = js.native
-        val BAD_REQUEST:js.Dynamic = js.native
-        val UNAUTHORIZED:js.Dynamic = js.native
-        val PAYMENT_REQUIRED:js.Dynamic = js.native
-        val FORBIDDEN:js.Dynamic = js.native
-        val NOT_FOUND:js.Dynamic = js.native
-        val METHOD_NOT_ALLOWED:js.Dynamic = js.native
-        val NOT_ACCEPTABLE:js.Dynamic = js.native
-        val PROXY_AUTHENTICATION_REQUIRED:js.Dynamic = js.native
-        val PROXY_UNAUTHORIZED:js.Dynamic = js.native
-        val REQUEST_TIMEOUT:js.Dynamic = js.native
-        val CONFLICT:js.Dynamic = js.native
-        val GONE:js.Dynamic = js.native
-        val LENGTH_REQUIRED:js.Dynamic = js.native
-        val PRECONDITION_FAILED:js.Dynamic = js.native
-        val REQUEST_ENTITY_TOO_LARGE:js.Dynamic = js.native
-        val REQUEST_URI_TOO_LONG:js.Dynamic = js.native
-        val UNSUPPORTED_MEDIA_TYPE:js.Dynamic = js.native
-        val REQUESTED_RANGE_NOT_SATISFIABLE:js.Dynamic = js.native
-        val INVALID_RANGE:js.Dynamic = js.native
-        val EXPECTATION_FAILED:js.Dynamic = js.native
-        val UNPROCESSABLE_ENTITY:js.Dynamic = js.native
-        val LOCKED:js.Dynamic = js.native
-        val FAILED_DEPENDENCY:js.Dynamic = js.native
-        val INTERNAL_SERVER_ERROR:js.Dynamic = js.native
-        val NOT_IMPLEMENTED:js.Dynamic = js.native
-        val BAD_GATEWAY:js.Dynamic = js.native
-        val SERVICE_UNAVAILABLE:js.Dynamic = js.native
-        val GATEWAY_TIMEOUT:js.Dynamic = js.native
-        val HTTP_VERSION_NOT_SUPPORTED:js.Dynamic = js.native
-        val INSUFFICIENT_STORAGE:js.Dynamic = js.native
-        val NOT_EXTENDED:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val CANCELLED:Double = js.native
+        val CANT_RESOLVE:Double = js.native
+        val CANT_RESOLVE_PROXY:Double = js.native
+        val CANT_CONNECT:Double = js.native
+        val CANT_CONNECT_PROXY:Double = js.native
+        val SSL_FAILED:Double = js.native
+        val IO_ERROR:Double = js.native
+        val MALFORMED:Double = js.native
+        val TRY_AGAIN:Double = js.native
+        val TOO_MANY_REDIRECTS:Double = js.native
+        val TLS_FAILED:Double = js.native
+        val CONTINUE:Double = js.native
+        val SWITCHING_PROTOCOLS:Double = js.native
+        val PROCESSING:Double = js.native
+        val OK:Double = js.native
+        val CREATED:Double = js.native
+        val ACCEPTED:Double = js.native
+        val NON_AUTHORITATIVE:Double = js.native
+        val NO_CONTENT:Double = js.native
+        val RESET_CONTENT:Double = js.native
+        val PARTIAL_CONTENT:Double = js.native
+        val MULTI_STATUS:Double = js.native
+        val MULTIPLE_CHOICES:Double = js.native
+        val MOVED_PERMANENTLY:Double = js.native
+        val FOUND:Double = js.native
+        val MOVED_TEMPORARILY:Double = js.native
+        val SEE_OTHER:Double = js.native
+        val NOT_MODIFIED:Double = js.native
+        val USE_PROXY:Double = js.native
+        val NOT_APPEARING_IN_THIS_PROTOCOL:Double = js.native
+        val TEMPORARY_REDIRECT:Double = js.native
+        val BAD_REQUEST:Double = js.native
+        val UNAUTHORIZED:Double = js.native
+        val PAYMENT_REQUIRED:Double = js.native
+        val FORBIDDEN:Double = js.native
+        val NOT_FOUND:Double = js.native
+        val METHOD_NOT_ALLOWED:Double = js.native
+        val NOT_ACCEPTABLE:Double = js.native
+        val PROXY_AUTHENTICATION_REQUIRED:Double = js.native
+        val PROXY_UNAUTHORIZED:Double = js.native
+        val REQUEST_TIMEOUT:Double = js.native
+        val CONFLICT:Double = js.native
+        val GONE:Double = js.native
+        val LENGTH_REQUIRED:Double = js.native
+        val PRECONDITION_FAILED:Double = js.native
+        val REQUEST_ENTITY_TOO_LARGE:Double = js.native
+        val REQUEST_URI_TOO_LONG:Double = js.native
+        val UNSUPPORTED_MEDIA_TYPE:Double = js.native
+        val REQUESTED_RANGE_NOT_SATISFIABLE:Double = js.native
+        val INVALID_RANGE:Double = js.native
+        val EXPECTATION_FAILED:Double = js.native
+        val UNPROCESSABLE_ENTITY:Double = js.native
+        val LOCKED:Double = js.native
+        val FAILED_DEPENDENCY:Double = js.native
+        val INTERNAL_SERVER_ERROR:Double = js.native
+        val NOT_IMPLEMENTED:Double = js.native
+        val BAD_GATEWAY:Double = js.native
+        val SERVICE_UNAVAILABLE:Double = js.native
+        val GATEWAY_TIMEOUT:Double = js.native
+        val HTTP_VERSION_NOT_SUPPORTED:Double = js.native
+        val INSUFFICIENT_STORAGE:Double = js.native
+        val NOT_EXTENDED:Double = js.native
     }
     @js.native
     object TLDError extends js.Object {
-        val INVALID_HOSTNAME:js.Dynamic = js.native
-        val IS_IP_ADDRESS:js.Dynamic = js.native
-        val NOT_ENOUGH_DOMAINS:js.Dynamic = js.native
-        val NO_BASE_DOMAIN:js.Dynamic = js.native
+        val INVALID_HOSTNAME:Double = js.native
+        val IS_IP_ADDRESS:Double = js.native
+        val NOT_ENOUGH_DOMAINS:Double = js.native
+        val NO_BASE_DOMAIN:Double = js.native
     }
     @js.native
     object WebsocketCloseCode extends js.Object {
-        val NORMAL:js.Dynamic = js.native
-        val GOING_AWAY:js.Dynamic = js.native
-        val PROTOCOL_ERROR:js.Dynamic = js.native
-        val UNSUPPORTED_DATA:js.Dynamic = js.native
-        val NO_STATUS:js.Dynamic = js.native
-        val ABNORMAL:js.Dynamic = js.native
-        val BAD_DATA:js.Dynamic = js.native
-        val POLICY_VIOLATION:js.Dynamic = js.native
-        val TOO_BIG:js.Dynamic = js.native
-        val NO_EXTENSION:js.Dynamic = js.native
-        val SERVER_ERROR:js.Dynamic = js.native
-        val TLS_HANDSHAKE:js.Dynamic = js.native
+        val NORMAL:Double = js.native
+        val GOING_AWAY:Double = js.native
+        val PROTOCOL_ERROR:Double = js.native
+        val UNSUPPORTED_DATA:Double = js.native
+        val NO_STATUS:Double = js.native
+        val ABNORMAL:Double = js.native
+        val BAD_DATA:Double = js.native
+        val POLICY_VIOLATION:Double = js.native
+        val TOO_BIG:Double = js.native
+        val NO_EXTENSION:Double = js.native
+        val SERVER_ERROR:Double = js.native
+        val TLS_HANDSHAKE:Double = js.native
     }
     @js.native
     object WebsocketConnectionType extends js.Object {
-        val UNKNOWN:js.Dynamic = js.native
-        val CLIENT:js.Dynamic = js.native
-        val SERVER:js.Dynamic = js.native
+        val UNKNOWN:Double = js.native
+        val CLIENT:Double = js.native
+        val SERVER:Double = js.native
     }
     @js.native
     object WebsocketDataType extends js.Object {
-        val TEXT:js.Dynamic = js.native
-        val BINARY:js.Dynamic = js.native
+        val TEXT:Double = js.native
+        val BINARY:Double = js.native
     }
     @js.native
     object WebsocketError extends js.Object {
-        val FAILED:js.Dynamic = js.native
-        val NOT_WEBSOCKET:js.Dynamic = js.native
-        val BAD_HANDSHAKE:js.Dynamic = js.native
-        val BAD_ORIGIN:js.Dynamic = js.native
+        val FAILED:Double = js.native
+        val NOT_WEBSOCKET:Double = js.native
+        val BAD_HANDSHAKE:Double = js.native
+        val BAD_ORIGIN:Double = js.native
     }
     @js.native
     object WebsocketState extends js.Object {
-        val OPEN:js.Dynamic = js.native
-        val CLOSING:js.Dynamic = js.native
-        val CLOSED:js.Dynamic = js.native
+        val OPEN:Double = js.native
+        val CLOSING:Double = js.native
+        val CLOSED:Double = js.native
     }
     @js.native
     object XMLRPCError extends js.Object {
-        val ARGUMENTS:js.Dynamic = js.native
-        val RETVAL:js.Dynamic = js.native
+        val ARGUMENTS:Double = js.native
+        val RETVAL:Double = js.native
     }
     @js.native
     object XMLRPCFault extends js.Object {
-        val PARSE_ERROR_NOT_WELL_FORMED:js.Dynamic = js.native
-        val PARSE_ERROR_UNSUPPORTED_ENCODING:js.Dynamic = js.native
-        val PARSE_ERROR_INVALID_CHARACTER_FOR_ENCODING:js.Dynamic = js.native
-        val SERVER_ERROR_INVALID_XML_RPC:js.Dynamic = js.native
-        val SERVER_ERROR_REQUESTED_METHOD_NOT_FOUND:js.Dynamic = js.native
-        val SERVER_ERROR_INVALID_METHOD_PARAMETERS:js.Dynamic = js.native
-        val SERVER_ERROR_INTERNAL_XML_RPC_ERROR:js.Dynamic = js.native
-        val APPLICATION_ERROR:js.Dynamic = js.native
-        val SYSTEM_ERROR:js.Dynamic = js.native
-        val TRANSPORT_ERROR:js.Dynamic = js.native
+        val PARSE_ERROR_NOT_WELL_FORMED:Double = js.native
+        val PARSE_ERROR_UNSUPPORTED_ENCODING:Double = js.native
+        val PARSE_ERROR_INVALID_CHARACTER_FOR_ENCODING:Double = js.native
+        val SERVER_ERROR_INVALID_XML_RPC:Double = js.native
+        val SERVER_ERROR_REQUESTED_METHOD_NOT_FOUND:Double = js.native
+        val SERVER_ERROR_INVALID_METHOD_PARAMETERS:Double = js.native
+        val SERVER_ERROR_INTERNAL_XML_RPC_ERROR:Double = js.native
+        val APPLICATION_ERROR:Double = js.native
+        val SYSTEM_ERROR:Double = js.native
+        val TRANSPORT_ERROR:Double = js.native
     }
     @js.native
     object Cacheability extends js.Object {
-        val CACHEABLE:js.Dynamic = js.native
-        val UNCACHEABLE:js.Dynamic = js.native
-        val INVALIDATES:js.Dynamic = js.native
-        val VALIDATES:js.Dynamic = js.native
+        val CACHEABLE:Double = js.native
+        val UNCACHEABLE:Double = js.native
+        val INVALIDATES:Double = js.native
+        val VALIDATES:Double = js.native
     }
     @js.native
     object Expectation extends js.Object {
-        val UNRECOGNIZED:js.Dynamic = js.native
-        val CONTINUE:js.Dynamic = js.native
+        val UNRECOGNIZED:Double = js.native
+        val CONTINUE:Double = js.native
     }
     @js.native
     object MessageFlags extends js.Object {
-        val NO_REDIRECT:js.Dynamic = js.native
-        val CAN_REBUILD:js.Dynamic = js.native
-        val OVERWRITE_CHUNKS:js.Dynamic = js.native
-        val CONTENT_DECODED:js.Dynamic = js.native
-        val CERTIFICATE_TRUSTED:js.Dynamic = js.native
-        val NEW_CONNECTION:js.Dynamic = js.native
-        val IDEMPOTENT:js.Dynamic = js.native
-        val IGNORE_CONNECTION_LIMITS:js.Dynamic = js.native
+        val NO_REDIRECT:Double = js.native
+        val CAN_REBUILD:Double = js.native
+        val OVERWRITE_CHUNKS:Double = js.native
+        val CONTENT_DECODED:Double = js.native
+        val CERTIFICATE_TRUSTED:Double = js.native
+        val NEW_CONNECTION:Double = js.native
+        val IDEMPOTENT:Double = js.native
+        val IGNORE_CONNECTION_LIMITS:Double = js.native
     }
     @js.native
     object ServerListenOptions extends js.Object {
-        val HTTPS:js.Dynamic = js.native
-        val IPV4_ONLY:js.Dynamic = js.native
-        val IPV6_ONLY:js.Dynamic = js.native
+        val HTTPS:Double = js.native
+        val IPV4_ONLY:Double = js.native
+        val IPV6_ONLY:Double = js.native
     }
     @js.native
     class Address extends GObject.Object {
         def this(config: js.Any) = this()
-        def equal_by_ip(addr2: Any):Boolean = js.native
-        def equal_by_name(addr2: Any):Boolean = js.native
-        def get_gsockaddr():Any = js.native
+        def equal_by_ip(addr2: Address):Boolean = js.native
+        def equal_by_name(addr2: Address):Boolean = js.native
+        def get_gsockaddr():Gio.SocketAddress = js.native
         def get_name():String = js.native
         def get_physical():String = js.native
         def get_port():Any = js.native
@@ -587,12 +587,12 @@ object Soup extends js.Object {
         def hash_by_ip():Any = js.native
         def hash_by_name():Any = js.native
         def is_resolved():Boolean = js.native
-        def resolve_async(async_context: Any, cancellable: Any, callback: Any, user_data: Object):Unit = js.native
-        def resolve_sync(cancellable: Any):Any = js.native
+        def resolve_async(async_context: Any, cancellable: Gio.Cancellable, callback: Any, user_data: Object):Unit = js.native
+        def resolve_sync(cancellable: Gio.Cancellable):Any = js.native
     }
     @js.native
     object Address extends js.Object {
-        def new_any(family: Any, port: Any):Address = js.native
+        def new_any(family: Double, port: Any):Address = js.native
         def new_from_sockaddr(sa: Object, len: Any):Address = js.native
     }
     @js.native
@@ -600,7 +600,7 @@ object Soup extends js.Object {
         def this(config: js.Any) = this()
         def authenticate(username: String, password: String):Unit = js.native
         def free_protection_space(space: Any):Unit = js.native
-        def get_authorization(msg: Any):String = js.native
+        def get_authorization(msg: Message):String = js.native
         def get_host():String = js.native
         def get_info():String = js.native
         def get_protection_space(source_uri: Any):Any = js.native
@@ -611,9 +611,9 @@ object Soup extends js.Object {
         def has_saved_password(username: String, password: String):Unit = js.native
         def is_authenticated():Boolean = js.native
         def is_for_proxy():Boolean = js.native
-        def is_ready(msg: Any):Boolean = js.native
+        def is_ready(msg: Message):Boolean = js.native
         def save_password(username: String, password: String):Unit = js.native
-        def update(msg: Any, auth_header: String):Boolean = js.native
+        def update(msg: Message, auth_header: String):Boolean = js.native
     }
     @js.native
     class AuthBasic extends Auth {
@@ -623,18 +623,18 @@ object Soup extends js.Object {
     }
     @js.native
     class AuthDomain extends GObject.Object {
-        def accepts(msg: Any):String = js.native
+        def accepts(msg: Message):String = js.native
         def add_path(path: String):Unit = js.native
         def basic_set_auth_callback(callback: Any, user_data: Object, dnotify: Any):Unit = js.native
-        def challenge(msg: Any):Unit = js.native
-        def check_password(msg: Any, username: String, password: String):Boolean = js.native
-        def covers(msg: Any):Boolean = js.native
+        def challenge(msg: Message):Unit = js.native
+        def check_password(msg: Message, username: String, password: String):Boolean = js.native
+        def covers(msg: Message):Boolean = js.native
         def digest_set_auth_callback(callback: Any, user_data: Object, dnotify: Any):Unit = js.native
         def get_realm():String = js.native
         def remove_path(path: String):Unit = js.native
         def set_filter(filter: Any, filter_data: Object, dnotify: Any):Unit = js.native
         def set_generic_auth_callback(auth_callback: Any, auth_data: Object, dnotify: Any):Unit = js.native
-        def try_generic_auth_callback(msg: Any, username: String):Boolean = js.native
+        def try_generic_auth_callback(msg: Message, username: String):Boolean = js.native
     }
     @js.native
     class AuthDomainBasic extends AuthDomain {
@@ -650,7 +650,7 @@ object Soup extends js.Object {
     }
     @js.native
     class AuthManager extends GObject.Object {
-        def use_auth(uri: Any, auth: Any):Unit = js.native
+        def use_auth(uri: Any, auth: Auth):Unit = js.native
     }
     @js.native
     class AuthNTLM extends Auth {
@@ -672,7 +672,7 @@ object Soup extends js.Object {
     class ContentSniffer extends GObject.Object {
         def this(config: js.Any) = this()
         def get_buffer_size():Any = js.native
-        def sniff(msg: Any, buffer: Any, params: Any):String = js.native
+        def sniff(msg: Message, buffer: Any, params: Any):String = js.native
     }
     @js.native
     class CookieJar extends GObject.Object {
@@ -681,12 +681,12 @@ object Soup extends js.Object {
         def add_cookie_with_first_party(first_party: Any, cookie: Any):Unit = js.native
         def all_cookies():Any = js.native
         def delete_cookie(cookie: Any):Unit = js.native
-        def get_accept_policy():Any = js.native
+        def get_accept_policy():Double = js.native
         def get_cookie_list(uri: Any, for_http: Boolean):Any = js.native
         def get_cookies(uri: Any, for_http: Boolean):String = js.native
         def is_persistent():Boolean = js.native
         def save():Unit = js.native
-        def set_accept_policy(policy: Any):Unit = js.native
+        def set_accept_policy(policy: Double):Unit = js.native
         def set_cookie(uri: Any, cookie: String):Unit = js.native
         def set_cookie_with_first_party(uri: Any, first_party: Any, cookie: String):Unit = js.native
     }
@@ -701,8 +701,8 @@ object Soup extends js.Object {
     @js.native
     class Logger extends GObject.Object {
         def this(config: js.Any) = this()
-        def attach(session: Any):Unit = js.native
-        def detach(session: Any):Unit = js.native
+        def attach(session: Session):Unit = js.native
+        def detach(session: Session):Unit = js.native
         def set_printer(printer: Any, printer_data: Object, destroy: Any):Unit = js.native
         def set_request_filter(request_filter: Any, filter_data: Object, destroy: Any):Unit = js.native
         def set_response_filter(response_filter: Any, filter_data: Object, destroy: Any):Unit = js.native
@@ -715,13 +715,13 @@ object Soup extends js.Object {
         def content_sniffed(content_type0: String, params: Any):Unit = js.native
         def disable_feature(feature_type0: Any):Unit = js.native
         def finished():Unit = js.native
-        def get_address():Any = js.native
+        def get_address():Address = js.native
         def get_first_party():Any = js.native
-        def get_flags():Any = js.native
-        def get_http_version():Any = js.native
-        def get_https_status(certificate: Any, errors: Any):Boolean = js.native
-        def get_priority():Any = js.native
-        def get_soup_request():Any = js.native
+        def get_flags():Double = js.native
+        def get_http_version():Double = js.native
+        def get_https_status(certificate: Gio.TlsCertificate, errors: Double):Boolean = js.native
+        def get_priority():Double = js.native
+        def get_soup_request():Request = js.native
         def get_uri():Any = js.native
         def got_body():Unit = js.native
         def got_chunk(chunk: Any):Unit = js.native
@@ -731,11 +731,11 @@ object Soup extends js.Object {
         def restarted():Unit = js.native
         def set_chunk_allocator(allocator: Any, user_data: Object, destroy_notify: Any):Unit = js.native
         def set_first_party(first_party: Any):Unit = js.native
-        def set_flags(flags: Any):Unit = js.native
-        def set_http_version(version: Any):Unit = js.native
-        def set_priority(priority: Any):Unit = js.native
+        def set_flags(flags: Double):Unit = js.native
+        def set_http_version(version: Double):Unit = js.native
+        def set_priority(priority: Double):Unit = js.native
         def set_redirect(status_code: Any, redirect_uri: String):Unit = js.native
-        def set_request(content_type0: String, req_use: Any, req_body: js.Array[Any], req_length: Any):Unit = js.native
+        def set_request(content_type0: String, req_use: Double, req_body: js.Array[Any], req_length: Any):Unit = js.native
         def set_response(content_type0:String, resp_use: Any, resp_body:String, resp_length:Number):Unit = js.native
 
         def set_status(status_code: Any):Unit = js.native
@@ -756,9 +756,9 @@ object Soup extends js.Object {
     class MultipartInputStream extends Gio.FilterInputStream {
         def this(config: js.Any) = this()
         def get_headers():Any = js.native
-        def next_part(cancellable: Any):Any = js.native
-        def next_part_async(io_priority: Any, cancellable: Any, callback: Any, data: Object):Unit = js.native
-        def next_part_finish(result: Any):Any = js.native
+        def next_part(cancellable: Gio.Cancellable):Gio.InputStream = js.native
+        def next_part_async(io_priority: Any, cancellable: Gio.Cancellable, callback: Any, data: Object):Unit = js.native
+        def next_part_finish(result: Any):Gio.InputStream = js.native
     }
     @js.native
     class ProxyResolverDefault extends GObject.Object {
@@ -767,11 +767,11 @@ object Soup extends js.Object {
     class Request extends GObject.Object {
         def get_content_length():Any = js.native
         def get_content_type():String = js.native
-        def get_session():Any = js.native
+        def get_session():Session = js.native
         def get_uri():Any = js.native
-        def send(cancellable: Any):Any = js.native
-        def send_async(cancellable: Any, callback: Any, user_data: Object):Unit = js.native
-        def send_finish(result: Any):Any = js.native
+        def send(cancellable: Gio.Cancellable):Gio.InputStream = js.native
+        def send_async(cancellable: Gio.Cancellable, callback: Any, user_data: Object):Unit = js.native
+        def send_finish(result: Any):Gio.InputStream = js.native
     }
     @js.native
     class RequestData extends Request {
@@ -782,42 +782,42 @@ object Soup extends js.Object {
     }
     @js.native
     class RequestHTTP extends Request {
-        def get_message():Any = js.native
+        def get_message():Message = js.native
     }
     @js.native
     class Requester extends GObject.Object {
         def this(config: js.Any) = this()
-        def request(uri_string: String):Any = js.native
-        def request_uri(uri: Any):Any = js.native
+        def request(uri_string: String):Request = js.native
+        def request_uri(uri: Any):Request = js.native
     }
     @js.native
     class Server extends GObject.Object {
         def this(config: js.Any) = this()
-        def accept_iostream(stream: Any, local_addr: Any, remote_addr: Any):Boolean = js.native
-        def add_auth_domain(auth_domain: Any):Unit = js.native
+        def accept_iostream(stream: Gio.IOStream, local_addr: Gio.SocketAddress, remote_addr: Gio.SocketAddress):Boolean = js.native
+        def add_auth_domain(auth_domain: AuthDomain):Unit = js.native
         def add_early_handler(path: String, callback: Any, user_data: Object, destroy: Any):Unit = js.native
         def add_handler(path: String, callback: Any, user_data: Object, destroy: Any):Unit = js.native
         def add_websocket_handler(path: String, origin: String, protocols: js.Array[String], callback: Any, user_data: Object, destroy: Any):Unit = js.native
         def disconnect():Unit = js.native
         def get_async_context():Any = js.native
-        def get_listener():Any = js.native
+        def get_listener():Socket = js.native
         def get_listeners():Any = js.native
         def get_port():Any = js.native
         def get_uris():Any = js.native
         def is_https():Boolean = js.native
-        def listen(address: Any, options: Any):Boolean = js.native
-        def listen_all(port: Any, options: Any):Boolean = js.native
-        def listen_fd(fd: Any, options: Any):Boolean = js.native
-        def listen_local(port: Any, options: Any):Boolean = js.native
-        def listen_socket(socket: Any, options: Any):Boolean = js.native
-        def pause_message(msg: Any):Unit = js.native
+        def listen(address: Gio.SocketAddress, options: Double):Boolean = js.native
+        def listen_all(port: Any, options: Double):Boolean = js.native
+        def listen_fd(fd: Any, options: Double):Boolean = js.native
+        def listen_local(port: Any, options: Double):Boolean = js.native
+        def listen_socket(socket: Gio.Socket, options: Double):Boolean = js.native
+        def pause_message(msg: Message):Unit = js.native
         def quit():Unit = js.native
-        def remove_auth_domain(auth_domain: Any):Unit = js.native
+        def remove_auth_domain(auth_domain: AuthDomain):Unit = js.native
         def remove_handler(path: String):Unit = js.native
         def run():Unit = js.native
         def run_async():Unit = js.native
         def set_ssl_cert_file(ssl_cert_file: String, ssl_key_file: String):Boolean = js.native
-        def unpause_message(msg: Any):Unit = js.native
+        def unpause_message(msg: Message):Unit = js.native
     }
     @js.native
     class Session extends GObject.Object {
@@ -825,33 +825,33 @@ object Soup extends js.Object {
         def abort():Unit = js.native
         def add_feature(feature: Any):Unit = js.native
         def add_feature_by_type(feature_type0: Any):Unit = js.native
-        def cancel_message(msg: Any, status_code: Any):Unit = js.native
+        def cancel_message(msg: Message, status_code: Any):Unit = js.native
         def get_async_context():Any = js.native
         def get_feature(feature_type0: Any):Any = js.native
-        def get_feature_for_message(feature_type0: Any, msg: Any):Any = js.native
+        def get_feature_for_message(feature_type0: Any, msg: Message):Any = js.native
         def get_features(feature_type0: Any):Any = js.native
         def has_feature(feature_type0: Any):Boolean = js.native
-        def pause_message(msg: Any):Unit = js.native
-        def prefetch_dns(hostname: String, cancellable: Any, callback: Any, user_data: Object):Unit = js.native
+        def pause_message(msg: Message):Unit = js.native
+        def prefetch_dns(hostname: String, cancellable: Gio.Cancellable, callback: Any, user_data: Object):Unit = js.native
         def prepare_for_uri(uri: Any):Unit = js.native
-        def queue_message(msg: Any, callback: Any, user_data: Object):Unit = js.native
-        def redirect_message(msg: Any):Boolean = js.native
+        def queue_message(msg: Message, callback: Any, user_data: Object):Unit = js.native
+        def redirect_message(msg: Message):Boolean = js.native
         def remove_feature(feature: Any):Unit = js.native
         def remove_feature_by_type(feature_type0: Any):Unit = js.native
-        def request(uri_string: String):Any = js.native
-        def request_http(method: String, uri_string: String):Any = js.native
-        def request_http_uri(method: String, uri: Any):Any = js.native
-        def request_uri(uri: Any):Any = js.native
-        def requeue_message(msg: Any):Unit = js.native
-        def send(msg: Any, cancellable: Any):Any = js.native
-        def send_async(msg: Any, cancellable: Any, callback: Any, user_data: Object):Unit = js.native
-        def send_finish(result: Any):Any = js.native
-        def send_message(msg: Any):Any = js.native
-        def steal_connection(msg: Any):Any = js.native
-        def unpause_message(msg: Any):Unit = js.native
-        def websocket_connect_async(msg: Any, origin: String, protocols: js.Array[String], cancellable: Any, callback: Any, user_data: Object):Unit = js.native
-        def websocket_connect_finish(result: Any):Any = js.native
-        def would_redirect(msg: Any):Boolean = js.native
+        def request(uri_string: String):Request = js.native
+        def request_http(method: String, uri_string: String):RequestHTTP = js.native
+        def request_http_uri(method: String, uri: Any):RequestHTTP = js.native
+        def request_uri(uri: Any):Request = js.native
+        def requeue_message(msg: Message):Unit = js.native
+        def send(msg: Message, cancellable: Gio.Cancellable):Gio.InputStream = js.native
+        def send_async(msg: Message, cancellable: Gio.Cancellable, callback: Any, user_data: Object):Unit = js.native
+        def send_finish(result: Any):Gio.InputStream = js.native
+        def send_message(msg: Message):Any = js.native
+        def steal_connection(msg: Message):Gio.IOStream = js.native
+        def unpause_message(msg: Message):Unit = js.native
+        def websocket_connect_async(msg: Message, origin: String, protocols: js.Array[String], cancellable: Gio.Cancellable, callback: Any, user_data: Object):Unit = js.native
+        def websocket_connect_finish(result: Any):WebsocketConnection = js.native
+        def would_redirect(msg: Message):Boolean = js.native
     }
     @js.native
     object Session extends js.Object {
@@ -876,20 +876,20 @@ object Soup extends js.Object {
     @js.native
     class Socket extends GObject.Object {
         def this(config: js.Any) = this()
-        def connect_async(cancellable: Any, callback: Any, user_data: Object):Unit = js.native
-        def connect_sync(cancellable: Any):Any = js.native
+        def connect_async(cancellable: Gio.Cancellable, callback: Any, user_data: Object):Unit = js.native
+        def connect_sync(cancellable: Gio.Cancellable):Any = js.native
         def disconnect():Unit = js.native
         def get_fd():Any = js.native
-        def get_local_address():Any = js.native
-        def get_remote_address():Any = js.native
+        def get_local_address():Address = js.native
+        def get_remote_address():Address = js.native
         def is_connected():Boolean = js.native
         def is_ssl():Boolean = js.native
         def listen():Boolean = js.native
-        def read(buffer: js.Array[Any], len: Any, nread: Any, cancellable: Any):Any = js.native
-        def read_until(buffer: js.Array[Any], len: Any, boundary: Object, boundary_len: Any, nread: Any, got_boundary: Boolean, cancellable: Any):Any = js.native
-        def start_proxy_ssl(ssl_host: String, cancellable: Any):Boolean = js.native
-        def start_ssl(cancellable: Any):Boolean = js.native
-        def write(buffer: js.Array[Any], len: Any, nwrote: Any, cancellable: Any):Any = js.native
+        def read(buffer: js.Array[Any], len: Any, nread: Any, cancellable: Gio.Cancellable):Double = js.native
+        def read_until(buffer: js.Array[Any], len: Any, boundary: Object, boundary_len: Any, nread: Any, got_boundary: Boolean, cancellable: Gio.Cancellable):Double = js.native
+        def start_proxy_ssl(ssl_host: String, cancellable: Gio.Cancellable):Boolean = js.native
+        def start_ssl(cancellable: Gio.Cancellable):Boolean = js.native
+        def write(buffer: js.Array[Any], len: Any, nwrote: Any, cancellable: Gio.Cancellable):Double = js.native
     }
     @js.native
     class WebsocketConnection extends GObject.Object {
@@ -897,11 +897,11 @@ object Soup extends js.Object {
         def close(code: Any, data: String):Unit = js.native
         def get_close_code():Any = js.native
         def get_close_data():String = js.native
-        def get_connection_type():Any = js.native
-        def get_io_stream():Any = js.native
+        def get_connection_type():Double = js.native
+        def get_io_stream():Gio.IOStream = js.native
         def get_origin():String = js.native
         def get_protocol():String = js.native
-        def get_state():Any = js.native
+        def get_state():Double = js.native
         def get_uri():Any = js.native
         def send_binary(data: js.Array[Any], length: Any):Unit = js.native
         def send_text(text: String):Unit = js.native

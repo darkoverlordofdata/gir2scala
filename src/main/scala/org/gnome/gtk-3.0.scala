@@ -271,69 +271,69 @@ object Gtk extends js.Object {
     val TEXT_VIEW_PRIORITY_VALIDATE:Any = js.native
     val TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID:Any = js.native
     val TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID:Any = js.native
-    def accel_groups_activate(object0: Any, accel_key: Any, accel_mods: Any):Boolean = js.native
-    def accel_groups_from_object(object0: Any):Any = js.native
-    def accelerator_get_default_mod_mask():Any = js.native
-    def accelerator_get_label(accelerator_key: Any, accelerator_mods: Any):String = js.native
-    def accelerator_get_label_with_keycode(display: Any, accelerator_key: Any, keycode: Any, accelerator_mods: Any):String = js.native
-    def accelerator_name(accelerator_key: Any, accelerator_mods: Any):String = js.native
-    def accelerator_name_with_keycode(display: Any, accelerator_key: Any, keycode: Any, accelerator_mods: Any):String = js.native
-    def accelerator_parse(accelerator: String, accelerator_key: Any, accelerator_mods: Any):Unit = js.native
-    def accelerator_parse_with_keycode(accelerator: String, accelerator_key: Any, accelerator_codes: js.Array[Any], accelerator_mods: Any):Unit = js.native
-    def accelerator_set_default_mod_mask(default_mod_mask: Any):Unit = js.native
-    def accelerator_valid(keyval0: Any, modifiers: Any):Boolean = js.native
-    def alternative_dialog_button_order(screen: Any):Boolean = js.native
-    def binding_entry_add_signal_from_string(binding_set: Any, signal_desc: String):Any = js.native
-    def binding_entry_add_signall(binding_set: Any, keyval0: Any, modifiers: Any, signal_name: String, binding_args: Any):Unit = js.native
-    def binding_entry_remove(binding_set: Any, keyval0: Any, modifiers: Any):Unit = js.native
-    def binding_entry_skip(binding_set: Any, keyval0: Any, modifiers: Any):Unit = js.native
+    def accel_groups_activate(object0: GObject.Object, accel_key: Any, accel_mods: Double):Boolean = js.native
+    def accel_groups_from_object(object0: GObject.Object):Any = js.native
+    def accelerator_get_default_mod_mask():Double = js.native
+    def accelerator_get_label(accelerator_key: Any, accelerator_mods: Double):String = js.native
+    def accelerator_get_label_with_keycode(display: Gdk.Display, accelerator_key: Any, keycode: Any, accelerator_mods: Double):String = js.native
+    def accelerator_name(accelerator_key: Any, accelerator_mods: Double):String = js.native
+    def accelerator_name_with_keycode(display: Gdk.Display, accelerator_key: Any, keycode: Any, accelerator_mods: Double):String = js.native
+    def accelerator_parse(accelerator: String, accelerator_key: Any, accelerator_mods: Double):Unit = js.native
+    def accelerator_parse_with_keycode(accelerator: String, accelerator_key: Any, accelerator_codes: js.Array[Any], accelerator_mods: Double):Unit = js.native
+    def accelerator_set_default_mod_mask(default_mod_mask: Double):Unit = js.native
+    def accelerator_valid(keyval0: Any, modifiers: Double):Boolean = js.native
+    def alternative_dialog_button_order(screen: Gdk.Screen):Boolean = js.native
+    def binding_entry_add_signal_from_string(binding_set: Any, signal_desc: String):Double = js.native
+    def binding_entry_add_signall(binding_set: Any, keyval0: Any, modifiers: Double, signal_name: String, binding_args: Any):Unit = js.native
+    def binding_entry_remove(binding_set: Any, keyval0: Any, modifiers: Double):Unit = js.native
+    def binding_entry_skip(binding_set: Any, keyval0: Any, modifiers: Double):Unit = js.native
     def binding_set_by_class(object_class: Object):Any = js.native
     def binding_set_find(set_name: String):Any = js.native
     def binding_set_new(set_name: String):Any = js.native
-    def bindings_activate(object0: Any, keyval0: Any, modifiers: Any):Boolean = js.native
-    def bindings_activate_event(object0: Any, event: Any):Boolean = js.native
+    def bindings_activate(object0: GObject.Object, keyval0: Any, modifiers: Double):Boolean = js.native
+    def bindings_activate_event(object0: GObject.Object, event: Any):Boolean = js.native
     def builder_error_quark():Any = js.native
-    def cairo_should_draw_window(cr: Any, window: Any):Boolean = js.native
-    def cairo_transform_to_window(cr: Any, widget: Any, window: Any):Unit = js.native
+    def cairo_should_draw_window(cr: Any, window: Gdk.Window):Boolean = js.native
+    def cairo_transform_to_window(cr: Any, widget: Widget, window: Gdk.Window):Unit = js.native
     def check_version(required_major: Any, required_minor: Any, required_micro: Any):String = js.native
     def css_provider_error_quark():Any = js.native
-    def device_grab_add(widget: Any, device: Any, block_others: Boolean):Unit = js.native
-    def device_grab_remove(widget: Any, device: Any):Unit = js.native
+    def device_grab_add(widget: Widget, device: Gdk.Device, block_others: Boolean):Unit = js.native
+    def device_grab_remove(widget: Widget, device: Gdk.Device):Unit = js.native
     def disable_setlocale():Unit = js.native
     def distribute_natural_allocation(extra_space: Any, n_requested_sizes: Any, sizes: Any):Any = js.native
-    def drag_cancel(context: Any):Unit = js.native
-    def drag_finish(context: Any, success: Boolean, del: Boolean, time0: Any):Unit = js.native
-    def drag_get_source_widget(context: Any):Any = js.native
-    def drag_set_icon_default(context: Any):Unit = js.native
-    def drag_set_icon_gicon(context: Any, icon: Any, hot_x: Any, hot_y: Any):Unit = js.native
-    def drag_set_icon_name(context: Any, icon_name: String, hot_x: Any, hot_y: Any):Unit = js.native
-    def drag_set_icon_pixbuf(context: Any, pixbuf: Any, hot_x: Any, hot_y: Any):Unit = js.native
-    def drag_set_icon_stock(context: Any, stock_id: String, hot_x: Any, hot_y: Any):Unit = js.native
-    def drag_set_icon_surface(context: Any, surface: Any):Unit = js.native
-    def drag_set_icon_widget(context: Any, widget: Any, hot_x: Any, hot_y: Any):Unit = js.native
-    def draw_insertion_cursor(widget: Any, cr: Any, location: Any, is_primary: Boolean, direction: Any, draw_arrow: Boolean):Unit = js.native
+    def drag_cancel(context: Gdk.DragContext):Unit = js.native
+    def drag_finish(context: Gdk.DragContext, success: Boolean, del: Boolean, time0: Any):Unit = js.native
+    def drag_get_source_widget(context: Gdk.DragContext):Widget = js.native
+    def drag_set_icon_default(context: Gdk.DragContext):Unit = js.native
+    def drag_set_icon_gicon(context: Gdk.DragContext, icon: Any, hot_x: Any, hot_y: Any):Unit = js.native
+    def drag_set_icon_name(context: Gdk.DragContext, icon_name: String, hot_x: Any, hot_y: Any):Unit = js.native
+    def drag_set_icon_pixbuf(context: Gdk.DragContext, pixbuf: Any, hot_x: Any, hot_y: Any):Unit = js.native
+    def drag_set_icon_stock(context: Gdk.DragContext, stock_id: String, hot_x: Any, hot_y: Any):Unit = js.native
+    def drag_set_icon_surface(context: Gdk.DragContext, surface: Any):Unit = js.native
+    def drag_set_icon_widget(context: Gdk.DragContext, widget: Widget, hot_x: Any, hot_y: Any):Unit = js.native
+    def draw_insertion_cursor(widget: Widget, cr: Any, location: Any, is_primary: Boolean, direction: Double, draw_arrow: Boolean):Unit = js.native
     def events_pending():Boolean = js.native
     def false0():Boolean = js.native
     def file_chooser_error_quark():Any = js.native
     def get_binary_age():Any = js.native
     def get_current_event():Any = js.native
-    def get_current_event_device():Any = js.native
-    def get_current_event_state(state: Any):Boolean = js.native
+    def get_current_event_device():Gdk.Device = js.native
+    def get_current_event_state(state: Double):Boolean = js.native
     def get_current_event_time():Any = js.native
     def get_debug_flags():Any = js.native
     def get_default_language():Any = js.native
-    def get_event_widget(event: Any):Any = js.native
+    def get_event_widget(event: Any):Widget = js.native
     def get_interface_age():Any = js.native
-    def get_locale_direction():Any = js.native
+    def get_locale_direction():Double = js.native
     def get_major_version():Any = js.native
     def get_micro_version():Any = js.native
     def get_minor_version():Any = js.native
     def get_option_group(open_default_display: Boolean):Any = js.native
-    def grab_get_current():Any = js.native
+    def grab_get_current():Widget = js.native
     def icon_size_from_name(name: String):Any = js.native
     def icon_size_get_name(size: Any):String = js.native
     def icon_size_lookup(size: Any, width: Any, height: Any):Boolean = js.native
-    def icon_size_lookup_for_settings(settings: Any, size: Any, width: Any, height: Any):Boolean = js.native
+    def icon_size_lookup_for_settings(settings: Settings, size: Any, width: Any, height: Any):Boolean = js.native
     def icon_size_register(name: String, width: Any, height: Any):Any = js.native
     def icon_size_register_alias(alias: String, target: Any):Unit = js.native
     def icon_theme_error_quark():Any = js.native
@@ -348,90 +348,90 @@ object Gtk extends js.Object {
     def main_iteration_do(blocking: Boolean):Boolean = js.native
     def main_level():Any = js.native
     def main_quit():Unit = js.native
-    def paint_arrow(style: Any, cr: Any, state_type0: Any, shadow_type0: Any, widget: Any, detail: String, arrow_type0: Any, fill: Boolean, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def paint_box(style: Any, cr: Any, state_type0: Any, shadow_type0: Any, widget: Any, detail: String, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def paint_box_gap(style: Any, cr: Any, state_type0: Any, shadow_type0: Any, widget: Any, detail: String, x: Any, y: Any, width: Any, height: Any, gap_side: Any, gap_x: Any, gap_width: Any):Unit = js.native
-    def paint_check(style: Any, cr: Any, state_type0: Any, shadow_type0: Any, widget: Any, detail: String, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def paint_diamond(style: Any, cr: Any, state_type0: Any, shadow_type0: Any, widget: Any, detail: String, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def paint_expander(style: Any, cr: Any, state_type0: Any, widget: Any, detail: String, x: Any, y: Any, expander_style: Any):Unit = js.native
-    def paint_extension(style: Any, cr: Any, state_type0: Any, shadow_type0: Any, widget: Any, detail: String, x: Any, y: Any, width: Any, height: Any, gap_side: Any):Unit = js.native
-    def paint_flat_box(style: Any, cr: Any, state_type0: Any, shadow_type0: Any, widget: Any, detail: String, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def paint_focus(style: Any, cr: Any, state_type0: Any, widget: Any, detail: String, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def paint_handle(style: Any, cr: Any, state_type0: Any, shadow_type0: Any, widget: Any, detail: String, x: Any, y: Any, width: Any, height: Any, orientation: Any):Unit = js.native
-    def paint_hline(style: Any, cr: Any, state_type0: Any, widget: Any, detail: String, x1: Any, x2: Any, y: Any):Unit = js.native
-    def paint_layout(style: Any, cr: Any, state_type0: Any, use_text: Boolean, widget: Any, detail: String, x: Any, y: Any, layout: Any):Unit = js.native
-    def paint_option(style: Any, cr: Any, state_type0: Any, shadow_type0: Any, widget: Any, detail: String, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def paint_resize_grip(style: Any, cr: Any, state_type0: Any, widget: Any, detail: String, edge: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def paint_shadow(style: Any, cr: Any, state_type0: Any, shadow_type0: Any, widget: Any, detail: String, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def paint_shadow_gap(style: Any, cr: Any, state_type0: Any, shadow_type0: Any, widget: Any, detail: String, x: Any, y: Any, width: Any, height: Any, gap_side: Any, gap_x: Any, gap_width: Any):Unit = js.native
-    def paint_slider(style: Any, cr: Any, state_type0: Any, shadow_type0: Any, widget: Any, detail: String, x: Any, y: Any, width: Any, height: Any, orientation: Any):Unit = js.native
-    def paint_spinner(style: Any, cr: Any, state_type0: Any, widget: Any, detail: String, step: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def paint_tab(style: Any, cr: Any, state_type0: Any, shadow_type0: Any, widget: Any, detail: String, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def paint_vline(style: Any, cr: Any, state_type0: Any, widget: Any, detail: String, y10: Any, y20: Any, x: Any):Unit = js.native
+    def paint_arrow(style: Style, cr: Any, state_type0: Double, shadow_type0: Double, widget: Widget, detail: String, arrow_type0: Double, fill: Boolean, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def paint_box(style: Style, cr: Any, state_type0: Double, shadow_type0: Double, widget: Widget, detail: String, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def paint_box_gap(style: Style, cr: Any, state_type0: Double, shadow_type0: Double, widget: Widget, detail: String, x: Any, y: Any, width: Any, height: Any, gap_side: Double, gap_x: Any, gap_width: Any):Unit = js.native
+    def paint_check(style: Style, cr: Any, state_type0: Double, shadow_type0: Double, widget: Widget, detail: String, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def paint_diamond(style: Style, cr: Any, state_type0: Double, shadow_type0: Double, widget: Widget, detail: String, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def paint_expander(style: Style, cr: Any, state_type0: Double, widget: Widget, detail: String, x: Any, y: Any, expander_style: Double):Unit = js.native
+    def paint_extension(style: Style, cr: Any, state_type0: Double, shadow_type0: Double, widget: Widget, detail: String, x: Any, y: Any, width: Any, height: Any, gap_side: Double):Unit = js.native
+    def paint_flat_box(style: Style, cr: Any, state_type0: Double, shadow_type0: Double, widget: Widget, detail: String, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def paint_focus(style: Style, cr: Any, state_type0: Double, widget: Widget, detail: String, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def paint_handle(style: Style, cr: Any, state_type0: Double, shadow_type0: Double, widget: Widget, detail: String, x: Any, y: Any, width: Any, height: Any, orientation: Double):Unit = js.native
+    def paint_hline(style: Style, cr: Any, state_type0: Double, widget: Widget, detail: String, x1: Any, x2: Any, y: Any):Unit = js.native
+    def paint_layout(style: Style, cr: Any, state_type0: Double, use_text: Boolean, widget: Widget, detail: String, x: Any, y: Any, layout: Pango.Layout):Unit = js.native
+    def paint_option(style: Style, cr: Any, state_type0: Double, shadow_type0: Double, widget: Widget, detail: String, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def paint_resize_grip(style: Style, cr: Any, state_type0: Double, widget: Widget, detail: String, edge: Double, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def paint_shadow(style: Style, cr: Any, state_type0: Double, shadow_type0: Double, widget: Widget, detail: String, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def paint_shadow_gap(style: Style, cr: Any, state_type0: Double, shadow_type0: Double, widget: Widget, detail: String, x: Any, y: Any, width: Any, height: Any, gap_side: Double, gap_x: Any, gap_width: Any):Unit = js.native
+    def paint_slider(style: Style, cr: Any, state_type0: Double, shadow_type0: Double, widget: Widget, detail: String, x: Any, y: Any, width: Any, height: Any, orientation: Double):Unit = js.native
+    def paint_spinner(style: Style, cr: Any, state_type0: Double, widget: Widget, detail: String, step: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def paint_tab(style: Style, cr: Any, state_type0: Double, shadow_type0: Double, widget: Widget, detail: String, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def paint_vline(style: Style, cr: Any, state_type0: Double, widget: Widget, detail: String, y10: Any, y20: Any, x: Any):Unit = js.native
     def paper_size_get_default():String = js.native
     def paper_size_get_paper_sizes(include_custom: Boolean):Any = js.native
     def parse_args(args:Any*):Boolean = js.native
     def print_error_quark():Any = js.native
-    def print_run_page_setup_dialog(parent: Any, page_setup: Any, settings: Any):Any = js.native
-    def print_run_page_setup_dialog_async(parent: Any, page_setup: Any, settings: Any, done_cb: Any, data: Object):Unit = js.native
-    def propagate_event(widget: Any, event: Any):Unit = js.native
+    def print_run_page_setup_dialog(parent: Window, page_setup: PageSetup, settings: PrintSettings):PageSetup = js.native
+    def print_run_page_setup_dialog_async(parent: Window, page_setup: PageSetup, settings: PrintSettings, done_cb: Any, data: Object):Unit = js.native
+    def propagate_event(widget: Widget, event: Any):Unit = js.native
     def rc_add_default_file(filename: Any):Unit = js.native
     def rc_find_module_in_path(module_file: String):Any = js.native
-    def rc_find_pixmap_in_path(settings: Any, scanner: Any, pixmap_file: String):Any = js.native
+    def rc_find_pixmap_in_path(settings: Settings, scanner: Any, pixmap_file: String):Any = js.native
     def rc_get_default_files():js.Array[Any] = js.native
     def rc_get_im_module_file():Any = js.native
     def rc_get_im_module_path():Any = js.native
     def rc_get_module_dir():Any = js.native
-    def rc_get_style(widget: Any):Any = js.native
-    def rc_get_style_by_paths(settings: Any, widget_path: String, class_path: String, type0: Any):Any = js.native
+    def rc_get_style(widget: Widget):Style = js.native
+    def rc_get_style_by_paths(settings: Settings, widget_path: String, class_path: String, type0: Any):Style = js.native
     def rc_get_theme_dir():String = js.native
     def rc_parse(filename: String):Unit = js.native
     def rc_parse_color(scanner: Any, color: Any):Any = js.native
-    def rc_parse_color_full(scanner: Any, style: Any, color: Any):Any = js.native
-    def rc_parse_priority(scanner: Any, priority: Any):Any = js.native
-    def rc_parse_state(scanner: Any, state: Any):Any = js.native
+    def rc_parse_color_full(scanner: Any, style: RcStyle, color: Any):Any = js.native
+    def rc_parse_priority(scanner: Any, priority: Double):Any = js.native
+    def rc_parse_state(scanner: Any, state: Double):Any = js.native
     def rc_parse_string(rc_string: String):Unit = js.native
-    def rc_property_parse_border(pspec: Any, gstring: Any, property_value: Any):Boolean = js.native
-    def rc_property_parse_color(pspec: Any, gstring: Any, property_value: Any):Boolean = js.native
-    def rc_property_parse_enum(pspec: Any, gstring: Any, property_value: Any):Boolean = js.native
-    def rc_property_parse_flags(pspec: Any, gstring: Any, property_value: Any):Boolean = js.native
-    def rc_property_parse_requisition(pspec: Any, gstring: Any, property_value: Any):Boolean = js.native
+    def rc_property_parse_border(pspec: GObject.ParamSpec, gstring: Any, property_value: Any):Boolean = js.native
+    def rc_property_parse_color(pspec: GObject.ParamSpec, gstring: Any, property_value: Any):Boolean = js.native
+    def rc_property_parse_enum(pspec: GObject.ParamSpec, gstring: Any, property_value: Any):Boolean = js.native
+    def rc_property_parse_flags(pspec: GObject.ParamSpec, gstring: Any, property_value: Any):Boolean = js.native
+    def rc_property_parse_requisition(pspec: GObject.ParamSpec, gstring: Any, property_value: Any):Boolean = js.native
     def rc_reparse_all():Boolean = js.native
-    def rc_reparse_all_for_settings(settings: Any, force_load: Boolean):Boolean = js.native
-    def rc_reset_styles(settings: Any):Unit = js.native
+    def rc_reparse_all_for_settings(settings: Settings, force_load: Boolean):Boolean = js.native
+    def rc_reset_styles(settings: Settings):Unit = js.native
     def rc_scanner_new():Any = js.native
     def rc_set_default_files(filenames: js.Array[Any]):Unit = js.native
     def recent_chooser_error_quark():Any = js.native
     def recent_manager_error_quark():Any = js.native
-    def render_activity(context: Any, cr: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def render_arrow(context: Any, cr: Any, angle: Any, x: Any, y: Any, size: Any):Unit = js.native
-    def render_background(context: Any, cr: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def render_check(context: Any, cr: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def render_expander(context: Any, cr: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def render_extension(context: Any, cr: Any, x: Any, y: Any, width: Any, height: Any, gap_side: Any):Unit = js.native
-    def render_focus(context: Any, cr: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def render_frame(context: Any, cr: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def render_frame_gap(context: Any, cr: Any, x: Any, y: Any, width: Any, height: Any, gap_side: Any, xy0_gap: Any, xy1_gap: Any):Unit = js.native
-    def render_handle(context: Any, cr: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def render_icon(context: Any, cr: Any, pixbuf: Any, x: Any, y: Any):Unit = js.native
-    def render_icon_pixbuf(context: Any, source: Any, size: Any):Any = js.native
-    def render_icon_surface(context: Any, cr: Any, surface: Any, x: Any, y: Any):Unit = js.native
-    def render_insertion_cursor(context: Any, cr: Any, x: Any, y: Any, layout: Any, index: Any, direction: Any):Unit = js.native
-    def render_layout(context: Any, cr: Any, x: Any, y: Any, layout: Any):Unit = js.native
-    def render_line(context: Any, cr: Any, x0: Any, y0: Any, x1: Any, y1: Any):Unit = js.native
-    def render_option(context: Any, cr: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-    def render_slider(context: Any, cr: Any, x: Any, y: Any, width: Any, height: Any, orientation: Any):Unit = js.native
+    def render_activity(context: StyleContext, cr: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def render_arrow(context: StyleContext, cr: Any, angle: Any, x: Any, y: Any, size: Any):Unit = js.native
+    def render_background(context: StyleContext, cr: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def render_check(context: StyleContext, cr: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def render_expander(context: StyleContext, cr: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def render_extension(context: StyleContext, cr: Any, x: Any, y: Any, width: Any, height: Any, gap_side: Double):Unit = js.native
+    def render_focus(context: StyleContext, cr: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def render_frame(context: StyleContext, cr: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def render_frame_gap(context: StyleContext, cr: Any, x: Any, y: Any, width: Any, height: Any, gap_side: Double, xy0_gap: Any, xy1_gap: Any):Unit = js.native
+    def render_handle(context: StyleContext, cr: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def render_icon(context: StyleContext, cr: Any, pixbuf: Any, x: Any, y: Any):Unit = js.native
+    def render_icon_pixbuf(context: StyleContext, source: Any, size: Any):Any = js.native
+    def render_icon_surface(context: StyleContext, cr: Any, surface: Any, x: Any, y: Any):Unit = js.native
+    def render_insertion_cursor(context: StyleContext, cr: Any, x: Any, y: Any, layout: Pango.Layout, index: Any, direction: Double):Unit = js.native
+    def render_layout(context: StyleContext, cr: Any, x: Any, y: Any, layout: Pango.Layout):Unit = js.native
+    def render_line(context: StyleContext, cr: Any, x0: Any, y0: Any, x1: Any, y1: Any):Unit = js.native
+    def render_option(context: StyleContext, cr: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+    def render_slider(context: StyleContext, cr: Any, x: Any, y: Any, width: Any, height: Any, orientation: Double):Unit = js.native
     def rgb_to_hsv(r: Any, g: Any, b: Any, h: Any, s: Any, v: Any):Unit = js.native
-    def selection_add_target(widget: Any, selection: Any, target: Any, info: Any):Unit = js.native
-    def selection_add_targets(widget: Any, selection: Any, targets: js.Array[Any], ntargets: Any):Unit = js.native
-    def selection_clear_targets(widget: Any, selection: Any):Unit = js.native
-    def selection_convert(widget: Any, selection: Any, target: Any, time0: Any):Boolean = js.native
-    def selection_owner_set(widget: Any, selection: Any, time0: Any):Boolean = js.native
-    def selection_owner_set_for_display(display: Any, widget: Any, selection: Any, time0: Any):Boolean = js.native
-    def selection_remove_all(widget: Any):Unit = js.native
+    def selection_add_target(widget: Widget, selection: Any, target: Any, info: Any):Unit = js.native
+    def selection_add_targets(widget: Widget, selection: Any, targets: js.Array[Any], ntargets: Any):Unit = js.native
+    def selection_clear_targets(widget: Widget, selection: Any):Unit = js.native
+    def selection_convert(widget: Widget, selection: Any, target: Any, time0: Any):Boolean = js.native
+    def selection_owner_set(widget: Widget, selection: Any, time0: Any):Boolean = js.native
+    def selection_owner_set_for_display(display: Gdk.Display, widget: Widget, selection: Any, time0: Any):Boolean = js.native
+    def selection_remove_all(widget: Widget):Unit = js.native
     def set_debug_flags(flags: Any):Unit = js.native
-    def show_about_dialog(parent: Any, first_property_name: String, rest:Any*):Unit = js.native
-    def show_uri(screen: Any, uri: String, timestamp: Any):Boolean = js.native
+    def show_about_dialog(parent: Window, first_property_name: String, rest:Any*):Unit = js.native
+    def show_uri(screen: Gdk.Screen, uri: String, timestamp: Any):Boolean = js.native
     def stock_add(items: js.Array[Any], n_items: Any):Unit = js.native
     def stock_add_static(items: js.Array[Any], n_items: Any):Unit = js.native
     def stock_list_ids():Any = js.native
@@ -440,1004 +440,1004 @@ object Gtk extends js.Object {
     def target_table_free(targets: js.Array[Any], n_targets: Any):Unit = js.native
     def target_table_new_from_list(list: Any, n_targets: Any):js.Array[Any] = js.native
     def targets_include_image(targets: js.Array[Any], n_targets: Any, writable: Boolean):Boolean = js.native
-    def targets_include_rich_text(targets: js.Array[Any], n_targets: Any, buffer: Any):Boolean = js.native
+    def targets_include_rich_text(targets: js.Array[Any], n_targets: Any, buffer: TextBuffer):Boolean = js.native
     def targets_include_text(targets: js.Array[Any], n_targets: Any):Boolean = js.native
     def targets_include_uri(targets: js.Array[Any], n_targets: Any):Boolean = js.native
-    def test_create_simple_window(window_title: String, dialog_text: String):Any = js.native
-    def test_create_widget(widget_type0: Any, first_property_name: String, rest:Any*):Any = js.native
-    def test_display_button_window(window_title: String, dialog_text: String, rest:Any*):Any = js.native
-    def test_find_label(widget: Any, label_pattern: String):Any = js.native
-    def test_find_sibling(base_widget: Any, widget_type0: Any):Any = js.native
-    def test_find_widget(widget: Any, label_pattern: String, widget_type0: Any):Any = js.native
+    def test_create_simple_window(window_title: String, dialog_text: String):Widget = js.native
+    def test_create_widget(widget_type0: Any, first_property_name: String, rest:Any*):Widget = js.native
+    def test_display_button_window(window_title: String, dialog_text: String, rest:Any*):Widget = js.native
+    def test_find_label(widget: Widget, label_pattern: String):Widget = js.native
+    def test_find_sibling(base_widget: Widget, widget_type0: Any):Widget = js.native
+    def test_find_widget(widget: Widget, label_pattern: String, widget_type0: Any):Widget = js.native
     def test_init(argcp: Any, argvp: js.Array[String], rest:Any*):Unit = js.native
     def test_list_all_types(n_types: Any):js.Array[Any] = js.native
     def test_register_all_types():Unit = js.native
-    def test_slider_get_value(widget: Any):Any = js.native
-    def test_slider_set_perc(widget: Any, percentage: Any):Unit = js.native
-    def test_spin_button_click(spinner: Any, button: Any, upwards: Boolean):Boolean = js.native
-    def test_text_get(widget: Any):String = js.native
-    def test_text_set(widget: Any, string: String):Unit = js.native
-    def test_widget_click(widget: Any, button: Any, modifiers: Any):Boolean = js.native
-    def test_widget_send_key(widget: Any, keyval0: Any, modifiers: Any):Boolean = js.native
-    def test_widget_wait_for_draw(widget: Any):Unit = js.native
+    def test_slider_get_value(widget: Widget):Any = js.native
+    def test_slider_set_perc(widget: Widget, percentage: Any):Unit = js.native
+    def test_spin_button_click(spinner: SpinButton, button: Any, upwards: Boolean):Boolean = js.native
+    def test_text_get(widget: Widget):String = js.native
+    def test_text_set(widget: Widget, string: String):Unit = js.native
+    def test_widget_click(widget: Widget, button: Any, modifiers: Double):Boolean = js.native
+    def test_widget_send_key(widget: Widget, keyval0: Any, modifiers: Double):Boolean = js.native
+    def test_widget_wait_for_draw(widget: Widget):Unit = js.native
     def tree_get_row_drag_data(selection_data: Any, tree_model: Any, path: Any):Boolean = js.native
-    def tree_row_reference_deleted(proxy: Any, path: Any):Unit = js.native
-    def tree_row_reference_inserted(proxy: Any, path: Any):Unit = js.native
-    def tree_row_reference_reordered(proxy: Any, path: Any, iter: Any, new_order: js.Array[Any]):Unit = js.native
+    def tree_row_reference_deleted(proxy: GObject.Object, path: Any):Unit = js.native
+    def tree_row_reference_inserted(proxy: GObject.Object, path: Any):Unit = js.native
+    def tree_row_reference_reordered(proxy: GObject.Object, path: Any, iter: Any, new_order: js.Array[Any]):Unit = js.native
     def tree_set_row_drag_data(selection_data: Any, tree_model: Any, path: Any):Boolean = js.native
     def true0():Boolean = js.native
     @js.native
     object Align extends js.Object {
-        val FILL:js.Dynamic = js.native
-        val START:js.Dynamic = js.native
-        val END:js.Dynamic = js.native
-        val CENTER:js.Dynamic = js.native
-        val BASELINE:js.Dynamic = js.native
+        val FILL:Double = js.native
+        val START:Double = js.native
+        val END:Double = js.native
+        val CENTER:Double = js.native
+        val BASELINE:Double = js.native
     }
     @js.native
     object ArrowPlacement extends js.Object {
-        val BOTH:js.Dynamic = js.native
-        val START:js.Dynamic = js.native
-        val END:js.Dynamic = js.native
+        val BOTH:Double = js.native
+        val START:Double = js.native
+        val END:Double = js.native
     }
     @js.native
     object ArrowType extends js.Object {
-        val UP:js.Dynamic = js.native
-        val DOWN:js.Dynamic = js.native
-        val LEFT:js.Dynamic = js.native
-        val RIGHT:js.Dynamic = js.native
-        val NONE:js.Dynamic = js.native
+        val UP:Double = js.native
+        val DOWN:Double = js.native
+        val LEFT:Double = js.native
+        val RIGHT:Double = js.native
+        val NONE:Double = js.native
     }
     @js.native
     object AssistantPageType extends js.Object {
-        val CONTENT:js.Dynamic = js.native
-        val INTRO:js.Dynamic = js.native
-        val CONFIRM:js.Dynamic = js.native
-        val SUMMARY:js.Dynamic = js.native
-        val PROGRESS:js.Dynamic = js.native
-        val CUSTOM:js.Dynamic = js.native
+        val CONTENT:Double = js.native
+        val INTRO:Double = js.native
+        val CONFIRM:Double = js.native
+        val SUMMARY:Double = js.native
+        val PROGRESS:Double = js.native
+        val CUSTOM:Double = js.native
     }
     @js.native
     object BaselinePosition extends js.Object {
-        val TOP:js.Dynamic = js.native
-        val CENTER:js.Dynamic = js.native
-        val BOTTOM:js.Dynamic = js.native
+        val TOP:Double = js.native
+        val CENTER:Double = js.native
+        val BOTTOM:Double = js.native
     }
     @js.native
     object BorderStyle extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val SOLID:js.Dynamic = js.native
-        val INSET:js.Dynamic = js.native
-        val OUTSET:js.Dynamic = js.native
-        val HIDDEN:js.Dynamic = js.native
-        val DOTTED:js.Dynamic = js.native
-        val DASHED:js.Dynamic = js.native
-        val DOUBLE:js.Dynamic = js.native
-        val GROOVE:js.Dynamic = js.native
-        val RIDGE:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val SOLID:Double = js.native
+        val INSET:Double = js.native
+        val OUTSET:Double = js.native
+        val HIDDEN:Double = js.native
+        val DOTTED:Double = js.native
+        val DASHED:Double = js.native
+        val DOUBLE:Double = js.native
+        val GROOVE:Double = js.native
+        val RIDGE:Double = js.native
     }
     @js.native
     object BuilderError extends js.Object {
-        val INVALID_TYPE_FUNCTION:js.Dynamic = js.native
-        val UNHANDLED_TAG:js.Dynamic = js.native
-        val MISSING_ATTRIBUTE:js.Dynamic = js.native
-        val INVALID_ATTRIBUTE:js.Dynamic = js.native
-        val INVALID_TAG:js.Dynamic = js.native
-        val MISSING_PROPERTY_VALUE:js.Dynamic = js.native
-        val INVALID_VALUE:js.Dynamic = js.native
-        val VERSION_MISMATCH:js.Dynamic = js.native
-        val DUPLICATE_ID:js.Dynamic = js.native
-        val OBJECT_TYPE_REFUSED:js.Dynamic = js.native
-        val TEMPLATE_MISMATCH:js.Dynamic = js.native
-        val INVALID_PROPERTY:js.Dynamic = js.native
-        val INVALID_SIGNAL:js.Dynamic = js.native
-        val INVALID_ID:js.Dynamic = js.native
+        val INVALID_TYPE_FUNCTION:Double = js.native
+        val UNHANDLED_TAG:Double = js.native
+        val MISSING_ATTRIBUTE:Double = js.native
+        val INVALID_ATTRIBUTE:Double = js.native
+        val INVALID_TAG:Double = js.native
+        val MISSING_PROPERTY_VALUE:Double = js.native
+        val INVALID_VALUE:Double = js.native
+        val VERSION_MISMATCH:Double = js.native
+        val DUPLICATE_ID:Double = js.native
+        val OBJECT_TYPE_REFUSED:Double = js.native
+        val TEMPLATE_MISMATCH:Double = js.native
+        val INVALID_PROPERTY:Double = js.native
+        val INVALID_SIGNAL:Double = js.native
+        val INVALID_ID:Double = js.native
     }
     @js.native
     object ButtonBoxStyle extends js.Object {
-        val SPREAD:js.Dynamic = js.native
-        val EDGE:js.Dynamic = js.native
-        val START:js.Dynamic = js.native
-        val END:js.Dynamic = js.native
-        val CENTER:js.Dynamic = js.native
-        val EXPAND:js.Dynamic = js.native
+        val SPREAD:Double = js.native
+        val EDGE:Double = js.native
+        val START:Double = js.native
+        val END:Double = js.native
+        val CENTER:Double = js.native
+        val EXPAND:Double = js.native
     }
     @js.native
     object ButtonRole extends js.Object {
-        val NORMAL:js.Dynamic = js.native
-        val CHECK:js.Dynamic = js.native
-        val RADIO:js.Dynamic = js.native
+        val NORMAL:Double = js.native
+        val CHECK:Double = js.native
+        val RADIO:Double = js.native
     }
     @js.native
     object ButtonsType extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val OK:js.Dynamic = js.native
-        val CLOSE:js.Dynamic = js.native
-        val CANCEL:js.Dynamic = js.native
-        val YES_NO:js.Dynamic = js.native
-        val OK_CANCEL:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val OK:Double = js.native
+        val CLOSE:Double = js.native
+        val CANCEL:Double = js.native
+        val YES_NO:Double = js.native
+        val OK_CANCEL:Double = js.native
     }
     @js.native
     object CellRendererAccelMode extends js.Object {
-        val GTK:js.Dynamic = js.native
-        val OTHER:js.Dynamic = js.native
-        val MODIFIER_TAP:js.Dynamic = js.native
+        val GTK:Double = js.native
+        val OTHER:Double = js.native
+        val MODIFIER_TAP:Double = js.native
     }
     @js.native
     object CellRendererMode extends js.Object {
-        val INERT:js.Dynamic = js.native
-        val ACTIVATABLE:js.Dynamic = js.native
-        val EDITABLE:js.Dynamic = js.native
+        val INERT:Double = js.native
+        val ACTIVATABLE:Double = js.native
+        val EDITABLE:Double = js.native
     }
     @js.native
     object CornerType extends js.Object {
-        val TOP_LEFT:js.Dynamic = js.native
-        val BOTTOM_LEFT:js.Dynamic = js.native
-        val TOP_RIGHT:js.Dynamic = js.native
-        val BOTTOM_RIGHT:js.Dynamic = js.native
+        val TOP_LEFT:Double = js.native
+        val BOTTOM_LEFT:Double = js.native
+        val TOP_RIGHT:Double = js.native
+        val BOTTOM_RIGHT:Double = js.native
     }
     @js.native
     object CssProviderError extends js.Object {
-        val FAILED:js.Dynamic = js.native
-        val SYNTAX:js.Dynamic = js.native
-        val IMPORT:js.Dynamic = js.native
-        val NAME:js.Dynamic = js.native
-        val DEPRECATED:js.Dynamic = js.native
-        val UNKNOWN_VALUE:js.Dynamic = js.native
+        val FAILED:Double = js.native
+        val SYNTAX:Double = js.native
+        val IMPORT:Double = js.native
+        val NAME:Double = js.native
+        val DEPRECATED:Double = js.native
+        val UNKNOWN_VALUE:Double = js.native
     }
     @js.native
     object CssSectionType extends js.Object {
-        val DOCUMENT:js.Dynamic = js.native
-        val IMPORT:js.Dynamic = js.native
-        val COLOR_DEFINITION:js.Dynamic = js.native
-        val BINDING_SET:js.Dynamic = js.native
-        val RULESET:js.Dynamic = js.native
-        val SELECTOR:js.Dynamic = js.native
-        val DECLARATION:js.Dynamic = js.native
-        val VALUE:js.Dynamic = js.native
-        val KEYFRAMES:js.Dynamic = js.native
+        val DOCUMENT:Double = js.native
+        val IMPORT:Double = js.native
+        val COLOR_DEFINITION:Double = js.native
+        val BINDING_SET:Double = js.native
+        val RULESET:Double = js.native
+        val SELECTOR:Double = js.native
+        val DECLARATION:Double = js.native
+        val VALUE:Double = js.native
+        val KEYFRAMES:Double = js.native
     }
     @js.native
     object DeleteType extends js.Object {
-        val CHARS:js.Dynamic = js.native
-        val WORD_ENDS:js.Dynamic = js.native
-        val WORDS:js.Dynamic = js.native
-        val DISPLAY_LINES:js.Dynamic = js.native
-        val DISPLAY_LINE_ENDS:js.Dynamic = js.native
-        val PARAGRAPH_ENDS:js.Dynamic = js.native
-        val PARAGRAPHS:js.Dynamic = js.native
-        val WHITESPACE:js.Dynamic = js.native
+        val CHARS:Double = js.native
+        val WORD_ENDS:Double = js.native
+        val WORDS:Double = js.native
+        val DISPLAY_LINES:Double = js.native
+        val DISPLAY_LINE_ENDS:Double = js.native
+        val PARAGRAPH_ENDS:Double = js.native
+        val PARAGRAPHS:Double = js.native
+        val WHITESPACE:Double = js.native
     }
     @js.native
     object DirectionType extends js.Object {
-        val TAB_FORWARD:js.Dynamic = js.native
-        val TAB_BACKWARD:js.Dynamic = js.native
-        val UP:js.Dynamic = js.native
-        val DOWN:js.Dynamic = js.native
-        val LEFT:js.Dynamic = js.native
-        val RIGHT:js.Dynamic = js.native
+        val TAB_FORWARD:Double = js.native
+        val TAB_BACKWARD:Double = js.native
+        val UP:Double = js.native
+        val DOWN:Double = js.native
+        val LEFT:Double = js.native
+        val RIGHT:Double = js.native
     }
     @js.native
     object DragResult extends js.Object {
-        val SUCCESS:js.Dynamic = js.native
-        val NO_TARGET:js.Dynamic = js.native
-        val USER_CANCELLED:js.Dynamic = js.native
-        val TIMEOUT_EXPIRED:js.Dynamic = js.native
-        val GRAB_BROKEN:js.Dynamic = js.native
-        val ERROR:js.Dynamic = js.native
+        val SUCCESS:Double = js.native
+        val NO_TARGET:Double = js.native
+        val USER_CANCELLED:Double = js.native
+        val TIMEOUT_EXPIRED:Double = js.native
+        val GRAB_BROKEN:Double = js.native
+        val ERROR:Double = js.native
     }
     @js.native
     object EntryIconPosition extends js.Object {
-        val PRIMARY:js.Dynamic = js.native
-        val SECONDARY:js.Dynamic = js.native
+        val PRIMARY:Double = js.native
+        val SECONDARY:Double = js.native
     }
     @js.native
     object EventSequenceState extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val CLAIMED:js.Dynamic = js.native
-        val DENIED:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val CLAIMED:Double = js.native
+        val DENIED:Double = js.native
     }
     @js.native
     object ExpanderStyle extends js.Object {
-        val COLLAPSED:js.Dynamic = js.native
-        val SEMI_COLLAPSED:js.Dynamic = js.native
-        val SEMI_EXPANDED:js.Dynamic = js.native
-        val EXPANDED:js.Dynamic = js.native
+        val COLLAPSED:Double = js.native
+        val SEMI_COLLAPSED:Double = js.native
+        val SEMI_EXPANDED:Double = js.native
+        val EXPANDED:Double = js.native
     }
     @js.native
     object FileChooserAction extends js.Object {
-        val OPEN:js.Dynamic = js.native
-        val SAVE:js.Dynamic = js.native
-        val SELECT_FOLDER:js.Dynamic = js.native
-        val CREATE_FOLDER:js.Dynamic = js.native
+        val OPEN:Double = js.native
+        val SAVE:Double = js.native
+        val SELECT_FOLDER:Double = js.native
+        val CREATE_FOLDER:Double = js.native
     }
     @js.native
     object FileChooserConfirmation extends js.Object {
-        val CONFIRM:js.Dynamic = js.native
-        val ACCEPT_FILENAME:js.Dynamic = js.native
-        val SELECT_AGAIN:js.Dynamic = js.native
+        val CONFIRM:Double = js.native
+        val ACCEPT_FILENAME:Double = js.native
+        val SELECT_AGAIN:Double = js.native
     }
     @js.native
     object FileChooserError extends js.Object {
-        val NONEXISTENT:js.Dynamic = js.native
-        val BAD_FILENAME:js.Dynamic = js.native
-        val ALREADY_EXISTS:js.Dynamic = js.native
-        val INCOMPLETE_HOSTNAME:js.Dynamic = js.native
+        val NONEXISTENT:Double = js.native
+        val BAD_FILENAME:Double = js.native
+        val ALREADY_EXISTS:Double = js.native
+        val INCOMPLETE_HOSTNAME:Double = js.native
     }
     @js.native
     object IMPreeditStyle extends js.Object {
-        val NOTHING:js.Dynamic = js.native
-        val CALLBACK:js.Dynamic = js.native
-        val NONE:js.Dynamic = js.native
+        val NOTHING:Double = js.native
+        val CALLBACK:Double = js.native
+        val NONE:Double = js.native
     }
     @js.native
     object IMStatusStyle extends js.Object {
-        val NOTHING:js.Dynamic = js.native
-        val CALLBACK:js.Dynamic = js.native
-        val NONE:js.Dynamic = js.native
+        val NOTHING:Double = js.native
+        val CALLBACK:Double = js.native
+        val NONE:Double = js.native
     }
     @js.native
     object IconSize extends js.Object {
-        val INVALID:js.Dynamic = js.native
-        val MENU:js.Dynamic = js.native
-        val SMALL_TOOLBAR:js.Dynamic = js.native
-        val LARGE_TOOLBAR:js.Dynamic = js.native
-        val BUTTON:js.Dynamic = js.native
-        val DND:js.Dynamic = js.native
-        val DIALOG:js.Dynamic = js.native
+        val INVALID:Double = js.native
+        val MENU:Double = js.native
+        val SMALL_TOOLBAR:Double = js.native
+        val LARGE_TOOLBAR:Double = js.native
+        val BUTTON:Double = js.native
+        val DND:Double = js.native
+        val DIALOG:Double = js.native
     }
     @js.native
     object IconThemeError extends js.Object {
-        val NOT_FOUND:js.Dynamic = js.native
-        val FAILED:js.Dynamic = js.native
+        val NOT_FOUND:Double = js.native
+        val FAILED:Double = js.native
     }
     @js.native
     object IconViewDropPosition extends js.Object {
-        val NO_DROP:js.Dynamic = js.native
-        val DROP_INTO:js.Dynamic = js.native
-        val DROP_LEFT:js.Dynamic = js.native
-        val DROP_RIGHT:js.Dynamic = js.native
-        val DROP_ABOVE:js.Dynamic = js.native
-        val DROP_BELOW:js.Dynamic = js.native
+        val NO_DROP:Double = js.native
+        val DROP_INTO:Double = js.native
+        val DROP_LEFT:Double = js.native
+        val DROP_RIGHT:Double = js.native
+        val DROP_ABOVE:Double = js.native
+        val DROP_BELOW:Double = js.native
     }
     @js.native
     object ImageType extends js.Object {
-        val EMPTY:js.Dynamic = js.native
-        val PIXBUF:js.Dynamic = js.native
-        val STOCK:js.Dynamic = js.native
-        val ICON_SET:js.Dynamic = js.native
-        val ANIMATION:js.Dynamic = js.native
-        val ICON_NAME:js.Dynamic = js.native
-        val GICON:js.Dynamic = js.native
-        val SURFACE:js.Dynamic = js.native
+        val EMPTY:Double = js.native
+        val PIXBUF:Double = js.native
+        val STOCK:Double = js.native
+        val ICON_SET:Double = js.native
+        val ANIMATION:Double = js.native
+        val ICON_NAME:Double = js.native
+        val GICON:Double = js.native
+        val SURFACE:Double = js.native
     }
     @js.native
     object InputPurpose extends js.Object {
-        val FREE_FORM:js.Dynamic = js.native
-        val ALPHA:js.Dynamic = js.native
-        val DIGITS:js.Dynamic = js.native
-        val NUMBER:js.Dynamic = js.native
-        val PHONE:js.Dynamic = js.native
-        val URL:js.Dynamic = js.native
-        val EMAIL:js.Dynamic = js.native
-        val NAME:js.Dynamic = js.native
-        val PASSWORD:js.Dynamic = js.native
-        val PIN:js.Dynamic = js.native
+        val FREE_FORM:Double = js.native
+        val ALPHA:Double = js.native
+        val DIGITS:Double = js.native
+        val NUMBER:Double = js.native
+        val PHONE:Double = js.native
+        val URL:Double = js.native
+        val EMAIL:Double = js.native
+        val NAME:Double = js.native
+        val PASSWORD:Double = js.native
+        val PIN:Double = js.native
     }
     @js.native
     object Justification extends js.Object {
-        val LEFT:js.Dynamic = js.native
-        val RIGHT:js.Dynamic = js.native
-        val CENTER:js.Dynamic = js.native
-        val FILL:js.Dynamic = js.native
+        val LEFT:Double = js.native
+        val RIGHT:Double = js.native
+        val CENTER:Double = js.native
+        val FILL:Double = js.native
     }
     @js.native
     object LevelBarMode extends js.Object {
-        val CONTINUOUS:js.Dynamic = js.native
-        val DISCRETE:js.Dynamic = js.native
+        val CONTINUOUS:Double = js.native
+        val DISCRETE:Double = js.native
     }
     @js.native
     object License extends js.Object {
-        val UNKNOWN:js.Dynamic = js.native
-        val CUSTOM:js.Dynamic = js.native
-        val GPL_2_0:js.Dynamic = js.native
-        val GPL_3_0:js.Dynamic = js.native
-        val LGPL_2_1:js.Dynamic = js.native
-        val LGPL_3_0:js.Dynamic = js.native
-        val BSD:js.Dynamic = js.native
-        val MIT_X11:js.Dynamic = js.native
-        val ARTISTIC:js.Dynamic = js.native
-        val GPL_2_0_ONLY:js.Dynamic = js.native
-        val GPL_3_0_ONLY:js.Dynamic = js.native
-        val LGPL_2_1_ONLY:js.Dynamic = js.native
-        val LGPL_3_0_ONLY:js.Dynamic = js.native
+        val UNKNOWN:Double = js.native
+        val CUSTOM:Double = js.native
+        val GPL_2_0:Double = js.native
+        val GPL_3_0:Double = js.native
+        val LGPL_2_1:Double = js.native
+        val LGPL_3_0:Double = js.native
+        val BSD:Double = js.native
+        val MIT_X11:Double = js.native
+        val ARTISTIC:Double = js.native
+        val GPL_2_0_ONLY:Double = js.native
+        val GPL_3_0_ONLY:Double = js.native
+        val LGPL_2_1_ONLY:Double = js.native
+        val LGPL_3_0_ONLY:Double = js.native
     }
     @js.native
     object MenuDirectionType extends js.Object {
-        val PARENT:js.Dynamic = js.native
-        val CHILD:js.Dynamic = js.native
-        val NEXT:js.Dynamic = js.native
-        val PREV:js.Dynamic = js.native
+        val PARENT:Double = js.native
+        val CHILD:Double = js.native
+        val NEXT:Double = js.native
+        val PREV:Double = js.native
     }
     @js.native
     object MessageType extends js.Object {
-        val INFO:js.Dynamic = js.native
-        val WARNING:js.Dynamic = js.native
-        val QUESTION:js.Dynamic = js.native
-        val ERROR:js.Dynamic = js.native
-        val OTHER:js.Dynamic = js.native
+        val INFO:Double = js.native
+        val WARNING:Double = js.native
+        val QUESTION:Double = js.native
+        val ERROR:Double = js.native
+        val OTHER:Double = js.native
     }
     @js.native
     object MovementStep extends js.Object {
-        val LOGICAL_POSITIONS:js.Dynamic = js.native
-        val VISUAL_POSITIONS:js.Dynamic = js.native
-        val WORDS:js.Dynamic = js.native
-        val DISPLAY_LINES:js.Dynamic = js.native
-        val DISPLAY_LINE_ENDS:js.Dynamic = js.native
-        val PARAGRAPHS:js.Dynamic = js.native
-        val PARAGRAPH_ENDS:js.Dynamic = js.native
-        val PAGES:js.Dynamic = js.native
-        val BUFFER_ENDS:js.Dynamic = js.native
-        val HORIZONTAL_PAGES:js.Dynamic = js.native
+        val LOGICAL_POSITIONS:Double = js.native
+        val VISUAL_POSITIONS:Double = js.native
+        val WORDS:Double = js.native
+        val DISPLAY_LINES:Double = js.native
+        val DISPLAY_LINE_ENDS:Double = js.native
+        val PARAGRAPHS:Double = js.native
+        val PARAGRAPH_ENDS:Double = js.native
+        val PAGES:Double = js.native
+        val BUFFER_ENDS:Double = js.native
+        val HORIZONTAL_PAGES:Double = js.native
     }
     @js.native
     object NotebookTab extends js.Object {
-        val FIRST:js.Dynamic = js.native
-        val LAST:js.Dynamic = js.native
+        val FIRST:Double = js.native
+        val LAST:Double = js.native
     }
     @js.native
     object NumberUpLayout extends js.Object {
-        val LRTB:js.Dynamic = js.native
-        val LRBT:js.Dynamic = js.native
-        val RLTB:js.Dynamic = js.native
-        val RLBT:js.Dynamic = js.native
-        val TBLR:js.Dynamic = js.native
-        val TBRL:js.Dynamic = js.native
-        val BTLR:js.Dynamic = js.native
-        val BTRL:js.Dynamic = js.native
+        val LRTB:Double = js.native
+        val LRBT:Double = js.native
+        val RLTB:Double = js.native
+        val RLBT:Double = js.native
+        val TBLR:Double = js.native
+        val TBRL:Double = js.native
+        val BTLR:Double = js.native
+        val BTRL:Double = js.native
     }
     @js.native
     object Orientation extends js.Object {
-        val HORIZONTAL:js.Dynamic = js.native
-        val VERTICAL:js.Dynamic = js.native
+        val HORIZONTAL:Double = js.native
+        val VERTICAL:Double = js.native
     }
     @js.native
     object PackDirection extends js.Object {
-        val LTR:js.Dynamic = js.native
-        val RTL:js.Dynamic = js.native
-        val TTB:js.Dynamic = js.native
-        val BTT:js.Dynamic = js.native
+        val LTR:Double = js.native
+        val RTL:Double = js.native
+        val TTB:Double = js.native
+        val BTT:Double = js.native
     }
     @js.native
     object PackType extends js.Object {
-        val START:js.Dynamic = js.native
-        val END:js.Dynamic = js.native
+        val START:Double = js.native
+        val END:Double = js.native
     }
     @js.native
     object PageOrientation extends js.Object {
-        val PORTRAIT:js.Dynamic = js.native
-        val LANDSCAPE:js.Dynamic = js.native
-        val REVERSE_PORTRAIT:js.Dynamic = js.native
-        val REVERSE_LANDSCAPE:js.Dynamic = js.native
+        val PORTRAIT:Double = js.native
+        val LANDSCAPE:Double = js.native
+        val REVERSE_PORTRAIT:Double = js.native
+        val REVERSE_LANDSCAPE:Double = js.native
     }
     @js.native
     object PageSet extends js.Object {
-        val ALL:js.Dynamic = js.native
-        val EVEN:js.Dynamic = js.native
-        val ODD:js.Dynamic = js.native
+        val ALL:Double = js.native
+        val EVEN:Double = js.native
+        val ODD:Double = js.native
     }
     @js.native
     object PanDirection extends js.Object {
-        val LEFT:js.Dynamic = js.native
-        val RIGHT:js.Dynamic = js.native
-        val UP:js.Dynamic = js.native
-        val DOWN:js.Dynamic = js.native
+        val LEFT:Double = js.native
+        val RIGHT:Double = js.native
+        val UP:Double = js.native
+        val DOWN:Double = js.native
     }
     @js.native
     object PathPriorityType extends js.Object {
-        val LOWEST:js.Dynamic = js.native
-        val GTK:js.Dynamic = js.native
-        val APPLICATION:js.Dynamic = js.native
-        val THEME:js.Dynamic = js.native
-        val RC:js.Dynamic = js.native
-        val HIGHEST:js.Dynamic = js.native
+        val LOWEST:Double = js.native
+        val GTK:Double = js.native
+        val APPLICATION:Double = js.native
+        val THEME:Double = js.native
+        val RC:Double = js.native
+        val HIGHEST:Double = js.native
     }
     @js.native
     object PathType extends js.Object {
-        val WIDGET:js.Dynamic = js.native
-        val WIDGET_CLASS:js.Dynamic = js.native
-        val CLASS:js.Dynamic = js.native
+        val WIDGET:Double = js.native
+        val WIDGET_CLASS:Double = js.native
+        val CLASS:Double = js.native
     }
     @js.native
     object PolicyType extends js.Object {
-        val ALWAYS:js.Dynamic = js.native
-        val AUTOMATIC:js.Dynamic = js.native
-        val NEVER:js.Dynamic = js.native
-        val EXTERNAL:js.Dynamic = js.native
+        val ALWAYS:Double = js.native
+        val AUTOMATIC:Double = js.native
+        val NEVER:Double = js.native
+        val EXTERNAL:Double = js.native
     }
     @js.native
     object PositionType extends js.Object {
-        val LEFT:js.Dynamic = js.native
-        val RIGHT:js.Dynamic = js.native
-        val TOP:js.Dynamic = js.native
-        val BOTTOM:js.Dynamic = js.native
+        val LEFT:Double = js.native
+        val RIGHT:Double = js.native
+        val TOP:Double = js.native
+        val BOTTOM:Double = js.native
     }
     @js.native
     object PrintDuplex extends js.Object {
-        val SIMPLEX:js.Dynamic = js.native
-        val HORIZONTAL:js.Dynamic = js.native
-        val VERTICAL:js.Dynamic = js.native
+        val SIMPLEX:Double = js.native
+        val HORIZONTAL:Double = js.native
+        val VERTICAL:Double = js.native
     }
     @js.native
     object PrintError extends js.Object {
-        val GENERAL:js.Dynamic = js.native
-        val INTERNAL_ERROR:js.Dynamic = js.native
-        val NOMEM:js.Dynamic = js.native
-        val INVALID_FILE:js.Dynamic = js.native
+        val GENERAL:Double = js.native
+        val INTERNAL_ERROR:Double = js.native
+        val NOMEM:Double = js.native
+        val INVALID_FILE:Double = js.native
     }
     @js.native
     object PrintOperationAction extends js.Object {
-        val PRINT_DIALOG:js.Dynamic = js.native
-        val PRINT:js.Dynamic = js.native
-        val PREVIEW:js.Dynamic = js.native
-        val EXPORT:js.Dynamic = js.native
+        val PRINT_DIALOG:Double = js.native
+        val PRINT:Double = js.native
+        val PREVIEW:Double = js.native
+        val EXPORT:Double = js.native
     }
     @js.native
     object PrintOperationResult extends js.Object {
-        val ERROR:js.Dynamic = js.native
-        val APPLY:js.Dynamic = js.native
-        val CANCEL:js.Dynamic = js.native
-        val IN_PROGRESS:js.Dynamic = js.native
+        val ERROR:Double = js.native
+        val APPLY:Double = js.native
+        val CANCEL:Double = js.native
+        val IN_PROGRESS:Double = js.native
     }
     @js.native
     object PrintPages extends js.Object {
-        val ALL:js.Dynamic = js.native
-        val CURRENT:js.Dynamic = js.native
-        val RANGES:js.Dynamic = js.native
-        val SELECTION:js.Dynamic = js.native
+        val ALL:Double = js.native
+        val CURRENT:Double = js.native
+        val RANGES:Double = js.native
+        val SELECTION:Double = js.native
     }
     @js.native
     object PrintQuality extends js.Object {
-        val LOW:js.Dynamic = js.native
-        val NORMAL:js.Dynamic = js.native
-        val HIGH:js.Dynamic = js.native
-        val DRAFT:js.Dynamic = js.native
+        val LOW:Double = js.native
+        val NORMAL:Double = js.native
+        val HIGH:Double = js.native
+        val DRAFT:Double = js.native
     }
     @js.native
     object PrintStatus extends js.Object {
-        val INITIAL:js.Dynamic = js.native
-        val PREPARING:js.Dynamic = js.native
-        val GENERATING_DATA:js.Dynamic = js.native
-        val SENDING_DATA:js.Dynamic = js.native
-        val PENDING:js.Dynamic = js.native
-        val PENDING_ISSUE:js.Dynamic = js.native
-        val PRINTING:js.Dynamic = js.native
-        val FINISHED:js.Dynamic = js.native
-        val FINISHED_ABORTED:js.Dynamic = js.native
+        val INITIAL:Double = js.native
+        val PREPARING:Double = js.native
+        val GENERATING_DATA:Double = js.native
+        val SENDING_DATA:Double = js.native
+        val PENDING:Double = js.native
+        val PENDING_ISSUE:Double = js.native
+        val PRINTING:Double = js.native
+        val FINISHED:Double = js.native
+        val FINISHED_ABORTED:Double = js.native
     }
     @js.native
     object PropagationPhase extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val CAPTURE:js.Dynamic = js.native
-        val BUBBLE:js.Dynamic = js.native
-        val TARGET:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val CAPTURE:Double = js.native
+        val BUBBLE:Double = js.native
+        val TARGET:Double = js.native
     }
     @js.native
     object RcTokenType extends js.Object {
-        val INVALID:js.Dynamic = js.native
-        val INCLUDE:js.Dynamic = js.native
-        val NORMAL:js.Dynamic = js.native
-        val ACTIVE:js.Dynamic = js.native
-        val PRELIGHT:js.Dynamic = js.native
-        val SELECTED:js.Dynamic = js.native
-        val INSENSITIVE:js.Dynamic = js.native
-        val FG:js.Dynamic = js.native
-        val BG:js.Dynamic = js.native
-        val TEXT:js.Dynamic = js.native
-        val BASE:js.Dynamic = js.native
-        val XTHICKNESS:js.Dynamic = js.native
-        val YTHICKNESS:js.Dynamic = js.native
-        val FONT:js.Dynamic = js.native
-        val FONTSET:js.Dynamic = js.native
-        val FONT_NAME:js.Dynamic = js.native
-        val BG_PIXMAP:js.Dynamic = js.native
-        val PIXMAP_PATH:js.Dynamic = js.native
-        val STYLE:js.Dynamic = js.native
-        val BINDING:js.Dynamic = js.native
-        val BIND:js.Dynamic = js.native
-        val WIDGET:js.Dynamic = js.native
-        val WIDGET_CLASS:js.Dynamic = js.native
-        val CLASS:js.Dynamic = js.native
-        val LOWEST:js.Dynamic = js.native
-        val GTK:js.Dynamic = js.native
-        val APPLICATION:js.Dynamic = js.native
-        val THEME:js.Dynamic = js.native
-        val RC:js.Dynamic = js.native
-        val HIGHEST:js.Dynamic = js.native
-        val ENGINE:js.Dynamic = js.native
-        val MODULE_PATH:js.Dynamic = js.native
-        val IM_MODULE_PATH:js.Dynamic = js.native
-        val IM_MODULE_FILE:js.Dynamic = js.native
-        val STOCK:js.Dynamic = js.native
-        val LTR:js.Dynamic = js.native
-        val RTL:js.Dynamic = js.native
-        val COLOR:js.Dynamic = js.native
-        val UNBIND:js.Dynamic = js.native
-        val LAST:js.Dynamic = js.native
+        val INVALID:Double = js.native
+        val INCLUDE:Double = js.native
+        val NORMAL:Double = js.native
+        val ACTIVE:Double = js.native
+        val PRELIGHT:Double = js.native
+        val SELECTED:Double = js.native
+        val INSENSITIVE:Double = js.native
+        val FG:Double = js.native
+        val BG:Double = js.native
+        val TEXT:Double = js.native
+        val BASE:Double = js.native
+        val XTHICKNESS:Double = js.native
+        val YTHICKNESS:Double = js.native
+        val FONT:Double = js.native
+        val FONTSET:Double = js.native
+        val FONT_NAME:Double = js.native
+        val BG_PIXMAP:Double = js.native
+        val PIXMAP_PATH:Double = js.native
+        val STYLE:Double = js.native
+        val BINDING:Double = js.native
+        val BIND:Double = js.native
+        val WIDGET:Double = js.native
+        val WIDGET_CLASS:Double = js.native
+        val CLASS:Double = js.native
+        val LOWEST:Double = js.native
+        val GTK:Double = js.native
+        val APPLICATION:Double = js.native
+        val THEME:Double = js.native
+        val RC:Double = js.native
+        val HIGHEST:Double = js.native
+        val ENGINE:Double = js.native
+        val MODULE_PATH:Double = js.native
+        val IM_MODULE_PATH:Double = js.native
+        val IM_MODULE_FILE:Double = js.native
+        val STOCK:Double = js.native
+        val LTR:Double = js.native
+        val RTL:Double = js.native
+        val COLOR:Double = js.native
+        val UNBIND:Double = js.native
+        val LAST:Double = js.native
     }
     @js.native
     object RecentChooserError extends js.Object {
-        val NOT_FOUND:js.Dynamic = js.native
-        val INVALID_URI:js.Dynamic = js.native
+        val NOT_FOUND:Double = js.native
+        val INVALID_URI:Double = js.native
     }
     @js.native
     object RecentManagerError extends js.Object {
-        val NOT_FOUND:js.Dynamic = js.native
-        val INVALID_URI:js.Dynamic = js.native
-        val INVALID_ENCODING:js.Dynamic = js.native
-        val NOT_REGISTERED:js.Dynamic = js.native
-        val READ:js.Dynamic = js.native
-        val WRITE:js.Dynamic = js.native
-        val UNKNOWN:js.Dynamic = js.native
+        val NOT_FOUND:Double = js.native
+        val INVALID_URI:Double = js.native
+        val INVALID_ENCODING:Double = js.native
+        val NOT_REGISTERED:Double = js.native
+        val READ:Double = js.native
+        val WRITE:Double = js.native
+        val UNKNOWN:Double = js.native
     }
     @js.native
     object RecentSortType extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val MRU:js.Dynamic = js.native
-        val LRU:js.Dynamic = js.native
-        val CUSTOM:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val MRU:Double = js.native
+        val LRU:Double = js.native
+        val CUSTOM:Double = js.native
     }
     @js.native
     object ReliefStyle extends js.Object {
-        val NORMAL:js.Dynamic = js.native
-        val HALF:js.Dynamic = js.native
-        val NONE:js.Dynamic = js.native
+        val NORMAL:Double = js.native
+        val HALF:Double = js.native
+        val NONE:Double = js.native
     }
     @js.native
     object ResizeMode extends js.Object {
-        val PARENT:js.Dynamic = js.native
-        val QUEUE:js.Dynamic = js.native
-        val IMMEDIATE:js.Dynamic = js.native
+        val PARENT:Double = js.native
+        val QUEUE:Double = js.native
+        val IMMEDIATE:Double = js.native
     }
     @js.native
     object ResponseType extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val REJECT:js.Dynamic = js.native
-        val ACCEPT:js.Dynamic = js.native
-        val DELETE_EVENT:js.Dynamic = js.native
-        val OK:js.Dynamic = js.native
-        val CANCEL:js.Dynamic = js.native
-        val CLOSE:js.Dynamic = js.native
-        val YES:js.Dynamic = js.native
-        val NO:js.Dynamic = js.native
-        val APPLY:js.Dynamic = js.native
-        val HELP:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val REJECT:Double = js.native
+        val ACCEPT:Double = js.native
+        val DELETE_EVENT:Double = js.native
+        val OK:Double = js.native
+        val CANCEL:Double = js.native
+        val CLOSE:Double = js.native
+        val YES:Double = js.native
+        val NO:Double = js.native
+        val APPLY:Double = js.native
+        val HELP:Double = js.native
     }
     @js.native
     object RevealerTransitionType extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val CROSSFADE:js.Dynamic = js.native
-        val SLIDE_RIGHT:js.Dynamic = js.native
-        val SLIDE_LEFT:js.Dynamic = js.native
-        val SLIDE_UP:js.Dynamic = js.native
-        val SLIDE_DOWN:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val CROSSFADE:Double = js.native
+        val SLIDE_RIGHT:Double = js.native
+        val SLIDE_LEFT:Double = js.native
+        val SLIDE_UP:Double = js.native
+        val SLIDE_DOWN:Double = js.native
     }
     @js.native
     object ScrollStep extends js.Object {
-        val STEPS:js.Dynamic = js.native
-        val PAGES:js.Dynamic = js.native
-        val ENDS:js.Dynamic = js.native
-        val HORIZONTAL_STEPS:js.Dynamic = js.native
-        val HORIZONTAL_PAGES:js.Dynamic = js.native
-        val HORIZONTAL_ENDS:js.Dynamic = js.native
+        val STEPS:Double = js.native
+        val PAGES:Double = js.native
+        val ENDS:Double = js.native
+        val HORIZONTAL_STEPS:Double = js.native
+        val HORIZONTAL_PAGES:Double = js.native
+        val HORIZONTAL_ENDS:Double = js.native
     }
     @js.native
     object ScrollType extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val JUMP:js.Dynamic = js.native
-        val STEP_BACKWARD:js.Dynamic = js.native
-        val STEP_FORWARD:js.Dynamic = js.native
-        val PAGE_BACKWARD:js.Dynamic = js.native
-        val PAGE_FORWARD:js.Dynamic = js.native
-        val STEP_UP:js.Dynamic = js.native
-        val STEP_DOWN:js.Dynamic = js.native
-        val PAGE_UP:js.Dynamic = js.native
-        val PAGE_DOWN:js.Dynamic = js.native
-        val STEP_LEFT:js.Dynamic = js.native
-        val STEP_RIGHT:js.Dynamic = js.native
-        val PAGE_LEFT:js.Dynamic = js.native
-        val PAGE_RIGHT:js.Dynamic = js.native
-        val START:js.Dynamic = js.native
-        val END:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val JUMP:Double = js.native
+        val STEP_BACKWARD:Double = js.native
+        val STEP_FORWARD:Double = js.native
+        val PAGE_BACKWARD:Double = js.native
+        val PAGE_FORWARD:Double = js.native
+        val STEP_UP:Double = js.native
+        val STEP_DOWN:Double = js.native
+        val PAGE_UP:Double = js.native
+        val PAGE_DOWN:Double = js.native
+        val STEP_LEFT:Double = js.native
+        val STEP_RIGHT:Double = js.native
+        val PAGE_LEFT:Double = js.native
+        val PAGE_RIGHT:Double = js.native
+        val START:Double = js.native
+        val END:Double = js.native
     }
     @js.native
     object ScrollablePolicy extends js.Object {
-        val MINIMUM:js.Dynamic = js.native
-        val NATURAL:js.Dynamic = js.native
+        val MINIMUM:Double = js.native
+        val NATURAL:Double = js.native
     }
     @js.native
     object SelectionMode extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val SINGLE:js.Dynamic = js.native
-        val BROWSE:js.Dynamic = js.native
-        val MULTIPLE:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val SINGLE:Double = js.native
+        val BROWSE:Double = js.native
+        val MULTIPLE:Double = js.native
     }
     @js.native
     object SensitivityType extends js.Object {
-        val AUTO:js.Dynamic = js.native
-        val ON:js.Dynamic = js.native
-        val OFF:js.Dynamic = js.native
+        val AUTO:Double = js.native
+        val ON:Double = js.native
+        val OFF:Double = js.native
     }
     @js.native
     object ShadowType extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val IN:js.Dynamic = js.native
-        val OUT:js.Dynamic = js.native
-        val ETCHED_IN:js.Dynamic = js.native
-        val ETCHED_OUT:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val IN:Double = js.native
+        val OUT:Double = js.native
+        val ETCHED_IN:Double = js.native
+        val ETCHED_OUT:Double = js.native
     }
     @js.native
     object SizeGroupMode extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val HORIZONTAL:js.Dynamic = js.native
-        val VERTICAL:js.Dynamic = js.native
-        val BOTH:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val HORIZONTAL:Double = js.native
+        val VERTICAL:Double = js.native
+        val BOTH:Double = js.native
     }
     @js.native
     object SizeRequestMode extends js.Object {
-        val HEIGHT_FOR_WIDTH:js.Dynamic = js.native
-        val WIDTH_FOR_HEIGHT:js.Dynamic = js.native
-        val CONSTANT_SIZE:js.Dynamic = js.native
+        val HEIGHT_FOR_WIDTH:Double = js.native
+        val WIDTH_FOR_HEIGHT:Double = js.native
+        val CONSTANT_SIZE:Double = js.native
     }
     @js.native
     object SortType extends js.Object {
-        val ASCENDING:js.Dynamic = js.native
-        val DESCENDING:js.Dynamic = js.native
+        val ASCENDING:Double = js.native
+        val DESCENDING:Double = js.native
     }
     @js.native
     object SpinButtonUpdatePolicy extends js.Object {
-        val ALWAYS:js.Dynamic = js.native
-        val IF_VALID:js.Dynamic = js.native
+        val ALWAYS:Double = js.native
+        val IF_VALID:Double = js.native
     }
     @js.native
     object SpinType extends js.Object {
-        val STEP_FORWARD:js.Dynamic = js.native
-        val STEP_BACKWARD:js.Dynamic = js.native
-        val PAGE_FORWARD:js.Dynamic = js.native
-        val PAGE_BACKWARD:js.Dynamic = js.native
-        val HOME:js.Dynamic = js.native
-        val END:js.Dynamic = js.native
-        val USER_DEFINED:js.Dynamic = js.native
+        val STEP_FORWARD:Double = js.native
+        val STEP_BACKWARD:Double = js.native
+        val PAGE_FORWARD:Double = js.native
+        val PAGE_BACKWARD:Double = js.native
+        val HOME:Double = js.native
+        val END:Double = js.native
+        val USER_DEFINED:Double = js.native
     }
     @js.native
     object StackTransitionType extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val CROSSFADE:js.Dynamic = js.native
-        val SLIDE_RIGHT:js.Dynamic = js.native
-        val SLIDE_LEFT:js.Dynamic = js.native
-        val SLIDE_UP:js.Dynamic = js.native
-        val SLIDE_DOWN:js.Dynamic = js.native
-        val SLIDE_LEFT_RIGHT:js.Dynamic = js.native
-        val SLIDE_UP_DOWN:js.Dynamic = js.native
-        val OVER_UP:js.Dynamic = js.native
-        val OVER_DOWN:js.Dynamic = js.native
-        val OVER_LEFT:js.Dynamic = js.native
-        val OVER_RIGHT:js.Dynamic = js.native
-        val UNDER_UP:js.Dynamic = js.native
-        val UNDER_DOWN:js.Dynamic = js.native
-        val UNDER_LEFT:js.Dynamic = js.native
-        val UNDER_RIGHT:js.Dynamic = js.native
-        val OVER_UP_DOWN:js.Dynamic = js.native
-        val OVER_DOWN_UP:js.Dynamic = js.native
-        val OVER_LEFT_RIGHT:js.Dynamic = js.native
-        val OVER_RIGHT_LEFT:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val CROSSFADE:Double = js.native
+        val SLIDE_RIGHT:Double = js.native
+        val SLIDE_LEFT:Double = js.native
+        val SLIDE_UP:Double = js.native
+        val SLIDE_DOWN:Double = js.native
+        val SLIDE_LEFT_RIGHT:Double = js.native
+        val SLIDE_UP_DOWN:Double = js.native
+        val OVER_UP:Double = js.native
+        val OVER_DOWN:Double = js.native
+        val OVER_LEFT:Double = js.native
+        val OVER_RIGHT:Double = js.native
+        val UNDER_UP:Double = js.native
+        val UNDER_DOWN:Double = js.native
+        val UNDER_LEFT:Double = js.native
+        val UNDER_RIGHT:Double = js.native
+        val OVER_UP_DOWN:Double = js.native
+        val OVER_DOWN_UP:Double = js.native
+        val OVER_LEFT_RIGHT:Double = js.native
+        val OVER_RIGHT_LEFT:Double = js.native
     }
     @js.native
     object StateType extends js.Object {
-        val NORMAL:js.Dynamic = js.native
-        val ACTIVE:js.Dynamic = js.native
-        val PRELIGHT:js.Dynamic = js.native
-        val SELECTED:js.Dynamic = js.native
-        val INSENSITIVE:js.Dynamic = js.native
-        val INCONSISTENT:js.Dynamic = js.native
-        val FOCUSED:js.Dynamic = js.native
+        val NORMAL:Double = js.native
+        val ACTIVE:Double = js.native
+        val PRELIGHT:Double = js.native
+        val SELECTED:Double = js.native
+        val INSENSITIVE:Double = js.native
+        val INCONSISTENT:Double = js.native
+        val FOCUSED:Double = js.native
     }
     @js.native
     object TextBufferTargetInfo extends js.Object {
-        val BUFFER_CONTENTS:js.Dynamic = js.native
-        val RICH_TEXT:js.Dynamic = js.native
-        val TEXT:js.Dynamic = js.native
+        val BUFFER_CONTENTS:Double = js.native
+        val RICH_TEXT:Double = js.native
+        val TEXT:Double = js.native
     }
     @js.native
     object TextDirection extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val LTR:js.Dynamic = js.native
-        val RTL:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val LTR:Double = js.native
+        val RTL:Double = js.native
     }
     @js.native
     object TextExtendSelection extends js.Object {
-        val WORD:js.Dynamic = js.native
-        val LINE:js.Dynamic = js.native
+        val WORD:Double = js.native
+        val LINE:Double = js.native
     }
     @js.native
     object TextViewLayer extends js.Object {
-        val BELOW:js.Dynamic = js.native
-        val ABOVE:js.Dynamic = js.native
+        val BELOW:Double = js.native
+        val ABOVE:Double = js.native
     }
     @js.native
     object TextWindowType extends js.Object {
-        val PRIVATE:js.Dynamic = js.native
-        val WIDGET:js.Dynamic = js.native
-        val TEXT:js.Dynamic = js.native
-        val LEFT:js.Dynamic = js.native
-        val RIGHT:js.Dynamic = js.native
-        val TOP:js.Dynamic = js.native
-        val BOTTOM:js.Dynamic = js.native
+        val PRIVATE:Double = js.native
+        val WIDGET:Double = js.native
+        val TEXT:Double = js.native
+        val LEFT:Double = js.native
+        val RIGHT:Double = js.native
+        val TOP:Double = js.native
+        val BOTTOM:Double = js.native
     }
     @js.native
     object ToolbarSpaceStyle extends js.Object {
-        val EMPTY:js.Dynamic = js.native
-        val LINE:js.Dynamic = js.native
+        val EMPTY:Double = js.native
+        val LINE:Double = js.native
     }
     @js.native
     object ToolbarStyle extends js.Object {
-        val ICONS:js.Dynamic = js.native
-        val TEXT:js.Dynamic = js.native
-        val BOTH:js.Dynamic = js.native
-        val BOTH_HORIZ:js.Dynamic = js.native
+        val ICONS:Double = js.native
+        val TEXT:Double = js.native
+        val BOTH:Double = js.native
+        val BOTH_HORIZ:Double = js.native
     }
     @js.native
     object TreeViewColumnSizing extends js.Object {
-        val GROW_ONLY:js.Dynamic = js.native
-        val AUTOSIZE:js.Dynamic = js.native
-        val FIXED:js.Dynamic = js.native
+        val GROW_ONLY:Double = js.native
+        val AUTOSIZE:Double = js.native
+        val FIXED:Double = js.native
     }
     @js.native
     object TreeViewDropPosition extends js.Object {
-        val BEFORE:js.Dynamic = js.native
-        val AFTER:js.Dynamic = js.native
-        val INTO_OR_BEFORE:js.Dynamic = js.native
-        val INTO_OR_AFTER:js.Dynamic = js.native
+        val BEFORE:Double = js.native
+        val AFTER:Double = js.native
+        val INTO_OR_BEFORE:Double = js.native
+        val INTO_OR_AFTER:Double = js.native
     }
     @js.native
     object TreeViewGridLines extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val HORIZONTAL:js.Dynamic = js.native
-        val VERTICAL:js.Dynamic = js.native
-        val BOTH:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val HORIZONTAL:Double = js.native
+        val VERTICAL:Double = js.native
+        val BOTH:Double = js.native
     }
     @js.native
     object Unit extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val POINTS:js.Dynamic = js.native
-        val INCH:js.Dynamic = js.native
-        val MM:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val POINTS:Double = js.native
+        val INCH:Double = js.native
+        val MM:Double = js.native
     }
     @js.native
     object WidgetHelpType extends js.Object {
-        val TOOLTIP:js.Dynamic = js.native
-        val WHATS_THIS:js.Dynamic = js.native
+        val TOOLTIP:Double = js.native
+        val WHATS_THIS:Double = js.native
     }
     @js.native
     object WindowPosition extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val CENTER:js.Dynamic = js.native
-        val MOUSE:js.Dynamic = js.native
-        val CENTER_ALWAYS:js.Dynamic = js.native
-        val CENTER_ON_PARENT:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val CENTER:Double = js.native
+        val MOUSE:Double = js.native
+        val CENTER_ALWAYS:Double = js.native
+        val CENTER_ON_PARENT:Double = js.native
     }
     @js.native
     object WindowType extends js.Object {
-        val TOPLEVEL:js.Dynamic = js.native
-        val POPUP:js.Dynamic = js.native
+        val TOPLEVEL:Double = js.native
+        val POPUP:Double = js.native
     }
     @js.native
     object WrapMode extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val CHAR:js.Dynamic = js.native
-        val WORD:js.Dynamic = js.native
-        val WORD_CHAR:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val CHAR:Double = js.native
+        val WORD:Double = js.native
+        val WORD_CHAR:Double = js.native
     }
     @js.native
     object AccelFlags extends js.Object {
-        val VISIBLE:js.Dynamic = js.native
-        val LOCKED:js.Dynamic = js.native
-        val MASK:js.Dynamic = js.native
+        val VISIBLE:Double = js.native
+        val LOCKED:Double = js.native
+        val MASK:Double = js.native
     }
     @js.native
     object ApplicationInhibitFlags extends js.Object {
-        val LOGOUT:js.Dynamic = js.native
-        val SWITCH:js.Dynamic = js.native
-        val SUSPEND:js.Dynamic = js.native
-        val IDLE:js.Dynamic = js.native
+        val LOGOUT:Double = js.native
+        val SWITCH:Double = js.native
+        val SUSPEND:Double = js.native
+        val IDLE:Double = js.native
     }
     @js.native
     object AttachOptions extends js.Object {
-        val EXPAND:js.Dynamic = js.native
-        val SHRINK:js.Dynamic = js.native
-        val FILL:js.Dynamic = js.native
+        val EXPAND:Double = js.native
+        val SHRINK:Double = js.native
+        val FILL:Double = js.native
     }
     @js.native
     object CalendarDisplayOptions extends js.Object {
-        val SHOW_HEADING:js.Dynamic = js.native
-        val SHOW_DAY_NAMES:js.Dynamic = js.native
-        val NO_MONTH_CHANGE:js.Dynamic = js.native
-        val SHOW_WEEK_NUMBERS:js.Dynamic = js.native
-        val SHOW_DETAILS:js.Dynamic = js.native
+        val SHOW_HEADING:Double = js.native
+        val SHOW_DAY_NAMES:Double = js.native
+        val NO_MONTH_CHANGE:Double = js.native
+        val SHOW_WEEK_NUMBERS:Double = js.native
+        val SHOW_DETAILS:Double = js.native
     }
     @js.native
     object CellRendererState extends js.Object {
-        val SELECTED:js.Dynamic = js.native
-        val PRELIT:js.Dynamic = js.native
-        val INSENSITIVE:js.Dynamic = js.native
-        val SORTED:js.Dynamic = js.native
-        val FOCUSED:js.Dynamic = js.native
-        val EXPANDABLE:js.Dynamic = js.native
-        val EXPANDED:js.Dynamic = js.native
+        val SELECTED:Double = js.native
+        val PRELIT:Double = js.native
+        val INSENSITIVE:Double = js.native
+        val SORTED:Double = js.native
+        val FOCUSED:Double = js.native
+        val EXPANDABLE:Double = js.native
+        val EXPANDED:Double = js.native
     }
     @js.native
     object DebugFlag extends js.Object {
-        val MISC:js.Dynamic = js.native
-        val PLUGSOCKET:js.Dynamic = js.native
-        val TEXT:js.Dynamic = js.native
-        val TREE:js.Dynamic = js.native
-        val UPDATES:js.Dynamic = js.native
-        val KEYBINDINGS:js.Dynamic = js.native
-        val MULTIHEAD:js.Dynamic = js.native
-        val MODULES:js.Dynamic = js.native
-        val GEOMETRY:js.Dynamic = js.native
-        val ICONTHEME:js.Dynamic = js.native
-        val PRINTING:js.Dynamic = js.native
-        val BUILDER:js.Dynamic = js.native
-        val SIZE_REQUEST:js.Dynamic = js.native
-        val NO_CSS_CACHE:js.Dynamic = js.native
-        val BASELINES:js.Dynamic = js.native
-        val PIXEL_CACHE:js.Dynamic = js.native
-        val NO_PIXEL_CACHE:js.Dynamic = js.native
-        val INTERACTIVE:js.Dynamic = js.native
-        val TOUCHSCREEN:js.Dynamic = js.native
-        val ACTIONS:js.Dynamic = js.native
+        val MISC:Double = js.native
+        val PLUGSOCKET:Double = js.native
+        val TEXT:Double = js.native
+        val TREE:Double = js.native
+        val UPDATES:Double = js.native
+        val KEYBINDINGS:Double = js.native
+        val MULTIHEAD:Double = js.native
+        val MODULES:Double = js.native
+        val GEOMETRY:Double = js.native
+        val ICONTHEME:Double = js.native
+        val PRINTING:Double = js.native
+        val BUILDER:Double = js.native
+        val SIZE_REQUEST:Double = js.native
+        val NO_CSS_CACHE:Double = js.native
+        val BASELINES:Double = js.native
+        val PIXEL_CACHE:Double = js.native
+        val NO_PIXEL_CACHE:Double = js.native
+        val INTERACTIVE:Double = js.native
+        val TOUCHSCREEN:Double = js.native
+        val ACTIONS:Double = js.native
     }
     @js.native
     object DestDefaults extends js.Object {
-        val MOTION:js.Dynamic = js.native
-        val HIGHLIGHT:js.Dynamic = js.native
-        val DROP:js.Dynamic = js.native
-        val ALL:js.Dynamic = js.native
+        val MOTION:Double = js.native
+        val HIGHLIGHT:Double = js.native
+        val DROP:Double = js.native
+        val ALL:Double = js.native
     }
     @js.native
     object DialogFlags extends js.Object {
-        val MODAL:js.Dynamic = js.native
-        val DESTROY_WITH_PARENT:js.Dynamic = js.native
-        val USE_HEADER_BAR:js.Dynamic = js.native
+        val MODAL:Double = js.native
+        val DESTROY_WITH_PARENT:Double = js.native
+        val USE_HEADER_BAR:Double = js.native
     }
     @js.native
     object FileFilterFlags extends js.Object {
-        val FILENAME:js.Dynamic = js.native
-        val URI:js.Dynamic = js.native
-        val DISPLAY_NAME:js.Dynamic = js.native
-        val MIME_TYPE:js.Dynamic = js.native
+        val FILENAME:Double = js.native
+        val URI:Double = js.native
+        val DISPLAY_NAME:Double = js.native
+        val MIME_TYPE:Double = js.native
     }
     @js.native
     object IconLookupFlags extends js.Object {
-        val NO_SVG:js.Dynamic = js.native
-        val FORCE_SVG:js.Dynamic = js.native
-        val USE_BUILTIN:js.Dynamic = js.native
-        val GENERIC_FALLBACK:js.Dynamic = js.native
-        val FORCE_SIZE:js.Dynamic = js.native
-        val FORCE_REGULAR:js.Dynamic = js.native
-        val FORCE_SYMBOLIC:js.Dynamic = js.native
-        val DIR_LTR:js.Dynamic = js.native
-        val DIR_RTL:js.Dynamic = js.native
+        val NO_SVG:Double = js.native
+        val FORCE_SVG:Double = js.native
+        val USE_BUILTIN:Double = js.native
+        val GENERIC_FALLBACK:Double = js.native
+        val FORCE_SIZE:Double = js.native
+        val FORCE_REGULAR:Double = js.native
+        val FORCE_SYMBOLIC:Double = js.native
+        val DIR_LTR:Double = js.native
+        val DIR_RTL:Double = js.native
     }
     @js.native
     object InputHints extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val SPELLCHECK:js.Dynamic = js.native
-        val NO_SPELLCHECK:js.Dynamic = js.native
-        val WORD_COMPLETION:js.Dynamic = js.native
-        val LOWERCASE:js.Dynamic = js.native
-        val UPPERCASE_CHARS:js.Dynamic = js.native
-        val UPPERCASE_WORDS:js.Dynamic = js.native
-        val UPPERCASE_SENTENCES:js.Dynamic = js.native
-        val INHIBIT_OSK:js.Dynamic = js.native
-        val VERTICAL_WRITING:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val SPELLCHECK:Double = js.native
+        val NO_SPELLCHECK:Double = js.native
+        val WORD_COMPLETION:Double = js.native
+        val LOWERCASE:Double = js.native
+        val UPPERCASE_CHARS:Double = js.native
+        val UPPERCASE_WORDS:Double = js.native
+        val UPPERCASE_SENTENCES:Double = js.native
+        val INHIBIT_OSK:Double = js.native
+        val VERTICAL_WRITING:Double = js.native
     }
     @js.native
     object JunctionSides extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val CORNER_TOPLEFT:js.Dynamic = js.native
-        val CORNER_TOPRIGHT:js.Dynamic = js.native
-        val CORNER_BOTTOMLEFT:js.Dynamic = js.native
-        val CORNER_BOTTOMRIGHT:js.Dynamic = js.native
-        val TOP:js.Dynamic = js.native
-        val BOTTOM:js.Dynamic = js.native
-        val LEFT:js.Dynamic = js.native
-        val RIGHT:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val CORNER_TOPLEFT:Double = js.native
+        val CORNER_TOPRIGHT:Double = js.native
+        val CORNER_BOTTOMLEFT:Double = js.native
+        val CORNER_BOTTOMRIGHT:Double = js.native
+        val TOP:Double = js.native
+        val BOTTOM:Double = js.native
+        val LEFT:Double = js.native
+        val RIGHT:Double = js.native
     }
     @js.native
     object PlacesOpenFlags extends js.Object {
-        val NORMAL:js.Dynamic = js.native
-        val NEW_TAB:js.Dynamic = js.native
-        val NEW_WINDOW:js.Dynamic = js.native
+        val NORMAL:Double = js.native
+        val NEW_TAB:Double = js.native
+        val NEW_WINDOW:Double = js.native
     }
     @js.native
     object RcFlags extends js.Object {
-        val FG:js.Dynamic = js.native
-        val BG:js.Dynamic = js.native
-        val TEXT:js.Dynamic = js.native
-        val BASE:js.Dynamic = js.native
+        val FG:Double = js.native
+        val BG:Double = js.native
+        val TEXT:Double = js.native
+        val BASE:Double = js.native
     }
     @js.native
     object RecentFilterFlags extends js.Object {
-        val URI:js.Dynamic = js.native
-        val DISPLAY_NAME:js.Dynamic = js.native
-        val MIME_TYPE:js.Dynamic = js.native
-        val APPLICATION:js.Dynamic = js.native
-        val GROUP:js.Dynamic = js.native
-        val AGE:js.Dynamic = js.native
+        val URI:Double = js.native
+        val DISPLAY_NAME:Double = js.native
+        val MIME_TYPE:Double = js.native
+        val APPLICATION:Double = js.native
+        val GROUP:Double = js.native
+        val AGE:Double = js.native
     }
     @js.native
     object RegionFlags extends js.Object {
-        val EVEN:js.Dynamic = js.native
-        val ODD:js.Dynamic = js.native
-        val FIRST:js.Dynamic = js.native
-        val LAST:js.Dynamic = js.native
-        val ONLY:js.Dynamic = js.native
-        val SORTED:js.Dynamic = js.native
+        val EVEN:Double = js.native
+        val ODD:Double = js.native
+        val FIRST:Double = js.native
+        val LAST:Double = js.native
+        val ONLY:Double = js.native
+        val SORTED:Double = js.native
     }
     @js.native
     object StateFlags extends js.Object {
-        val NORMAL:js.Dynamic = js.native
-        val ACTIVE:js.Dynamic = js.native
-        val PRELIGHT:js.Dynamic = js.native
-        val SELECTED:js.Dynamic = js.native
-        val INSENSITIVE:js.Dynamic = js.native
-        val INCONSISTENT:js.Dynamic = js.native
-        val FOCUSED:js.Dynamic = js.native
-        val BACKDROP:js.Dynamic = js.native
-        val DIR_LTR:js.Dynamic = js.native
-        val DIR_RTL:js.Dynamic = js.native
-        val LINK:js.Dynamic = js.native
-        val VISITED:js.Dynamic = js.native
-        val CHECKED:js.Dynamic = js.native
+        val NORMAL:Double = js.native
+        val ACTIVE:Double = js.native
+        val PRELIGHT:Double = js.native
+        val SELECTED:Double = js.native
+        val INSENSITIVE:Double = js.native
+        val INCONSISTENT:Double = js.native
+        val FOCUSED:Double = js.native
+        val BACKDROP:Double = js.native
+        val DIR_LTR:Double = js.native
+        val DIR_RTL:Double = js.native
+        val LINK:Double = js.native
+        val VISITED:Double = js.native
+        val CHECKED:Double = js.native
     }
     @js.native
     object TargetFlags extends js.Object {
-        val SAME_APP:js.Dynamic = js.native
-        val SAME_WIDGET:js.Dynamic = js.native
-        val OTHER_APP:js.Dynamic = js.native
-        val OTHER_WIDGET:js.Dynamic = js.native
+        val SAME_APP:Double = js.native
+        val SAME_WIDGET:Double = js.native
+        val OTHER_APP:Double = js.native
+        val OTHER_WIDGET:Double = js.native
     }
     @js.native
     object TextSearchFlags extends js.Object {
-        val VISIBLE_ONLY:js.Dynamic = js.native
-        val TEXT_ONLY:js.Dynamic = js.native
-        val CASE_INSENSITIVE:js.Dynamic = js.native
+        val VISIBLE_ONLY:Double = js.native
+        val TEXT_ONLY:Double = js.native
+        val CASE_INSENSITIVE:Double = js.native
     }
     @js.native
     object ToolPaletteDragTargets extends js.Object {
-        val ITEMS:js.Dynamic = js.native
-        val GROUPS:js.Dynamic = js.native
+        val ITEMS:Double = js.native
+        val GROUPS:Double = js.native
     }
     @js.native
     object TreeModelFlags extends js.Object {
-        val ITERS_PERSIST:js.Dynamic = js.native
-        val LIST_ONLY:js.Dynamic = js.native
+        val ITERS_PERSIST:Double = js.native
+        val LIST_ONLY:Double = js.native
     }
     @js.native
     object UIManagerItemType extends js.Object {
-        val AUTO:js.Dynamic = js.native
-        val MENUBAR:js.Dynamic = js.native
-        val MENU:js.Dynamic = js.native
-        val TOOLBAR:js.Dynamic = js.native
-        val PLACEHOLDER:js.Dynamic = js.native
-        val POPUP:js.Dynamic = js.native
-        val MENUITEM:js.Dynamic = js.native
-        val TOOLITEM:js.Dynamic = js.native
-        val SEPARATOR:js.Dynamic = js.native
-        val ACCELERATOR:js.Dynamic = js.native
-        val POPUP_WITH_ACCELS:js.Dynamic = js.native
+        val AUTO:Double = js.native
+        val MENUBAR:Double = js.native
+        val MENU:Double = js.native
+        val TOOLBAR:Double = js.native
+        val PLACEHOLDER:Double = js.native
+        val POPUP:Double = js.native
+        val MENUITEM:Double = js.native
+        val TOOLITEM:Double = js.native
+        val SEPARATOR:Double = js.native
+        val ACCELERATOR:Double = js.native
+        val POPUP_WITH_ACCELS:Double = js.native
     }
     @js.native
     class AboutDialog extends Dialog {
@@ -1449,7 +1449,7 @@ object Gtk extends js.Object {
         def get_copyright():String = js.native
         def get_documenters():js.Array[String] = js.native
         def get_license():String = js.native
-        def get_license_type():Any = js.native
+        def get_license_type():Double = js.native
         def get_logo():Any = js.native
         def get_logo_icon_name():String = js.native
         def get_program_name():String = js.native
@@ -1464,7 +1464,7 @@ object Gtk extends js.Object {
         def set_copyright(copyright: String):Unit = js.native
         def set_documenters(documenters: js.Array[String]):Unit = js.native
         def set_license(license: String):Unit = js.native
-        def set_license_type(license_type0: Any):Unit = js.native
+        def set_license_type(license_type0: Double):Unit = js.native
         def set_logo(logo: Any):Unit = js.native
         def set_logo_icon_name(icon_name: String):Unit = js.native
         def set_program_name(name: String):Unit = js.native
@@ -1477,44 +1477,44 @@ object Gtk extends js.Object {
     @js.native
     class AccelGroup extends GObject.Object {
         def this(config: js.Any) = this()
-        def activate(accel_quark: Any, acceleratable: Any, accel_key: Any, accel_mods: Any):Boolean = js.native
-        def connect(accel_key: Any, accel_mods: Any, accel_flags: Any, closure: Any):Unit = js.native
+        def activate(accel_quark: Any, acceleratable: GObject.Object, accel_key: Any, accel_mods: Double):Boolean = js.native
+        def connect(accel_key: Any, accel_mods: Double, accel_flags: Double, closure: Any):Unit = js.native
         def connect_by_path(accel_path: String, closure: Any):Unit = js.native
         def disconnect(closure: Any):Boolean = js.native
-        def disconnect_key(accel_key: Any, accel_mods: Any):Boolean = js.native
+        def disconnect_key(accel_key: Any, accel_mods: Double):Boolean = js.native
         def find(find_func: Any, data: Object):Any = js.native
         def get_is_locked():Boolean = js.native
-        def get_modifier_mask():Any = js.native
+        def get_modifier_mask():Double = js.native
         def lock():Unit = js.native
-        def query(accel_key: Any, accel_mods: Any, n_entries: Any):js.Array[Any] = js.native
+        def query(accel_key: Any, accel_mods: Double, n_entries: Any):js.Array[Any] = js.native
         def unlock():Unit = js.native
     }
     @js.native
     object AccelGroup extends js.Object {
-        def from_accel_closure(closure: Any):Any = js.native
+        def from_accel_closure(closure: Any):AccelGroup = js.native
     }
     @js.native
     class AccelLabel extends Label {
         def this(config: js.Any) = this()
-        def get_accel(accelerator_key: Any, accelerator_mods: Any):Unit = js.native
-        def get_accel_widget():Any = js.native
+        def get_accel(accelerator_key: Any, accelerator_mods: Double):Unit = js.native
+        def get_accel_widget():Widget = js.native
         def get_accel_width():Any = js.native
         def refetch():Boolean = js.native
-        def set_accel(accelerator_key: Any, accelerator_mods: Any):Unit = js.native
+        def set_accel(accelerator_key: Any, accelerator_mods: Double):Unit = js.native
         def set_accel_closure(accel_closure: Any):Unit = js.native
-        def set_accel_widget(accel_widget: Any):Unit = js.native
+        def set_accel_widget(accel_widget: Widget):Unit = js.native
     }
     @js.native
     class AccelMap extends GObject.Object {
     }
     @js.native
     object AccelMap extends js.Object {
-        def add_entry(accel_path: String, accel_key: Any, accel_mods: Any):Unit = js.native
+        def add_entry(accel_path: String, accel_key: Any, accel_mods: Double):Unit = js.native
         def add_filter(filter_pattern: String):Unit = js.native
-        def change_entry(accel_path: String, accel_key: Any, accel_mods: Any, replace: Boolean):Boolean = js.native
+        def change_entry(accel_path: String, accel_key: Any, accel_mods: Double, replace: Boolean):Boolean = js.native
         def foreach(data: Object, foreach_func: Any):Unit = js.native
         def foreach_unfiltered(data: Object, foreach_func: Any):Unit = js.native
-        def get():Any = js.native
+        def get():AccelMap = js.native
         def load(file_name: Any):Unit = js.native
         def load_fd(fd: Any):Unit = js.native
         def load_scanner(scanner: Any):Unit = js.native
@@ -1527,8 +1527,8 @@ object Gtk extends js.Object {
     @js.native
     class Accessible extends Atk.Object {
         def connect_widget_destroyed():Unit = js.native
-        def get_widget():Any = js.native
-        def set_widget(widget: Any):Unit = js.native
+        def get_widget():Widget = js.native
+        def set_widget(widget: Widget):Unit = js.native
     }
     @js.native
     class Action extends GObject.Object {
@@ -1536,10 +1536,10 @@ object Gtk extends js.Object {
         def activate():Unit = js.native
         def block_activate():Unit = js.native
         def connect_accelerator():Unit = js.native
-        def create_icon(icon_size: Any):Any = js.native
-        def create_menu():Any = js.native
-        def create_menu_item():Any = js.native
-        def create_tool_item():Any = js.native
+        def create_icon(icon_size: Any):Widget = js.native
+        def create_menu():Widget = js.native
+        def create_menu_item():Widget = js.native
+        def create_tool_item():Widget = js.native
         def disconnect_accelerator():Unit = js.native
         def get_accel_closure():Any = js.native
         def get_accel_path():String = js.native
@@ -1559,7 +1559,7 @@ object Gtk extends js.Object {
         def get_visible_vertical():Boolean = js.native
         def is_sensitive():Boolean = js.native
         def is_visible():Boolean = js.native
-        def set_accel_group(accel_group: Any):Unit = js.native
+        def set_accel_group(accel_group: AccelGroup):Unit = js.native
         def set_accel_path(accel_path: String):Unit = js.native
         def set_always_show_image(always_show: Boolean):Unit = js.native
         def set_gicon(icon: Any):Unit = js.native
@@ -1578,30 +1578,30 @@ object Gtk extends js.Object {
     @js.native
     class ActionBar extends Bin {
         def this(config: js.Any) = this()
-        def get_center_widget():Any = js.native
-        def pack_end(child: Any):Unit = js.native
-        def pack_start(child: Any):Unit = js.native
-        def set_center_widget(center_widget: Any):Unit = js.native
+        def get_center_widget():Widget = js.native
+        def pack_end(child: Widget):Unit = js.native
+        def pack_start(child: Widget):Unit = js.native
+        def set_center_widget(center_widget: Widget):Unit = js.native
     }
     @js.native
     class ActionGroup extends GObject.Object {
         def this(config: js.Any) = this()
-        def add_action(action: Any):Unit = js.native
-        def add_action_with_accel(action: Any, accelerator: String):Unit = js.native
+        def add_action(action: Action):Unit = js.native
+        def add_action_with_accel(action: Action, accelerator: String):Unit = js.native
         def add_actions(entries: js.Array[Any], n_entries: Any, user_data: Object):Unit = js.native
         def add_actions_full(entries: js.Array[Any], n_entries: Any, user_data: Object, destroy: Any):Unit = js.native
         def add_radio_actions(entries: js.Array[Any], n_entries: Any, value: Any, on_change: Any, user_data: Object):Unit = js.native
         def add_radio_actions_full(entries: js.Array[Any], n_entries: Any, value: Any, on_change: Any, user_data: Object, destroy: Any):Unit = js.native
         def add_toggle_actions(entries: js.Array[Any], n_entries: Any, user_data: Object):Unit = js.native
         def add_toggle_actions_full(entries: js.Array[Any], n_entries: Any, user_data: Object, destroy: Any):Unit = js.native
-        def get_accel_group():Any = js.native
-        def get_action(action_name: String):Any = js.native
+        def get_accel_group():AccelGroup = js.native
+        def get_action(action_name: String):Action = js.native
         def get_name():String = js.native
         def get_sensitive():Boolean = js.native
         def get_visible():Boolean = js.native
         def list_actions():Any = js.native
-        def remove_action(action: Any):Unit = js.native
-        def set_accel_group(accel_group: Any):Unit = js.native
+        def remove_action(action: Action):Unit = js.native
+        def set_accel_group(accel_group: AccelGroup):Unit = js.native
         def set_sensitive(sensitive: Boolean):Unit = js.native
         def set_translate_func(func: Any, data: Object, notify: Any):Unit = js.native
         def set_translation_domain(domain: String):Unit = js.native
@@ -1653,12 +1653,12 @@ object Gtk extends js.Object {
     class AppChooserDialog extends Dialog {
         def this(config: js.Any) = this()
         def get_heading():String = js.native
-        def get_widget():Any = js.native
+        def get_widget():Widget = js.native
         def set_heading(heading: String):Unit = js.native
     }
     @js.native
     object AppChooserDialog extends js.Object {
-        def new_for_content_type(parent: Any, flags: Any, content_type0: String):AppChooserDialog = js.native
+        def new_for_content_type(parent: Window, flags: Double, content_type0: String):AppChooserDialog = js.native
     }
     @js.native
     class AppChooserWidget extends Box {
@@ -1681,24 +1681,24 @@ object Gtk extends js.Object {
         def this(config: js.Any) = this()
         def add_action(action:Any):Unit = js.native
         def add_accelerator(accelerator: String, action_name: String, parameter: Any):Unit = js.native
-        def add_window(window: Any):Unit = js.native
+        def add_window(window: Window):Unit = js.native
         def get_accels_for_action(detailed_action_name: String):js.Array[String] = js.native
         def get_actions_for_accel(accel: String):js.Array[String] = js.native
-        def get_active_window():Any = js.native
-        def get_app_menu():Any = js.native
-        def get_menu_by_id(id: String):Any = js.native
-        def get_menubar():Any = js.native
-        def get_window_by_id(id: Any):Any = js.native
+        def get_active_window():Window = js.native
+        def get_app_menu():Gio.MenuModel = js.native
+        def get_menu_by_id(id: String):Gio.Menu = js.native
+        def get_menubar():Gio.MenuModel = js.native
+        def get_window_by_id(id: Any):Window = js.native
         def get_windows():Any = js.native
-        def inhibit(window: Any, flags: Any, reason: String):Any = js.native
-        def is_inhibited(flags: Any):Boolean = js.native
+        def inhibit(window: Window, flags: Double, reason: String):Any = js.native
+        def is_inhibited(flags: Double):Boolean = js.native
         def list_action_descriptions():js.Array[String] = js.native
         def prefers_app_menu():Boolean = js.native
         def remove_accelerator(action_name: String, parameter: Any):Unit = js.native
-        def remove_window(window: Any):Unit = js.native
+        def remove_window(window: Window):Unit = js.native
         def set_accels_for_action(detailed_action_name: String, accels: js.Array[String]):Unit = js.native
-        def set_app_menu(app_menu: Any):Unit = js.native
-        def set_menubar(menubar: Any):Unit = js.native
+        def set_app_menu(app_menu: Gio.MenuModel):Unit = js.native
+        def set_menubar(menubar: Gio.MenuModel):Unit = js.native
         def uninhibit(cookie: Any):Unit = js.native
     }
     @js.native
@@ -1711,7 +1711,7 @@ object Gtk extends js.Object {
     @js.native
     class Arrow extends Misc {
         def this(config: js.Any) = this()
-        def set(arrow_type0: Any, shadow_type0: Any):Unit = js.native
+        def set(arrow_type0: Double, shadow_type0: Double):Unit = js.native
     }
     @js.native
     class ArrowAccessible extends WidgetAccessible {
@@ -1724,37 +1724,37 @@ object Gtk extends js.Object {
     @js.native
     class Assistant extends Window {
         def this(config: js.Any) = this()
-        def add_action_widget(child: Any):Unit = js.native
-        def append_page(page: Any):Any = js.native
+        def add_action_widget(child: Widget):Unit = js.native
+        def append_page(page: Widget):Any = js.native
         def commit():Unit = js.native
         def get_current_page():Any = js.native
         def get_n_pages():Any = js.native
-        def get_nth_page(page_num: Any):Any = js.native
-        def get_page_complete(page: Any):Boolean = js.native
-        def get_page_has_padding(page: Any):Boolean = js.native
-        def get_page_header_image(page: Any):Any = js.native
-        def get_page_side_image(page: Any):Any = js.native
-        def get_page_title(page: Any):String = js.native
-        def get_page_type(page: Any):Any = js.native
-        def insert_page(page: Any, position: Any):Any = js.native
+        def get_nth_page(page_num: Any):Widget = js.native
+        def get_page_complete(page: Widget):Boolean = js.native
+        def get_page_has_padding(page: Widget):Boolean = js.native
+        def get_page_header_image(page: Widget):Any = js.native
+        def get_page_side_image(page: Widget):Any = js.native
+        def get_page_title(page: Widget):String = js.native
+        def get_page_type(page: Widget):Double = js.native
+        def insert_page(page: Widget, position: Any):Any = js.native
         def next_page():Unit = js.native
-        def prepend_page(page: Any):Any = js.native
+        def prepend_page(page: Widget):Any = js.native
         def previous_page():Unit = js.native
-        def remove_action_widget(child: Any):Unit = js.native
+        def remove_action_widget(child: Widget):Unit = js.native
         def remove_page(page_num: Any):Unit = js.native
         def set_current_page(page_num: Any):Unit = js.native
         def set_forward_page_func(page_func: Any, data: Object, destroy: Any):Unit = js.native
-        def set_page_complete(page: Any, complete: Boolean):Unit = js.native
-        def set_page_has_padding(page: Any, has_padding: Boolean):Unit = js.native
-        def set_page_header_image(page: Any, pixbuf: Any):Unit = js.native
-        def set_page_side_image(page: Any, pixbuf: Any):Unit = js.native
-        def set_page_title(page: Any, title: String):Unit = js.native
-        def set_page_type(page: Any, type0: Any):Unit = js.native
+        def set_page_complete(page: Widget, complete: Boolean):Unit = js.native
+        def set_page_has_padding(page: Widget, has_padding: Boolean):Unit = js.native
+        def set_page_header_image(page: Widget, pixbuf: Any):Unit = js.native
+        def set_page_side_image(page: Widget, pixbuf: Any):Unit = js.native
+        def set_page_title(page: Widget, title: String):Unit = js.native
+        def set_page_type(page: Widget, type0: Double):Unit = js.native
         def update_buttons_state():Unit = js.native
     }
     @js.native
     class Bin extends Container {
-        def get_child():Any = js.native
+        def get_child():Widget = js.native
     }
     @js.native
     class BooleanCellAccessible extends RendererCellAccessible {
@@ -1762,17 +1762,17 @@ object Gtk extends js.Object {
     @js.native
     class Box extends Container {
         def this(config: js.Any) = this()
-        def get_baseline_position():Any = js.native
-        def get_center_widget():Any = js.native
+        def get_baseline_position():Double = js.native
+        def get_center_widget():Widget = js.native
         def get_homogeneous():Boolean = js.native
         def get_spacing():Any = js.native
-        def pack_end(child: Any, expand: Boolean, fill: Boolean, padding: Any):Unit = js.native
-        def pack_start(child: Any, expand: Boolean, fill: Boolean, padding: Any):Unit = js.native
-        def query_child_packing(child: Any, expand: Boolean, fill: Boolean, padding: Any, pack_type0: Any):Unit = js.native
-        def reorder_child(child: Any, position: Any):Unit = js.native
-        def set_baseline_position(position: Any):Unit = js.native
-        def set_center_widget(widget: Any):Unit = js.native
-        def set_child_packing(child: Any, expand: Boolean, fill: Boolean, padding: Any, pack_type0: Any):Unit = js.native
+        def pack_end(child: Widget, expand: Boolean, fill: Boolean, padding: Any):Unit = js.native
+        def pack_start(child: Widget, expand: Boolean, fill: Boolean, padding: Any):Unit = js.native
+        def query_child_packing(child: Widget, expand: Boolean, fill: Boolean, padding: Any, pack_type0: Double):Unit = js.native
+        def reorder_child(child: Widget, position: Any):Unit = js.native
+        def set_baseline_position(position: Double):Unit = js.native
+        def set_center_widget(widget: Widget):Unit = js.native
+        def set_child_packing(child: Widget, expand: Boolean, fill: Boolean, padding: Any, pack_type0: Double):Unit = js.native
         def set_homogeneous(homogeneous: Boolean):Unit = js.native
         def set_spacing(spacing: Any):Unit = js.native
     }
@@ -1787,18 +1787,18 @@ object Gtk extends js.Object {
         def add_objects_from_file(filename: String, object_ids: js.Array[String]):Any = js.native
         def add_objects_from_resource(resource_path: String, object_ids: js.Array[String]):Any = js.native
         def add_objects_from_string(buffer: String, length: Any, object_ids: js.Array[String]):Any = js.native
-        def connect_signals(handler: Any, user_data: Any):Unit = js.native
+        def connect_signals(user_data: Object):Unit = js.native
         def connect_signals_full(func: Any, user_data: Object):Unit = js.native
-        def expose_object(name: String, object0: Any):Unit = js.native
-        def get_application():Any = js.native
-        def get_object(name: String):Any = js.native
+        def expose_object(name: String, object0: GObject.Object):Unit = js.native
+        def get_application():Application = js.native
+        def get_object(name: String):GObject.Object = js.native
         def get_objects():Any = js.native
         def get_translation_domain():String = js.native
         def get_type_from_name(type_name: String):Any = js.native
         def lookup_callback_symbol(callback_name: String):Any = js.native
-        def set_application(application: Any):Unit = js.native
+        def set_application(application: Application):Unit = js.native
         def set_translation_domain(domain: String):Unit = js.native
-        def value_from_string(pspec: Any, string: String, value: Any):Boolean = js.native
+        def value_from_string(pspec: GObject.ParamSpec, string: String, value: Any):Boolean = js.native
         def value_from_string_type(type0: Any, string: String, value: Any):Boolean = js.native
     }
     @js.native
@@ -1814,12 +1814,12 @@ object Gtk extends js.Object {
         def enter():Unit = js.native
         def get_alignment(xalign: Any, yalign: Any):Unit = js.native
         def get_always_show_image():Boolean = js.native
-        def get_event_window():Any = js.native
+        def get_event_window():Gdk.Window = js.native
         def get_focus_on_click():Boolean = js.native
-        def get_image():Any = js.native
-        def get_image_position():Any = js.native
+        def get_image():Widget = js.native
+        def get_image_position():Double = js.native
         def get_label():String = js.native
-        def get_relief():Any = js.native
+        def get_relief():Double = js.native
         def get_use_stock():Boolean = js.native
         def get_use_underline():Boolean = js.native
         def leave():Unit = js.native
@@ -1828,10 +1828,10 @@ object Gtk extends js.Object {
         def set_alignment(xalign: Any, yalign: Any):Unit = js.native
         def set_always_show_image(always_show: Boolean):Unit = js.native
         def set_focus_on_click(focus_on_click: Boolean):Unit = js.native
-        def set_image(image: Any):Unit = js.native
-        def set_image_position(position: Any):Unit = js.native
+        def set_image(image: Widget):Unit = js.native
+        def set_image_position(position: Double):Unit = js.native
         def set_label(label: String):Unit = js.native
-        def set_relief(relief: Any):Unit = js.native
+        def set_relief(relief: Double):Unit = js.native
         def set_use_stock(use_stock: Boolean):Unit = js.native
         def set_use_underline(use_underline: Boolean):Unit = js.native
     }
@@ -1848,12 +1848,12 @@ object Gtk extends js.Object {
     @js.native
     class ButtonBox extends Box {
         def this(config: js.Any) = this()
-        def get_child_non_homogeneous(child: Any):Boolean = js.native
-        def get_child_secondary(child: Any):Boolean = js.native
-        def get_layout():Any = js.native
-        def set_child_non_homogeneous(child: Any, non_homogeneous: Boolean):Unit = js.native
-        def set_child_secondary(child: Any, is_secondary: Boolean):Unit = js.native
-        def set_layout(layout_style: Any):Unit = js.native
+        def get_child_non_homogeneous(child: Widget):Boolean = js.native
+        def get_child_secondary(child: Widget):Boolean = js.native
+        def get_layout():Double = js.native
+        def set_child_non_homogeneous(child: Widget, non_homogeneous: Boolean):Unit = js.native
+        def set_child_secondary(child: Widget, is_secondary: Boolean):Unit = js.native
+        def set_layout(layout_style: Double):Unit = js.native
     }
     @js.native
     class Calendar extends Widget {
@@ -1863,14 +1863,14 @@ object Gtk extends js.Object {
         def get_day_is_marked(day: Any):Boolean = js.native
         def get_detail_height_rows():Any = js.native
         def get_detail_width_chars():Any = js.native
-        def get_display_options():Any = js.native
+        def get_display_options():Double = js.native
         def mark_day(day: Any):Unit = js.native
         def select_day(day: Any):Unit = js.native
         def select_month(month: Any, year: Any):Unit = js.native
         def set_detail_func(func: Any, data: Object, destroy: Any):Unit = js.native
         def set_detail_height_rows(rows: Any):Unit = js.native
         def set_detail_width_chars(chars: Any):Unit = js.native
-        def set_display_options(flags: Any):Unit = js.native
+        def set_display_options(flags: Double):Unit = js.native
         def unmark_day(day: Any):Unit = js.native
     }
     @js.native
@@ -1878,64 +1878,64 @@ object Gtk extends js.Object {
     }
     @js.native
     class CellArea extends GObject.InitiallyUnowned {
-        def activate(context: Any, widget: Any, cell_area: Any, flags: Any, edit_only: Boolean):Boolean = js.native
-        def activate_cell(widget: Any, renderer: Any, event: Any, cell_area: Any, flags: Any):Boolean = js.native
-        def add(renderer: Any):Unit = js.native
-        def add_focus_sibling(renderer: Any, sibling: Any):Unit = js.native
-        def add_with_properties(renderer: Any, first_prop_name: String, rest:Any*):Unit = js.native
+        def activate(context: CellAreaContext, widget: Widget, cell_area: Any, flags: Double, edit_only: Boolean):Boolean = js.native
+        def activate_cell(widget: Widget, renderer: CellRenderer, event: Any, cell_area: Any, flags: Double):Boolean = js.native
+        def add(renderer: CellRenderer):Unit = js.native
+        def add_focus_sibling(renderer: CellRenderer, sibling: CellRenderer):Unit = js.native
+        def add_with_properties(renderer: CellRenderer, first_prop_name: String, rest:Any*):Unit = js.native
         def apply_attributes(tree_model: Any, iter: Any, is_expander: Boolean, is_expanded: Boolean):Unit = js.native
-        def attribute_connect(renderer: Any, attribute: String, column: Any):Unit = js.native
-        def attribute_disconnect(renderer: Any, attribute: String):Unit = js.native
-        def attribute_get_column(renderer: Any, attribute: String):Any = js.native
-        def cell_get(renderer: Any, first_prop_name: String, rest:Any*):Unit = js.native
-        def cell_get_property(renderer: Any, property_name: String, value: Any):Unit = js.native
-        def cell_get_valist(renderer: Any, first_property_name: String, var_args: Any):Unit = js.native
-        def cell_set(renderer: Any, first_prop_name: String, rest:Any*):Unit = js.native
-        def cell_set_property(renderer: Any, property_name: String, value: Any):Unit = js.native
-        def cell_set_valist(renderer: Any, first_property_name: String, var_args: Any):Unit = js.native
-        def copy_context(context: Any):Any = js.native
-        def create_context():Any = js.native
-        def event(context: Any, widget: Any, event: Any, cell_area: Any, flags: Any):Any = js.native
-        def focus(direction: Any):Boolean = js.native
+        def attribute_connect(renderer: CellRenderer, attribute: String, column: Any):Unit = js.native
+        def attribute_disconnect(renderer: CellRenderer, attribute: String):Unit = js.native
+        def attribute_get_column(renderer: CellRenderer, attribute: String):Any = js.native
+        def cell_get(renderer: CellRenderer, first_prop_name: String, rest:Any*):Unit = js.native
+        def cell_get_property(renderer: CellRenderer, property_name: String, value: Any):Unit = js.native
+        def cell_get_valist(renderer: CellRenderer, first_property_name: String, var_args: Any):Unit = js.native
+        def cell_set(renderer: CellRenderer, first_prop_name: String, rest:Any*):Unit = js.native
+        def cell_set_property(renderer: CellRenderer, property_name: String, value: Any):Unit = js.native
+        def cell_set_valist(renderer: CellRenderer, first_property_name: String, var_args: Any):Unit = js.native
+        def copy_context(context: CellAreaContext):CellAreaContext = js.native
+        def create_context():CellAreaContext = js.native
+        def event(context: CellAreaContext, widget: Widget, event: Any, cell_area: Any, flags: Double):Any = js.native
+        def focus(direction: Double):Boolean = js.native
         def foreach(callback: Any, callback_data: Object):Unit = js.native
-        def foreach_alloc(context: Any, widget: Any, cell_area: Any, background_area: Any, callback: Any, callback_data: Object):Unit = js.native
-        def get_cell_allocation(context: Any, widget: Any, renderer: Any, cell_area: Any, allocation: Any):Unit = js.native
-        def get_cell_at_position(context: Any, widget: Any, cell_area: Any, x: Any, y: Any, alloc_area: Any):Any = js.native
+        def foreach_alloc(context: CellAreaContext, widget: Widget, cell_area: Any, background_area: Any, callback: Any, callback_data: Object):Unit = js.native
+        def get_cell_allocation(context: CellAreaContext, widget: Widget, renderer: CellRenderer, cell_area: Any, allocation: Any):Unit = js.native
+        def get_cell_at_position(context: CellAreaContext, widget: Widget, cell_area: Any, x: Any, y: Any, alloc_area: Any):CellRenderer = js.native
         def get_current_path_string():String = js.native
         def get_edit_widget():Any = js.native
-        def get_edited_cell():Any = js.native
-        def get_focus_cell():Any = js.native
-        def get_focus_from_sibling(renderer: Any):Any = js.native
-        def get_focus_siblings(renderer: Any):Any = js.native
-        def get_preferred_height(context: Any, widget: Any, minimum_height: Any, natural_height: Any):Unit = js.native
-        def get_preferred_height_for_width(context: Any, widget: Any, width: Any, minimum_height: Any, natural_height: Any):Unit = js.native
-        def get_preferred_width(context: Any, widget: Any, minimum_width: Any, natural_width: Any):Unit = js.native
-        def get_preferred_width_for_height(context: Any, widget: Any, height: Any, minimum_width: Any, natural_width: Any):Unit = js.native
-        def get_request_mode():Any = js.native
-        def has_renderer(renderer: Any):Boolean = js.native
-        def inner_cell_area(widget: Any, cell_area: Any, inner_area: Any):Unit = js.native
+        def get_edited_cell():CellRenderer = js.native
+        def get_focus_cell():CellRenderer = js.native
+        def get_focus_from_sibling(renderer: CellRenderer):CellRenderer = js.native
+        def get_focus_siblings(renderer: CellRenderer):Any = js.native
+        def get_preferred_height(context: CellAreaContext, widget: Widget, minimum_height: Any, natural_height: Any):Unit = js.native
+        def get_preferred_height_for_width(context: CellAreaContext, widget: Widget, width: Any, minimum_height: Any, natural_height: Any):Unit = js.native
+        def get_preferred_width(context: CellAreaContext, widget: Widget, minimum_width: Any, natural_width: Any):Unit = js.native
+        def get_preferred_width_for_height(context: CellAreaContext, widget: Widget, height: Any, minimum_width: Any, natural_width: Any):Unit = js.native
+        def get_request_mode():Double = js.native
+        def has_renderer(renderer: CellRenderer):Boolean = js.native
+        def inner_cell_area(widget: Widget, cell_area: Any, inner_area: Any):Unit = js.native
         def is_activatable():Boolean = js.native
-        def is_focus_sibling(renderer: Any, sibling: Any):Boolean = js.native
-        def remove(renderer: Any):Unit = js.native
-        def remove_focus_sibling(renderer: Any, sibling: Any):Unit = js.native
-        def render(context: Any, widget: Any, cr: Any, background_area: Any, cell_area: Any, flags: Any, paint_focus: Boolean):Unit = js.native
-        def request_renderer(renderer: Any, orientation: Any, widget: Any, for_size: Any, minimum_size: Any, natural_size: Any):Unit = js.native
-        def set_focus_cell(renderer: Any):Unit = js.native
+        def is_focus_sibling(renderer: CellRenderer, sibling: CellRenderer):Boolean = js.native
+        def remove(renderer: CellRenderer):Unit = js.native
+        def remove_focus_sibling(renderer: CellRenderer, sibling: CellRenderer):Unit = js.native
+        def render(context: CellAreaContext, widget: Widget, cr: Any, background_area: Any, cell_area: Any, flags: Double, paint_focus: Boolean):Unit = js.native
+        def request_renderer(renderer: CellRenderer, orientation: Double, widget: Widget, for_size: Any, minimum_size: Any, natural_size: Any):Unit = js.native
+        def set_focus_cell(renderer: CellRenderer):Unit = js.native
         def stop_editing(canceled: Boolean):Unit = js.native
     }
     @js.native
     class CellAreaBox extends CellArea {
         def this(config: js.Any) = this()
         def get_spacing():Any = js.native
-        def pack_end(renderer: Any, expand: Boolean, align: Boolean, fixed: Boolean):Unit = js.native
-        def pack_start(renderer: Any, expand: Boolean, align: Boolean, fixed: Boolean):Unit = js.native
+        def pack_end(renderer: CellRenderer, expand: Boolean, align: Boolean, fixed: Boolean):Unit = js.native
+        def pack_start(renderer: CellRenderer, expand: Boolean, align: Boolean, fixed: Boolean):Unit = js.native
         def set_spacing(spacing: Any):Unit = js.native
     }
     @js.native
     class CellAreaContext extends GObject.Object {
         def allocate(width: Any, height: Any):Unit = js.native
         def get_allocation(width: Any, height: Any):Unit = js.native
-        def get_area():Any = js.native
+        def get_area():CellArea = js.native
         def get_preferred_height(minimum_height: Any, natural_height: Any):Unit = js.native
         def get_preferred_height_for_width(width: Any, minimum_height: Any, natural_height: Any):Unit = js.native
         def get_preferred_width(minimum_width: Any, natural_width: Any):Unit = js.native
@@ -1946,29 +1946,29 @@ object Gtk extends js.Object {
     }
     @js.native
     class CellRenderer extends GObject.InitiallyUnowned {
-        def activate(event: Any, widget: Any, path: String, background_area: Any, cell_area: Any, flags: Any):Boolean = js.native
-        def get_aligned_area(widget: Any, flags: Any, cell_area: Any, aligned_area: Any):Unit = js.native
+        def activate(event: Any, widget: Widget, path: String, background_area: Any, cell_area: Any, flags: Double):Boolean = js.native
+        def get_aligned_area(widget: Widget, flags: Double, cell_area: Any, aligned_area: Any):Unit = js.native
         def get_alignment(xalign: Any, yalign: Any):Unit = js.native
         def get_fixed_size(width: Any, height: Any):Unit = js.native
         def get_padding(xpad: Any, ypad: Any):Unit = js.native
-        def get_preferred_height(widget: Any, minimum_size: Any, natural_size: Any):Unit = js.native
-        def get_preferred_height_for_width(widget: Any, width: Any, minimum_height: Any, natural_height: Any):Unit = js.native
-        def get_preferred_size(widget: Any, minimum_size: Any, natural_size: Any):Unit = js.native
-        def get_preferred_width(widget: Any, minimum_size: Any, natural_size: Any):Unit = js.native
-        def get_preferred_width_for_height(widget: Any, height: Any, minimum_width: Any, natural_width: Any):Unit = js.native
-        def get_request_mode():Any = js.native
+        def get_preferred_height(widget: Widget, minimum_size: Any, natural_size: Any):Unit = js.native
+        def get_preferred_height_for_width(widget: Widget, width: Any, minimum_height: Any, natural_height: Any):Unit = js.native
+        def get_preferred_size(widget: Widget, minimum_size: Any, natural_size: Any):Unit = js.native
+        def get_preferred_width(widget: Widget, minimum_size: Any, natural_size: Any):Unit = js.native
+        def get_preferred_width_for_height(widget: Widget, height: Any, minimum_width: Any, natural_width: Any):Unit = js.native
+        def get_request_mode():Double = js.native
         def get_sensitive():Boolean = js.native
-        def get_size(widget: Any, cell_area: Any, x_offset: Any, y_offset: Any, width: Any, height: Any):Unit = js.native
-        def get_state(widget: Any, cell_state: Any):Any = js.native
+        def get_size(widget: Widget, cell_area: Any, x_offset: Any, y_offset: Any, width: Any, height: Any):Unit = js.native
+        def get_state(widget: Widget, cell_state: Double):Double = js.native
         def get_visible():Boolean = js.native
         def is_activatable():Boolean = js.native
-        def render(cr: Any, widget: Any, background_area: Any, cell_area: Any, flags: Any):Unit = js.native
+        def render(cr: Any, widget: Widget, background_area: Any, cell_area: Any, flags: Double):Unit = js.native
         def set_alignment(xalign: Any, yalign: Any):Unit = js.native
         def set_fixed_size(width: Any, height: Any):Unit = js.native
         def set_padding(xpad: Any, ypad: Any):Unit = js.native
         def set_sensitive(sensitive: Boolean):Unit = js.native
         def set_visible(visible: Boolean):Unit = js.native
-        def start_editing(event: Any, widget: Any, path: String, background_area: Any, cell_area: Any, flags: Any):Any = js.native
+        def start_editing(event: Any, widget: Widget, path: String, background_area: Any, cell_area: Any, flags: Double):Any = js.native
         def stop_editing(canceled: Boolean):Unit = js.native
     }
     @js.native
@@ -2027,7 +2027,7 @@ object Gtk extends js.Object {
     }
     @js.native
     object CellView extends js.Object {
-        def new_with_context(area: Any, context: Any):CellView = js.native
+        def new_with_context(area: CellArea, context: CellAreaContext):CellView = js.native
         def new_with_markup(markup: String):CellView = js.native
         def new_with_pixbuf(pixbuf: Any):CellView = js.native
         def new_with_text(text: String):CellView = js.native
@@ -2063,11 +2063,11 @@ object Gtk extends js.Object {
     @js.native
     class Clipboard extends GObject.Object {
         def clear():Unit = js.native
-        def get_display():Any = js.native
-        def get_owner():Any = js.native
+        def get_display():Gdk.Display = js.native
+        def get_owner():GObject.Object = js.native
         def request_contents(target: Any, callback: Any, user_data: Object):Unit = js.native
         def request_image(callback: Any, user_data: Object):Unit = js.native
-        def request_rich_text(buffer: Any, callback: Any, user_data: Object):Unit = js.native
+        def request_rich_text(buffer: TextBuffer, callback: Any, user_data: Object):Unit = js.native
         def request_targets(callback: Any, user_data: Object):Unit = js.native
         def request_text(callback: Any, user_data: Object):Unit = js.native
         def request_uris(callback: Any, user_data: Object):Unit = js.native
@@ -2075,25 +2075,25 @@ object Gtk extends js.Object {
         def set_image(pixbuf: Any):Unit = js.native
         def set_text(text: String, len: Any):Unit = js.native
         def set_with_data(targets: js.Array[Any], n_targets: Any, get_func: Any, clear_func: Any, user_data: Object):Boolean = js.native
-        def set_with_owner(targets: js.Array[Any], n_targets: Any, get_func: Any, clear_func: Any, owner: Any):Boolean = js.native
+        def set_with_owner(targets: js.Array[Any], n_targets: Any, get_func: Any, clear_func: Any, owner: GObject.Object):Boolean = js.native
         def store():Unit = js.native
         def wait_for_contents(target: Any):Any = js.native
         def wait_for_image():Any = js.native
-        def wait_for_rich_text(buffer: Any, format: Any, length: Any):js.Array[Any] = js.native
+        def wait_for_rich_text(buffer: TextBuffer, format: Any, length: Any):js.Array[Any] = js.native
         def wait_for_targets(targets: js.Array[Any], n_targets: Any):Boolean = js.native
         def wait_for_text():String = js.native
         def wait_for_uris():js.Array[String] = js.native
         def wait_is_image_available():Boolean = js.native
-        def wait_is_rich_text_available(buffer: Any):Boolean = js.native
+        def wait_is_rich_text_available(buffer: TextBuffer):Boolean = js.native
         def wait_is_target_available(target: Any):Boolean = js.native
         def wait_is_text_available():Boolean = js.native
         def wait_is_uris_available():Boolean = js.native
     }
     @js.native
     object Clipboard extends js.Object {
-        def get(selection: Any):Any = js.native
-        def get_default(display: Any):Any = js.native
-        def get_for_display(display: Any, selection: Any):Any = js.native
+        def get(selection: Any):Clipboard = js.native
+        def get_default(display: Gdk.Display):Clipboard = js.native
+        def get_for_display(display: Gdk.Display, selection: Any):Clipboard = js.native
     }
     @js.native
     class ColorButton extends Button {
@@ -2152,7 +2152,7 @@ object Gtk extends js.Object {
     @js.native
     class ColorSelectionDialog extends Dialog {
         def this(config: js.Any) = this()
-        def get_color_selection():Any = js.native
+        def get_color_selection():Widget = js.native
     }
     @js.native
     class ComboBox extends Bin {
@@ -2161,14 +2161,14 @@ object Gtk extends js.Object {
         def get_active_id():String = js.native
         def get_active_iter(iter: Any):Boolean = js.native
         def get_add_tearoffs():Boolean = js.native
-        def get_button_sensitivity():Any = js.native
+        def get_button_sensitivity():Double = js.native
         def get_column_span_column():Any = js.native
         def get_entry_text_column():Any = js.native
         def get_focus_on_click():Boolean = js.native
         def get_has_entry():Boolean = js.native
         def get_id_column():Any = js.native
         def get_model():Any = js.native
-        def get_popup_accessible():Any = js.native
+        def get_popup_accessible():Atk.Object = js.native
         def get_popup_fixed_width():Boolean = js.native
         def get_row_separator_func():Any = js.native
         def get_row_span_column():Any = js.native
@@ -2176,12 +2176,12 @@ object Gtk extends js.Object {
         def get_wrap_width():Any = js.native
         def popdown():Unit = js.native
         def popup():Unit = js.native
-        def popup_for_device(device: Any):Unit = js.native
+        def popup_for_device(device: Gdk.Device):Unit = js.native
         def set_active(index0: Any):Unit = js.native
         def set_active_id(active_id: String):Boolean = js.native
         def set_active_iter(iter: Any):Unit = js.native
         def set_add_tearoffs(add_tearoffs: Boolean):Unit = js.native
-        def set_button_sensitivity(sensitivity: Any):Unit = js.native
+        def set_button_sensitivity(sensitivity: Double):Unit = js.native
         def set_column_span_column(column_span: Any):Unit = js.native
         def set_entry_text_column(text_column: Any):Unit = js.native
         def set_focus_on_click(focus_on_click: Boolean):Unit = js.native
@@ -2195,8 +2195,8 @@ object Gtk extends js.Object {
     }
     @js.native
     object ComboBox extends js.Object {
-        def new_with_area(area: Any):ComboBox = js.native
-        def new_with_area_and_entry(area: Any):ComboBox = js.native
+        def new_with_area(area: CellArea):ComboBox = js.native
+        def new_with_area_and_entry(area: CellArea):ComboBox = js.native
         def new_with_entry():ComboBox = js.native
         def new_with_model(model: Any):ComboBox = js.native
         def new_with_model_and_entry(model: Any):ComboBox = js.native
@@ -2224,40 +2224,40 @@ object Gtk extends js.Object {
     }
     @js.native
     class Container extends Widget {
-        def add(widget: Any):Unit = js.native
-        def add_with_properties(widget: Any, first_prop_name: String, rest:Any*):Unit = js.native
+        def add(widget: Widget):Unit = js.native
+        def add_with_properties(widget: Widget, first_prop_name: String, rest:Any*):Unit = js.native
         def check_resize():Unit = js.native
-        def child_get(child: Any, first_prop_name: String, rest:Any*):Unit = js.native
-        def child_get_property(child: Any, property_name: String, value: Any):Unit = js.native
-        def child_get_valist(child: Any, first_property_name: String, var_args: Any):Unit = js.native
+        def child_get(child: Widget, first_prop_name: String, rest:Any*):Unit = js.native
+        def child_get_property(child: Widget, property_name: String, value: Any):Unit = js.native
+        def child_get_valist(child: Widget, first_property_name: String, var_args: Any):Unit = js.native
         override def child_notify(args:Any*):Unit = js.native
 
-        def child_notify_by_pspec(child: Any, pspec: Any):Unit = js.native
-        def child_set(child: Any, first_prop_name: String, rest:Any*):Unit = js.native
-        def child_set_property(child: Any, property_name: String, value: Any):Unit = js.native
-        def child_set_valist(child: Any, first_property_name: String, var_args: Any):Unit = js.native
+        def child_notify_by_pspec(child: Widget, pspec: GObject.ParamSpec):Unit = js.native
+        def child_set(child: Widget, first_prop_name: String, rest:Any*):Unit = js.native
+        def child_set_property(child: Widget, property_name: String, value: Any):Unit = js.native
+        def child_set_valist(child: Widget, first_property_name: String, var_args: Any):Unit = js.native
         def child_type():Any = js.native
         def forall(callback: Any, callback_data: Object):Unit = js.native
         def foreach(callback: Any, callback_data: Object):Unit = js.native
         def get_border_width():Any = js.native
         def get_children():Any = js.native
         def get_focus_chain(focusable_widgets: Any):Boolean = js.native
-        def get_focus_child():Any = js.native
-        def get_focus_hadjustment():Any = js.native
-        def get_focus_vadjustment():Any = js.native
-        def get_path_for_child(child: Any):Any = js.native
-        def get_resize_mode():Any = js.native
-        def propagate_draw(child: Any, cr: Any):Unit = js.native
+        def get_focus_child():Widget = js.native
+        def get_focus_hadjustment():Adjustment = js.native
+        def get_focus_vadjustment():Adjustment = js.native
+        def get_path_for_child(child: Widget):Any = js.native
+        def get_resize_mode():Double = js.native
+        def propagate_draw(child: Widget, cr: Any):Unit = js.native
         def remove(args:Any*):Unit = js.native
 
         def resize_children():Unit = js.native
         def set_border_width(border_width: Any):Unit = js.native
         def set_focus_chain(focusable_widgets: Any):Unit = js.native
-        def set_focus_child(child: Any):Unit = js.native
-        def set_focus_hadjustment(adjustment: Any):Unit = js.native
-        def set_focus_vadjustment(adjustment: Any):Unit = js.native
+        def set_focus_child(child: Widget):Unit = js.native
+        def set_focus_hadjustment(adjustment: Adjustment):Unit = js.native
+        def set_focus_vadjustment(adjustment: Adjustment):Unit = js.native
         def set_reallocate_redraws(needs_redraws: Boolean):Unit = js.native
-        def set_resize_mode(resize_mode: Any):Unit = js.native
+        def set_resize_mode(resize_mode: Double):Unit = js.native
         def unset_focus_chain():Unit = js.native
     }
     @js.native
@@ -2266,9 +2266,9 @@ object Gtk extends js.Object {
     @js.native
     class ContainerCellAccessible extends CellAccessible {
         def this(config: js.Any) = this()
-        def add_child(child: Any):Unit = js.native
+        def add_child(child: CellAccessible):Unit = js.native
         def get_children():Any = js.native
-        def remove_child(child: Any):Unit = js.native
+        def remove_child(child: CellAccessible):Unit = js.native
     }
     @js.native
     class CssProvider extends GObject.Object {
@@ -2282,20 +2282,20 @@ object Gtk extends js.Object {
     }
     @js.native
     object CssProvider extends js.Object {
-        def get_default():Any = js.native
-        def get_named(name: String, variant: String):Any = js.native
+        def get_default():CssProvider = js.native
+        def get_named(name: String, variant: String):CssProvider = js.native
     }
     @js.native
     class Dialog extends Window {
         def this(config: js.Any) = this()
-        def add_action_widget(child: Any, response_id: Any):Unit = js.native
-        def add_button(button_text: String, response_id: Any):Any = js.native
+        def add_action_widget(child: Widget, response_id: Any):Unit = js.native
+        def add_button(button_text: String, response_id: Any):Widget = js.native
         def add_buttons(first_button_text: String, rest:Any*):Unit = js.native
-        def get_action_area():Any = js.native
-        def get_content_area():Any = js.native
-        def get_header_bar():Any = js.native
-        def get_response_for_widget(widget: Any):Any = js.native
-        def get_widget_for_response(response_id: Any):Any = js.native
+        def get_action_area():Widget = js.native
+        def get_content_area():Box = js.native
+        def get_header_bar():Widget = js.native
+        def get_response_for_widget(widget: Widget):Any = js.native
+        def get_widget_for_response(response_id: Any):Widget = js.native
         def response(response_id: Any):Unit = js.native
         def run():Any = js.native
         def set_alternative_button_order(first_response_id: Any, rest:Any*):Unit = js.native
@@ -2305,7 +2305,7 @@ object Gtk extends js.Object {
     }
     @js.native
     object Dialog extends js.Object {
-        def new_with_buttons(title: String, parent: Any, flags: Any, first_button_text: String, rest:Any*):Dialog = js.native
+        def new_with_buttons(title: String, parent: Window, flags: Double, first_button_text: String, rest:Any*):Dialog = js.native
     }
     @js.native
     class DrawingArea extends Widget {
@@ -2317,27 +2317,27 @@ object Gtk extends js.Object {
         def get_activates_default():Boolean = js.native
         def get_alignment():Any = js.native
         def get_attributes():Any = js.native
-        def get_buffer():Any = js.native
-        def get_completion():Any = js.native
+        def get_buffer():EntryBuffer = js.native
+        def get_completion():EntryCompletion = js.native
         def get_current_icon_drag_source():Any = js.native
-        def get_cursor_hadjustment():Any = js.native
+        def get_cursor_hadjustment():Adjustment = js.native
         def get_has_frame():Boolean = js.native
-        def get_icon_activatable(icon_pos: Any):Boolean = js.native
-        def get_icon_area(icon_pos: Any, icon_area: Any):Unit = js.native
+        def get_icon_activatable(icon_pos: Double):Boolean = js.native
+        def get_icon_area(icon_pos: Double, icon_area: Any):Unit = js.native
         def get_icon_at_pos(x: Any, y: Any):Any = js.native
-        def get_icon_gicon(icon_pos: Any):Any = js.native
-        def get_icon_name(icon_pos: Any):String = js.native
-        def get_icon_pixbuf(icon_pos: Any):Any = js.native
-        def get_icon_sensitive(icon_pos: Any):Boolean = js.native
-        def get_icon_stock(icon_pos: Any):String = js.native
-        def get_icon_storage_type(icon_pos: Any):Any = js.native
-        def get_icon_tooltip_markup(icon_pos: Any):String = js.native
-        def get_icon_tooltip_text(icon_pos: Any):String = js.native
+        def get_icon_gicon(icon_pos: Double):Any = js.native
+        def get_icon_name(icon_pos: Double):String = js.native
+        def get_icon_pixbuf(icon_pos: Double):Any = js.native
+        def get_icon_sensitive(icon_pos: Double):Boolean = js.native
+        def get_icon_stock(icon_pos: Double):String = js.native
+        def get_icon_storage_type(icon_pos: Double):Double = js.native
+        def get_icon_tooltip_markup(icon_pos: Double):String = js.native
+        def get_icon_tooltip_text(icon_pos: Double):String = js.native
         def get_inner_border():Any = js.native
-        def get_input_hints():Any = js.native
-        def get_input_purpose():Any = js.native
+        def get_input_hints():Double = js.native
+        def get_input_purpose():Double = js.native
         def get_invisible_char():Any = js.native
-        def get_layout():Any = js.native
+        def get_layout():Pango.Layout = js.native
         def get_layout_offsets(x: Any, y: Any):Unit = js.native
         def get_max_length():Any = js.native
         def get_max_width_chars():Any = js.native
@@ -2359,22 +2359,22 @@ object Gtk extends js.Object {
         def set_activates_default(setting: Boolean):Unit = js.native
         def set_alignment(xalign: Any):Unit = js.native
         def set_attributes(attrs: Any):Unit = js.native
-        def set_buffer(buffer: Any):Unit = js.native
-        def set_completion(completion: Any):Unit = js.native
-        def set_cursor_hadjustment(adjustment: Any):Unit = js.native
+        def set_buffer(buffer: EntryBuffer):Unit = js.native
+        def set_completion(completion: EntryCompletion):Unit = js.native
+        def set_cursor_hadjustment(adjustment: Adjustment):Unit = js.native
         def set_has_frame(setting: Boolean):Unit = js.native
-        def set_icon_activatable(icon_pos: Any, activatable: Boolean):Unit = js.native
-        def set_icon_drag_source(icon_pos: Any, target_list: Any, actions: Any):Unit = js.native
-        def set_icon_from_gicon(icon_pos: Any, icon: Any):Unit = js.native
-        def set_icon_from_icon_name(icon_pos: Any, icon_name: String):Unit = js.native
-        def set_icon_from_pixbuf(icon_pos: Any, pixbuf: Any):Unit = js.native
-        def set_icon_from_stock(icon_pos: Any, stock_id: String):Unit = js.native
-        def set_icon_sensitive(icon_pos: Any, sensitive: Boolean):Unit = js.native
-        def set_icon_tooltip_markup(icon_pos: Any, tooltip: String):Unit = js.native
-        def set_icon_tooltip_text(icon_pos: Any, tooltip: String):Unit = js.native
+        def set_icon_activatable(icon_pos: Double, activatable: Boolean):Unit = js.native
+        def set_icon_drag_source(icon_pos: Double, target_list: Any, actions: Double):Unit = js.native
+        def set_icon_from_gicon(icon_pos: Double, icon: Any):Unit = js.native
+        def set_icon_from_icon_name(icon_pos: Double, icon_name: String):Unit = js.native
+        def set_icon_from_pixbuf(icon_pos: Double, pixbuf: Any):Unit = js.native
+        def set_icon_from_stock(icon_pos: Double, stock_id: String):Unit = js.native
+        def set_icon_sensitive(icon_pos: Double, sensitive: Boolean):Unit = js.native
+        def set_icon_tooltip_markup(icon_pos: Double, tooltip: String):Unit = js.native
+        def set_icon_tooltip_text(icon_pos: Double, tooltip: String):Unit = js.native
         def set_inner_border(border: Any):Unit = js.native
-        def set_input_hints(hints: Any):Unit = js.native
-        def set_input_purpose(purpose: Any):Unit = js.native
+        def set_input_hints(hints: Double):Unit = js.native
+        def set_input_purpose(purpose: Double):Unit = js.native
         def set_invisible_char(ch: Any):Unit = js.native
         def set_max_length(max: Any):Unit = js.native
         def set_max_width_chars(n_chars: Any):Unit = js.native
@@ -2391,7 +2391,7 @@ object Gtk extends js.Object {
     }
     @js.native
     object Entry extends js.Object {
-        def new_with_buffer(buffer: Any):Entry = js.native
+        def new_with_buffer(buffer: EntryBuffer):Entry = js.native
     }
     @js.native
     class EntryAccessible extends WidgetAccessible {
@@ -2417,7 +2417,7 @@ object Gtk extends js.Object {
         def compute_prefix(key: String):String = js.native
         def delete_action(index0: Any):Unit = js.native
         def get_completion_prefix():String = js.native
-        def get_entry():Any = js.native
+        def get_entry():Widget = js.native
         def get_inline_completion():Boolean = js.native
         def get_inline_selection():Boolean = js.native
         def get_minimum_key_length():Any = js.native
@@ -2441,7 +2441,7 @@ object Gtk extends js.Object {
     }
     @js.native
     object EntryCompletion extends js.Object {
-        def new_with_area(area: Any):EntryCompletion = js.native
+        def new_with_area(area: CellArea):EntryCompletion = js.native
     }
     @js.native
     class EntryIconAccessible extends Atk.Object {
@@ -2456,11 +2456,11 @@ object Gtk extends js.Object {
     }
     @js.native
     class EventController extends GObject.Object {
-        def get_propagation_phase():Any = js.native
-        def get_widget():Any = js.native
+        def get_propagation_phase():Double = js.native
+        def get_widget():Widget = js.native
         def handle_event(event: Any):Boolean = js.native
         def reset():Unit = js.native
-        def set_propagation_phase(phase: Any):Unit = js.native
+        def set_propagation_phase(phase: Double):Unit = js.native
     }
     @js.native
     class Expander extends Bin {
@@ -2468,7 +2468,7 @@ object Gtk extends js.Object {
         def get_expanded():Boolean = js.native
         def get_label():String = js.native
         def get_label_fill():Boolean = js.native
-        def get_label_widget():Any = js.native
+        def get_label_widget():Widget = js.native
         def get_resize_toplevel():Boolean = js.native
         def get_spacing():Any = js.native
         def get_use_markup():Boolean = js.native
@@ -2476,7 +2476,7 @@ object Gtk extends js.Object {
         def set_expanded(expanded: Boolean):Unit = js.native
         def set_label(label: String):Unit = js.native
         def set_label_fill(label_fill: Boolean):Unit = js.native
-        def set_label_widget(label_widget: Any):Unit = js.native
+        def set_label_widget(label_widget: Widget):Unit = js.native
         def set_resize_toplevel(resize_toplevel: Boolean):Unit = js.native
         def set_spacing(spacing: Any):Unit = js.native
         def set_use_markup(use_markup: Boolean):Unit = js.native
@@ -2501,7 +2501,7 @@ object Gtk extends js.Object {
     }
     @js.native
     object FileChooserButton extends js.Object {
-        def new_with_dialog(dialog: Any):FileChooserButton = js.native
+        def new_with_dialog(dialog: Dialog):FileChooserButton = js.native
     }
     @js.native
     class FileChooserDialog extends Dialog {
@@ -2515,53 +2515,53 @@ object Gtk extends js.Object {
     @js.native
     class FileFilter extends GObject.InitiallyUnowned {
         def this(config: js.Any) = this()
-        def add_custom(needed: Any, func: Any, data: Object, notify: Any):Unit = js.native
+        def add_custom(needed: Double, func: Any, data: Object, notify: Any):Unit = js.native
         def add_mime_type(mime_type0: String):Unit = js.native
         def add_pattern(pattern: String):Unit = js.native
         def add_pixbuf_formats():Unit = js.native
         def filter(filter_info: Any):Boolean = js.native
         def get_name():String = js.native
-        def get_needed():Any = js.native
+        def get_needed():Double = js.native
         def set_name(name: String):Unit = js.native
     }
     @js.native
     class Fixed extends Container {
         def this(config: js.Any) = this()
-        def move(widget: Any, x: Any, y: Any):Unit = js.native
-        def put(widget: Any, x: Any, y: Any):Unit = js.native
+        def move(widget: Widget, x: Any, y: Any):Unit = js.native
+        def put(widget: Widget, x: Any, y: Any):Unit = js.native
     }
     @js.native
     class FlowBox extends Container {
         def this(config: js.Any) = this()
         def bind_model(model: Any, create_widget_func: Any, user_data: Object, user_data_free_func: Any):Unit = js.native
         def get_activate_on_single_click():Boolean = js.native
-        def get_child_at_index(idx: Any):Any = js.native
+        def get_child_at_index(idx: Any):FlowBoxChild = js.native
         def get_column_spacing():Any = js.native
         def get_homogeneous():Boolean = js.native
         def get_max_children_per_line():Any = js.native
         def get_min_children_per_line():Any = js.native
         def get_row_spacing():Any = js.native
         def get_selected_children():Any = js.native
-        def get_selection_mode():Any = js.native
-        def insert(widget: Any, position: Any):Unit = js.native
+        def get_selection_mode():Double = js.native
+        def insert(widget: Widget, position: Any):Unit = js.native
         def invalidate_filter():Unit = js.native
         def invalidate_sort():Unit = js.native
         def select_all():Unit = js.native
-        def select_child(child: Any):Unit = js.native
+        def select_child(child: FlowBoxChild):Unit = js.native
         def selected_foreach(func: Any, data: Object):Unit = js.native
         def set_activate_on_single_click(single: Boolean):Unit = js.native
         def set_column_spacing(spacing: Any):Unit = js.native
         def set_filter_func(filter_func: Any, user_data: Object, destroy: Any):Unit = js.native
-        def set_hadjustment(adjustment: Any):Unit = js.native
+        def set_hadjustment(adjustment: Adjustment):Unit = js.native
         def set_homogeneous(homogeneous: Boolean):Unit = js.native
         def set_max_children_per_line(n_children: Any):Unit = js.native
         def set_min_children_per_line(n_children: Any):Unit = js.native
         def set_row_spacing(spacing: Any):Unit = js.native
-        def set_selection_mode(mode: Any):Unit = js.native
+        def set_selection_mode(mode: Double):Unit = js.native
         def set_sort_func(sort_func: Any, user_data: Object, destroy: Any):Unit = js.native
-        def set_vadjustment(adjustment: Any):Unit = js.native
+        def set_vadjustment(adjustment: Adjustment):Unit = js.native
         def unselect_all():Unit = js.native
-        def unselect_child(child: Any):Unit = js.native
+        def unselect_child(child: FlowBoxChild):Unit = js.native
     }
     @js.native
     class FlowBoxAccessible extends ContainerAccessible {
@@ -2607,26 +2607,26 @@ object Gtk extends js.Object {
     @js.native
     class FontSelection extends Box {
         def this(config: js.Any) = this()
-        def get_face():Any = js.native
-        def get_face_list():Any = js.native
-        def get_family():Any = js.native
-        def get_family_list():Any = js.native
+        def get_face():Pango.FontFace = js.native
+        def get_face_list():Widget = js.native
+        def get_family():Pango.FontFamily = js.native
+        def get_family_list():Widget = js.native
         def get_font_name():String = js.native
-        def get_preview_entry():Any = js.native
+        def get_preview_entry():Widget = js.native
         def get_preview_text():String = js.native
         def get_size():Any = js.native
-        def get_size_entry():Any = js.native
-        def get_size_list():Any = js.native
+        def get_size_entry():Widget = js.native
+        def get_size_list():Widget = js.native
         def set_font_name(fontname: String):Boolean = js.native
         def set_preview_text(text: String):Unit = js.native
     }
     @js.native
     class FontSelectionDialog extends Dialog {
         def this(config: js.Any) = this()
-        def get_cancel_button():Any = js.native
+        def get_cancel_button():Widget = js.native
         def get_font_name():String = js.native
-        def get_font_selection():Any = js.native
-        def get_ok_button():Any = js.native
+        def get_font_selection():Widget = js.native
+        def get_ok_button():Widget = js.native
         def get_preview_text():String = js.native
         def set_font_name(fontname: String):Boolean = js.native
         def set_preview_text(text: String):Unit = js.native
@@ -2636,12 +2636,12 @@ object Gtk extends js.Object {
         def this(config: js.Any) = this()
         def get_label():String = js.native
         def get_label_align(xalign: Any, yalign: Any):Unit = js.native
-        def get_label_widget():Any = js.native
-        def get_shadow_type():Any = js.native
+        def get_label_widget():Widget = js.native
+        def get_shadow_type():Double = js.native
         def set_label(label: String):Unit = js.native
         def set_label_align(xalign: Any, yalign: Any):Unit = js.native
-        def set_label_widget(label_widget: Any):Unit = js.native
-        def set_shadow_type(type0: Any):Unit = js.native
+        def set_label_widget(label_widget: Widget):Unit = js.native
+        def set_shadow_type(type0: Double):Unit = js.native
     }
     @js.native
     class FrameAccessible extends ContainerAccessible {
@@ -2651,7 +2651,7 @@ object Gtk extends js.Object {
         def this(config: js.Any) = this()
         def attach_buffers():Unit = js.native
         def get_auto_render():Boolean = js.native
-        def get_context():Any = js.native
+        def get_context():Gdk.GLContext = js.native
         def get_error():Any = js.native
         def get_has_alpha():Boolean = js.native
         def get_has_depth_buffer():Boolean = js.native
@@ -2670,22 +2670,22 @@ object Gtk extends js.Object {
     class Gesture extends EventController {
         def get_bounding_box(rect: Any):Boolean = js.native
         def get_bounding_box_center(x: Any, y: Any):Boolean = js.native
-        def get_device():Any = js.native
+        def get_device():Gdk.Device = js.native
         def get_group():Any = js.native
         def get_last_event(sequence: Any):Any = js.native
         def get_last_updated_sequence():Any = js.native
         def get_point(sequence: Any, x: Any, y: Any):Boolean = js.native
-        def get_sequence_state(sequence: Any):Any = js.native
+        def get_sequence_state(sequence: Any):Double = js.native
         def get_sequences():Any = js.native
-        def get_window():Any = js.native
-        def group(gesture: Any):Unit = js.native
+        def get_window():Gdk.Window = js.native
+        def group(gesture: Gesture):Unit = js.native
         def handles_sequence(sequence: Any):Boolean = js.native
         def is_active():Boolean = js.native
-        def is_grouped_with(other: Any):Boolean = js.native
+        def is_grouped_with(other: Gesture):Boolean = js.native
         def is_recognized():Boolean = js.native
-        def set_sequence_state(sequence: Any, state: Any):Boolean = js.native
-        def set_state(state: Any):Boolean = js.native
-        def set_window(window: Any):Unit = js.native
+        def set_sequence_state(sequence: Any, state: Double):Boolean = js.native
+        def set_state(state: Double):Boolean = js.native
+        def set_window(window: Gdk.Window):Unit = js.native
         def ungroup():Unit = js.native
     }
     @js.native
@@ -2707,8 +2707,8 @@ object Gtk extends js.Object {
     @js.native
     class GesturePan extends GestureDrag {
         def this(config: js.Any) = this()
-        def get_orientation():Any = js.native
-        def set_orientation(orientation: Any):Unit = js.native
+        def get_orientation():Double = js.native
+        def set_orientation(orientation: Double):Unit = js.native
     }
     @js.native
     class GestureRotate extends Gesture {
@@ -2739,24 +2739,24 @@ object Gtk extends js.Object {
     @js.native
     class Grid extends Container {
         def this(config: js.Any) = this()
-        def attach(child: Any, left: Any, top: Any, width: Any, height: Any):Unit = js.native
-        def attach_next_to(child: Any, sibling: Any, side: Any, width: Any, height: Any):Unit = js.native
+        def attach(child: Widget, left: Any, top: Any, width: Any, height: Any):Unit = js.native
+        def attach_next_to(child: Widget, sibling: Widget, side: Double, width: Any, height: Any):Unit = js.native
         def get_baseline_row():Any = js.native
-        def get_child_at(left: Any, top: Any):Any = js.native
+        def get_child_at(left: Any, top: Any):Widget = js.native
         def get_column_homogeneous():Boolean = js.native
         def get_column_spacing():Any = js.native
-        def get_row_baseline_position(row: Any):Any = js.native
+        def get_row_baseline_position(row: Any):Double = js.native
         def get_row_homogeneous():Boolean = js.native
         def get_row_spacing():Any = js.native
         def insert_column(position: Any):Unit = js.native
-        def insert_next_to(sibling: Any, side: Any):Unit = js.native
+        def insert_next_to(sibling: Widget, side: Double):Unit = js.native
         def insert_row(position: Any):Unit = js.native
         def remove_column(position: Any):Unit = js.native
         def remove_row(position: Any):Unit = js.native
         def set_baseline_row(row: Any):Unit = js.native
         def set_column_homogeneous(homogeneous: Boolean):Unit = js.native
         def set_column_spacing(spacing: Any):Unit = js.native
-        def set_row_baseline_position(row: Any, pos: Any):Unit = js.native
+        def set_row_baseline_position(row: Any, pos: Double):Unit = js.native
         def set_row_homogeneous(homogeneous: Boolean):Unit = js.native
         def set_row_spacing(spacing: Any):Unit = js.native
     }
@@ -2805,25 +2805,25 @@ object Gtk extends js.Object {
     class HandleBox extends Bin {
         def this(config: js.Any) = this()
         def get_child_detached():Boolean = js.native
-        def get_handle_position():Any = js.native
-        def get_shadow_type():Any = js.native
-        def get_snap_edge():Any = js.native
-        def set_handle_position(position: Any):Unit = js.native
-        def set_shadow_type(type0: Any):Unit = js.native
-        def set_snap_edge(edge: Any):Unit = js.native
+        def get_handle_position():Double = js.native
+        def get_shadow_type():Double = js.native
+        def get_snap_edge():Double = js.native
+        def set_handle_position(position: Double):Unit = js.native
+        def set_shadow_type(type0: Double):Unit = js.native
+        def set_snap_edge(edge: Double):Unit = js.native
     }
     @js.native
     class HeaderBar extends Container {
         def this(config: js.Any) = this()
-        def get_custom_title():Any = js.native
+        def get_custom_title():Widget = js.native
         def get_decoration_layout():String = js.native
         def get_has_subtitle():Boolean = js.native
         def get_show_close_button():Boolean = js.native
         def get_subtitle():String = js.native
         def get_title():String = js.native
-        def pack_end(child: Any):Unit = js.native
-        def pack_start(child: Any):Unit = js.native
-        def set_custom_title(title_widget: Any):Unit = js.native
+        def pack_end(child: Widget):Unit = js.native
+        def pack_start(child: Widget):Unit = js.native
+        def set_custom_title(title_widget: Widget):Unit = js.native
         def set_decoration_layout(layout: String):Unit = js.native
         def set_has_subtitle(setting: Boolean):Unit = js.native
         def set_show_close_button(setting: Boolean):Unit = js.native
@@ -2839,7 +2839,7 @@ object Gtk extends js.Object {
         def get_preedit_string(str: String, attrs: Any, cursor_pos: Any):Unit = js.native
         def get_surrounding(text: String, cursor_index: Any):Boolean = js.native
         def reset():Unit = js.native
-        def set_client_window(window: Any):Unit = js.native
+        def set_client_window(window: Gdk.Window):Unit = js.native
         def set_cursor_location(area: Any):Unit = js.native
         def set_surrounding(text: String, len: Any, cursor_index: Any):Unit = js.native
         def set_use_preedit(use_preedit: Boolean):Unit = js.native
@@ -2852,7 +2852,7 @@ object Gtk extends js.Object {
     @js.native
     class IMMulticontext extends IMContext {
         def this(config: js.Any) = this()
-        def append_menuitems(menushell: Any):Unit = js.native
+        def append_menuitems(menushell: MenuShell):Unit = js.native
         def get_context_id():String = js.native
         def set_context_id(context_id: String):Unit = js.native
     }
@@ -2871,7 +2871,7 @@ object Gtk extends js.Object {
     @js.native
     class IconInfo extends GObject.Object {
         def this(config: js.Any) = this()
-        def copy():Any = js.native
+        def copy():IconInfo = js.native
         def free():Unit = js.native
         def get_attach_points(points: js.Array[Any], n_points: Any):Boolean = js.native
         def get_base_scale():Any = js.native
@@ -2882,71 +2882,71 @@ object Gtk extends js.Object {
         def get_filename():Any = js.native
         def is_symbolic():Boolean = js.native
         def load_icon():Any = js.native
-        def load_icon_async(cancellable: Any, callback: Any, user_data: Object):Unit = js.native
+        def load_icon_async(cancellable: Gio.Cancellable, callback: Any, user_data: Object):Unit = js.native
         def load_icon_finish(res: Any):Any = js.native
-        def load_surface(for_window: Any):Any = js.native
+        def load_surface(for_window: Gdk.Window):Any = js.native
         def load_symbolic(fg: Any, success_color: Any, warning_color: Any, error_color: Any, was_symbolic: Boolean):Any = js.native
-        def load_symbolic_async(fg: Any, success_color: Any, warning_color: Any, error_color: Any, cancellable: Any, callback: Any, user_data: Object):Unit = js.native
+        def load_symbolic_async(fg: Any, success_color: Any, warning_color: Any, error_color: Any, cancellable: Gio.Cancellable, callback: Any, user_data: Object):Unit = js.native
         def load_symbolic_finish(res: Any, was_symbolic: Boolean):Any = js.native
-        def load_symbolic_for_context(context: Any, was_symbolic: Boolean):Any = js.native
-        def load_symbolic_for_context_async(context: Any, cancellable: Any, callback: Any, user_data: Object):Unit = js.native
+        def load_symbolic_for_context(context: StyleContext, was_symbolic: Boolean):Any = js.native
+        def load_symbolic_for_context_async(context: StyleContext, cancellable: Gio.Cancellable, callback: Any, user_data: Object):Unit = js.native
         def load_symbolic_for_context_finish(res: Any, was_symbolic: Boolean):Any = js.native
-        def load_symbolic_for_style(style: Any, state: Any, was_symbolic: Boolean):Any = js.native
+        def load_symbolic_for_style(style: Style, state: Double, was_symbolic: Boolean):Any = js.native
         def set_raw_coordinates(raw_coordinates: Boolean):Unit = js.native
     }
     @js.native
     object IconInfo extends js.Object {
-        def new_for_pixbuf(icon_theme: Any, pixbuf: Any):IconInfo = js.native
+        def new_for_pixbuf(icon_theme: IconTheme, pixbuf: Any):IconInfo = js.native
     }
     @js.native
     class IconTheme extends GObject.Object {
         def this(config: js.Any) = this()
         def add_resource_path(path: String):Unit = js.native
         def append_search_path(path: Any):Unit = js.native
-        def choose_icon(icon_names: js.Array[String], size: Any, flags: Any):Any = js.native
-        def choose_icon_for_scale(icon_names: js.Array[String], size: Any, scale: Any, flags: Any):Any = js.native
+        def choose_icon(icon_names: js.Array[String], size: Any, flags: Double):IconInfo = js.native
+        def choose_icon_for_scale(icon_names: js.Array[String], size: Any, scale: Any, flags: Double):IconInfo = js.native
         def get_example_icon_name():String = js.native
         def get_icon_sizes(icon_name: String):js.Array[Any] = js.native
         def get_search_path(path: js.Array[Any], n_elements: Any):Unit = js.native
         def has_icon(icon_name: String):Boolean = js.native
         def list_contexts():Any = js.native
         def list_icons(context: String):Any = js.native
-        def load_icon(icon_name: String, size: Any, flags: Any):Any = js.native
-        def load_icon_for_scale(icon_name: String, size: Any, scale: Any, flags: Any):Any = js.native
-        def load_surface(icon_name: String, size: Any, scale: Any, for_window: Any, flags: Any):Any = js.native
-        def lookup_by_gicon(icon: Any, size: Any, flags: Any):Any = js.native
-        def lookup_by_gicon_for_scale(icon: Any, size: Any, scale: Any, flags: Any):Any = js.native
-        def lookup_icon(icon_name: String, size: Any, flags: Any):Any = js.native
-        def lookup_icon_for_scale(icon_name: String, size: Any, scale: Any, flags: Any):Any = js.native
+        def load_icon(icon_name: String, size: Any, flags: Double):Any = js.native
+        def load_icon_for_scale(icon_name: String, size: Any, scale: Any, flags: Double):Any = js.native
+        def load_surface(icon_name: String, size: Any, scale: Any, for_window: Gdk.Window, flags: Double):Any = js.native
+        def lookup_by_gicon(icon: Any, size: Any, flags: Double):IconInfo = js.native
+        def lookup_by_gicon_for_scale(icon: Any, size: Any, scale: Any, flags: Double):IconInfo = js.native
+        def lookup_icon(icon_name: String, size: Any, flags: Double):IconInfo = js.native
+        def lookup_icon_for_scale(icon_name: String, size: Any, scale: Any, flags: Double):IconInfo = js.native
         def prepend_search_path(path: Any):Unit = js.native
         def rescan_if_needed():Boolean = js.native
         def set_custom_theme(theme_name: String):Unit = js.native
-        def set_screen(screen: Any):Unit = js.native
+        def set_screen(screen: Gdk.Screen):Unit = js.native
         def set_search_path(path: js.Array[Any], n_elements: Any):Unit = js.native
     }
     @js.native
     object IconTheme extends js.Object {
         def add_builtin_icon(icon_name: String, size: Any, pixbuf: Any):Unit = js.native
-        def get_default():Any = js.native
-        def get_for_screen(screen: Any):Any = js.native
+        def get_default():IconTheme = js.native
+        def get_for_screen(screen: Gdk.Screen):IconTheme = js.native
     }
     @js.native
     class IconView extends Container {
         def this(config: js.Any) = this()
         def convert_widget_to_bin_window_coords(wx: Any, wy: Any, bx: Any, by: Any):Unit = js.native
         def create_drag_icon(path: Any):Any = js.native
-        def enable_model_drag_dest(targets: js.Array[Any], n_targets: Any, actions: Any):Unit = js.native
-        def enable_model_drag_source(start_button_mask: Any, targets: js.Array[Any], n_targets: Any, actions: Any):Unit = js.native
+        def enable_model_drag_dest(targets: js.Array[Any], n_targets: Any, actions: Double):Unit = js.native
+        def enable_model_drag_source(start_button_mask: Double, targets: js.Array[Any], n_targets: Any, actions: Double):Unit = js.native
         def get_activate_on_single_click():Boolean = js.native
-        def get_cell_rect(path: Any, cell: Any, rect: Any):Boolean = js.native
+        def get_cell_rect(path: Any, cell: CellRenderer, rect: Any):Boolean = js.native
         def get_column_spacing():Any = js.native
         def get_columns():Any = js.native
-        def get_cursor(path: Any, cell: Any):Boolean = js.native
-        def get_dest_item_at_pos(drag_x: Any, drag_y: Any, path: Any, pos: Any):Boolean = js.native
-        def get_drag_dest_item(path: Any, pos: Any):Unit = js.native
-        def get_item_at_pos(x: Any, y: Any, path: Any, cell: Any):Boolean = js.native
+        def get_cursor(path: Any, cell: CellRenderer):Boolean = js.native
+        def get_dest_item_at_pos(drag_x: Any, drag_y: Any, path: Any, pos: Double):Boolean = js.native
+        def get_drag_dest_item(path: Any, pos: Double):Unit = js.native
+        def get_item_at_pos(x: Any, y: Any, path: Any, cell: CellRenderer):Boolean = js.native
         def get_item_column(path: Any):Any = js.native
-        def get_item_orientation():Any = js.native
+        def get_item_orientation():Double = js.native
         def get_item_padding():Any = js.native
         def get_item_row(path: Any):Any = js.native
         def get_item_width():Any = js.native
@@ -2958,7 +2958,7 @@ object Gtk extends js.Object {
         def get_reorderable():Boolean = js.native
         def get_row_spacing():Any = js.native
         def get_selected_items():Any = js.native
-        def get_selection_mode():Any = js.native
+        def get_selection_mode():Double = js.native
         def get_spacing():Any = js.native
         def get_text_column():Any = js.native
         def get_tooltip_column():Any = js.native
@@ -2973,9 +2973,9 @@ object Gtk extends js.Object {
         def set_activate_on_single_click(single: Boolean):Unit = js.native
         def set_column_spacing(column_spacing: Any):Unit = js.native
         def set_columns(columns: Any):Unit = js.native
-        def set_cursor(path: Any, cell: Any, start_editing: Boolean):Unit = js.native
-        def set_drag_dest_item(path: Any, pos: Any):Unit = js.native
-        def set_item_orientation(orientation: Any):Unit = js.native
+        def set_cursor(path: Any, cell: CellRenderer, start_editing: Boolean):Unit = js.native
+        def set_drag_dest_item(path: Any, pos: Double):Unit = js.native
+        def set_item_orientation(orientation: Double):Unit = js.native
         def set_item_padding(item_padding: Any):Unit = js.native
         def set_item_width(item_width: Any):Unit = js.native
         def set_margin(margin: Any):Unit = js.native
@@ -2984,12 +2984,12 @@ object Gtk extends js.Object {
         def set_pixbuf_column(column: Any):Unit = js.native
         def set_reorderable(reorderable: Boolean):Unit = js.native
         def set_row_spacing(row_spacing: Any):Unit = js.native
-        def set_selection_mode(mode: Any):Unit = js.native
+        def set_selection_mode(mode: Double):Unit = js.native
         def set_spacing(spacing: Any):Unit = js.native
         def set_text_column(column: Any):Unit = js.native
-        def set_tooltip_cell(tooltip: Any, path: Any, cell: Any):Unit = js.native
+        def set_tooltip_cell(tooltip: Tooltip, path: Any, cell: CellRenderer):Unit = js.native
         def set_tooltip_column(column: Any):Unit = js.native
-        def set_tooltip_item(tooltip: Any, path: Any):Unit = js.native
+        def set_tooltip_item(tooltip: Tooltip, path: Any):Unit = js.native
         def unselect_all():Unit = js.native
         def unselect_path(path: Any):Unit = js.native
         def unset_model_drag_dest():Unit = js.native
@@ -2997,7 +2997,7 @@ object Gtk extends js.Object {
     }
     @js.native
     object IconView extends js.Object {
-        def new_with_area(area: Any):IconView = js.native
+        def new_with_area(area: CellArea):IconView = js.native
         def new_with_model(model: Any):IconView = js.native
     }
     @js.native
@@ -3014,7 +3014,7 @@ object Gtk extends js.Object {
         def get_pixbuf():Any = js.native
         def get_pixel_size():Any = js.native
         def get_stock(stock_id: String, size: Any):Unit = js.native
-        def get_storage_type():Any = js.native
+        def get_storage_type():Double = js.native
         def set_from_animation(animation: Any):Unit = js.native
         def set_from_file(filename: Any):Unit = js.native
         def set_from_gicon(icon: Any, size: Any):Unit = js.native
@@ -3048,32 +3048,32 @@ object Gtk extends js.Object {
     class ImageMenuItem extends MenuItem {
         def this(config: js.Any) = this()
         def get_always_show_image():Boolean = js.native
-        def get_image():Any = js.native
+        def get_image():Widget = js.native
         def get_use_stock():Boolean = js.native
-        def set_accel_group(accel_group: Any):Unit = js.native
+        def set_accel_group(accel_group: AccelGroup):Unit = js.native
         def set_always_show_image(always_show: Boolean):Unit = js.native
-        def set_image(image: Any):Unit = js.native
+        def set_image(image: Widget):Unit = js.native
         def set_use_stock(use_stock: Boolean):Unit = js.native
     }
     @js.native
     object ImageMenuItem extends js.Object {
-        def new_from_stock(stock_id: String, accel_group: Any):ImageMenuItem = js.native
+        def new_from_stock(stock_id: String, accel_group: AccelGroup):ImageMenuItem = js.native
         def new_with_label(label: String):ImageMenuItem = js.native
         def new_with_mnemonic(label: String):ImageMenuItem = js.native
     }
     @js.native
     class InfoBar extends Box {
         def this(config: js.Any) = this()
-        def add_action_widget(child: Any, response_id: Any):Unit = js.native
-        def add_button(button_text: String, response_id: Any):Any = js.native
+        def add_action_widget(child: Widget, response_id: Any):Unit = js.native
+        def add_button(button_text: String, response_id: Any):Button = js.native
         def add_buttons(first_button_text: String, rest:Any*):Unit = js.native
-        def get_action_area():Any = js.native
-        def get_content_area():Any = js.native
-        def get_message_type():Any = js.native
+        def get_action_area():Widget = js.native
+        def get_content_area():Widget = js.native
+        def get_message_type():Double = js.native
         def get_show_close_button():Boolean = js.native
         def response(response_id: Any):Unit = js.native
         def set_default_response(response_id: Any):Unit = js.native
-        def set_message_type(message_type0: Any):Unit = js.native
+        def set_message_type(message_type0: Double):Unit = js.native
         def set_response_sensitive(response_id: Any, setting: Boolean):Unit = js.native
         def set_show_close_button(setting: Boolean):Unit = js.native
     }
@@ -3084,12 +3084,12 @@ object Gtk extends js.Object {
     @js.native
     class Invisible extends Widget {
         def this(config: js.Any) = this()
-        override def get_screen():Any = js.native
-        def set_screen(screen: Any):Unit = js.native
+        override def get_screen():Gdk.Screen = js.native
+        def set_screen(screen: Gdk.Screen):Unit = js.native
     }
     @js.native
     object Invisible extends js.Object {
-        def new_for_screen(screen: Any):Invisible = js.native
+        def new_for_screen(screen: Gdk.Screen):Invisible = js.native
     }
     @js.native
     class Label extends Misc {
@@ -3097,17 +3097,17 @@ object Gtk extends js.Object {
         def get_angle():Any = js.native
         def get_attributes():Any = js.native
         def get_current_uri():String = js.native
-        def get_ellipsize():Any = js.native
-        def get_justify():Any = js.native
+        def get_ellipsize():Double = js.native
+        def get_justify():Double = js.native
         def get_label():String = js.native
-        def get_layout():Any = js.native
+        def get_layout():Pango.Layout = js.native
         def get_layout_offsets(x: Any, y: Any):Unit = js.native
         def get_line_wrap():Boolean = js.native
-        def get_line_wrap_mode():Any = js.native
+        def get_line_wrap_mode():Double = js.native
         def get_lines():Any = js.native
         def get_max_width_chars():Any = js.native
         def get_mnemonic_keyval():Any = js.native
-        def get_mnemonic_widget():Any = js.native
+        def get_mnemonic_widget():Widget = js.native
         def get_selectable():Boolean = js.native
         def get_selection_bounds(start: Any, end: Any):Boolean = js.native
         def get_single_line_mode():Boolean = js.native
@@ -3121,16 +3121,16 @@ object Gtk extends js.Object {
         def select_region(start_offset: Any, end_offset: Any):Unit = js.native
         def set_angle(angle: Any):Unit = js.native
         def set_attributes(attrs: Any):Unit = js.native
-        def set_ellipsize(mode: Any):Unit = js.native
-        def set_justify(jtype0: Any):Unit = js.native
+        def set_ellipsize(mode: Double):Unit = js.native
+        def set_justify(jtype0: Double):Unit = js.native
         def set_label(str: String):Unit = js.native
         def set_line_wrap(wrap: Boolean):Unit = js.native
-        def set_line_wrap_mode(wrap_mode: Any):Unit = js.native
+        def set_line_wrap_mode(wrap_mode: Double):Unit = js.native
         def set_lines(lines: Any):Unit = js.native
         def set_markup(str: String):Unit = js.native
         def set_markup_with_mnemonic(str: String):Unit = js.native
         def set_max_width_chars(n_chars: Any):Unit = js.native
-        def set_mnemonic_widget(widget: Any):Unit = js.native
+        def set_mnemonic_widget(widget: Widget):Unit = js.native
         def set_pattern(pattern: String):Unit = js.native
         def set_selectable(setting: Boolean):Unit = js.native
         def set_single_line_mode(single_line_mode: Boolean):Unit = js.native
@@ -3153,15 +3153,15 @@ object Gtk extends js.Object {
     @js.native
     class Layout extends Container {
         def this(config: js.Any) = this()
-        def get_bin_window():Any = js.native
-        def get_hadjustment():Any = js.native
+        def get_bin_window():Gdk.Window = js.native
+        def get_hadjustment():Adjustment = js.native
         def get_size(width: Any, height: Any):Unit = js.native
-        def get_vadjustment():Any = js.native
-        def move(child_widget: Any, x: Any, y: Any):Unit = js.native
-        def put(child_widget: Any, x: Any, y: Any):Unit = js.native
-        def set_hadjustment(adjustment: Any):Unit = js.native
+        def get_vadjustment():Adjustment = js.native
+        def move(child_widget: Widget, x: Any, y: Any):Unit = js.native
+        def put(child_widget: Widget, x: Any, y: Any):Unit = js.native
+        def set_hadjustment(adjustment: Adjustment):Unit = js.native
         def set_size(width: Any, height: Any):Unit = js.native
-        def set_vadjustment(adjustment: Any):Unit = js.native
+        def set_vadjustment(adjustment: Adjustment):Unit = js.native
     }
     @js.native
     class LevelBar extends Widget {
@@ -3170,14 +3170,14 @@ object Gtk extends js.Object {
         def get_inverted():Boolean = js.native
         def get_max_value():Any = js.native
         def get_min_value():Any = js.native
-        def get_mode():Any = js.native
+        def get_mode():Double = js.native
         def get_offset_value(name: String, value: Any):Boolean = js.native
         def get_value():Any = js.native
         def remove_offset_value(name: String):Unit = js.native
         def set_inverted(inverted: Boolean):Unit = js.native
         def set_max_value(value: Any):Unit = js.native
         def set_min_value(value: Any):Unit = js.native
-        def set_mode(mode: Any):Unit = js.native
+        def set_mode(mode: Double):Unit = js.native
         def set_value(value: Any):Unit = js.native
     }
     @js.native
@@ -3206,32 +3206,32 @@ object Gtk extends js.Object {
     class ListBox extends Container {
         def this(config: js.Any) = this()
         def bind_model(model: Any, create_widget_func: Any, user_data: Object, user_data_free_func: Any):Unit = js.native
-        def drag_highlight_row(row: Any):Unit = js.native
+        def drag_highlight_row(row: ListBoxRow):Unit = js.native
         def drag_unhighlight_row():Unit = js.native
         def get_activate_on_single_click():Boolean = js.native
-        def get_adjustment():Any = js.native
-        def get_row_at_index(index0: Any):Any = js.native
-        def get_row_at_y(y: Any):Any = js.native
-        def get_selected_row():Any = js.native
+        def get_adjustment():Adjustment = js.native
+        def get_row_at_index(index0: Any):ListBoxRow = js.native
+        def get_row_at_y(y: Any):ListBoxRow = js.native
+        def get_selected_row():ListBoxRow = js.native
         def get_selected_rows():Any = js.native
-        def get_selection_mode():Any = js.native
-        def insert(child: Any, position: Any):Unit = js.native
+        def get_selection_mode():Double = js.native
+        def insert(child: Widget, position: Any):Unit = js.native
         def invalidate_filter():Unit = js.native
         def invalidate_headers():Unit = js.native
         def invalidate_sort():Unit = js.native
-        def prepend(child: Any):Unit = js.native
+        def prepend(child: Widget):Unit = js.native
         def select_all():Unit = js.native
-        def select_row(row: Any):Unit = js.native
+        def select_row(row: ListBoxRow):Unit = js.native
         def selected_foreach(func: Any, data: Object):Unit = js.native
         def set_activate_on_single_click(single: Boolean):Unit = js.native
-        def set_adjustment(adjustment: Any):Unit = js.native
+        def set_adjustment(adjustment: Adjustment):Unit = js.native
         def set_filter_func(filter_func: Any, user_data: Object, destroy: Any):Unit = js.native
         def set_header_func(update_header: Any, user_data: Object, destroy: Any):Unit = js.native
-        def set_placeholder(placeholder: Any):Unit = js.native
-        def set_selection_mode(mode: Any):Unit = js.native
+        def set_placeholder(placeholder: Widget):Unit = js.native
+        def set_selection_mode(mode: Double):Unit = js.native
         def set_sort_func(sort_func: Any, user_data: Object, destroy: Any):Unit = js.native
         def unselect_all():Unit = js.native
-        def unselect_row(row: Any):Unit = js.native
+        def unselect_row(row: ListBoxRow):Unit = js.native
     }
     @js.native
     class ListBoxAccessible extends ContainerAccessible {
@@ -3241,12 +3241,12 @@ object Gtk extends js.Object {
         def this(config: js.Any) = this()
         def changed():Unit = js.native
         def get_activatable():Boolean = js.native
-        def get_header():Any = js.native
+        def get_header():Widget = js.native
         def get_index():Any = js.native
         def get_selectable():Boolean = js.native
         def is_selected():Boolean = js.native
         def set_activatable(activatable: Boolean):Unit = js.native
-        def set_header(header: Any):Unit = js.native
+        def set_header(header: Widget):Unit = js.native
         def set_selectable(selectable: Boolean):Unit = js.native
     }
     @js.native
@@ -3285,8 +3285,8 @@ object Gtk extends js.Object {
     @js.native
     class LockButton extends Button {
         def this(config: js.Any) = this()
-        def get_permission():Any = js.native
-        def set_permission(permission: Any):Unit = js.native
+        def get_permission():Gio.Permission = js.native
+        def set_permission(permission: Gio.Permission):Unit = js.native
     }
     @js.native
     class LockButtonAccessible extends ButtonAccessible {
@@ -3294,35 +3294,35 @@ object Gtk extends js.Object {
     @js.native
     class Menu extends MenuShell {
         def this(config: js.Any) = this()
-        def attach(child: Any, left_attach: Any, right_attach: Any, top_attach: Any, bottom_attach: Any):Unit = js.native
-        def attach_to_widget(attach_widget: Any, detacher: Any):Unit = js.native
+        def attach(child: Widget, left_attach: Any, right_attach: Any, top_attach: Any, bottom_attach: Any):Unit = js.native
+        def attach_to_widget(attach_widget: Widget, detacher: Any):Unit = js.native
         def detach():Unit = js.native
-        def get_accel_group():Any = js.native
+        def get_accel_group():AccelGroup = js.native
         def get_accel_path():String = js.native
-        def get_active():Any = js.native
-        def get_attach_widget():Any = js.native
+        def get_active():Widget = js.native
+        def get_attach_widget():Widget = js.native
         def get_monitor():Any = js.native
         def get_reserve_toggle_size():Boolean = js.native
         def get_tearoff_state():Boolean = js.native
         def get_title():String = js.native
         def popdown():Unit = js.native
-        def popup(parent_menu_shell: Any, parent_menu_item: Any, func: Any, data: Object, button: Any, activate_time: Any):Unit = js.native
-        def popup_for_device(device: Any, parent_menu_shell: Any, parent_menu_item: Any, func: Any, data: Object, destroy: Any, button: Any, activate_time: Any):Unit = js.native
-        def reorder_child(child: Any, position: Any):Unit = js.native
+        def popup(parent_menu_shell: Widget, parent_menu_item: Widget, func: Any, data: Object, button: Any, activate_time: Any):Unit = js.native
+        def popup_for_device(device: Gdk.Device, parent_menu_shell: Widget, parent_menu_item: Widget, func: Any, data: Object, destroy: Any, button: Any, activate_time: Any):Unit = js.native
+        def reorder_child(child: Widget, position: Any):Unit = js.native
         def reposition():Unit = js.native
-        def set_accel_group(accel_group: Any):Unit = js.native
+        def set_accel_group(accel_group: AccelGroup):Unit = js.native
         def set_accel_path(accel_path: String):Unit = js.native
         def set_active(index: Any):Unit = js.native
         def set_monitor(monitor_num: Any):Unit = js.native
         def set_reserve_toggle_size(reserve_toggle_size: Boolean):Unit = js.native
-        def set_screen(screen: Any):Unit = js.native
+        def set_screen(screen: Gdk.Screen):Unit = js.native
         def set_tearoff_state(torn_off: Boolean):Unit = js.native
         def set_title(title: String):Unit = js.native
     }
     @js.native
     object Menu extends js.Object {
-        def get_for_attach_widget(widget: Any):Any = js.native
-        def new_from_model(model: Any):Menu = js.native
+        def get_for_attach_widget(widget: Widget):Any = js.native
+        def new_from_model(model: Gio.MenuModel):Menu = js.native
     }
     @js.native
     class MenuAccessible extends MenuShellAccessible {
@@ -3330,31 +3330,31 @@ object Gtk extends js.Object {
     @js.native
     class MenuBar extends MenuShell {
         def this(config: js.Any) = this()
-        def get_child_pack_direction():Any = js.native
-        def get_pack_direction():Any = js.native
-        def set_child_pack_direction(child_pack_dir: Any):Unit = js.native
-        def set_pack_direction(pack_dir: Any):Unit = js.native
+        def get_child_pack_direction():Double = js.native
+        def get_pack_direction():Double = js.native
+        def set_child_pack_direction(child_pack_dir: Double):Unit = js.native
+        def set_pack_direction(pack_dir: Double):Unit = js.native
     }
     @js.native
     object MenuBar extends js.Object {
-        def new_from_model(model: Any):MenuBar = js.native
+        def new_from_model(model: Gio.MenuModel):MenuBar = js.native
     }
     @js.native
     class MenuButton extends ToggleButton {
         def this(config: js.Any) = this()
-        def get_align_widget():Any = js.native
+        def get_align_widget():Widget = js.native
         override def get_direction():Number = js.native
 
-        def get_menu_model():Any = js.native
-        def get_popover():Any = js.native
-        def get_popup():Any = js.native
+        def get_menu_model():Gio.MenuModel = js.native
+        def get_popover():Popover = js.native
+        def get_popup():Menu = js.native
         def get_use_popover():Boolean = js.native
-        def set_align_widget(align_widget: Any):Unit = js.native
+        def set_align_widget(align_widget: Widget):Unit = js.native
         override def set_direction(dir:Number):Unit = js.native
 
-        def set_menu_model(menu_model: Any):Unit = js.native
-        def set_popover(popover: Any):Unit = js.native
-        def set_popup(menu: Any):Unit = js.native
+        def set_menu_model(menu_model: Gio.MenuModel):Unit = js.native
+        def set_popover(popover: Widget):Unit = js.native
+        def set_popup(menu: Widget):Unit = js.native
         def set_use_popover(use_popover: Boolean):Unit = js.native
     }
     @js.native
@@ -3370,14 +3370,14 @@ object Gtk extends js.Object {
         def get_label():String = js.native
         def get_reserve_indicator():Boolean = js.native
         def get_right_justified():Boolean = js.native
-        def get_submenu():Any = js.native
+        def get_submenu():Widget = js.native
         def get_use_underline():Boolean = js.native
         def select():Unit = js.native
         def set_accel_path(accel_path: String):Unit = js.native
         def set_label(label: String):Unit = js.native
         def set_reserve_indicator(reserve: Boolean):Unit = js.native
         def set_right_justified(right_justified: Boolean):Unit = js.native
-        def set_submenu(submenu: Any):Unit = js.native
+        def set_submenu(submenu: Menu):Unit = js.native
         def set_use_underline(setting: Boolean):Unit = js.native
         def toggle_size_allocate(allocation: Any):Unit = js.native
         def toggle_size_request(requisition: Any):Unit = js.native
@@ -3392,19 +3392,19 @@ object Gtk extends js.Object {
     }
     @js.native
     class MenuShell extends Container {
-        def activate_item(menu_item: Any, force_deactivate: Boolean):Unit = js.native
-        def append(child: Any):Unit = js.native
-        def bind_model(model: Any, action_namespace: String, with_separators: Boolean):Unit = js.native
+        def activate_item(menu_item: Widget, force_deactivate: Boolean):Unit = js.native
+        def append(child: MenuItem):Unit = js.native
+        def bind_model(model: Gio.MenuModel, action_namespace: String, with_separators: Boolean):Unit = js.native
         def cancel():Unit = js.native
         def deactivate():Unit = js.native
         def deselect():Unit = js.native
-        def get_parent_shell():Any = js.native
-        def get_selected_item():Any = js.native
+        def get_parent_shell():Widget = js.native
+        def get_selected_item():Widget = js.native
         def get_take_focus():Boolean = js.native
-        def insert(child: Any, position: Any):Unit = js.native
-        def prepend(child: Any):Unit = js.native
+        def insert(child: Widget, position: Any):Unit = js.native
+        def prepend(child: Widget):Unit = js.native
         def select_first(search_sensitive: Boolean):Unit = js.native
-        def select_item(menu_item: Any):Unit = js.native
+        def select_item(menu_item: Widget):Unit = js.native
         def set_take_focus(take_focus: Boolean):Unit = js.native
     }
     @js.native
@@ -3413,10 +3413,10 @@ object Gtk extends js.Object {
     @js.native
     class MenuToolButton extends ToolButton {
         def this(config: js.Any) = this()
-        def get_menu():Any = js.native
+        def get_menu():Widget = js.native
         def set_arrow_tooltip_markup(markup: String):Unit = js.native
         def set_arrow_tooltip_text(text: String):Unit = js.native
-        def set_menu(menu: Any):Unit = js.native
+        def set_menu(menu: Widget):Unit = js.native
     }
     @js.native
     object MenuToolButton extends js.Object {
@@ -3427,14 +3427,14 @@ object Gtk extends js.Object {
         def this(config: js.Any) = this()
         def format_secondary_markup(message_format: String, rest:Any*):Unit = js.native
         def format_secondary_text(message_format: String, rest:Any*):Unit = js.native
-        def get_image():Any = js.native
-        def get_message_area():Any = js.native
-        def set_image(image: Any):Unit = js.native
+        def get_image():Widget = js.native
+        def get_message_area():Widget = js.native
+        def set_image(image: Widget):Unit = js.native
         def set_markup(str: String):Unit = js.native
     }
     @js.native
     object MessageDialog extends js.Object {
-        def new_with_markup(parent: Any, flags: Any, type0: Any, buttons: Any, message_format: String, rest:Any*):MessageDialog = js.native
+        def new_with_markup(parent: Window, flags: Double, type0: Double, buttons: Double, message_format: String, rest:Any*):MessageDialog = js.native
     }
     @js.native
     class Misc extends Widget {
@@ -3450,59 +3450,59 @@ object Gtk extends js.Object {
     @js.native
     class MountOperation extends Gio.MountOperation {
         def this(config: js.Any) = this()
-        def get_parent():Any = js.native
-        def get_screen():Any = js.native
+        def get_parent():Window = js.native
+        def get_screen():Gdk.Screen = js.native
         def is_showing():Boolean = js.native
-        def set_parent(parent: Any):Unit = js.native
-        def set_screen(screen: Any):Unit = js.native
+        def set_parent(parent: Window):Unit = js.native
+        def set_screen(screen: Gdk.Screen):Unit = js.native
     }
     @js.native
     class Notebook extends Container {
         def this(config: js.Any) = this()
-        def append_page(child: Any, tab_label: Any):Any = js.native
-        def append_page_menu(child: Any, tab_label: Any, menu_label: Any):Any = js.native
-        def detach_tab(child: Any):Unit = js.native
-        def get_action_widget(pack_type0: Any):Any = js.native
+        def append_page(child: Widget, tab_label: Widget):Any = js.native
+        def append_page_menu(child: Widget, tab_label: Widget, menu_label: Widget):Any = js.native
+        def detach_tab(child: Widget):Unit = js.native
+        def get_action_widget(pack_type0: Double):Widget = js.native
         def get_current_page():Any = js.native
         def get_group_name():String = js.native
-        def get_menu_label(child: Any):Any = js.native
-        def get_menu_label_text(child: Any):String = js.native
+        def get_menu_label(child: Widget):Widget = js.native
+        def get_menu_label_text(child: Widget):String = js.native
         def get_n_pages():Any = js.native
-        def get_nth_page(page_num: Any):Any = js.native
+        def get_nth_page(page_num: Any):Widget = js.native
         def get_scrollable():Boolean = js.native
         def get_show_border():Boolean = js.native
         def get_show_tabs():Boolean = js.native
-        def get_tab_detachable(child: Any):Boolean = js.native
+        def get_tab_detachable(child: Widget):Boolean = js.native
         def get_tab_hborder():Any = js.native
-        def get_tab_label(child: Any):Any = js.native
-        def get_tab_label_text(child: Any):String = js.native
-        def get_tab_pos():Any = js.native
-        def get_tab_reorderable(child: Any):Boolean = js.native
+        def get_tab_label(child: Widget):Widget = js.native
+        def get_tab_label_text(child: Widget):String = js.native
+        def get_tab_pos():Double = js.native
+        def get_tab_reorderable(child: Widget):Boolean = js.native
         def get_tab_vborder():Any = js.native
-        def insert_page(child: Any, tab_label: Any, position: Any):Any = js.native
-        def insert_page_menu(child: Any, tab_label: Any, menu_label: Any, position: Any):Any = js.native
+        def insert_page(child: Widget, tab_label: Widget, position: Any):Any = js.native
+        def insert_page_menu(child: Widget, tab_label: Widget, menu_label: Widget, position: Any):Any = js.native
         def next_page():Unit = js.native
-        def page_num(child: Any):Any = js.native
+        def page_num(child: Widget):Any = js.native
         def popup_disable():Unit = js.native
         def popup_enable():Unit = js.native
-        def prepend_page(child: Any, tab_label: Any):Any = js.native
-        def prepend_page_menu(child: Any, tab_label: Any, menu_label: Any):Any = js.native
+        def prepend_page(child: Widget, tab_label: Widget):Any = js.native
+        def prepend_page_menu(child: Widget, tab_label: Widget, menu_label: Widget):Any = js.native
         def prev_page():Unit = js.native
         def remove_page(page_num: Any):Unit = js.native
-        def reorder_child(child: Any, position: Any):Unit = js.native
-        def set_action_widget(widget: Any, pack_type0: Any):Unit = js.native
+        def reorder_child(child: Widget, position: Any):Unit = js.native
+        def set_action_widget(widget: Widget, pack_type0: Double):Unit = js.native
         def set_current_page(page_num: Any):Unit = js.native
         def set_group_name(group_name: String):Unit = js.native
-        def set_menu_label(child: Any, menu_label: Any):Unit = js.native
-        def set_menu_label_text(child: Any, menu_text: String):Unit = js.native
+        def set_menu_label(child: Widget, menu_label: Widget):Unit = js.native
+        def set_menu_label_text(child: Widget, menu_text: String):Unit = js.native
         def set_scrollable(scrollable: Boolean):Unit = js.native
         def set_show_border(show_border: Boolean):Unit = js.native
         def set_show_tabs(show_tabs: Boolean):Unit = js.native
-        def set_tab_detachable(child: Any, detachable: Boolean):Unit = js.native
-        def set_tab_label(child: Any, tab_label: Any):Unit = js.native
-        def set_tab_label_text(child: Any, tab_text: String):Unit = js.native
-        def set_tab_pos(pos: Any):Unit = js.native
-        def set_tab_reorderable(child: Any, reorderable: Boolean):Unit = js.native
+        def set_tab_detachable(child: Widget, detachable: Boolean):Unit = js.native
+        def set_tab_label(child: Widget, tab_label: Widget):Unit = js.native
+        def set_tab_label_text(child: Widget, tab_text: String):Unit = js.native
+        def set_tab_pos(pos: Double):Unit = js.native
+        def set_tab_reorderable(child: Widget, reorderable: Boolean):Unit = js.native
     }
     @js.native
     class NotebookAccessible extends ContainerAccessible {
@@ -3518,16 +3518,16 @@ object Gtk extends js.Object {
         def get_background_icon_name():String = js.native
         def get_count():Any = js.native
         def get_label():String = js.native
-        def get_style_context():Any = js.native
+        def get_style_context():StyleContext = js.native
         def set_background_gicon(icon: Any):Unit = js.native
         def set_background_icon_name(icon_name: String):Unit = js.native
         def set_count(count: Any):Unit = js.native
         def set_label(label: String):Unit = js.native
-        def set_style_context(style: Any):Unit = js.native
+        def set_style_context(style: StyleContext):Unit = js.native
     }
     @js.native
     object NumerableIcon extends js.Object {
-        def new_with_style_context(base_icon: Any, context: Any):Any = js.native
+        def new_with_style_context(base_icon: Any, context: StyleContext):Any = js.native
     }
     @js.native
     class OffscreenWindow extends Window {
@@ -3538,34 +3538,34 @@ object Gtk extends js.Object {
     @js.native
     class Overlay extends Bin {
         def this(config: js.Any) = this()
-        def add_overlay(widget: Any):Unit = js.native
-        def get_overlay_pass_through(widget: Any):Boolean = js.native
-        def reorder_overlay(child: Any, position: Any):Unit = js.native
-        def set_overlay_pass_through(widget: Any, pass_through: Boolean):Unit = js.native
+        def add_overlay(widget: Widget):Unit = js.native
+        def get_overlay_pass_through(widget: Widget):Boolean = js.native
+        def reorder_overlay(child: Widget, position: Any):Unit = js.native
+        def set_overlay_pass_through(widget: Widget, pass_through: Boolean):Unit = js.native
     }
     @js.native
     class PageSetup extends GObject.Object {
         def this(config: js.Any) = this()
-        def copy():Any = js.native
-        def get_bottom_margin(unit: Any):Any = js.native
-        def get_left_margin(unit: Any):Any = js.native
-        def get_orientation():Any = js.native
-        def get_page_height(unit: Any):Any = js.native
-        def get_page_width(unit: Any):Any = js.native
-        def get_paper_height(unit: Any):Any = js.native
+        def copy():PageSetup = js.native
+        def get_bottom_margin(unit: Double):Any = js.native
+        def get_left_margin(unit: Double):Any = js.native
+        def get_orientation():Double = js.native
+        def get_page_height(unit: Double):Any = js.native
+        def get_page_width(unit: Double):Any = js.native
+        def get_paper_height(unit: Double):Any = js.native
         def get_paper_size():Any = js.native
-        def get_paper_width(unit: Any):Any = js.native
-        def get_right_margin(unit: Any):Any = js.native
-        def get_top_margin(unit: Any):Any = js.native
+        def get_paper_width(unit: Double):Any = js.native
+        def get_right_margin(unit: Double):Any = js.native
+        def get_top_margin(unit: Double):Any = js.native
         def load_file(file_name: Any):Boolean = js.native
         def load_key_file(key_file: Any, group_name: String):Boolean = js.native
-        def set_bottom_margin(margin: Any, unit: Any):Unit = js.native
-        def set_left_margin(margin: Any, unit: Any):Unit = js.native
-        def set_orientation(orientation: Any):Unit = js.native
+        def set_bottom_margin(margin: Any, unit: Double):Unit = js.native
+        def set_left_margin(margin: Any, unit: Double):Unit = js.native
+        def set_orientation(orientation: Double):Unit = js.native
         def set_paper_size(size: Any):Unit = js.native
         def set_paper_size_and_default_margins(size: Any):Unit = js.native
-        def set_right_margin(margin: Any, unit: Any):Unit = js.native
-        def set_top_margin(margin: Any, unit: Any):Unit = js.native
+        def set_right_margin(margin: Any, unit: Double):Unit = js.native
+        def set_top_margin(margin: Any, unit: Double):Unit = js.native
         def to_file(file_name: Any):Boolean = js.native
         def to_key_file(key_file: Any, group_name: String):Unit = js.native
     }
@@ -3577,15 +3577,15 @@ object Gtk extends js.Object {
     @js.native
     class Paned extends Container {
         def this(config: js.Any) = this()
-        def add1(child: Any):Unit = js.native
-        def add2(child: Any):Unit = js.native
-        def get_child1():Any = js.native
-        def get_child2():Any = js.native
-        def get_handle_window():Any = js.native
+        def add1(child: Widget):Unit = js.native
+        def add2(child: Widget):Unit = js.native
+        def get_child1():Widget = js.native
+        def get_child2():Widget = js.native
+        def get_handle_window():Gdk.Window = js.native
         def get_position():Any = js.native
         def get_wide_handle():Boolean = js.native
-        def pack1(child: Any, resize: Boolean, shrink: Boolean):Unit = js.native
-        def pack2(child: Any, resize: Boolean, shrink: Boolean):Unit = js.native
+        def pack1(child: Widget, resize: Boolean, shrink: Boolean):Unit = js.native
+        def pack2(child: Widget, resize: Boolean, shrink: Boolean):Unit = js.native
         def set_position(position: Any):Unit = js.native
         def set_wide_handle(wide: Boolean):Unit = js.native
     }
@@ -3599,7 +3599,7 @@ object Gtk extends js.Object {
         def get_local_only():Boolean = js.native
         def get_location():Any = js.native
         def get_nth_bookmark(n: Any):Any = js.native
-        def get_open_flags():Any = js.native
+        def get_open_flags():Double = js.native
         def get_show_connect_to_server():Boolean = js.native
         def get_show_desktop():Boolean = js.native
         def get_show_enter_location():Boolean = js.native
@@ -3608,10 +3608,10 @@ object Gtk extends js.Object {
         def get_show_trash():Boolean = js.native
         def list_shortcuts():Any = js.native
         def remove_shortcut(location: Any):Unit = js.native
-        def set_drop_targets_visible(visible: Boolean, context: Any):Unit = js.native
+        def set_drop_targets_visible(visible: Boolean, context: Gdk.DragContext):Unit = js.native
         def set_local_only(local_only: Boolean):Unit = js.native
         def set_location(location: Any):Unit = js.native
-        def set_open_flags(flags: Any):Unit = js.native
+        def set_open_flags(flags: Double):Unit = js.native
         def set_show_connect_to_server(show_connect_to_server: Boolean):Unit = js.native
         def set_show_desktop(show_desktop: Boolean):Unit = js.native
         def set_show_enter_location(show_enter_location: Boolean):Unit = js.native
@@ -3623,35 +3623,35 @@ object Gtk extends js.Object {
     class Plug extends Window {
         def this(config: js.Any) = this()
         def construct(socket_id: Any):Unit = js.native
-        def construct_for_display(display: Any, socket_id: Any):Unit = js.native
+        def construct_for_display(display: Gdk.Display, socket_id: Any):Unit = js.native
         def get_embedded():Boolean = js.native
         def get_id():Any = js.native
-        def get_socket_window():Any = js.native
+        def get_socket_window():Gdk.Window = js.native
     }
     @js.native
     object Plug extends js.Object {
-        def new_for_display(display: Any, socket_id: Any):Plug = js.native
+        def new_for_display(display: Gdk.Display, socket_id: Any):Plug = js.native
     }
     @js.native
     class Popover extends Bin {
         def this(config: js.Any) = this()
-        def bind_model(model: Any, action_namespace: String):Unit = js.native
-        def get_default_widget():Any = js.native
+        def bind_model(model: Gio.MenuModel, action_namespace: String):Unit = js.native
+        def get_default_widget():Widget = js.native
         def get_modal():Boolean = js.native
         def get_pointing_to(rect: Any):Boolean = js.native
-        def get_position():Any = js.native
-        def get_relative_to():Any = js.native
+        def get_position():Double = js.native
+        def get_relative_to():Widget = js.native
         def get_transitions_enabled():Boolean = js.native
-        def set_default_widget(widget: Any):Unit = js.native
+        def set_default_widget(widget: Widget):Unit = js.native
         def set_modal(modal: Boolean):Unit = js.native
         def set_pointing_to(rect: Any):Unit = js.native
-        def set_position(position: Any):Unit = js.native
-        def set_relative_to(relative_to: Any):Unit = js.native
+        def set_position(position: Double):Unit = js.native
+        def set_relative_to(relative_to: Widget):Unit = js.native
         def set_transitions_enabled(transitions_enabled: Boolean):Unit = js.native
     }
     @js.native
     object Popover extends js.Object {
-        def new_from_model(relative_to: Any, model: Any):Popover = js.native
+        def new_from_model(relative_to: Widget, model: Gio.MenuModel):Popover = js.native
     }
     @js.native
     class PopoverAccessible extends ContainerAccessible {
@@ -3663,15 +3663,15 @@ object Gtk extends js.Object {
     }
     @js.native
     class PrintContext extends GObject.Object {
-        def create_pango_context():Any = js.native
-        def create_pango_layout():Any = js.native
+        def create_pango_context():Pango.Context = js.native
+        def create_pango_layout():Pango.Layout = js.native
         def get_cairo_context():Any = js.native
         def get_dpi_x():Any = js.native
         def get_dpi_y():Any = js.native
         def get_hard_margins(top: Any, bottom: Any, left: Any, right: Any):Boolean = js.native
         def get_height():Any = js.native
-        def get_page_setup():Any = js.native
-        def get_pango_fontmap():Any = js.native
+        def get_page_setup():PageSetup = js.native
+        def get_pango_fontmap():Pango.FontMap = js.native
         def get_width():Any = js.native
         def set_cairo_context(cr: Any, dpi_x: Any, dpi_y: Any):Unit = js.native
     }
@@ -3680,38 +3680,38 @@ object Gtk extends js.Object {
         def this(config: js.Any) = this()
         def cancel():Unit = js.native
         def draw_page_finish():Unit = js.native
-        def get_default_page_setup():Any = js.native
+        def get_default_page_setup():PageSetup = js.native
         def get_embed_page_setup():Boolean = js.native
         def get_error():Unit = js.native
         def get_has_selection():Boolean = js.native
         def get_n_pages_to_print():Any = js.native
-        def get_print_settings():Any = js.native
-        def get_status():Any = js.native
+        def get_print_settings():PrintSettings = js.native
+        def get_status():Double = js.native
         def get_status_string():String = js.native
         def get_support_selection():Boolean = js.native
         def is_finished():Boolean = js.native
-        def run(action: Any, parent: Any):Any = js.native
+        def run(action: Double, parent: Window):Double = js.native
         def set_allow_async(allow_async: Boolean):Unit = js.native
         def set_current_page(current_page: Any):Unit = js.native
         def set_custom_tab_label(label: String):Unit = js.native
-        def set_default_page_setup(default_page_setup: Any):Unit = js.native
+        def set_default_page_setup(default_page_setup: PageSetup):Unit = js.native
         def set_defer_drawing():Unit = js.native
         def set_embed_page_setup(embed: Boolean):Unit = js.native
         def set_export_filename(filename: Any):Unit = js.native
         def set_has_selection(has_selection: Boolean):Unit = js.native
         def set_job_name(job_name: String):Unit = js.native
         def set_n_pages(n_pages: Any):Unit = js.native
-        def set_print_settings(print_settings: Any):Unit = js.native
+        def set_print_settings(print_settings: PrintSettings):Unit = js.native
         def set_show_progress(show_progress: Boolean):Unit = js.native
         def set_support_selection(support_selection: Boolean):Unit = js.native
         def set_track_print_status(track_status: Boolean):Unit = js.native
-        def set_unit(unit: Any):Unit = js.native
+        def set_unit(unit: Double):Unit = js.native
         def set_use_full_page(full_page: Boolean):Unit = js.native
     }
     @js.native
     class PrintSettings extends GObject.Object {
         def this(config: js.Any) = this()
-        def copy():Any = js.native
+        def copy():PrintSettings = js.native
         def foreach(func: Any, user_data: Object):Unit = js.native
         def get(key: String):String = js.native
         def get_bool(key: String):Boolean = js.native
@@ -3720,26 +3720,26 @@ object Gtk extends js.Object {
         def get_dither():String = js.native
         def get_double(key: String):Any = js.native
         def get_double_with_default(key: String, def0: Any):Any = js.native
-        def get_duplex():Any = js.native
+        def get_duplex():Double = js.native
         def get_finishings():String = js.native
         def get_int(key: String):Any = js.native
         def get_int_with_default(key: String, def0: Any):Any = js.native
-        def get_length(key: String, unit: Any):Any = js.native
+        def get_length(key: String, unit: Double):Any = js.native
         def get_media_type():String = js.native
         def get_n_copies():Any = js.native
         def get_number_up():Any = js.native
-        def get_number_up_layout():Any = js.native
-        def get_orientation():Any = js.native
+        def get_number_up_layout():Double = js.native
+        def get_orientation():Double = js.native
         def get_output_bin():String = js.native
         def get_page_ranges(num_ranges: Any):js.Array[Any] = js.native
-        def get_page_set():Any = js.native
-        def get_paper_height(unit: Any):Any = js.native
+        def get_page_set():Double = js.native
+        def get_paper_height(unit: Double):Any = js.native
         def get_paper_size():Any = js.native
-        def get_paper_width(unit: Any):Any = js.native
-        def get_print_pages():Any = js.native
+        def get_paper_width(unit: Double):Any = js.native
+        def get_print_pages():Double = js.native
         def get_printer():String = js.native
         def get_printer_lpi():Any = js.native
-        def get_quality():Any = js.native
+        def get_quality():Double = js.native
         def get_resolution():Any = js.native
         def get_resolution_x():Any = js.native
         def get_resolution_y():Any = js.native
@@ -3755,25 +3755,25 @@ object Gtk extends js.Object {
         def set_default_source(default_source: String):Unit = js.native
         def set_dither(dither: String):Unit = js.native
         def set_double(key: String, value: Any):Unit = js.native
-        def set_duplex(duplex: Any):Unit = js.native
+        def set_duplex(duplex: Double):Unit = js.native
         def set_finishings(finishings: String):Unit = js.native
         def set_int(key: String, value: Any):Unit = js.native
-        def set_length(key: String, value: Any, unit: Any):Unit = js.native
+        def set_length(key: String, value: Any, unit: Double):Unit = js.native
         def set_media_type(media_type0: String):Unit = js.native
         def set_n_copies(num_copies: Any):Unit = js.native
         def set_number_up(number_up: Any):Unit = js.native
-        def set_number_up_layout(number_up_layout: Any):Unit = js.native
-        def set_orientation(orientation: Any):Unit = js.native
+        def set_number_up_layout(number_up_layout: Double):Unit = js.native
+        def set_orientation(orientation: Double):Unit = js.native
         def set_output_bin(output_bin: String):Unit = js.native
         def set_page_ranges(page_ranges: js.Array[Any], num_ranges: Any):Unit = js.native
-        def set_page_set(page_set: Any):Unit = js.native
-        def set_paper_height(height: Any, unit: Any):Unit = js.native
+        def set_page_set(page_set: Double):Unit = js.native
+        def set_paper_height(height: Any, unit: Double):Unit = js.native
         def set_paper_size(paper_size: Any):Unit = js.native
-        def set_paper_width(width: Any, unit: Any):Unit = js.native
-        def set_print_pages(pages: Any):Unit = js.native
+        def set_paper_width(width: Any, unit: Double):Unit = js.native
+        def set_print_pages(pages: Double):Unit = js.native
         def set_printer(printer: String):Unit = js.native
         def set_printer_lpi(lpi: Any):Unit = js.native
-        def set_quality(quality: Any):Unit = js.native
+        def set_quality(quality: Double):Unit = js.native
         def set_resolution(resolution: Any):Unit = js.native
         def set_resolution_xy(resolution_x: Any, resolution_y: Any):Unit = js.native
         def set_reverse(reverse: Boolean):Unit = js.native
@@ -3791,14 +3791,14 @@ object Gtk extends js.Object {
     @js.native
     class ProgressBar extends Widget {
         def this(config: js.Any) = this()
-        def get_ellipsize():Any = js.native
+        def get_ellipsize():Double = js.native
         def get_fraction():Any = js.native
         def get_inverted():Boolean = js.native
         def get_pulse_step():Any = js.native
         def get_show_text():Boolean = js.native
         def get_text():String = js.native
         def pulse():Unit = js.native
-        def set_ellipsize(mode: Any):Unit = js.native
+        def set_ellipsize(mode: Double):Unit = js.native
         def set_fraction(fraction: Any):Unit = js.native
         def set_inverted(inverted: Boolean):Unit = js.native
         def set_pulse_step(fraction: Any):Unit = js.native
@@ -3813,7 +3813,7 @@ object Gtk extends js.Object {
         def this(config: js.Any) = this()
         def get_current_value():Any = js.native
         def get_group():Any = js.native
-        def join_group(group_source: Any):Unit = js.native
+        def join_group(group_source: RadioAction):Unit = js.native
         def set_current_value(current_value: Any):Unit = js.native
         def set_group(group: Any):Unit = js.native
     }
@@ -3821,16 +3821,16 @@ object Gtk extends js.Object {
     class RadioButton extends CheckButton {
         def this(config: js.Any) = this()
         def get_group():Any = js.native
-        def join_group(group_source: Any):Unit = js.native
+        def join_group(group_source: RadioButton):Unit = js.native
         def set_group(group: Any):Unit = js.native
     }
     @js.native
     object RadioButton extends js.Object {
-        def new_from_widget(radio_group_member: Any):RadioButton = js.native
+        def new_from_widget(radio_group_member: RadioButton):RadioButton = js.native
         def new_with_label(args:Any*):RadioButton = js.native
-        def new_with_label_from_widget(radio_group_member: Any, label: String):RadioButton = js.native
+        def new_with_label_from_widget(radio_group_member: RadioButton, label: String):RadioButton = js.native
         def new_with_mnemonic(args:Any*):RadioButton = js.native
-        def new_with_mnemonic_from_widget(radio_group_member: Any, label: String):RadioButton = js.native
+        def new_with_mnemonic_from_widget(radio_group_member: RadioButton, label: String):RadioButton = js.native
     }
     @js.native
     class RadioButtonAccessible extends ToggleButtonAccessible {
@@ -3839,16 +3839,16 @@ object Gtk extends js.Object {
     class RadioMenuItem extends CheckMenuItem {
         def this(config: js.Any) = this()
         def get_group():Any = js.native
-        def join_group(group_source: Any):Unit = js.native
+        def join_group(group_source: RadioMenuItem):Unit = js.native
         def set_group(group: Any):Unit = js.native
     }
     @js.native
     object RadioMenuItem extends js.Object {
-        def new_from_widget(group: Any):RadioMenuItem = js.native
+        def new_from_widget(group: RadioMenuItem):RadioMenuItem = js.native
         def new_with_label(args:Any*):RadioMenuItem = js.native
-        def new_with_label_from_widget(group: Any, label: String):RadioMenuItem = js.native
+        def new_with_label_from_widget(group: RadioMenuItem, label: String):RadioMenuItem = js.native
         def new_with_mnemonic(args:Any*):RadioMenuItem = js.native
-        def new_with_mnemonic_from_widget(group: Any, label: String):RadioMenuItem = js.native
+        def new_with_mnemonic_from_widget(group: RadioMenuItem, label: String):RadioMenuItem = js.native
     }
     @js.native
     class RadioMenuItemAccessible extends CheckMenuItemAccessible {
@@ -3862,16 +3862,16 @@ object Gtk extends js.Object {
     @js.native
     object RadioToolButton extends js.Object {
         def new_from_stock(args:Any*):RadioToolButton = js.native
-        def new_from_widget(group: Any):RadioToolButton = js.native
-        def new_with_stock_from_widget(group: Any, stock_id: String):RadioToolButton = js.native
+        def new_from_widget(group: RadioToolButton):RadioToolButton = js.native
+        def new_with_stock_from_widget(group: RadioToolButton, stock_id: String):RadioToolButton = js.native
     }
     @js.native
     class Range extends Widget {
-        def get_adjustment():Any = js.native
+        def get_adjustment():Adjustment = js.native
         def get_fill_level():Any = js.native
         def get_flippable():Boolean = js.native
         def get_inverted():Boolean = js.native
-        def get_lower_stepper_sensitivity():Any = js.native
+        def get_lower_stepper_sensitivity():Double = js.native
         def get_min_slider_size():Any = js.native
         def get_range_rect(range_rect: Any):Unit = js.native
         def get_restrict_to_fill_level():Boolean = js.native
@@ -3879,21 +3879,21 @@ object Gtk extends js.Object {
         def get_show_fill_level():Boolean = js.native
         def get_slider_range(slider_start: Any, slider_end: Any):Unit = js.native
         def get_slider_size_fixed():Boolean = js.native
-        def get_upper_stepper_sensitivity():Any = js.native
+        def get_upper_stepper_sensitivity():Double = js.native
         def get_value():Any = js.native
-        def set_adjustment(adjustment: Any):Unit = js.native
+        def set_adjustment(adjustment: Adjustment):Unit = js.native
         def set_fill_level(fill_level: Any):Unit = js.native
         def set_flippable(flippable: Boolean):Unit = js.native
         def set_increments(step: Any, page: Any):Unit = js.native
         def set_inverted(setting: Boolean):Unit = js.native
-        def set_lower_stepper_sensitivity(sensitivity: Any):Unit = js.native
+        def set_lower_stepper_sensitivity(sensitivity: Double):Unit = js.native
         def set_min_slider_size(min_size: Any):Unit = js.native
         def set_range(min: Any, max: Any):Unit = js.native
         def set_restrict_to_fill_level(restrict_to_fill_level: Boolean):Unit = js.native
         def set_round_digits(round_digits: Any):Unit = js.native
         def set_show_fill_level(show_fill_level: Boolean):Unit = js.native
         def set_slider_size_fixed(size_fixed: Boolean):Unit = js.native
-        def set_upper_stepper_sensitivity(sensitivity: Any):Unit = js.native
+        def set_upper_stepper_sensitivity(sensitivity: Double):Unit = js.native
         def set_value(value: Any):Unit = js.native
     }
     @js.native
@@ -3902,7 +3902,7 @@ object Gtk extends js.Object {
     @js.native
     class RcStyle extends GObject.Object {
         def this(config: js.Any) = this()
-        def copy():Any = js.native
+        def copy():RcStyle = js.native
     }
     @js.native
     class RecentAction extends Action {
@@ -3912,7 +3912,7 @@ object Gtk extends js.Object {
     }
     @js.native
     object RecentAction extends js.Object {
-        def new_for_manager(name: String, label: String, tooltip: String, stock_id: String, manager: Any):RecentAction = js.native
+        def new_for_manager(name: String, label: String, tooltip: String, stock_id: String, manager: RecentManager):RecentAction = js.native
     }
     @js.native
     class RecentChooserDialog extends Dialog {
@@ -3920,7 +3920,7 @@ object Gtk extends js.Object {
     }
     @js.native
     object RecentChooserDialog extends js.Object {
-        def new_for_manager(title: String, parent: Any, manager: Any, first_button_text: String, rest:Any*):RecentChooserDialog = js.native
+        def new_for_manager(title: String, parent: Window, manager: RecentManager, first_button_text: String, rest:Any*):RecentChooserDialog = js.native
     }
     @js.native
     class RecentChooserMenu extends Menu {
@@ -3930,7 +3930,7 @@ object Gtk extends js.Object {
     }
     @js.native
     object RecentChooserMenu extends js.Object {
-        def new_for_manager(manager: Any):RecentChooserMenu = js.native
+        def new_for_manager(manager: RecentManager):RecentChooserMenu = js.native
     }
     @js.native
     class RecentChooserWidget extends Box {
@@ -3938,21 +3938,21 @@ object Gtk extends js.Object {
     }
     @js.native
     object RecentChooserWidget extends js.Object {
-        def new_for_manager(manager: Any):RecentChooserWidget = js.native
+        def new_for_manager(manager: RecentManager):RecentChooserWidget = js.native
     }
     @js.native
     class RecentFilter extends GObject.InitiallyUnowned {
         def this(config: js.Any) = this()
         def add_age(days: Any):Unit = js.native
         def add_application(application: String):Unit = js.native
-        def add_custom(needed: Any, func: Any, data: Object, data_destroy: Any):Unit = js.native
+        def add_custom(needed: Double, func: Any, data: Object, data_destroy: Any):Unit = js.native
         def add_group(group: String):Unit = js.native
         def add_mime_type(mime_type0: String):Unit = js.native
         def add_pattern(pattern: String):Unit = js.native
         def add_pixbuf_formats():Unit = js.native
         def filter(filter_info: Any):Boolean = js.native
         def get_name():String = js.native
-        def get_needed():Any = js.native
+        def get_needed():Double = js.native
         def set_name(name: String):Unit = js.native
     }
     @js.native
@@ -3969,7 +3969,7 @@ object Gtk extends js.Object {
     }
     @js.native
     object RecentManager extends js.Object {
-        def get_default():Any = js.native
+        def get_default():RecentManager = js.native
     }
     @js.native
     class RendererCellAccessible extends CellAccessible {
@@ -3981,30 +3981,30 @@ object Gtk extends js.Object {
         def get_child_revealed():Boolean = js.native
         def get_reveal_child():Boolean = js.native
         def get_transition_duration():Any = js.native
-        def get_transition_type():Any = js.native
+        def get_transition_type():Double = js.native
         def set_reveal_child(reveal_child: Boolean):Unit = js.native
         def set_transition_duration(duration: Any):Unit = js.native
-        def set_transition_type(transition: Any):Unit = js.native
+        def set_transition_type(transition: Double):Unit = js.native
     }
     @js.native
     class Scale extends Range {
         def this(config: js.Any) = this()
-        def add_mark(value: Any, position: Any, markup: String):Unit = js.native
+        def add_mark(value: Any, position: Double, markup: String):Unit = js.native
         def clear_marks():Unit = js.native
         def get_digits():Any = js.native
         def get_draw_value():Boolean = js.native
         def get_has_origin():Boolean = js.native
-        def get_layout():Any = js.native
+        def get_layout():Pango.Layout = js.native
         def get_layout_offsets(x: Any, y: Any):Unit = js.native
-        def get_value_pos():Any = js.native
+        def get_value_pos():Double = js.native
         def set_digits(digits: Any):Unit = js.native
         def set_draw_value(draw_value: Boolean):Unit = js.native
         def set_has_origin(has_origin: Boolean):Unit = js.native
-        def set_value_pos(pos: Any):Unit = js.native
+        def set_value_pos(pos: Double):Unit = js.native
     }
     @js.native
     object Scale extends js.Object {
-        def new_with_range(orientation: Any, min: Any, max: Any, step: Any):Scale = js.native
+        def new_with_range(orientation: Double, min: Any, max: Any, step: Any):Scale = js.native
     }
     @js.native
     class ScaleAccessible extends RangeAccessible {
@@ -4012,12 +4012,12 @@ object Gtk extends js.Object {
     @js.native
     class ScaleButton extends Button {
         def this(config: js.Any) = this()
-        def get_adjustment():Any = js.native
-        def get_minus_button():Any = js.native
-        def get_plus_button():Any = js.native
-        def get_popup():Any = js.native
+        def get_adjustment():Adjustment = js.native
+        def get_minus_button():Button = js.native
+        def get_plus_button():Button = js.native
+        def get_popup():Widget = js.native
         def get_value():Any = js.native
-        def set_adjustment(adjustment: Any):Unit = js.native
+        def set_adjustment(adjustment: Adjustment):Unit = js.native
         def set_icons(icons: js.Array[String]):Unit = js.native
         def set_value(value: Any):Unit = js.native
     }
@@ -4031,29 +4031,29 @@ object Gtk extends js.Object {
     @js.native
     class ScrolledWindow extends Bin {
         def this(config: js.Any) = this()
-        def add_with_viewport(child: Any):Unit = js.native
+        def add_with_viewport(child: Widget):Unit = js.native
         def get_capture_button_press():Boolean = js.native
-        def get_hadjustment():Any = js.native
-        def get_hscrollbar():Any = js.native
+        def get_hadjustment():Adjustment = js.native
+        def get_hscrollbar():Widget = js.native
         def get_kinetic_scrolling():Boolean = js.native
         def get_min_content_height():Any = js.native
         def get_min_content_width():Any = js.native
         def get_overlay_scrolling():Boolean = js.native
-        def get_placement():Any = js.native
-        def get_policy(hscrollbar_policy: Any, vscrollbar_policy: Any):Unit = js.native
-        def get_shadow_type():Any = js.native
-        def get_vadjustment():Any = js.native
-        def get_vscrollbar():Any = js.native
+        def get_placement():Double = js.native
+        def get_policy(hscrollbar_policy: Double, vscrollbar_policy: Double):Unit = js.native
+        def get_shadow_type():Double = js.native
+        def get_vadjustment():Adjustment = js.native
+        def get_vscrollbar():Widget = js.native
         def set_capture_button_press(capture_button_press: Boolean):Unit = js.native
-        def set_hadjustment(hadjustment: Any):Unit = js.native
+        def set_hadjustment(hadjustment: Adjustment):Unit = js.native
         def set_kinetic_scrolling(kinetic_scrolling: Boolean):Unit = js.native
         def set_min_content_height(height: Any):Unit = js.native
         def set_min_content_width(width: Any):Unit = js.native
         def set_overlay_scrolling(overlay_scrolling: Boolean):Unit = js.native
-        def set_placement(window_placement: Any):Unit = js.native
-        def set_policy(hscrollbar_policy: Any, vscrollbar_policy: Any):Unit = js.native
-        def set_shadow_type(type0: Any):Unit = js.native
-        def set_vadjustment(vadjustment: Any):Unit = js.native
+        def set_placement(window_placement: Double):Unit = js.native
+        def set_policy(hscrollbar_policy: Double, vscrollbar_policy: Double):Unit = js.native
+        def set_shadow_type(type0: Double):Unit = js.native
+        def set_vadjustment(vadjustment: Adjustment):Unit = js.native
         def unset_placement():Unit = js.native
     }
     @js.native
@@ -4062,7 +4062,7 @@ object Gtk extends js.Object {
     @js.native
     class SearchBar extends Bin {
         def this(config: js.Any) = this()
-        def connect_entry(entry: Any):Unit = js.native
+        def connect_entry(entry: Entry):Unit = js.native
         def get_search_mode():Boolean = js.native
         def get_show_close_button():Boolean = js.native
         def handle_event(event: Any):Boolean = js.native
@@ -4099,53 +4099,53 @@ object Gtk extends js.Object {
     }
     @js.native
     object Settings extends js.Object {
-        def get_default():Any = js.native
-        def get_for_screen(screen: Any):Any = js.native
-        def install_property(pspec: Any):Unit = js.native
-        def install_property_parser(pspec: Any, parser: Any):Unit = js.native
+        def get_default():Settings = js.native
+        def get_for_screen(screen: Gdk.Screen):Settings = js.native
+        def install_property(pspec: GObject.ParamSpec):Unit = js.native
+        def install_property_parser(pspec: GObject.ParamSpec, parser: Any):Unit = js.native
     }
     @js.native
     class SizeGroup extends GObject.Object {
         def this(config: js.Any) = this()
-        def add_widget(widget: Any):Unit = js.native
+        def add_widget(widget: Widget):Unit = js.native
         def get_ignore_hidden():Boolean = js.native
-        def get_mode():Any = js.native
+        def get_mode():Double = js.native
         def get_widgets():Any = js.native
-        def remove_widget(widget: Any):Unit = js.native
+        def remove_widget(widget: Widget):Unit = js.native
         def set_ignore_hidden(ignore_hidden: Boolean):Unit = js.native
-        def set_mode(mode: Any):Unit = js.native
+        def set_mode(mode: Double):Unit = js.native
     }
     @js.native
     class Socket extends Container {
         def this(config: js.Any) = this()
         def add_id(window: Any):Unit = js.native
         def get_id():Any = js.native
-        def get_plug_window():Any = js.native
+        def get_plug_window():Gdk.Window = js.native
     }
     @js.native
     class SpinButton extends Entry {
         def this(config: js.Any) = this()
-        def configure(adjustment: Any, climb_rate: Any, digits: Any):Unit = js.native
-        def get_adjustment():Any = js.native
+        def configure(adjustment: Adjustment, climb_rate: Any, digits: Any):Unit = js.native
+        def get_adjustment():Adjustment = js.native
         def get_digits():Any = js.native
         def get_increments(step: Any, page: Any):Unit = js.native
         def get_numeric():Boolean = js.native
         def get_range(min: Any, max: Any):Unit = js.native
         def get_snap_to_ticks():Boolean = js.native
-        def get_update_policy():Any = js.native
+        def get_update_policy():Double = js.native
         def get_value():Any = js.native
         def get_value_as_int():Any = js.native
         def get_wrap():Boolean = js.native
-        def set_adjustment(adjustment: Any):Unit = js.native
+        def set_adjustment(adjustment: Adjustment):Unit = js.native
         def set_digits(digits: Any):Unit = js.native
         def set_increments(step: Any, page: Any):Unit = js.native
         def set_numeric(numeric: Boolean):Unit = js.native
         def set_range(min: Any, max: Any):Unit = js.native
         def set_snap_to_ticks(snap_to_ticks: Boolean):Unit = js.native
-        def set_update_policy(policy: Any):Unit = js.native
+        def set_update_policy(policy: Double):Unit = js.native
         def set_value(value: Any):Unit = js.native
         def set_wrap(wrap: Boolean):Unit = js.native
-        def spin(direction: Any, increment: Any):Unit = js.native
+        def spin(direction: Double, increment: Any):Unit = js.native
         def update():Unit = js.native
     }
     @js.native
@@ -4167,52 +4167,52 @@ object Gtk extends js.Object {
     @js.native
     class Stack extends Container {
         def this(config: js.Any) = this()
-        def add_named(child: Any, name: String):Unit = js.native
-        def add_titled(child: Any, name: String, title: String):Unit = js.native
-        def get_child_by_name(name: String):Any = js.native
+        def add_named(child: Widget, name: String):Unit = js.native
+        def add_titled(child: Widget, name: String, title: String):Unit = js.native
+        def get_child_by_name(name: String):Widget = js.native
         def get_hhomogeneous():Boolean = js.native
         def get_homogeneous():Boolean = js.native
         def get_interpolate_size():Boolean = js.native
         def get_transition_duration():Any = js.native
         def get_transition_running():Boolean = js.native
-        def get_transition_type():Any = js.native
+        def get_transition_type():Double = js.native
         def get_vhomogeneous():Boolean = js.native
-        def get_visible_child():Any = js.native
+        def get_visible_child():Widget = js.native
         def get_visible_child_name():String = js.native
         def set_hhomogeneous(hhomogeneous: Boolean):Unit = js.native
         def set_homogeneous(homogeneous: Boolean):Unit = js.native
         def set_interpolate_size(interpolate_size: Boolean):Unit = js.native
         def set_transition_duration(duration: Any):Unit = js.native
-        def set_transition_type(transition: Any):Unit = js.native
+        def set_transition_type(transition: Double):Unit = js.native
         def set_vhomogeneous(vhomogeneous: Boolean):Unit = js.native
-        def set_visible_child(child: Any):Unit = js.native
-        def set_visible_child_full(name: String, transition: Any):Unit = js.native
+        def set_visible_child(child: Widget):Unit = js.native
+        def set_visible_child_full(name: String, transition: Double):Unit = js.native
         def set_visible_child_name(name: String):Unit = js.native
     }
     @js.native
     class StackSidebar extends Bin {
         def this(config: js.Any) = this()
-        def get_stack():Any = js.native
-        def set_stack(stack: Any):Unit = js.native
+        def get_stack():Stack = js.native
+        def set_stack(stack: Stack):Unit = js.native
     }
     @js.native
     class StackSwitcher extends Box {
         def this(config: js.Any) = this()
-        def get_stack():Any = js.native
-        def set_stack(stack: Any):Unit = js.native
+        def get_stack():Stack = js.native
+        def set_stack(stack: Stack):Unit = js.native
     }
     @js.native
     class StatusIcon extends GObject.Object {
         def this(config: js.Any) = this()
-        def get_geometry(screen: Any, area: Any, orientation: Any):Boolean = js.native
+        def get_geometry(screen: Gdk.Screen, area: Any, orientation: Double):Boolean = js.native
         def get_gicon():Any = js.native
         def get_has_tooltip():Boolean = js.native
         def get_icon_name():String = js.native
         def get_pixbuf():Any = js.native
-        def get_screen():Any = js.native
+        def get_screen():Gdk.Screen = js.native
         def get_size():Any = js.native
         def get_stock():String = js.native
-        def get_storage_type():Any = js.native
+        def get_storage_type():Double = js.native
         def get_title():String = js.native
         def get_tooltip_markup():String = js.native
         def get_tooltip_text():String = js.native
@@ -4226,7 +4226,7 @@ object Gtk extends js.Object {
         def set_from_stock(stock_id: String):Unit = js.native
         def set_has_tooltip(has_tooltip: Boolean):Unit = js.native
         def set_name(name: String):Unit = js.native
-        def set_screen(screen: Any):Unit = js.native
+        def set_screen(screen: Gdk.Screen):Unit = js.native
         def set_title(title: String):Unit = js.native
         def set_tooltip_markup(markup: String):Unit = js.native
         def set_tooltip_text(text: String):Unit = js.native
@@ -4234,7 +4234,7 @@ object Gtk extends js.Object {
     }
     @js.native
     object StatusIcon extends js.Object {
-        def position_menu(menu: Any, x: Any, y: Any, push_in: Boolean, user_data: Any):Unit = js.native
+        def position_menu(menu: Menu, x: Any, y: Any, push_in: Boolean, user_data: StatusIcon):Unit = js.native
         def new_from_file(filename: Any):StatusIcon = js.native
         def new_from_gicon(icon: Any):StatusIcon = js.native
         def new_from_icon_name(icon_name: String):StatusIcon = js.native
@@ -4245,7 +4245,7 @@ object Gtk extends js.Object {
     class Statusbar extends Box {
         def this(config: js.Any) = this()
         def get_context_id(context_description: String):Any = js.native
-        def get_message_area():Any = js.native
+        def get_message_area():Box = js.native
         def pop(context_id: Any):Unit = js.native
         def push(context_id: Any, text: String):Any = js.native
         override def remove(args:Any*):Unit = js.native
@@ -4258,9 +4258,9 @@ object Gtk extends js.Object {
     @js.native
     class Style extends GObject.Object {
         def this(config: js.Any) = this()
-        def apply_default_background(cr: Any, window: Any, state_type0: Any, x: Any, y: Any, width: Any, height: Any):Unit = js.native
-        def attach(window: Any):Any = js.native
-        def copy():Any = js.native
+        def apply_default_background(cr: Any, window: Gdk.Window, state_type0: Double, x: Any, y: Any, width: Any, height: Any):Unit = js.native
+        def attach(window: Gdk.Window):Style = js.native
+        def copy():Style = js.native
         def detach():Unit = js.native
         def get(widget_type0: Any, first_property_name: String, rest:Any*):Unit = js.native
         def get_style_property(widget_type0: Any, property_name: String, value: Any):Unit = js.native
@@ -4269,48 +4269,48 @@ object Gtk extends js.Object {
         def has_context():Boolean = js.native
         def lookup_color(color_name: String, color: Any):Boolean = js.native
         def lookup_icon_set(stock_id: String):Any = js.native
-        def render_icon(source: Any, direction: Any, state: Any, size: Any, widget: Any, detail: String):Any = js.native
-        def set_background(window: Any, state_type0: Any):Unit = js.native
+        def render_icon(source: Any, direction: Double, state: Double, size: Any, widget: Widget, detail: String):Any = js.native
+        def set_background(window: Gdk.Window, state_type0: Double):Unit = js.native
     }
     @js.native
     class StyleContext extends GObject.Object {
         def this(config: js.Any) = this()
         def add_class(class_name: String):Unit = js.native
         def add_provider(provider: Any, priority: Any):Unit = js.native
-        def add_region(region_name: String, flags: Any):Unit = js.native
+        def add_region(region_name: String, flags: Double):Unit = js.native
         def cancel_animations(region_id: Object):Unit = js.native
-        def get(state: Any, rest:Any*):Unit = js.native
-        def get_background_color(state: Any, color: Any):Unit = js.native
-        def get_border(state: Any, border: Any):Unit = js.native
-        def get_border_color(state: Any, color: Any):Unit = js.native
-        def get_color(state: Any, color: Any):Unit = js.native
-        def get_direction():Any = js.native
-        def get_font(state: Any):Any = js.native
-        def get_frame_clock():Any = js.native
-        def get_junction_sides():Any = js.native
-        def get_margin(state: Any, margin: Any):Unit = js.native
-        def get_padding(state: Any, padding: Any):Unit = js.native
-        def get_parent():Any = js.native
+        def get(state: Double, rest:Any*):Unit = js.native
+        def get_background_color(state: Double, color: Any):Unit = js.native
+        def get_border(state: Double, border: Any):Unit = js.native
+        def get_border_color(state: Double, color: Any):Unit = js.native
+        def get_color(state: Double, color: Any):Unit = js.native
+        def get_direction():Double = js.native
+        def get_font(state: Double):Any = js.native
+        def get_frame_clock():Gdk.FrameClock = js.native
+        def get_junction_sides():Double = js.native
+        def get_margin(state: Double, margin: Any):Unit = js.native
+        def get_padding(state: Double, padding: Any):Unit = js.native
+        def get_parent():StyleContext = js.native
         def get_path():Any = js.native
         override def get_property(args:Any*):Any = js.native
 
         def get_scale():Any = js.native
-        def get_screen():Any = js.native
+        def get_screen():Gdk.Screen = js.native
         def get_section(property: String):Any = js.native
-        def get_state():Any = js.native
+        def get_state():Double = js.native
         def get_style(args:Any*):Unit = js.native
         def get_style_property(property_name: String, value: Any):Unit = js.native
         def get_style_valist(args: Any):Unit = js.native
         override def get_valist(args:Any*):Unit = js.native
 
         def has_class(class_name: String):Boolean = js.native
-        def has_region(region_name: String, flags_return: Any):Boolean = js.native
+        def has_region(region_name: String, flags_return: Double):Boolean = js.native
         def invalidate():Unit = js.native
         def list_classes():Any = js.native
         def list_regions():Any = js.native
         def lookup_color(color_name: String, color: Any):Boolean = js.native
         def lookup_icon_set(stock_id: String):Any = js.native
-        def notify_state_change(window: Any, region_id: Object, state: Any, state_value: Boolean):Unit = js.native
+        def notify_state_change(window: Gdk.Window, region_id: Object, state: Double, state_value: Boolean):Unit = js.native
         def pop_animatable_region():Unit = js.native
         def push_animatable_region(region_id: Object):Unit = js.native
         def remove_class(class_name: String):Unit = js.native
@@ -4318,47 +4318,47 @@ object Gtk extends js.Object {
         def remove_region(region_name: String):Unit = js.native
         def restore():Unit = js.native
         def save():Unit = js.native
-        def scroll_animations(window: Any, dx: Any, dy: Any):Unit = js.native
-        def set_background(window: Any):Unit = js.native
-        def set_direction(direction: Any):Unit = js.native
-        def set_frame_clock(frame_clock: Any):Unit = js.native
-        def set_junction_sides(sides: Any):Unit = js.native
-        def set_parent(parent: Any):Unit = js.native
+        def scroll_animations(window: Gdk.Window, dx: Any, dy: Any):Unit = js.native
+        def set_background(window: Gdk.Window):Unit = js.native
+        def set_direction(direction: Double):Unit = js.native
+        def set_frame_clock(frame_clock: Gdk.FrameClock):Unit = js.native
+        def set_junction_sides(sides: Double):Unit = js.native
+        def set_parent(parent: StyleContext):Unit = js.native
         def set_path(path: Any):Unit = js.native
         def set_scale(scale: Any):Unit = js.native
-        def set_screen(screen: Any):Unit = js.native
-        def set_state(flags: Any):Unit = js.native
-        def state_is_running(state: Any, progress: Any):Boolean = js.native
+        def set_screen(screen: Gdk.Screen):Unit = js.native
+        def set_state(flags: Double):Unit = js.native
+        def state_is_running(state: Double, progress: Any):Boolean = js.native
     }
     @js.native
     object StyleContext extends js.Object {
-        def add_provider_for_screen(screen: Any, provider: Any, priority: Any):Unit = js.native
-        def remove_provider_for_screen(screen: Any, provider: Any):Unit = js.native
-        def reset_widgets(screen: Any):Unit = js.native
+        def add_provider_for_screen(screen: Gdk.Screen, provider: Any, priority: Any):Unit = js.native
+        def remove_provider_for_screen(screen: Gdk.Screen, provider: Any):Unit = js.native
+        def reset_widgets(screen: Gdk.Screen):Unit = js.native
     }
     @js.native
     class StyleProperties extends GObject.Object {
         def this(config: js.Any) = this()
         def clear():Unit = js.native
-        def get(state: Any, rest:Any*):Unit = js.native
+        def get(state: Double, rest:Any*):Unit = js.native
         override def get_property(args:Any*):Any = js.native
 
         override def get_valist(args:Any*):Unit = js.native
 
         def lookup_color(name: String):Any = js.native
         def map_color(name: String, color: Any):Unit = js.native
-        def merge(props_to_merge: Any, replace: Boolean):Unit = js.native
-        def set(state: Any, rest:Any*):Unit = js.native
+        def merge(props_to_merge: StyleProperties, replace: Boolean):Unit = js.native
+        def set(state: Double, rest:Any*):Unit = js.native
         override def set_property(args:Any*):Unit = js.native
 
         override def set_valist(args:Any*):Unit = js.native
 
-        def unset_property(property: String, state: Any):Unit = js.native
+        def unset_property(property: String, state: Double):Unit = js.native
     }
     @js.native
     object StyleProperties extends js.Object {
-        def lookup_property(property_name: String, parse_func: Any, pspec: Any):Boolean = js.native
-        def register_property(parse_func: Any, pspec: Any):Unit = js.native
+        def lookup_property(property_name: String, parse_func: Any, pspec: GObject.ParamSpec):Boolean = js.native
+        def register_property(parse_func: Any, pspec: GObject.ParamSpec):Unit = js.native
     }
     @js.native
     class Switch extends Widget {
@@ -4376,8 +4376,8 @@ object Gtk extends js.Object {
     @js.native
     class Table extends Container {
         def this(config: js.Any) = this()
-        def attach(child: Any, left_attach: Any, right_attach: Any, top_attach: Any, bottom_attach: Any, xoptions: Any, yoptions: Any, xpadding: Any, ypadding: Any):Unit = js.native
-        def attach_defaults(widget: Any, left_attach: Any, right_attach: Any, top_attach: Any, bottom_attach: Any):Unit = js.native
+        def attach(child: Widget, left_attach: Any, right_attach: Any, top_attach: Any, bottom_attach: Any, xoptions: Double, yoptions: Double, xpadding: Any, ypadding: Any):Unit = js.native
+        def attach_defaults(widget: Widget, left_attach: Any, right_attach: Any, top_attach: Any, bottom_attach: Any):Unit = js.native
         def get_col_spacing(column: Any):Any = js.native
         def get_default_col_spacing():Any = js.native
         def get_default_row_spacing():Any = js.native
@@ -4398,23 +4398,23 @@ object Gtk extends js.Object {
     @js.native
     class TextBuffer extends GObject.Object {
         def this(config: js.Any) = this()
-        def add_mark(mark: Any, where: Any):Unit = js.native
-        def add_selection_clipboard(clipboard: Any):Unit = js.native
-        def apply_tag(tag: Any, start: Any, end: Any):Unit = js.native
+        def add_mark(mark: TextMark, where: Any):Unit = js.native
+        def add_selection_clipboard(clipboard: Clipboard):Unit = js.native
+        def apply_tag(tag: TextTag, start: Any, end: Any):Unit = js.native
         def apply_tag_by_name(name: String, start: Any, end: Any):Unit = js.native
         def backspace(iter: Any, interactive: Boolean, default_editable: Boolean):Boolean = js.native
         def begin_user_action():Unit = js.native
-        def copy_clipboard(clipboard: Any):Unit = js.native
-        def create_child_anchor(iter: Any):Any = js.native
-        def create_mark(mark_name: String, where: Any, left_gravity: Boolean):Any = js.native
-        def create_tag(tag_name: String, first_property_name: String, rest:Any*):Any = js.native
-        def cut_clipboard(clipboard: Any, default_editable: Boolean):Unit = js.native
+        def copy_clipboard(clipboard: Clipboard):Unit = js.native
+        def create_child_anchor(iter: Any):TextChildAnchor = js.native
+        def create_mark(mark_name: String, where: Any, left_gravity: Boolean):TextMark = js.native
+        def create_tag(tag_name: String, first_property_name: String, rest:Any*):TextTag = js.native
+        def cut_clipboard(clipboard: Clipboard, default_editable: Boolean):Unit = js.native
         def delete(start: Any, end: Any):Unit = js.native
         def delete_interactive(start_iter: Any, end_iter: Any, default_editable: Boolean):Boolean = js.native
-        def delete_mark(mark: Any):Unit = js.native
+        def delete_mark(mark: TextMark):Unit = js.native
         def delete_mark_by_name(name: String):Unit = js.native
         def delete_selection(interactive: Boolean, default_editable: Boolean):Boolean = js.native
-        def deserialize(content_buffer: Any, format: Any, iter: Any, data: js.Array[Any], length: Any):Boolean = js.native
+        def deserialize(content_buffer: TextBuffer, format: Any, iter: Any, data: js.Array[Any], length: Any):Boolean = js.native
         def deserialize_get_can_create_tags(format: Any):Boolean = js.native
         def deserialize_set_can_create_tags(format: Any, can_create_tags: Boolean):Unit = js.native
         def end_user_action():Unit = js.native
@@ -4424,49 +4424,49 @@ object Gtk extends js.Object {
         def get_deserialize_formats(n_formats: Any):js.Array[Any] = js.native
         def get_end_iter(iter: Any):Unit = js.native
         def get_has_selection():Boolean = js.native
-        def get_insert():Any = js.native
-        def get_iter_at_child_anchor(iter: Any, anchor: Any):Unit = js.native
+        def get_insert():TextMark = js.native
+        def get_iter_at_child_anchor(iter: Any, anchor: TextChildAnchor):Unit = js.native
         def get_iter_at_line(iter: Any, line_number: Any):Unit = js.native
         def get_iter_at_line_index(iter: Any, line_number: Any, byte_index: Any):Unit = js.native
         def get_iter_at_line_offset(iter: Any, line_number: Any, char_offset: Any):Unit = js.native
-        def get_iter_at_mark(iter: Any, mark: Any):Unit = js.native
+        def get_iter_at_mark(iter: Any, mark: TextMark):Unit = js.native
         def get_iter_at_offset(iter: Any, char_offset: Any):Unit = js.native
         def get_line_count():Any = js.native
-        def get_mark(name: String):Any = js.native
+        def get_mark(name: String):TextMark = js.native
         def get_modified():Boolean = js.native
         def get_paste_target_list():Any = js.native
-        def get_selection_bound():Any = js.native
+        def get_selection_bound():TextMark = js.native
         def get_selection_bounds(start: Any, end: Any):Boolean = js.native
         def get_serialize_formats(n_formats: Any):js.Array[Any] = js.native
         def get_slice(start: Any, end: Any, include_hidden_chars: Boolean):String = js.native
         def get_start_iter(iter: Any):Unit = js.native
-        def get_tag_table():Any = js.native
+        def get_tag_table():TextTagTable = js.native
         def get_text(start: Any, end: Any, include_hidden_chars: Boolean):String = js.native
         def insert(iter: Any, text: String, len: Any):Unit = js.native
         def insert_at_cursor(text: String, len: Any):Unit = js.native
-        def insert_child_anchor(iter: Any, anchor: Any):Unit = js.native
+        def insert_child_anchor(iter: Any, anchor: TextChildAnchor):Unit = js.native
         def insert_interactive(iter: Any, text: String, len: Any, default_editable: Boolean):Boolean = js.native
         def insert_interactive_at_cursor(text: String, len: Any, default_editable: Boolean):Boolean = js.native
         def insert_markup(iter: Any, markup: String, len: Any):Unit = js.native
         def insert_pixbuf(iter: Any, pixbuf: Any):Unit = js.native
         def insert_range(iter: Any, start: Any, end: Any):Unit = js.native
         def insert_range_interactive(iter: Any, start: Any, end: Any, default_editable: Boolean):Boolean = js.native
-        def insert_with_tags(iter: Any, text: String, len: Any, first_tag: Any, rest:Any*):Unit = js.native
+        def insert_with_tags(iter: Any, text: String, len: Any, first_tag: TextTag, rest:Any*):Unit = js.native
         def insert_with_tags_by_name(iter: Any, text: String, len: Any, first_tag_name: String, rest:Any*):Unit = js.native
-        def move_mark(mark: Any, where: Any):Unit = js.native
+        def move_mark(mark: TextMark, where: Any):Unit = js.native
         def move_mark_by_name(name: String, where: Any):Unit = js.native
-        def paste_clipboard(clipboard: Any, override_location: Any, default_editable: Boolean):Unit = js.native
+        def paste_clipboard(clipboard: Clipboard, override_location: Any, default_editable: Boolean):Unit = js.native
         def place_cursor(where: Any):Unit = js.native
         def register_deserialize_format(mime_type0: String, function0: Any, user_data: Object, user_data_destroy: Any):Any = js.native
         def register_deserialize_tagset(tagset_name: String):Any = js.native
         def register_serialize_format(mime_type0: String, function0: Any, user_data: Object, user_data_destroy: Any):Any = js.native
         def register_serialize_tagset(tagset_name: String):Any = js.native
         def remove_all_tags(start: Any, end: Any):Unit = js.native
-        def remove_selection_clipboard(clipboard: Any):Unit = js.native
-        def remove_tag(tag: Any, start: Any, end: Any):Unit = js.native
+        def remove_selection_clipboard(clipboard: Clipboard):Unit = js.native
+        def remove_tag(tag: TextTag, start: Any, end: Any):Unit = js.native
         def remove_tag_by_name(name: String, start: Any, end: Any):Unit = js.native
         def select_range(ins: Any, bound: Any):Unit = js.native
-        def serialize(content_buffer: Any, format: Any, start: Any, end: Any, length: Any):js.Array[Any] = js.native
+        def serialize(content_buffer: TextBuffer, format: Any, start: Any, end: Any, length: Any):js.Array[Any] = js.native
         def set_modified(setting: Boolean):Unit = js.native
         def set_text(text: String, len: Any):Unit = js.native
         def unregister_deserialize_format(format: Any):Unit = js.native
@@ -4484,7 +4484,7 @@ object Gtk extends js.Object {
     @js.native
     class TextMark extends GObject.Object {
         def this(config: js.Any) = this()
-        def get_buffer():Any = js.native
+        def get_buffer():TextBuffer = js.native
         def get_deleted():Boolean = js.native
         def get_left_gravity():Boolean = js.native
         def get_name():String = js.native
@@ -4494,45 +4494,45 @@ object Gtk extends js.Object {
     @js.native
     class TextTag extends GObject.Object {
         def this(config: js.Any) = this()
-        def event(event_object0: Any, event: Any, iter: Any):Boolean = js.native
+        def event(event_object0: GObject.Object, event: Any, iter: Any):Boolean = js.native
         def get_priority():Any = js.native
         def set_priority(priority: Any):Unit = js.native
     }
     @js.native
     class TextTagTable extends GObject.Object {
         def this(config: js.Any) = this()
-        def add(tag: Any):Boolean = js.native
+        def add(tag: TextTag):Boolean = js.native
         def foreach(func: Any, data: Object):Unit = js.native
         def get_size():Any = js.native
-        def lookup(name: String):Any = js.native
-        def remove(tag: Any):Unit = js.native
+        def lookup(name: String):TextTag = js.native
+        def remove(tag: TextTag):Unit = js.native
     }
     @js.native
     class TextView extends Container {
         def this(config: js.Any) = this()
-        def add_child_at_anchor(child: Any, anchor: Any):Unit = js.native
-        def add_child_in_window(child: Any, which_window: Any, xpos: Any, ypos: Any):Unit = js.native
+        def add_child_at_anchor(child: Widget, anchor: TextChildAnchor):Unit = js.native
+        def add_child_in_window(child: Widget, which_window: Double, xpos: Any, ypos: Any):Unit = js.native
         def backward_display_line(iter: Any):Boolean = js.native
         def backward_display_line_start(iter: Any):Boolean = js.native
-        def buffer_to_window_coords(win: Any, buffer_x: Any, buffer_y: Any, window_x: Any, window_y: Any):Unit = js.native
+        def buffer_to_window_coords(win: Double, buffer_x: Any, buffer_y: Any, window_x: Any, window_y: Any):Unit = js.native
         def forward_display_line(iter: Any):Boolean = js.native
         def forward_display_line_end(iter: Any):Boolean = js.native
         def get_accepts_tab():Boolean = js.native
-        def get_border_window_size(type0: Any):Any = js.native
+        def get_border_window_size(type0: Double):Any = js.native
         def get_bottom_margin():Any = js.native
-        def get_buffer():Any = js.native
+        def get_buffer():TextBuffer = js.native
         def get_cursor_locations(iter: Any, strong: Any, weak: Any):Unit = js.native
         def get_cursor_visible():Boolean = js.native
         def get_default_attributes():Any = js.native
         def get_editable():Boolean = js.native
-        def get_hadjustment():Any = js.native
+        def get_hadjustment():Adjustment = js.native
         def get_indent():Any = js.native
-        def get_input_hints():Any = js.native
-        def get_input_purpose():Any = js.native
+        def get_input_hints():Double = js.native
+        def get_input_purpose():Double = js.native
         def get_iter_at_location(iter: Any, x: Any, y: Any):Unit = js.native
         def get_iter_at_position(iter: Any, trailing: Any, x: Any, y: Any):Unit = js.native
         def get_iter_location(iter: Any, location: Any):Unit = js.native
-        def get_justification():Any = js.native
+        def get_justification():Double = js.native
         def get_left_margin():Any = js.native
         def get_line_at_y(target_iter: Any, y: Any, line_top: Any):Unit = js.native
         def get_line_yrange(iter: Any, y: Any, height: Any):Unit = js.native
@@ -4544,31 +4544,31 @@ object Gtk extends js.Object {
         def get_right_margin():Any = js.native
         def get_tabs():Any = js.native
         def get_top_margin():Any = js.native
-        def get_vadjustment():Any = js.native
+        def get_vadjustment():Adjustment = js.native
         def get_visible_rect(visible_rect: Any):Unit = js.native
         override def get_window(win:Number):Gdk.Window = js.native
 
-        def get_window_type(window: Any):Any = js.native
-        def get_wrap_mode():Any = js.native
+        def get_window_type(window: Gdk.Window):Double = js.native
+        def get_wrap_mode():Double = js.native
         def im_context_filter_keypress(event: Any):Boolean = js.native
-        def move_child(child: Any, xpos: Any, ypos: Any):Unit = js.native
-        def move_mark_onscreen(mark: Any):Boolean = js.native
+        def move_child(child: Widget, xpos: Any, ypos: Any):Unit = js.native
+        def move_mark_onscreen(mark: TextMark):Boolean = js.native
         def move_visually(iter: Any, count: Any):Boolean = js.native
         def place_cursor_onscreen():Boolean = js.native
         def reset_im_context():Unit = js.native
-        def scroll_mark_onscreen(mark: Any):Unit = js.native
+        def scroll_mark_onscreen(mark: TextMark):Unit = js.native
         def scroll_to_iter(iter: Any, within_margin: Any, use_align: Boolean, xalign: Any, yalign: Any):Boolean = js.native
-        def scroll_to_mark(mark: Any, within_margin: Any, use_align: Boolean, xalign: Any, yalign: Any):Unit = js.native
+        def scroll_to_mark(mark: TextMark, within_margin: Any, use_align: Boolean, xalign: Any, yalign: Any):Unit = js.native
         def set_accepts_tab(accepts_tab: Boolean):Unit = js.native
-        def set_border_window_size(type0: Any, size: Any):Unit = js.native
+        def set_border_window_size(type0: Double, size: Any):Unit = js.native
         def set_bottom_margin(bottom_margin: Any):Unit = js.native
-        def set_buffer(buffer: Any):Unit = js.native
+        def set_buffer(buffer: TextBuffer):Unit = js.native
         def set_cursor_visible(setting: Boolean):Unit = js.native
         def set_editable(setting: Boolean):Unit = js.native
         def set_indent(indent: Any):Unit = js.native
-        def set_input_hints(hints: Any):Unit = js.native
-        def set_input_purpose(purpose: Any):Unit = js.native
-        def set_justification(justification: Any):Unit = js.native
+        def set_input_hints(hints: Double):Unit = js.native
+        def set_input_purpose(purpose: Double):Unit = js.native
+        def set_justification(justification: Double):Unit = js.native
         def set_left_margin(left_margin: Any):Unit = js.native
         def set_monospace(monospace: Boolean):Unit = js.native
         def set_overwrite(overwrite: Boolean):Unit = js.native
@@ -4578,48 +4578,48 @@ object Gtk extends js.Object {
         def set_right_margin(right_margin: Any):Unit = js.native
         def set_tabs(tabs: Any):Unit = js.native
         def set_top_margin(top_margin: Any):Unit = js.native
-        def set_wrap_mode(wrap_mode: Any):Unit = js.native
+        def set_wrap_mode(wrap_mode: Double):Unit = js.native
         def starts_display_line(iter: Any):Boolean = js.native
-        def window_to_buffer_coords(win: Any, window_x: Any, window_y: Any, buffer_x: Any, buffer_y: Any):Unit = js.native
+        def window_to_buffer_coords(win: Double, window_x: Any, window_y: Any, buffer_x: Any, buffer_y: Any):Unit = js.native
     }
     @js.native
     object TextView extends js.Object {
-        def new_with_buffer(buffer: Any):TextView = js.native
+        def new_with_buffer(buffer: TextBuffer):TextView = js.native
     }
     @js.native
     class TextViewAccessible extends ContainerAccessible {
     }
     @js.native
     class ThemingEngine extends GObject.Object {
-        def get(state: Any, rest:Any*):Unit = js.native
-        def get_background_color(state: Any, color: Any):Unit = js.native
-        def get_border(state: Any, border: Any):Unit = js.native
-        def get_border_color(state: Any, color: Any):Unit = js.native
-        def get_color(state: Any, color: Any):Unit = js.native
-        def get_direction():Any = js.native
-        def get_font(state: Any):Any = js.native
-        def get_junction_sides():Any = js.native
-        def get_margin(state: Any, margin: Any):Unit = js.native
-        def get_padding(state: Any, padding: Any):Unit = js.native
+        def get(state: Double, rest:Any*):Unit = js.native
+        def get_background_color(state: Double, color: Any):Unit = js.native
+        def get_border(state: Double, border: Any):Unit = js.native
+        def get_border_color(state: Double, color: Any):Unit = js.native
+        def get_color(state: Double, color: Any):Unit = js.native
+        def get_direction():Double = js.native
+        def get_font(state: Double):Any = js.native
+        def get_junction_sides():Double = js.native
+        def get_margin(state: Double, margin: Any):Unit = js.native
+        def get_padding(state: Double, padding: Any):Unit = js.native
         def get_path():Any = js.native
         override def get_property(args:Any*):Any = js.native
 
-        def get_screen():Any = js.native
-        def get_state():Any = js.native
+        def get_screen():Gdk.Screen = js.native
+        def get_state():Double = js.native
         def get_style(args:Any*):Unit = js.native
         def get_style_property(property_name: String, value: Any):Unit = js.native
         def get_style_valist(args: Any):Unit = js.native
         override def get_valist(args:Any*):Unit = js.native
 
         def has_class(style_class: String):Boolean = js.native
-        def has_region(style_region: String, flags: Any):Boolean = js.native
+        def has_region(style_region: String, flags: Double):Boolean = js.native
         def lookup_color(color_name: String, color: Any):Boolean = js.native
-        def state_is_running(state: Any, progress: Any):Boolean = js.native
+        def state_is_running(state: Double, progress: Any):Boolean = js.native
     }
     @js.native
     object ThemingEngine extends js.Object {
-        def load(name: String):Any = js.native
-        def register_property(name_space: String, parse_func: Any, pspec: Any):Unit = js.native
+        def load(name: String):ThemingEngine = js.native
+        def register_property(name_space: String, parse_func: Any, pspec: GObject.ParamSpec):Unit = js.native
     }
     @js.native
     class ToggleAction extends Action {
@@ -4663,15 +4663,15 @@ object Gtk extends js.Object {
     class ToolButton extends ToolItem {
         def this(config: js.Any) = this()
         def get_icon_name():String = js.native
-        def get_icon_widget():Any = js.native
+        def get_icon_widget():Widget = js.native
         def get_label():String = js.native
-        def get_label_widget():Any = js.native
+        def get_label_widget():Widget = js.native
         def get_stock_id():String = js.native
         def get_use_underline():Boolean = js.native
         def set_icon_name(icon_name: String):Unit = js.native
-        def set_icon_widget(icon_widget: Any):Unit = js.native
+        def set_icon_widget(icon_widget: Widget):Unit = js.native
         def set_label(label: String):Unit = js.native
-        def set_label_widget(label_widget: Any):Unit = js.native
+        def set_label_widget(label_widget: Widget):Unit = js.native
         def set_stock_id(stock_id: String):Unit = js.native
         def set_use_underline(use_underline: Boolean):Unit = js.native
     }
@@ -4682,27 +4682,27 @@ object Gtk extends js.Object {
     @js.native
     class ToolItem extends Bin {
         def this(config: js.Any) = this()
-        def get_ellipsize_mode():Any = js.native
+        def get_ellipsize_mode():Double = js.native
         def get_expand():Boolean = js.native
         def get_homogeneous():Boolean = js.native
         def get_icon_size():Any = js.native
         def get_is_important():Boolean = js.native
-        def get_orientation():Any = js.native
-        def get_proxy_menu_item(menu_item_id: String):Any = js.native
-        def get_relief_style():Any = js.native
+        def get_orientation():Double = js.native
+        def get_proxy_menu_item(menu_item_id: String):Widget = js.native
+        def get_relief_style():Double = js.native
         def get_text_alignment():Any = js.native
-        def get_text_orientation():Any = js.native
-        def get_text_size_group():Any = js.native
-        def get_toolbar_style():Any = js.native
+        def get_text_orientation():Double = js.native
+        def get_text_size_group():SizeGroup = js.native
+        def get_toolbar_style():Double = js.native
         def get_use_drag_window():Boolean = js.native
         def get_visible_horizontal():Boolean = js.native
         def get_visible_vertical():Boolean = js.native
         def rebuild_menu():Unit = js.native
-        def retrieve_proxy_menu_item():Any = js.native
+        def retrieve_proxy_menu_item():Widget = js.native
         def set_expand(expand: Boolean):Unit = js.native
         def set_homogeneous(homogeneous: Boolean):Unit = js.native
         def set_is_important(is_important: Boolean):Unit = js.native
-        def set_proxy_menu_item(menu_item_id: String, menu_item: Any):Unit = js.native
+        def set_proxy_menu_item(menu_item_id: String, menu_item: Widget):Unit = js.native
         override def set_tooltip_markup(markup: String):Unit = js.native
         override def set_tooltip_text(text: String):Unit = js.native
         def set_use_drag_window(use_drag_window: Boolean):Unit = js.native
@@ -4714,41 +4714,41 @@ object Gtk extends js.Object {
     class ToolItemGroup extends Container {
         def this(config: js.Any) = this()
         def get_collapsed():Boolean = js.native
-        def get_drop_item(x: Any, y: Any):Any = js.native
-        def get_ellipsize():Any = js.native
-        def get_header_relief():Any = js.native
-        def get_item_position(item: Any):Any = js.native
+        def get_drop_item(x: Any, y: Any):ToolItem = js.native
+        def get_ellipsize():Double = js.native
+        def get_header_relief():Double = js.native
+        def get_item_position(item: ToolItem):Any = js.native
         def get_label():String = js.native
-        def get_label_widget():Any = js.native
+        def get_label_widget():Widget = js.native
         def get_n_items():Any = js.native
-        def get_nth_item(index: Any):Any = js.native
-        def insert(item: Any, position: Any):Unit = js.native
+        def get_nth_item(index: Any):ToolItem = js.native
+        def insert(item: ToolItem, position: Any):Unit = js.native
         def set_collapsed(collapsed: Boolean):Unit = js.native
-        def set_ellipsize(ellipsize: Any):Unit = js.native
-        def set_header_relief(style: Any):Unit = js.native
-        def set_item_position(item: Any, position: Any):Unit = js.native
+        def set_ellipsize(ellipsize: Double):Unit = js.native
+        def set_header_relief(style: Double):Unit = js.native
+        def set_item_position(item: ToolItem, position: Any):Unit = js.native
         def set_label(label: String):Unit = js.native
-        def set_label_widget(label_widget: Any):Unit = js.native
+        def set_label_widget(label_widget: Widget):Unit = js.native
     }
     @js.native
     class ToolPalette extends Container {
         def this(config: js.Any) = this()
-        def add_drag_dest(widget: Any, flags: Any, targets: Any, actions: Any):Unit = js.native
-        def get_drag_item(selection: Any):Any = js.native
-        def get_drop_group(x: Any, y: Any):Any = js.native
-        def get_drop_item(x: Any, y: Any):Any = js.native
-        def get_exclusive(group: Any):Boolean = js.native
-        def get_expand(group: Any):Boolean = js.native
-        def get_group_position(group: Any):Any = js.native
-        def get_hadjustment():Any = js.native
+        def add_drag_dest(widget: Widget, flags: Double, targets: Double, actions: Double):Unit = js.native
+        def get_drag_item(selection: Any):Widget = js.native
+        def get_drop_group(x: Any, y: Any):ToolItemGroup = js.native
+        def get_drop_item(x: Any, y: Any):ToolItem = js.native
+        def get_exclusive(group: ToolItemGroup):Boolean = js.native
+        def get_expand(group: ToolItemGroup):Boolean = js.native
+        def get_group_position(group: ToolItemGroup):Any = js.native
+        def get_hadjustment():Adjustment = js.native
         def get_icon_size():Any = js.native
         override def get_style():Number = js.native
 
-        def get_vadjustment():Any = js.native
-        def set_drag_source(targets: Any):Unit = js.native
-        def set_exclusive(group: Any, exclusive: Boolean):Unit = js.native
-        def set_expand(group: Any, expand: Boolean):Unit = js.native
-        def set_group_position(group: Any, position: Any):Unit = js.native
+        def get_vadjustment():Adjustment = js.native
+        def set_drag_source(targets: Double):Unit = js.native
+        def set_exclusive(group: ToolItemGroup, exclusive: Boolean):Unit = js.native
+        def set_expand(group: ToolItemGroup, expand: Boolean):Unit = js.native
+        def set_group_position(group: ToolItemGroup, position: Any):Unit = js.native
         def set_icon_size(icon_size: Any):Unit = js.native
         override def set_style(style:Number):Unit = js.native
 
@@ -4764,17 +4764,17 @@ object Gtk extends js.Object {
     class Toolbar extends Container {
         def this(config: js.Any) = this()
         def get_drop_index(x: Any, y: Any):Any = js.native
-        def get_icon_size():Any = js.native
-        def get_item_index(item: Any):Any = js.native
+        def get_icon_size():Double = js.native
+        def get_item_index(item: ToolItem):Any = js.native
         def get_n_items():Any = js.native
-        def get_nth_item(n: Any):Any = js.native
-        def get_relief_style():Any = js.native
+        def get_nth_item(n: Any):ToolItem = js.native
+        def get_relief_style():Double = js.native
         def get_show_arrow():Boolean = js.native
         override def get_style():Number = js.native
 
-        def insert(item: Any, pos: Any):Unit = js.native
-        def set_drop_highlight_item(tool_item: Any, index0: Any):Unit = js.native
-        def set_icon_size(icon_size: Any):Unit = js.native
+        def insert(item: ToolItem, pos: Any):Unit = js.native
+        def set_drop_highlight_item(tool_item: ToolItem, index0: Any):Unit = js.native
+        def set_icon_size(icon_size: Double):Unit = js.native
         def set_show_arrow(show_arrow: Boolean):Unit = js.native
         override def set_style(style:Number):Unit = js.native
 
@@ -4783,7 +4783,7 @@ object Gtk extends js.Object {
     }
     @js.native
     class Tooltip extends GObject.Object {
-        def set_custom(custom_widget: Any):Unit = js.native
+        def set_custom(custom_widget: Widget):Unit = js.native
         def set_icon(pixbuf: Any):Unit = js.native
         def set_icon_from_gicon(gicon: Any, size: Any):Unit = js.native
         def set_icon_from_icon_name(icon_name: String, size: Any):Unit = js.native
@@ -4794,7 +4794,7 @@ object Gtk extends js.Object {
     }
     @js.native
     object Tooltip extends js.Object {
-        def trigger_tooltip_query(display: Any):Unit = js.native
+        def trigger_tooltip_query(display: Gdk.Display):Unit = js.native
     }
     @js.native
     class ToplevelAccessible extends Atk.Object {
@@ -4827,12 +4827,12 @@ object Gtk extends js.Object {
     @js.native
     class TreeSelection extends GObject.Object {
         def count_selected_rows():Any = js.native
-        def get_mode():Any = js.native
+        def get_mode():Double = js.native
         def get_select_function():Any = js.native
         def get_selected():Any = js.native
 
         def get_selected_rows(model: Any):Any = js.native
-        def get_tree_view():Any = js.native
+        def get_tree_view():TreeView = js.native
         def get_user_data():Object = js.native
         def iter_is_selected(iter: Any):Boolean = js.native
         def path_is_selected(path: Any):Boolean = js.native
@@ -4841,7 +4841,7 @@ object Gtk extends js.Object {
         def select_path(path: Any):Unit = js.native
         def select_range(start_path: Any, end_path: Any):Unit = js.native
         def selected_foreach(func: Any, data: Object):Unit = js.native
-        def set_mode(type0: Any):Unit = js.native
+        def set_mode(type0: Double):Unit = js.native
         def set_select_function(func: Any, data: Object, destroy: Any):Unit = js.native
         def unselect_all():Unit = js.native
         def unselect_iter(iter: Any):Unit = js.native
@@ -4880,7 +4880,7 @@ object Gtk extends js.Object {
     @js.native
     class TreeView extends Container {
         def this(config: js.Any) = this()
-        def append_column(column: Any):Any = js.native
+        def append_column(column: TreeViewColumn):Any = js.native
         def collapse_all():Unit = js.native
         def collapse_row(path: Any):Boolean = js.native
         def columns_autosize():Unit = js.native
@@ -4891,26 +4891,26 @@ object Gtk extends js.Object {
         def convert_widget_to_bin_window_coords(wx: Any, wy: Any, bx: Any, by: Any):Unit = js.native
         def convert_widget_to_tree_coords(wx: Any, wy: Any, tx: Any, ty: Any):Unit = js.native
         def create_row_drag_icon(path: Any):Any = js.native
-        def enable_model_drag_dest(targets: js.Array[Any], n_targets: Any, actions: Any):Unit = js.native
-        def enable_model_drag_source(start_button_mask: Any, targets: js.Array[Any], n_targets: Any, actions: Any):Unit = js.native
+        def enable_model_drag_dest(targets: js.Array[Any], n_targets: Any, actions: Double):Unit = js.native
+        def enable_model_drag_source(start_button_mask: Double, targets: js.Array[Any], n_targets: Any, actions: Double):Unit = js.native
         def expand_all():Unit = js.native
         def expand_row(path: Any, open_all: Boolean):Boolean = js.native
         def expand_to_path(path: Any):Unit = js.native
         def get_activate_on_single_click():Boolean = js.native
-        def get_background_area(path: Any, column: Any, rect: Any):Unit = js.native
-        def get_bin_window():Any = js.native
-        def get_cell_area(path: Any, column: Any, rect: Any):Unit = js.native
-        def get_column(n: Any):Any = js.native
+        def get_background_area(path: Any, column: TreeViewColumn, rect: Any):Unit = js.native
+        def get_bin_window():Gdk.Window = js.native
+        def get_cell_area(path: Any, column: TreeViewColumn, rect: Any):Unit = js.native
+        def get_column(n: Any):TreeViewColumn = js.native
         def get_columns():Any = js.native
-        def get_cursor(path: Any, focus_column: Any):Unit = js.native
-        def get_dest_row_at_pos(drag_x: Any, drag_y: Any, path: Any, pos: Any):Boolean = js.native
-        def get_drag_dest_row(path: Any, pos: Any):Unit = js.native
+        def get_cursor(path: Any, focus_column: TreeViewColumn):Unit = js.native
+        def get_dest_row_at_pos(drag_x: Any, drag_y: Any, path: Any, pos: Double):Boolean = js.native
+        def get_drag_dest_row(path: Any, pos: Double):Unit = js.native
         def get_enable_search():Boolean = js.native
         def get_enable_tree_lines():Boolean = js.native
-        def get_expander_column():Any = js.native
+        def get_expander_column():TreeViewColumn = js.native
         def get_fixed_height_mode():Boolean = js.native
-        def get_grid_lines():Any = js.native
-        def get_hadjustment():Any = js.native
+        def get_grid_lines():Double = js.native
+        def get_hadjustment():Adjustment = js.native
         def get_headers_clickable():Boolean = js.native
         def get_headers_visible():Boolean = js.native
         def get_hover_expand():Boolean = js.native
@@ -4918,46 +4918,46 @@ object Gtk extends js.Object {
         def get_level_indentation():Any = js.native
         def get_model():Any = js.native
         def get_n_columns():Any = js.native
-        def get_path_at_pos(x: Any, y: Any, path: Any, column: Any, cell_x: Any, cell_y: Any):Boolean = js.native
+        def get_path_at_pos(x: Any, y: Any, path: Any, column: TreeViewColumn, cell_x: Any, cell_y: Any):Boolean = js.native
         def get_reorderable():Boolean = js.native
         def get_row_separator_func():Any = js.native
         def get_rubber_banding():Boolean = js.native
         def get_rules_hint():Boolean = js.native
         def get_search_column():Any = js.native
-        def get_search_entry():Any = js.native
+        def get_search_entry():Entry = js.native
         def get_search_equal_func():Any = js.native
         def get_search_position_func():Any = js.native
-        def get_selection():Any = js.native
+        def get_selection():TreeSelection = js.native
         def get_show_expanders():Boolean = js.native
         def get_tooltip_column():Any = js.native
         def get_tooltip_context(x: Any, y: Any, keyboard_tip: Boolean, model: Any, path: Any, iter: Any):Boolean = js.native
-        def get_vadjustment():Any = js.native
+        def get_vadjustment():Adjustment = js.native
         def get_visible_range(start_path: Any, end_path: Any):Boolean = js.native
         def get_visible_rect(visible_rect: Any):Unit = js.native
-        def insert_column(column: Any, position: Any):Any = js.native
-        def insert_column_with_attributes(position: Any, title: String, cell: Any, rest:Any*):Any = js.native
-        def insert_column_with_data_func(position: Any, title: String, cell: Any, func: Any, data: Object, dnotify: Any):Any = js.native
-        def is_blank_at_pos(x: Any, y: Any, path: Any, column: Any, cell_x: Any, cell_y: Any):Boolean = js.native
+        def insert_column(column: TreeViewColumn, position: Any):Any = js.native
+        def insert_column_with_attributes(position: Any, title: String, cell: CellRenderer, rest:Any*):Any = js.native
+        def insert_column_with_data_func(position: Any, title: String, cell: CellRenderer, func: Any, data: Object, dnotify: Any):Any = js.native
+        def is_blank_at_pos(x: Any, y: Any, path: Any, column: TreeViewColumn, cell_x: Any, cell_y: Any):Boolean = js.native
         def is_rubber_banding_active():Boolean = js.native
         def map_expanded_rows(func: Any, data: Object):Unit = js.native
-        def move_column_after(column: Any, base_column: Any):Unit = js.native
-        def remove_column(column: Any):Any = js.native
-        def row_activated(path: Any, column: Any):Unit = js.native
+        def move_column_after(column: TreeViewColumn, base_column: TreeViewColumn):Unit = js.native
+        def remove_column(column: TreeViewColumn):Any = js.native
+        def row_activated(path: Any, column: TreeViewColumn):Unit = js.native
         def row_expanded(path: Any):Boolean = js.native
-        def scroll_to_cell(path: Any, column: Any, use_align: Boolean, row_align: Any, col_align: Any):Unit = js.native
+        def scroll_to_cell(path: Any, column: TreeViewColumn, use_align: Boolean, row_align: Any, col_align: Any):Unit = js.native
         def scroll_to_point(tree_x: Any, tree_y: Any):Unit = js.native
         def set_activate_on_single_click(single: Boolean):Unit = js.native
         def set_column_drag_function(func: Any, user_data: Object, destroy: Any):Unit = js.native
-        def set_cursor(path: Any, focus_column: Any, start_editing: Boolean):Unit = js.native
-        def set_cursor_on_cell(path: Any, focus_column: Any, focus_cell: Any, start_editing: Boolean):Unit = js.native
+        def set_cursor(path: Any, focus_column: TreeViewColumn, start_editing: Boolean):Unit = js.native
+        def set_cursor_on_cell(path: Any, focus_column: TreeViewColumn, focus_cell: CellRenderer, start_editing: Boolean):Unit = js.native
         def set_destroy_count_func(func: Any, data: Object, destroy: Any):Unit = js.native
-        def set_drag_dest_row(path: Any, pos: Any):Unit = js.native
+        def set_drag_dest_row(path: Any, pos: Double):Unit = js.native
         def set_enable_search(enable_search: Boolean):Unit = js.native
         def set_enable_tree_lines(enabled: Boolean):Unit = js.native
-        def set_expander_column(column: Any):Unit = js.native
+        def set_expander_column(column: TreeViewColumn):Unit = js.native
         def set_fixed_height_mode(enable: Boolean):Unit = js.native
-        def set_grid_lines(grid_lines: Any):Unit = js.native
-        def set_hadjustment(adjustment: Any):Unit = js.native
+        def set_grid_lines(grid_lines: Double):Unit = js.native
+        def set_hadjustment(adjustment: Adjustment):Unit = js.native
         def set_headers_clickable(setting: Boolean):Unit = js.native
         def set_headers_visible(headers_visible: Boolean):Unit = js.native
         def set_hover_expand(expand: Boolean):Unit = js.native
@@ -4969,14 +4969,14 @@ object Gtk extends js.Object {
         def set_rubber_banding(enable: Boolean):Unit = js.native
         def set_rules_hint(setting: Boolean):Unit = js.native
         def set_search_column(column: Any):Unit = js.native
-        def set_search_entry(entry: Any):Unit = js.native
+        def set_search_entry(entry: Entry):Unit = js.native
         def set_search_equal_func(search_equal_func: Any, search_user_data: Object, search_destroy: Any):Unit = js.native
         def set_search_position_func(func: Any, data: Object, destroy: Any):Unit = js.native
         def set_show_expanders(enabled: Boolean):Unit = js.native
-        def set_tooltip_cell(tooltip: Any, path: Any, column: Any, cell: Any):Unit = js.native
+        def set_tooltip_cell(tooltip: Tooltip, path: Any, column: TreeViewColumn, cell: CellRenderer):Unit = js.native
         def set_tooltip_column(column: Any):Unit = js.native
-        def set_tooltip_row(tooltip: Any, path: Any):Unit = js.native
-        def set_vadjustment(adjustment: Any):Unit = js.native
+        def set_tooltip_row(tooltip: Tooltip, path: Any):Unit = js.native
+        def set_vadjustment(adjustment: Adjustment):Unit = js.native
         def unset_rows_drag_dest():Unit = js.native
         def unset_rows_drag_source():Unit = js.native
     }
@@ -4990,17 +4990,17 @@ object Gtk extends js.Object {
     @js.native
     class TreeViewColumn extends GObject.InitiallyUnowned {
         def this(config: js.Any) = this()
-        def add_attribute(cell_renderer: Any, attribute: String, column: Any):Unit = js.native
-        def cell_get_position(cell_renderer: Any, x_offset: Any, width: Any):Boolean = js.native
+        def add_attribute(cell_renderer: CellRenderer, attribute: String, column: Any):Unit = js.native
+        def cell_get_position(cell_renderer: CellRenderer, x_offset: Any, width: Any):Boolean = js.native
         def cell_get_size(cell_area: Any, x_offset: Any, y_offset: Any, width: Any, height: Any):Unit = js.native
         def cell_is_visible():Boolean = js.native
         def cell_set_cell_data(tree_model: Any, iter: Any, is_expander: Boolean, is_expanded: Boolean):Unit = js.native
         def clear():Unit = js.native
-        def clear_attributes(cell_renderer: Any):Unit = js.native
+        def clear_attributes(cell_renderer: CellRenderer):Unit = js.native
         def clicked():Unit = js.native
-        def focus_cell(cell: Any):Unit = js.native
+        def focus_cell(cell: CellRenderer):Unit = js.native
         def get_alignment():Any = js.native
-        def get_button():Any = js.native
+        def get_button():Widget = js.native
         def get_clickable():Boolean = js.native
         def get_expand():Boolean = js.native
         def get_fixed_width():Any = js.native
@@ -5008,23 +5008,23 @@ object Gtk extends js.Object {
         def get_min_width():Any = js.native
         def get_reorderable():Boolean = js.native
         def get_resizable():Boolean = js.native
-        def get_sizing():Any = js.native
+        def get_sizing():Double = js.native
         def get_sort_column_id():Any = js.native
         def get_sort_indicator():Boolean = js.native
-        def get_sort_order():Any = js.native
+        def get_sort_order():Double = js.native
         def get_spacing():Any = js.native
         def get_title():String = js.native
-        def get_tree_view():Any = js.native
+        def get_tree_view():Widget = js.native
         def get_visible():Boolean = js.native
-        def get_widget():Any = js.native
+        def get_widget():Widget = js.native
         def get_width():Any = js.native
         def get_x_offset():Any = js.native
-        def pack_end(cell: Any, expand: Boolean):Unit = js.native
-        def pack_start(cell: Any, expand: Boolean):Unit = js.native
+        def pack_end(cell: CellRenderer, expand: Boolean):Unit = js.native
+        def pack_start(cell: CellRenderer, expand: Boolean):Unit = js.native
         def queue_resize():Unit = js.native
         def set_alignment(xalign: Any):Unit = js.native
-        def set_attributes(cell_renderer: Any, rest:Any*):Unit = js.native
-        def set_cell_data_func(cell_renderer: Any, func: Any, func_data: Object, destroy: Any):Unit = js.native
+        def set_attributes(cell_renderer: CellRenderer, rest:Any*):Unit = js.native
+        def set_cell_data_func(cell_renderer: CellRenderer, func: Any, func_data: Object, destroy: Any):Unit = js.native
         def set_clickable(clickable: Boolean):Unit = js.native
         def set_expand(expand: Boolean):Unit = js.native
         def set_fixed_width(fixed_width: Any):Unit = js.native
@@ -5032,38 +5032,38 @@ object Gtk extends js.Object {
         def set_min_width(min_width: Any):Unit = js.native
         def set_reorderable(reorderable: Boolean):Unit = js.native
         def set_resizable(resizable: Boolean):Unit = js.native
-        def set_sizing(type0: Any):Unit = js.native
+        def set_sizing(type0: Double):Unit = js.native
         def set_sort_column_id(sort_column_id: Any):Unit = js.native
         def set_sort_indicator(setting: Boolean):Unit = js.native
-        def set_sort_order(order: Any):Unit = js.native
+        def set_sort_order(order: Double):Unit = js.native
         def set_spacing(spacing: Any):Unit = js.native
         def set_title(title: String):Unit = js.native
         def set_visible(visible: Boolean):Unit = js.native
-        def set_widget(widget: Any):Unit = js.native
+        def set_widget(widget: Widget):Unit = js.native
     }
     @js.native
     object TreeViewColumn extends js.Object {
-        def new_with_area(area: Any):TreeViewColumn = js.native
-        def new_with_attributes(title: String, cell: Any, rest:Any*):TreeViewColumn = js.native
+        def new_with_area(area: CellArea):TreeViewColumn = js.native
+        def new_with_attributes(title: String, cell: CellRenderer, rest:Any*):TreeViewColumn = js.native
     }
     @js.native
     class UIManager extends GObject.Object {
         def this(config: js.Any) = this()
-        def add_ui(merge_id: Any, path: String, name: String, action: String, type0: Any, top: Boolean):Unit = js.native
+        def add_ui(merge_id: Any, path: String, name: String, action: String, type0: Double, top: Boolean):Unit = js.native
         def add_ui_from_file(filename: Any):Any = js.native
         def add_ui_from_resource(resource_path: String):Any = js.native
         def add_ui_from_string(buffer: String, length: Any):Any = js.native
         def ensure_update():Unit = js.native
-        def get_accel_group():Any = js.native
-        def get_action(path: String):Any = js.native
+        def get_accel_group():AccelGroup = js.native
+        def get_action(path: String):Action = js.native
         def get_action_groups():Any = js.native
         def get_add_tearoffs():Boolean = js.native
-        def get_toplevels(types: Any):Any = js.native
+        def get_toplevels(types: Double):Any = js.native
         def get_ui():String = js.native
-        def get_widget(path: String):Any = js.native
-        def insert_action_group(action_group: Any, pos: Any):Unit = js.native
+        def get_widget(path: String):Widget = js.native
+        def insert_action_group(action_group: ActionGroup, pos: Any):Unit = js.native
         def new_merge_id():Any = js.native
-        def remove_action_group(action_group: Any):Unit = js.native
+        def remove_action_group(action_group: ActionGroup):Unit = js.native
         def remove_ui(merge_id: Any):Unit = js.native
         def set_add_tearoffs(add_tearoffs: Boolean):Unit = js.native
     }
@@ -5098,14 +5098,14 @@ object Gtk extends js.Object {
     @js.native
     class Viewport extends Bin {
         def this(config: js.Any) = this()
-        def get_bin_window():Any = js.native
-        def get_hadjustment():Any = js.native
-        def get_shadow_type():Any = js.native
-        def get_vadjustment():Any = js.native
-        def get_view_window():Any = js.native
-        def set_hadjustment(adjustment: Any):Unit = js.native
-        def set_shadow_type(type0: Any):Unit = js.native
-        def set_vadjustment(adjustment: Any):Unit = js.native
+        def get_bin_window():Gdk.Window = js.native
+        def get_hadjustment():Adjustment = js.native
+        def get_shadow_type():Double = js.native
+        def get_vadjustment():Adjustment = js.native
+        def get_view_window():Gdk.Window = js.native
+        def set_hadjustment(adjustment: Adjustment):Unit = js.native
+        def set_shadow_type(type0: Double):Unit = js.native
+        def set_vadjustment(adjustment: Adjustment):Unit = js.native
     }
     @js.native
     class VolumeButton extends ScaleButton {
@@ -5116,43 +5116,43 @@ object Gtk extends js.Object {
         def this(config: js.Any) = this()
         def activate():Any = js.native
 
-        def add_accelerator(accel_signal: String, accel_group: Any, accel_key: Any, accel_mods: Any, accel_flags: Any):Unit = js.native
-        def add_device_events(device: Any, events: Any):Unit = js.native
+        def add_accelerator(accel_signal: String, accel_group: AccelGroup, accel_key: Any, accel_mods: Double, accel_flags: Double):Unit = js.native
+        def add_device_events(device: Gdk.Device, events: Double):Unit = js.native
         def add_events(events: Any):Unit = js.native
-        def add_mnemonic_label(label: Any):Unit = js.native
+        def add_mnemonic_label(label: Widget):Unit = js.native
         def add_tick_callback(callback: Any, user_data: Object, notify: Any):Any = js.native
         def can_activate_accel(signal_id: Any):Boolean = js.native
-        def child_focus(direction: Any):Boolean = js.native
+        def child_focus(direction: Double):Boolean = js.native
         def child_notify(args:Any*):Unit = js.native
 
         def class_path(path_length: Any, path: String, path_reversed: String):Unit = js.native
-        def compute_expand(orientation: Any):Boolean = js.native
-        def create_pango_context():Any = js.native
-        def create_pango_layout(text: String):Any = js.native
+        def compute_expand(orientation: Double):Boolean = js.native
+        def create_pango_context():Pango.Context = js.native
+        def create_pango_layout(text: String):Pango.Layout = js.native
         def destroy():Unit = js.native
-        def destroyed(widget_pointer: Any):Unit = js.native
-        def device_is_shadowed(device: Any):Boolean = js.native
-        def drag_begin(targets: Any, actions: Any, button: Any, event: Any):Any = js.native
-        def drag_begin_with_coordinates(targets: Any, actions: Any, button: Any, event: Any, x: Any, y: Any):Any = js.native
+        def destroyed(widget_pointer: Widget):Unit = js.native
+        def device_is_shadowed(device: Gdk.Device):Boolean = js.native
+        def drag_begin(targets: Any, actions: Double, button: Any, event: Any):Gdk.DragContext = js.native
+        def drag_begin_with_coordinates(targets: Any, actions: Double, button: Any, event: Any, x: Any, y: Any):Gdk.DragContext = js.native
         def drag_check_threshold(start_x: Any, start_y: Any, current_x: Any, current_y: Any):Boolean = js.native
         def drag_dest_add_image_targets():Unit = js.native
         def drag_dest_add_text_targets():Unit = js.native
         def drag_dest_add_uri_targets():Unit = js.native
-        def drag_dest_find_target(context: Any, target_list: Any):Any = js.native
+        def drag_dest_find_target(context: Gdk.DragContext, target_list: Any):Any = js.native
         def drag_dest_get_target_list():Any = js.native
         def drag_dest_get_track_motion():Boolean = js.native
-        def drag_dest_set(flags: Any, targets: js.Array[Any], n_targets: Any, actions: Any):Unit = js.native
-        def drag_dest_set_proxy(proxy_window: Any, protocol: Any, use_coordinates: Boolean):Unit = js.native
+        def drag_dest_set(flags: Double, targets: js.Array[Any], n_targets: Any, actions: Double):Unit = js.native
+        def drag_dest_set_proxy(proxy_window: Gdk.Window, protocol: Double, use_coordinates: Boolean):Unit = js.native
         def drag_dest_set_target_list(target_list: Any):Unit = js.native
         def drag_dest_set_track_motion(track_motion: Boolean):Unit = js.native
         def drag_dest_unset():Unit = js.native
-        def drag_get_data(context: Any, target: Any, time0: Any):Unit = js.native
+        def drag_get_data(context: Gdk.DragContext, target: Any, time0: Any):Unit = js.native
         def drag_highlight():Unit = js.native
         def drag_source_add_image_targets():Unit = js.native
         def drag_source_add_text_targets():Unit = js.native
         def drag_source_add_uri_targets():Unit = js.native
         def drag_source_get_target_list():Any = js.native
-        def drag_source_set(start_button_mask: Any, targets: js.Array[Any], n_targets: Any, actions: Any):Unit = js.native
+        def drag_source_set(start_button_mask: Double, targets: js.Array[Any], n_targets: Any, actions: Double):Unit = js.native
         def drag_source_set_icon_gicon(icon: Any):Unit = js.native
         def drag_source_set_icon_name(icon_name: String):Unit = js.native
         def drag_source_set_icon_pixbuf(pixbuf: Any):Unit = js.native
@@ -5165,32 +5165,32 @@ object Gtk extends js.Object {
         def error_bell():Unit = js.native
         def event(event: Any):Boolean = js.native
         def freeze_child_notify():Unit = js.native
-        def get_accessible():Any = js.native
+        def get_accessible():Atk.Object = js.native
         def get_action_group(prefix: String):Any = js.native
         def get_allocated_baseline():Any = js.native
         def get_allocated_height():Any = js.native
         def get_allocated_width():Any = js.native
         def get_allocation(allocation: Any):Unit = js.native
-        def get_ancestor(widget_type0: Any):Any = js.native
+        def get_ancestor(widget_type0: Any):Widget = js.native
         def get_app_paintable():Boolean = js.native
         def get_can_default():Boolean = js.native
         def get_can_focus():Boolean = js.native
         def get_child_requisition(requisition: Any):Unit = js.native
         def get_child_visible():Boolean = js.native
         def get_clip(clip: Any):Unit = js.native
-        def get_clipboard(selection: Any):Any = js.native
+        def get_clipboard(selection: Any):Clipboard = js.native
         def get_composite_name():String = js.native
-        def get_device_enabled(device: Any):Boolean = js.native
-        def get_device_events(device: Any):Any = js.native
+        def get_device_enabled(device: Gdk.Device):Boolean = js.native
+        def get_device_events(device: Gdk.Device):Double = js.native
         def get_direction():Number = js.native
 
-        def get_display():Any = js.native
+        def get_display():Gdk.Display = js.native
         def get_double_buffered():Boolean = js.native
         def get_events():Any = js.native
-        def get_font_map():Any = js.native
+        def get_font_map():Pango.FontMap = js.native
         def get_font_options():Any = js.native
-        def get_frame_clock():Any = js.native
-        def get_halign():Any = js.native
+        def get_frame_clock():Gdk.FrameClock = js.native
+        def get_halign():Double = js.native
         def get_has_tooltip():Boolean = js.native
         def get_has_window():Boolean = js.native
         def get_hexpand():Boolean = js.native
@@ -5202,14 +5202,14 @@ object Gtk extends js.Object {
         def get_margin_right():Any = js.native
         def get_margin_start():Any = js.native
         def get_margin_top():Any = js.native
-        def get_modifier_mask(intent: Any):Any = js.native
-        def get_modifier_style():Any = js.native
+        def get_modifier_mask(intent: Double):Double = js.native
+        def get_modifier_style():RcStyle = js.native
         def get_name():String = js.native
         def get_no_show_all():Boolean = js.native
         def get_opacity():Any = js.native
-        def get_pango_context():Any = js.native
-        def get_parent():Any = js.native
-        def get_parent_window():Any = js.native
+        def get_pango_context():Pango.Context = js.native
+        def get_parent():Widget = js.native
+        def get_parent_window():Gdk.Window = js.native
         def get_path():Any = js.native
         def get_pointer(x: Any, y: Any):Unit = js.native
         def get_preferred_height(minimum_height: Any, natural_height: Any):Unit = js.native
@@ -5220,33 +5220,33 @@ object Gtk extends js.Object {
         def get_preferred_width_for_height(height: Any, minimum_width: Any, natural_width: Any):Unit = js.native
         def get_realized():Boolean = js.native
         def get_receives_default():Boolean = js.native
-        def get_request_mode():Any = js.native
+        def get_request_mode():Double = js.native
         def get_requisition(requisition: Any):Unit = js.native
-        def get_root_window():Any = js.native
+        def get_root_window():Gdk.Window = js.native
         def get_scale_factor():Any = js.native
-        def get_screen():Any = js.native
+        def get_screen():Gdk.Screen = js.native
         def get_sensitive():Boolean = js.native
         def get_settings():Any = js.native
 
         def get_size_request(width: Any, height: Any):Unit = js.native
         def get_state():Number = js.native
 
-        def get_state_flags():Any = js.native
+        def get_state_flags():Double = js.native
         def get_style():Number = js.native
 
-        def get_style_context():Any = js.native
+        def get_style_context():StyleContext = js.native
         def get_support_multidevice():Boolean = js.native
-        def get_template_child(widget_type0: Any, name: String):Any = js.native
+        def get_template_child(widget_type0: Any, name: String):GObject.Object = js.native
         def get_tooltip_markup():String = js.native
         def get_tooltip_text():String = js.native
-        def get_tooltip_window():Any = js.native
-        def get_toplevel():Any = js.native
-        def get_valign():Any = js.native
-        def get_valign_with_baseline():Any = js.native
+        def get_tooltip_window():Window = js.native
+        def get_toplevel():Widget = js.native
+        def get_valign():Double = js.native
+        def get_valign_with_baseline():Double = js.native
         def get_vexpand():Boolean = js.native
         def get_vexpand_set():Boolean = js.native
         def get_visible():Boolean = js.native
-        def get_visual():Any = js.native
+        def get_visual():Gdk.Visual = js.native
         def get_window(win:Number):Gdk.Window = js.native
 
         def grab_add():Unit = js.native
@@ -5266,28 +5266,28 @@ object Gtk extends js.Object {
         def input_shape_combine_region(region: Any):Unit = js.native
         def insert_action_group(name: String, group: Any):Unit = js.native
         def intersect(area: Any, intersection: Any):Boolean = js.native
-        def is_ancestor(ancestor: Any):Boolean = js.native
+        def is_ancestor(ancestor: Widget):Boolean = js.native
         def is_composited():Boolean = js.native
         def is_drawable():Boolean = js.native
         def is_focus():Boolean = js.native
         def is_sensitive():Boolean = js.native
         def is_toplevel():Boolean = js.native
         def is_visible():Boolean = js.native
-        def keynav_failed(direction: Any):Boolean = js.native
+        def keynav_failed(direction: Double):Boolean = js.native
         def list_accel_closures():Any = js.native
         def list_action_prefixes():js.Array[String] = js.native
         def list_mnemonic_labels():Any = js.native
         def map():Unit = js.native
         def mnemonic_activate(group_cycling: Boolean):Boolean = js.native
-        def modify_base(state: Any, color: Any):Unit = js.native
-        def modify_bg(state: Any, color: Any):Unit = js.native
+        def modify_base(state: Double, color: Any):Unit = js.native
+        def modify_bg(state: Double, color: Any):Unit = js.native
         def modify_cursor(primary: Any, secondary: Any):Unit = js.native
-        def modify_fg(state: Any, color: Any):Unit = js.native
+        def modify_fg(state: Double, color: Any):Unit = js.native
         def modify_font(font_desc: Any):Unit = js.native
-        def modify_style(style: Any):Unit = js.native
-        def modify_text(state: Any, color: Any):Unit = js.native
-        def override_background_color(state: Any, color: Any):Unit = js.native
-        def override_color(state: Any, color: Any):Unit = js.native
+        def modify_style(style: RcStyle):Unit = js.native
+        def modify_text(state: Double, color: Any):Unit = js.native
+        def override_background_color(state: Double, color: Any):Unit = js.native
+        def override_color(state: Double, color: Any):Unit = js.native
         def override_cursor(cursor: Any, secondary_cursor: Any):Unit = js.native
         def override_font(font_desc: Any):Unit = js.native
         def override_symbolic_color(name: String, color: Any):Unit = js.native
@@ -5300,18 +5300,18 @@ object Gtk extends js.Object {
         def queue_resize_no_redraw():Unit = js.native
         def realize():Unit = js.native
         def region_intersect(region: Any):Any = js.native
-        def register_window(window: Any):Unit = js.native
-        def remove_accelerator(accel_group: Any, accel_key: Any, accel_mods: Any):Boolean = js.native
-        def remove_mnemonic_label(label: Any):Unit = js.native
+        def register_window(window: Gdk.Window):Unit = js.native
+        def remove_accelerator(accel_group: AccelGroup, accel_key: Any, accel_mods: Double):Boolean = js.native
+        def remove_mnemonic_label(label: Widget):Unit = js.native
         def remove_tick_callback(id: Any):Unit = js.native
         def render_icon(stock_id: String, size: Any, detail: String):Any = js.native
         def render_icon_pixbuf(stock_id: String, size: Any):Any = js.native
-        def reparent(new_parent: Any):Unit = js.native
+        def reparent(new_parent: Widget):Unit = js.native
         def reset_rc_styles():Unit = js.native
         def reset_style():Unit = js.native
         def send_expose(event: Any):Any = js.native
         def send_focus_change(event: Any):Boolean = js.native
-        def set_accel_path(accel_path: String, accel_group: Any):Unit = js.native
+        def set_accel_path(accel_path: String, accel_group: AccelGroup):Unit = js.native
         def set_allocation(allocation: Any):Unit = js.native
         def set_app_paintable(app_paintable: Boolean):Unit = js.native
         def set_can_default(can_default: Boolean):Unit = js.native
@@ -5319,15 +5319,15 @@ object Gtk extends js.Object {
         def set_child_visible(is_visible: Boolean):Unit = js.native
         def set_clip(clip: Any):Unit = js.native
         def set_composite_name(name: String):Unit = js.native
-        def set_device_enabled(device: Any, enabled: Boolean):Unit = js.native
-        def set_device_events(device: Any, events: Any):Unit = js.native
+        def set_device_enabled(device: Gdk.Device, enabled: Boolean):Unit = js.native
+        def set_device_events(device: Gdk.Device, events: Double):Unit = js.native
         def set_direction(dir:Number):Unit = js.native
 
         def set_double_buffered(double_buffered: Boolean):Unit = js.native
         def set_events(events: Any):Unit = js.native
-        def set_font_map(font_map: Any):Unit = js.native
+        def set_font_map(font_map: Pango.FontMap):Unit = js.native
         def set_font_options(options: Any):Unit = js.native
-        def set_halign(align: Any):Unit = js.native
+        def set_halign(align: Double):Unit = js.native
         def set_has_tooltip(has_tooltip: Boolean):Unit = js.native
         def set_has_window(has_window: Boolean):Unit = js.native
         def set_hexpand(expand: Boolean):Unit = js.native
@@ -5342,8 +5342,8 @@ object Gtk extends js.Object {
         def set_name(name: String):Unit = js.native
         def set_no_show_all(no_show_all: Boolean):Unit = js.native
         def set_opacity(opacity: Any):Unit = js.native
-        def set_parent(parent: Any):Unit = js.native
-        def set_parent_window(parent_window: Any):Unit = js.native
+        def set_parent(parent: Widget):Unit = js.native
+        def set_parent_window(parent_window: Gdk.Window):Unit = js.native
         def set_realized(realized: Boolean):Unit = js.native
         def set_receives_default(receives_default: Boolean):Unit = js.native
         def set_redraw_on_allocate(redraw_on_allocate: Boolean):Unit = js.native
@@ -5351,19 +5351,19 @@ object Gtk extends js.Object {
         def set_size_request(width: Any, height: Any):Unit = js.native
         def set_state(state:Number):Unit = js.native
 
-        def set_state_flags(flags: Any, clear: Boolean):Unit = js.native
+        def set_state_flags(flags: Double, clear: Boolean):Unit = js.native
         def set_style(style:Number):Unit = js.native
 
         def set_support_multidevice(support_multidevice: Boolean):Unit = js.native
         def set_tooltip_markup(markup: String):Unit = js.native
         def set_tooltip_text(text: String):Unit = js.native
-        def set_tooltip_window(custom_window: Any):Unit = js.native
-        def set_valign(align: Any):Unit = js.native
+        def set_tooltip_window(custom_window: Window):Unit = js.native
+        def set_valign(align: Double):Unit = js.native
         def set_vexpand(expand: Boolean):Unit = js.native
         def set_vexpand_set(set: Boolean):Unit = js.native
         def set_visible(visible: Boolean):Unit = js.native
-        def set_visual(visual: Any):Unit = js.native
-        def set_window(window: Any):Unit = js.native
+        def set_visual(visual: Gdk.Visual):Unit = js.native
+        def set_window(window: Gdk.Window):Unit = js.native
         def shape_combine_region(region: Any):Unit = js.native
         def show():Unit = js.native
         def show_all():Unit = js.native
@@ -5376,21 +5376,21 @@ object Gtk extends js.Object {
         def style_get_property(property_name: String, value: Any):Unit = js.native
         def style_get_valist(first_property_name: String, var_args: Any):Unit = js.native
         def thaw_child_notify():Unit = js.native
-        def translate_coordinates(dest_widget: Any, src_x: Any, src_y: Any, dest_x: Any, dest_y: Any):Boolean = js.native
+        def translate_coordinates(dest_widget: Widget, src_x: Any, src_y: Any, dest_x: Any, dest_y: Any):Boolean = js.native
         def trigger_tooltip_query():Unit = js.native
         def unmap():Unit = js.native
         def unparent():Unit = js.native
         def unrealize():Unit = js.native
-        def unregister_window(window: Any):Unit = js.native
-        def unset_state_flags(flags: Any):Unit = js.native
+        def unregister_window(window: Gdk.Window):Unit = js.native
+        def unset_state_flags(flags: Double):Unit = js.native
     }
     @js.native
     object Widget extends js.Object {
-        def get_default_direction():Any = js.native
-        def get_default_style():Any = js.native
+        def get_default_direction():Double = js.native
+        def get_default_style():Style = js.native
         def pop_composite_child():Unit = js.native
         def push_composite_child():Unit = js.native
-        def set_default_direction(dir: Any):Unit = js.native
+        def set_default_direction(dir: Double):Unit = js.native
     }
     @js.native
     class WidgetAccessible extends Accessible {
@@ -5401,33 +5401,33 @@ object Gtk extends js.Object {
         def activate_default():Boolean = js.native
         def activate_focus():Boolean = js.native
         def activate_key(event: Any):Boolean = js.native
-        def add_accel_group(accel_group: Any):Unit = js.native
-        def add_mnemonic(keyval0: Any, target: Any):Unit = js.native
+        def add_accel_group(accel_group: AccelGroup):Unit = js.native
+        def add_mnemonic(keyval0: Any, target: Widget):Unit = js.native
         def begin_move_drag(button: Any, root_x: Any, root_y: Any, timestamp: Any):Unit = js.native
-        def begin_resize_drag(edge: Any, button: Any, root_x: Any, root_y: Any, timestamp: Any):Unit = js.native
+        def begin_resize_drag(edge: Double, button: Any, root_x: Any, root_y: Any, timestamp: Any):Unit = js.native
         def close():Unit = js.native
         def deiconify():Unit = js.native
         def fullscreen():Unit = js.native
-        def fullscreen_on_monitor(screen: Any, monitor: Any):Unit = js.native
+        def fullscreen_on_monitor(screen: Gdk.Screen, monitor: Any):Unit = js.native
         def get_accept_focus():Boolean = js.native
-        def get_application():Any = js.native
-        def get_attached_to():Any = js.native
+        def get_application():Application = js.native
+        def get_attached_to():Widget = js.native
         def get_decorated():Boolean = js.native
         def get_default_size(width: Any, height: Any):Unit = js.native
-        def get_default_widget():Any = js.native
+        def get_default_widget():Widget = js.native
         def get_deletable():Boolean = js.native
         def get_destroy_with_parent():Boolean = js.native
-        def get_focus():Any = js.native
+        def get_focus():Widget = js.native
         def get_focus_on_map():Boolean = js.native
         def get_focus_visible():Boolean = js.native
-        def get_gravity():Any = js.native
-        def get_group():Any = js.native
+        def get_gravity():Double = js.native
+        def get_group():WindowGroup = js.native
         def get_has_resize_grip():Boolean = js.native
         def get_hide_titlebar_when_maximized():Boolean = js.native
         def get_icon():Any = js.native
         def get_icon_list():Any = js.native
         def get_icon_name():String = js.native
-        def get_mnemonic_modifier():Any = js.native
+        def get_mnemonic_modifier():Double = js.native
         def get_mnemonics_visible():Boolean = js.native
         def get_modal():Boolean = js.native
         override def get_opacity():Any = js.native
@@ -5435,16 +5435,16 @@ object Gtk extends js.Object {
         def get_resizable():Boolean = js.native
         def get_resize_grip_area(rect: Any):Boolean = js.native
         def get_role():String = js.native
-        override def get_screen():Any = js.native
+        override def get_screen():Gdk.Screen = js.native
         def get_size(width: Any, height: Any):Unit = js.native
         def get_skip_pager_hint():Boolean = js.native
         def get_skip_taskbar_hint():Boolean = js.native
         def get_title():String = js.native
-        def get_titlebar():Any = js.native
-        def get_transient_for():Any = js.native
-        def get_type_hint():Any = js.native
+        def get_titlebar():Widget = js.native
+        def get_transient_for():Window = js.native
+        def get_type_hint():Double = js.native
         def get_urgency_hint():Boolean = js.native
-        def get_window_type():Any = js.native
+        def get_window_type():Double = js.native
         def has_group():Boolean = js.native
         def has_toplevel_focus():Boolean = js.native
         def iconify():Unit = js.native
@@ -5458,26 +5458,26 @@ object Gtk extends js.Object {
         def present():Unit = js.native
         def present_with_time(timestamp: Any):Unit = js.native
         def propagate_key_event(event: Any):Boolean = js.native
-        def remove_accel_group(accel_group: Any):Unit = js.native
-        def remove_mnemonic(keyval0: Any, target: Any):Unit = js.native
+        def remove_accel_group(accel_group: AccelGroup):Unit = js.native
+        def remove_mnemonic(keyval0: Any, target: Widget):Unit = js.native
         def reshow_with_initial_size():Unit = js.native
         def resize(width: Any, height: Any):Unit = js.native
         def resize_grip_is_visible():Boolean = js.native
         def resize_to_geometry(width: Any, height: Any):Unit = js.native
         def set_accept_focus(setting: Boolean):Unit = js.native
-        def set_application(application: Any):Unit = js.native
-        def set_attached_to(attach_widget: Any):Unit = js.native
+        def set_application(application: Application):Unit = js.native
+        def set_attached_to(attach_widget: Widget):Unit = js.native
         def set_decorated(setting: Boolean):Unit = js.native
-        def set_default(default_widget: Any):Unit = js.native
+        def set_default(default_widget: Widget):Unit = js.native
         def set_default_geometry(width: Any, height: Any):Unit = js.native
         def set_default_size(width: Any, height: Any):Unit = js.native
         def set_deletable(setting: Boolean):Unit = js.native
         def set_destroy_with_parent(setting: Boolean):Unit = js.native
-        def set_focus(focus: Any):Unit = js.native
+        def set_focus(focus: Widget):Unit = js.native
         def set_focus_on_map(setting: Boolean):Unit = js.native
         def set_focus_visible(setting: Boolean):Unit = js.native
-        def set_geometry_hints(geometry_widget: Any, geometry: Any, geom_mask: Any):Unit = js.native
-        def set_gravity(gravity: Any):Unit = js.native
+        def set_geometry_hints(geometry_widget: Widget, geometry: Any, geom_mask: Double):Unit = js.native
+        def set_gravity(gravity: Double):Unit = js.native
         def set_has_resize_grip(value: Boolean):Unit = js.native
         def set_has_user_ref_count(setting: Boolean):Unit = js.native
         def set_hide_titlebar_when_maximized(setting: Boolean):Unit = js.native
@@ -5487,21 +5487,21 @@ object Gtk extends js.Object {
         def set_icon_name(name: String):Unit = js.native
         def set_keep_above(setting: Boolean):Unit = js.native
         def set_keep_below(setting: Boolean):Unit = js.native
-        def set_mnemonic_modifier(modifier: Any):Unit = js.native
+        def set_mnemonic_modifier(modifier: Double):Unit = js.native
         def set_mnemonics_visible(setting: Boolean):Unit = js.native
         def set_modal(modal: Boolean):Unit = js.native
         override def set_opacity(opacity: Any):Unit = js.native
-        def set_position(position: Any):Unit = js.native
+        def set_position(position: Double):Unit = js.native
         def set_resizable(resizable: Boolean):Unit = js.native
         def set_role(role: String):Unit = js.native
-        def set_screen(screen: Any):Unit = js.native
+        def set_screen(screen: Gdk.Screen):Unit = js.native
         def set_skip_pager_hint(setting: Boolean):Unit = js.native
         def set_skip_taskbar_hint(setting: Boolean):Unit = js.native
         def set_startup_id(startup_id: String):Unit = js.native
         def set_title(title: String):Unit = js.native
-        def set_titlebar(titlebar: Any):Unit = js.native
-        def set_transient_for(parent: Any):Unit = js.native
-        def set_type_hint(hint: Any):Unit = js.native
+        def set_titlebar(titlebar: Widget):Unit = js.native
+        def set_transient_for(parent: Window):Unit = js.native
+        def set_type_hint(hint: Double):Unit = js.native
         def set_urgency_hint(setting: Boolean):Unit = js.native
         def set_wmclass(wmclass_name: String, wmclass_class: String):Unit = js.native
         def stick():Unit = js.native
@@ -5527,10 +5527,10 @@ object Gtk extends js.Object {
     @js.native
     class WindowGroup extends GObject.Object {
         def this(config: js.Any) = this()
-        def add_window(window: Any):Unit = js.native
-        def get_current_device_grab(device: Any):Any = js.native
-        def get_current_grab():Any = js.native
+        def add_window(window: Window):Unit = js.native
+        def get_current_device_grab(device: Gdk.Device):Widget = js.native
+        def get_current_grab():Widget = js.native
         def list_windows():Any = js.native
-        def remove_window(window: Any):Unit = js.native
+        def remove_window(window: Window):Unit = js.native
     }
 }

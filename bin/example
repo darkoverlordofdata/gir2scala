@@ -1477,8 +1477,7 @@ $c_Lorg_example_AppWindow.prototype.headerbar__Lorg_gnome_Gtk$HeaderBar = (funct
 });
 $c_Lorg_example_AppWindow.prototype.init___Lorg_example_Example__sjs_js_Dynamic = (function(parent, params) {
   this.org$example$AppWindow$$parent$f = parent;
-  this.config$1 = new $c_Lorg_example_Config().init___();
-  this.config$1.appName$1 = "Example";
+  this.config$1 = new $c_Lorg_example_Config().init___T("");
   this.DATADIR$1 = "/home/bruce/gjs/gir2scala/share/example";
   var jsx$2 = $g.Util;
   var s = new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["", "/main.ui"])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.DATADIR$1]));
@@ -1513,10 +1512,13 @@ $c_Lorg_example_AppWindow.prototype.buildUI__V = (function() {
 });
 $c_Lorg_example_AppWindow.prototype.buildOpen__Lorg_gnome_Gtk$Widget = (function() {
   var openButton = new $g.imports.gi.Gtk.Button();
-  openButton.add(new $g.imports.gi.Gtk.Image({
+  var jsx$2 = $g.imports.gi.Gtk.Image;
+  var value = $uD($g.imports.gi.Gtk.IconSize.SMALL_TOOLBAR);
+  var jsx$1 = new jsx$2({
     "icon_name": "document-open-symbolic",
-    "icon_size": $g.imports.gi.Gtk.IconSize.SMALL_TOOLBAR
-  }));
+    "icon_size": value
+  });
+  openButton.add(jsx$1);
   openButton.connect("clicked", (function(f) {
     return (function() {
       return f.apply__O()
@@ -1550,14 +1552,6 @@ function $h_Lorg_example_Config() {
   /*<skip>*/
 }
 $h_Lorg_example_Config.prototype = $c_Lorg_example_Config.prototype;
-$c_Lorg_example_Config.prototype.init___ = (function() {
-  this.appName$1 = "Example";
-  this.url$1 = "";
-  this.base$1 = "";
-  this.darkTheme$1 = true;
-  this.themeName$1 = "elementary";
-  return this
-});
 $c_Lorg_example_Config.prototype.toString__T = (function() {
   var jsx$2 = $g.JSON;
   var s = this.appName$1;
@@ -1573,6 +1567,21 @@ $c_Lorg_example_Config.prototype.toString__T = (function() {
     "themeName": s$3
   }, null, 2);
   return $objectToString(jsx$1)
+});
+$c_Lorg_example_Config.prototype.init___T = (function(data) {
+  this.appName$1 = "Example";
+  this.url$1 = "";
+  this.base$1 = "";
+  this.darkTheme$1 = true;
+  this.themeName$1 = "elementary";
+  if (((data !== "") && (data !== "null"))) {
+    var p = $g.JSON.parse(data);
+    this.base$1 = $as_T(p.base);
+    this.url$1 = $as_T(p.url);
+    this.darkTheme$1 = $uZ(p.darkTheme);
+    this.themeName$1 = $as_T(p.themeName)
+  };
+  return this
 });
 var $d_Lorg_example_Config = new $TypeData().initClass({
   Lorg_example_Config: 0
@@ -1615,15 +1624,18 @@ $c_Lorg_example_Example.prototype.init___ = (function() {
     elem$1 = ((1 + elem$1) | 0)
   };
   this.THEMES$1 = array;
-  this.application$1 = new $g.imports.gi.Gtk.Application({
-    "flags": $g.imports.gi.Gio.ApplicationFlags.FLAGS_NONE
+  var jsx$2 = $g.imports.gi.Gtk.Application;
+  var value = $uD($g.imports.gi.Gio.ApplicationFlags.FLAGS_NONE);
+  var jsx$1 = new jsx$2({
+    "flags": value
   });
+  this.application$1 = jsx$1;
   this.application$1.connect("activate", (function(arg$outer) {
     return (function() {
       arg$outer.buildUI__V();
-      var this$5 = arg$outer.appWindow__Lorg_example_AppWindow();
+      var this$6 = arg$outer.appWindow__Lorg_example_AppWindow();
       var config = arg$outer.getConfig__Lorg_example_Config();
-      this$5.config$1 = config;
+      this$6.config$1 = config;
       arg$outer.appWindow__Lorg_example_AppWindow().buildUI__V();
       arg$outer.appWindow__Lorg_example_AppWindow().window$1.present()
     })
@@ -1646,25 +1658,26 @@ $c_Lorg_example_Example.prototype.buildPrefs__Lorg_example_AppWindow__Lorg_gnome
   var darkLabel = new $g.imports.gi.Gtk.Label({
     "label": "Dark theme:"
   });
-  darkLabel.set_halign($g.imports.gi.Gtk.Align.END);
+  darkLabel.set_halign($uD($g.imports.gi.Gtk.Align.END));
   var jsx$1 = $g.imports.gi.Gtk.Switch;
   var value = ctx.config$1.darkTheme$1;
+  var value$1 = $uD($g.imports.gi.Gtk.Align.CENTER);
   var darkEntry = new jsx$1({
     "state": value,
-    "valign": $g.imports.gi.Gtk.Align.CENTER
+    "valign": value$1
   });
   darkEntry.connect("state-set", (function(arg$outer, darkEntry$1) {
     return (function() {
-      var this$6 = $uZ(darkEntry$1.get_active());
-      arg$outer.setConfigValue__T__T__V("darkTheme", ("" + this$6))
+      var this$7 = $uZ(darkEntry$1.get_active());
+      arg$outer.setConfigValue__T__T__V("darkTheme", ("" + this$7))
     })
   })(this, darkEntry));
   grid.attach(darkLabel, 0, 0, 1, 1);
-  grid.attach_next_to(darkEntry, darkLabel, $g.imports.gi.Gtk.PositionType.RIGHT, 2, 1);
+  grid.attach_next_to(darkEntry, darkLabel, $uD($g.imports.gi.Gtk.PositionType.RIGHT), 2, 1);
   var themeLabel = new $g.imports.gi.Gtk.Label({
     "label": "Theme name:"
   });
-  themeLabel.set_halign($g.imports.gi.Gtk.Align.END);
+  themeLabel.set_halign($uD($g.imports.gi.Gtk.Align.END));
   var themeSelect = new $g.imports.gi.Gtk.ComboBoxText();
   var elem$1 = 0;
   elem$1 = 0;
@@ -1686,28 +1699,31 @@ $c_Lorg_example_Example.prototype.buildPrefs__Lorg_example_AppWindow__Lorg_gnome
     })
   })(this, themeSelect));
   grid.attach(themeLabel, 0, 1, 1, 1);
-  grid.attach_next_to(themeSelect, themeLabel, $g.imports.gi.Gtk.PositionType.RIGHT, 2, 1);
+  grid.attach_next_to(themeSelect, themeLabel, $uD($g.imports.gi.Gtk.PositionType.RIGHT), 2, 1);
   var baseLabel = new $g.imports.gi.Gtk.Label({
     "label": "Base path:"
   });
-  baseLabel.set_halign($g.imports.gi.Gtk.Align.END);
+  baseLabel.set_halign($uD($g.imports.gi.Gtk.Align.END));
   var baseText = new $g.imports.gi.Gtk.Entry();
   baseText.set_text(ctx.config$1.base$1);
   grid.attach(baseLabel, 0, 2, 1, 1);
-  grid.attach_next_to(baseText, baseLabel, $g.imports.gi.Gtk.PositionType.RIGHT, 2, 1);
+  grid.attach_next_to(baseText, baseLabel, $uD($g.imports.gi.Gtk.PositionType.RIGHT), 2, 1);
   var urlLabel = new $g.imports.gi.Gtk.Label({
     "label": "Url path:"
   });
-  urlLabel.set_halign($g.imports.gi.Gtk.Align.END);
+  urlLabel.set_halign($uD($g.imports.gi.Gtk.Align.END));
   var urlText = new $g.imports.gi.Gtk.Entry();
   urlText.set_text(ctx.config$1.url$1);
   grid.attach(urlLabel, 0, 3, 1, 1);
-  grid.attach_next_to(urlText, urlLabel, $g.imports.gi.Gtk.PositionType.RIGHT, 2, 1);
+  grid.attach_next_to(urlText, urlLabel, $uD($g.imports.gi.Gtk.PositionType.RIGHT), 2, 1);
   var menubutton = new $g.imports.gi.Gtk.ToggleButton();
-  menubutton.add(new $g.imports.gi.Gtk.Image({
+  var jsx$3 = $g.imports.gi.Gtk.Image;
+  var value$2 = $uD($g.imports.gi.Gtk.IconSize.SMALL_TOOLBAR);
+  var jsx$2 = new jsx$3({
     "icon_name": "open-menu-symbolic",
-    "icon_size": $g.imports.gi.Gtk.IconSize.SMALL_TOOLBAR
-  }));
+    "icon_size": value$2
+  });
+  menubutton.add(jsx$2);
   var elem = new $g.imports.gi.Gtk.Popover();
   var menu = new $c_sr_ObjectRef().init___O(elem);
   menu.elem$1.set_relative_to(menubutton);
@@ -1832,15 +1848,7 @@ $c_Lorg_example_Example.prototype.showAbout__V = (function() {
   about.destroy()
 });
 $c_Lorg_example_Example.prototype.data2Config__T__Lorg_example_Config = (function(data) {
-  var config = new $c_Lorg_example_Config().init___();
-  if (((data !== null) && (data !== "null"))) {
-    var p = $g.JSON.parse(data);
-    config.appName$1 = $as_T(p.appName);
-    config.base$1 = $as_T(p.base);
-    config.url$1 = $as_T(p.url);
-    config.darkTheme$1 = $uZ(p.darkTheme);
-    config.themeName$1 = $as_T(p.themeName)
-  };
+  var config = new $c_Lorg_example_Config().init___T(data);
   return config
 });
 $c_Lorg_example_Example.prototype.getConfig__Lorg_example_Config = (function() {
@@ -4993,26 +5001,28 @@ function $h_Lorg_example_AppWindow$$anonfun$buildOpen$1() {
 }
 $h_Lorg_example_AppWindow$$anonfun$buildOpen$1.prototype = $c_Lorg_example_AppWindow$$anonfun$buildOpen$1.prototype;
 $c_Lorg_example_AppWindow$$anonfun$buildOpen$1.prototype.apply__O = (function() {
-  var chooser = new $g.imports.gi.Gtk.FileChooserDialog({
+  var jsx$1 = $g.imports.gi.Gtk.FileChooserDialog;
+  var value = $uD($g.imports.gi.Gtk.FileChooserAction.OPEN);
+  var chooser = new jsx$1({
     "title": "Select Project File",
-    "action": $g.imports.gi.Gtk.FileChooserAction.OPEN,
+    "action": value,
     "transient_for": this.$$outer$2.window$1,
     "modal": true
   });
   chooser.set_select_multiple(false);
-  chooser.add_button("Open", $g.imports.gi.Gtk.ResponseType.OK);
-  chooser.add_button("Cancel", $g.imports.gi.Gtk.ResponseType.CANCEL);
-  chooser.set_default_response($g.imports.gi.Gtk.ResponseType.OK);
+  chooser.add_button("Open", $uD($g.imports.gi.Gtk.ResponseType.OK));
+  chooser.add_button("Cancel", $uD($g.imports.gi.Gtk.ResponseType.CANCEL));
+  chooser.set_default_response($uD($g.imports.gi.Gtk.ResponseType.OK));
   chooser.connect("response", (function(arg$outer) {
     return (function(dialog$2, response$2) {
       var filename = dialog$2.get_filename();
-      var this$4 = $m_s_Console$();
-      var this$5 = $as_Ljava_io_PrintStream(this$4.outVar$2.v$1);
-      this$5.java$lang$JSConsoleBasedPrintStream$$printString__T__V((filename + "\n"));
+      var this$5 = $m_s_Console$();
+      var this$6 = $as_Ljava_io_PrintStream(this$5.outVar$2.v$1);
+      this$6.java$lang$JSConsoleBasedPrintStream$$printString__T__V((filename + "\n"));
       dialog$2.destroy();
-      var file = $g.imports.gi.Gio.file_new_for_path($objectToString(filename));
-      arg$outer.$$outer$2.org$example$AppWindow$$parent$f.setConfigValue__T__T__V("url", $objectToString(file.get_basename()));
-      arg$outer.$$outer$2.org$example$AppWindow$$parent$f.setConfigValue__T__T__V("base", $objectToString(file.get_parent().get_path()))
+      var file = $g.imports.gi.Gio.File.new_for_path($objectToString(filename));
+      arg$outer.$$outer$2.org$example$AppWindow$$parent$f.setConfigValue__T__T__V("url", $as_T(file.get_basename()));
+      arg$outer.$$outer$2.org$example$AppWindow$$parent$f.setConfigValue__T__T__V("base", $as_T(file.get_parent().get_path()))
     })
   })(this));
   return chooser.run()
@@ -7482,7 +7492,5 @@ var $d_sjs_js_WrappedArray = new $TypeData().initClass({
 $c_sjs_js_WrappedArray.prototype.$classData = $d_sjs_js_WrappedArray;
 }).call(this);
 //# sourceMappingURL=example-fastopt.js.map
-/**
- * Scala expects the environment to invoke main
- */
-org.example.Main().main()
+((typeof global === "object" && global &&
+         global["Object"] === Object) ? global : this)["org"]["example"]["Main"]().main();

@@ -11,7 +11,8 @@
         {
             "isBuildCommand": true,
             "taskName": "build",
-            "args": ["sbt fastOptJS && /bin/cat src/js/prolog.js target/scala-2.11/example-jsdeps.js target/scala-2.11/example-fastopt.js src/js/main.js > bin/example && chmod +x bin/example"]
+            // "args": ["sbt fullOptJS && /bin/cat src/js/prolog.js target/scala-2.11/example-jsdeps.js target/scala-2.11/example-opt.js target/scala-2.11/example-launcher.js > bin/example && chmod +x bin/example"]
+            "args": ["sbt fastOptJS && /bin/cat src/js/prolog.js target/scala-2.11/example-jsdeps.js target/scala-2.11/example-fastopt.js target/scala-2.11/example-launcher.js > bin/example && chmod +x bin/example"]
         }
     ]
 }

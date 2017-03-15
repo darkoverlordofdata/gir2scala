@@ -6,12 +6,21 @@ import org.gnome.Gtk
 import org.gnome.Gio
 import org.gnome.WebKit
 
-class Config {
-    var appName = "Example"
+class Config (data:String="") {
+    val appName = "Example"
     var url = ""
     var base = ""
     var darkTheme = true   
     var themeName = "elementary"
+
+    if (data != "" && data != "null") {
+        val p = g.JSON.parse(data)
+        base = p.base.asInstanceOf[String]
+        url = p.url.asInstanceOf[String]
+        darkTheme = p.darkTheme.asInstanceOf[Boolean]
+        themeName = p.themeName.asInstanceOf[String]
+    }
+
     override def toString():String = {
         g.JSON.stringify(l(
             appName = appName,
@@ -34,14 +43,14 @@ trait IAppWindow extends Gtk.ApplicationWindow {
 }
 class AppWindow(parent: Example, params: js.Dynamic) {
     var config:Config = new Config()
-    config.appName = "Example"
+    // config.appName = "Example"
 
     val DATADIR = "/home/bruce/gjs/gir2scala/share/example"
     /**
      * loads the glade template
      */
-    val window =  (g.Util.createWindow("AppWindow", s"${DATADIR}/main.ui",
-        js.Array("back","refresh","url","client","status"), params)).asInstanceOf[IAppWindow]
+    val window =  g.Util.createWindow("AppWindow", s"${DATADIR}/main.ui",
+        js.Array("back","refresh","url","client","status"), params).asInstanceOf[IAppWindow]
 
     lazy val headerbar = new Gtk.HeaderBar(l(
         title = config.appName,
@@ -96,9 +105,9 @@ class AppWindow(parent: Example, params: js.Dynamic) {
                 val filename = dialog.get_filename()
                 println(filename)
                 dialog.destroy()
-                val file = Gio.file_new_for_path(filename.toString()).asInstanceOf[js.Dynamic]
-                parent.setConfigValue("url", file.get_basename().toString())
-                parent.setConfigValue("base", file.get_parent().get_path().toString())
+                val file = Gio.File.new_for_path(filename.toString())
+                parent.setConfigValue("url", file.get_basename())
+                parent.setConfigValue("base", file.get_parent().get_path())
                 //server["reset"](file.get_parent().get_path())
                 //setUrl(`http://${this.server.info.host}:${this.server.info.port}/${file.get_basename()}`)
             })

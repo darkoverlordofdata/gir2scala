@@ -11,8 +11,9 @@ const util = require('util')
 const {execSync} = require('child_process')
 const {parseString} = require('xml2js')
 
-const cfg = require('./gir2facade.json')
+const cfg = require('./gir2scala.json')
 const sym = {}
+const enu = {}
 const gir = {}
 let count = Object.keys(cfg.module).length
 
@@ -31,9 +32,9 @@ for (let name in cfg.module) {
 
 function build(cfg, gir) {
 
-    // for (let name in gir) {
-    //     getSymbols(name, gir[name])
-    // }
+    for (let name in gir) {
+        getSymbols(name, gir[name])
+    }
     for (let name in cfg.module) {
         let out = []
         out.push(generateModule(name, gir[name], cfg.module[name]))
@@ -47,20 +48,20 @@ function build(cfg, gir) {
 function getSymbols(module, gir) {
 
     let ns = gir.repository.namespace[0]
-    if (ns.function) 
-        for (let func of ns.function) {
-            let name = getName(func.$['name'])
-            sym[`${module}.${name}`] = `${module}.${name}`
-        }
+    // if (ns.function) 
+    //     for (let func of ns.function) {
+    //         let name = getName(func.$['name'])
+    //         sym[`${module}.${name}`] = `${module}.${name}`
+    //     }
     if (ns.enumeration)
         for (let enumeration of ns.enumeration) {
             let name = enumeration.$['name']
-            sym[`${module}.${name}`] = `${module}.${name}`
+            enu[`${module}.${name}`] = `${module}.${name}`
         }
     if (ns.bitfield)
         for (let bitfield of ns.bitfield) {
             let name = bitfield.$['name']
-            sym[`${module}.${name}`] = `${module}.${name}`
+            enu[`${module}.${name}`] = `${module}.${name}`
         }
     if (ns.class)
         for (let klass of ns.class) {
@@ -178,7 +179,7 @@ function addGirInfo(modName, gir, patch, add, static, out) {
                 for (let member of enumeration.member) {
                     let name = member.$['name'].toUpperCase()
                     if (name[0] >= '0' && name[0] <= '9') name = "_"+name
-                    out.push(`        val ${name}:js.Dynamic = js.native`)
+                    out.push(`        val ${name}:Double = js.native`)
                 }
                 out.push('    }')
             } catch (e) {
@@ -199,7 +200,7 @@ function addGirInfo(modName, gir, patch, add, static, out) {
                 for (let member of bitfield.member) {
                     let name = member.$['name'].toUpperCase()
                     if (name[0] >= '0' && name[0] <= '9') name = "_"+name
-                    out.push(`        val ${name}:js.Dynamic = js.native`)
+                    out.push(`        val ${name}:Double = js.native`)
                 }
                 out.push('    }')
             } catch (e) {
@@ -443,6 +444,8 @@ function getType(modName, parameter) {
         default:
             if (sym[name] || sym[`${modName}.${name}`]) 
                 return isArray ? `js.Array[${name}]` : name
+            else if (enu[name] || enu[`${modName}.${name}`]) 
+                return isArray ? 'js.Array[Double]' : 'Double'
             else
                 return isArray ? 'js.Array[Any]' : 'Any'
     }
@@ -471,7 +474,6 @@ function oname(modName, className, method) {
         },
         'GObject': {
             'ParamSpec': ['get_qdata', 'ref', 'ref_sink', 'set_qdata', 'set_qdata_full', 'steal_qdata', 'unref']
-
         },
         'Gtk': {
             'ComboBoxText': ['remove'],

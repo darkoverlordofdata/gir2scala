@@ -202,18 +202,18 @@ object GLib extends js.Object {
     def byte_array_unref(array: js.Array[Any]):Unit = js.native
     def chdir(path: String):Any = js.native
     def check_version(required_major: Any, required_minor: Any, required_micro: Any):String = js.native
-    def checksum_type_get_length(checksum_type0: Any):Any = js.native
+    def checksum_type_get_length(checksum_type0: Double):Any = js.native
     def child_watch_add(pid: Any, function0: Any, data: Object):Any = js.native
     def child_watch_add_full(priority: Any, pid: Any, function0: Any, data: Object, notify: Any):Any = js.native
     def child_watch_source_new(pid: Any):Any = js.native
     def clear_error():Unit = js.native
     def clear_pointer(pp: Object, destroy: Any):Unit = js.native
     def close(fd: Any):Boolean = js.native
-    def compute_checksum_for_bytes(checksum_type0: Any, data: Any):String = js.native
-    def compute_checksum_for_data(checksum_type0: Any, data: js.Array[Any], length: Any):String = js.native
-    def compute_checksum_for_string(checksum_type0: Any, str: String, length: Any):String = js.native
-    def compute_hmac_for_data(digest_type0: Any, key: js.Array[Any], key_len: Any, data: Any, length: Any):String = js.native
-    def compute_hmac_for_string(digest_type0: Any, key: js.Array[Any], key_len: Any, str: String, length: Any):String = js.native
+    def compute_checksum_for_bytes(checksum_type0: Double, data: Any):String = js.native
+    def compute_checksum_for_data(checksum_type0: Double, data: js.Array[Any], length: Any):String = js.native
+    def compute_checksum_for_string(checksum_type0: Double, str: String, length: Any):String = js.native
+    def compute_hmac_for_data(digest_type0: Double, key: js.Array[Any], key_len: Any, data: Any, length: Any):String = js.native
+    def compute_hmac_for_string(digest_type0: Double, key: js.Array[Any], key_len: Any, str: String, length: Any):String = js.native
     def convert(str: String, len: Any, to_codeset: String, from_codeset: String, bytes_read: Any, bytes_written: Any):String = js.native
     def convert_error_quark():Any = js.native
     def convert_with_fallback(str: String, len: Any, to_codeset: String, from_codeset: String, fallback: String, bytes_read: Any, bytes_written: Any):String = js.native
@@ -235,7 +235,7 @@ object GLib extends js.Object {
     def dataset_id_get_data(dataset_location: Object, key_id: Any):Object = js.native
     def dataset_id_remove_no_notify(dataset_location: Object, key_id: Any):Object = js.native
     def dataset_id_set_data_full(dataset_location: Object, key_id: Any, data: Object, destroy_func: Any):Unit = js.native
-    def date_get_days_in_month(month: Any, year: Any):Any = js.native
+    def date_get_days_in_month(month: Double, year: Any):Any = js.native
     def date_get_monday_weeks_in_year(year: Any):Any = js.native
     def date_get_sunday_weeks_in_year(year: Any):Any = js.native
     def date_is_leap_year(year: Any):Boolean = js.native
@@ -244,10 +244,10 @@ object GLib extends js.Object {
     def date_time_equal(dt1: Object, dt2: Object):Boolean = js.native
     def date_time_hash(datetime: Object):Any = js.native
     def date_valid_day(day: Any):Boolean = js.native
-    def date_valid_dmy(day: Any, month: Any, year: Any):Boolean = js.native
+    def date_valid_dmy(day: Any, month: Double, year: Any):Boolean = js.native
     def date_valid_julian(julian_date: Any):Boolean = js.native
-    def date_valid_month(month: Any):Boolean = js.native
-    def date_valid_weekday(weekday: Any):Boolean = js.native
+    def date_valid_month(month: Double):Boolean = js.native
+    def date_valid_weekday(weekday: Double):Boolean = js.native
     def date_valid_year(year: Any):Boolean = js.native
     def dcgettext(domain: String, msgid: String, category: Any):String = js.native
     def dgettext(domain: String, msgid: String):String = js.native
@@ -262,13 +262,13 @@ object GLib extends js.Object {
     def environ_getenv(envp: js.Array[String], variable: String):String = js.native
     def environ_setenv(envp: js.Array[String], variable: String, value: String, overwrite: Boolean):js.Array[String] = js.native
     def environ_unsetenv(envp: js.Array[String], variable: String):js.Array[String] = js.native
-    def file_error_from_errno(err_no: Any):Any = js.native
+    def file_error_from_errno(err_no: Any):Double = js.native
     def file_error_quark():Any = js.native
     def file_get_contents(filename: Any, contents: js.Array[Any], length: Any):Boolean = js.native
     def file_open_tmp(tmpl: Any, name_used: Any):Any = js.native
     def file_read_link(filename: String):String = js.native
     def file_set_contents(filename: Any, contents: js.Array[Any], length: Any):Boolean = js.native
-    def file_test(filename: String, test: Any):Boolean = js.native
+    def file_test(filename: String, test: Double):Boolean = js.native
     def filename_display_basename(filename: String):String = js.native
     def filename_display_name(filename: String):String = js.native
     def filename_from_uri(uri: String, hostname: String):Any = js.native
@@ -278,7 +278,7 @@ object GLib extends js.Object {
     def find_program_in_path(program: String):String = js.native
     def format_size(size: Any):String = js.native
     def format_size_for_display(size: Any):String = js.native
-    def format_size_full(size: Any, flags: Any):String = js.native
+    def format_size_full(size: Any, flags: Double):String = js.native
     def fprintf(file: Object, format: String, rest:Any*):Any = js.native
     def free(mem: Object):Unit = js.native
     def get_application_name():String = js.native
@@ -305,7 +305,7 @@ object GLib extends js.Object {
     def get_user_data_dir():String = js.native
     def get_user_name():String = js.native
     def get_user_runtime_dir():String = js.native
-    def get_user_special_dir(directory: Any):String = js.native
+    def get_user_special_dir(directory: Double):String = js.native
     def getenv(variable: String):String = js.native
     def hash_table_add(hash_table: Any, key: Object):Boolean = js.native
     def hash_table_contains(hash_table: Any, key: Object):Boolean = js.native
@@ -341,24 +341,24 @@ object GLib extends js.Object {
     def int_hash(v: Object):Any = js.native
     def intern_static_string(string: String):String = js.native
     def intern_string(string: String):String = js.native
-    def io_add_watch(channel: Any, condition: Any, func: Any, user_data: Object):Any = js.native
-    def io_add_watch_full(channel: Any, priority: Any, condition: Any, func: Any, user_data: Object, notify: Any):Any = js.native
-    def io_channel_error_from_errno(en: Any):Any = js.native
+    def io_add_watch(channel: Any, condition: Double, func: Any, user_data: Object):Any = js.native
+    def io_add_watch_full(channel: Any, priority: Any, condition: Double, func: Any, user_data: Object, notify: Any):Any = js.native
+    def io_channel_error_from_errno(en: Any):Double = js.native
     def io_channel_error_quark():Any = js.native
-    def io_create_watch(channel: Any, condition: Any):Any = js.native
+    def io_create_watch(channel: Any, condition: Double):Any = js.native
     def key_file_error_quark():Any = js.native
     def listenv():js.Array[String] = js.native
     def locale_from_utf8(utf8string: String, len: Any, bytes_read: Any, bytes_written: Any):String = js.native
     def locale_to_utf8(opsysstring: String, len: Any, bytes_read: Any, bytes_written: Any):String = js.native
-    def log(log_domain: String, log_level: Any, format: String, rest:Any*):Unit = js.native
-    def log_default_handler(log_domain: String, log_level: Any, message: String, unused_data: Object):Unit = js.native
+    def log(log_domain: String, log_level: Double, format: String, rest:Any*):Unit = js.native
+    def log_default_handler(log_domain: String, log_level: Double, message: String, unused_data: Object):Unit = js.native
     def log_remove_handler(log_domain: String, handler_id: Any):Unit = js.native
-    def log_set_always_fatal(fatal_mask: Any):Any = js.native
+    def log_set_always_fatal(fatal_mask: Double):Double = js.native
     def log_set_default_handler(log_func: Any, user_data: Object):Any = js.native
-    def log_set_fatal_mask(log_domain: String, fatal_mask: Any):Any = js.native
-    def log_set_handler(log_domain: String, log_levels: Any, log_func: Any, user_data: Object):Any = js.native
-    def log_set_handler_full(log_domain: String, log_levels: Any, log_func: Any, user_data: Object, destroy: Any):Any = js.native
-    def logv(log_domain: String, log_level: Any, format: String, args: Any):Unit = js.native
+    def log_set_fatal_mask(log_domain: String, fatal_mask: Double):Double = js.native
+    def log_set_handler(log_domain: String, log_levels: Double, log_func: Any, user_data: Object):Any = js.native
+    def log_set_handler_full(log_domain: String, log_levels: Double, log_func: Any, user_data: Object, destroy: Any):Any = js.native
+    def logv(log_domain: String, log_level: Double, format: String, args: Any):Unit = js.native
     def main_context_default():Any = js.native
     def main_context_get_thread_default():Any = js.native
     def main_context_ref_thread_default():Any = js.native
@@ -368,7 +368,7 @@ object GLib extends js.Object {
     def malloc0(n_bytes: Any):Object = js.native
     def malloc0_n(n_blocks: Any, n_block_bytes: Any):Object = js.native
     def malloc_n(n_blocks: Any, n_block_bytes: Any):Object = js.native
-    def markup_collect_attributes(element_name: String, attribute_names: String, attribute_values: String, error: Any, first_type0: Any, first_attr: String, rest:Any*):Boolean = js.native
+    def markup_collect_attributes(element_name: String, attribute_names: String, attribute_values: String, error: Any, first_type0: Double, first_attr: String, rest:Any*):Boolean = js.native
     def markup_error_quark():Any = js.native
     def markup_escape_text(text: String, length: Any):String = js.native
     def markup_printf_escaped(format: String, rest:Any*):String = js.native
@@ -423,8 +423,8 @@ object GLib extends js.Object {
     def regex_error_quark():Any = js.native
     def regex_escape_nul(string: String, length: Any):String = js.native
     def regex_escape_string(string: js.Array[String], length: Any):String = js.native
-    def regex_match_simple(pattern: String, string: String, compile_options: Any, match_options: Any):Boolean = js.native
-    def regex_split_simple(pattern: String, string: String, compile_options: Any, match_options: Any):js.Array[String] = js.native
+    def regex_match_simple(pattern: String, string: String, compile_options: Double, match_options: Double):Boolean = js.native
+    def regex_split_simple(pattern: String, string: String, compile_options: Double, match_options: Double):js.Array[String] = js.native
     def reload_user_special_dirs_cache():Unit = js.native
     def return_if_fail_warning(log_domain: String, pretty_function: String, expression: String):Unit = js.native
     def rmdir(filename: String):Any = js.native
@@ -450,24 +450,24 @@ object GLib extends js.Object {
     def slice_copy(block_size: Any, mem_block: Object):Object = js.native
     def slice_free1(block_size: Any, mem_block: Object):Unit = js.native
     def slice_free_chain_with_offset(block_size: Any, mem_chain: Object, next_offset: Any):Unit = js.native
-    def slice_get_config(ckey: Any):Any = js.native
-    def slice_get_config_state(ckey: Any, address: Any, n_values: Any):Any = js.native
-    def slice_set_config(ckey: Any, value: Any):Unit = js.native
+    def slice_get_config(ckey: Double):Any = js.native
+    def slice_get_config_state(ckey: Double, address: Any, n_values: Any):Any = js.native
+    def slice_set_config(ckey: Double, value: Any):Unit = js.native
     def snprintf(string: String, n: Any, format: String, rest:Any*):Any = js.native
     def source_remove(tag: Any):Boolean = js.native
     def source_remove_by_funcs_user_data(funcs: Any, user_data: Object):Boolean = js.native
     def source_remove_by_user_data(user_data: Object):Boolean = js.native
     def source_set_name_by_id(tag: Any, name: String):Unit = js.native
     def spaced_primes_closest(num: Any):Any = js.native
-    def spawn_async(working_directory: String, argv: js.Array[String], envp: js.Array[String], flags: Any, child_setup: Any, user_data: Object, child_pid: Any):Boolean = js.native
-    def spawn_async_with_pipes(working_directory: String, argv: js.Array[String], envp: js.Array[String], flags: Any, child_setup: Any, user_data: Object, child_pid: Any, standard_input: Any, standard_output: Any, standard_error: Any):Boolean = js.native
+    def spawn_async(working_directory: String, argv: js.Array[String], envp: js.Array[String], flags: Double, child_setup: Any, user_data: Object, child_pid: Any):Boolean = js.native
+    def spawn_async_with_pipes(working_directory: String, argv: js.Array[String], envp: js.Array[String], flags: Double, child_setup: Any, user_data: Object, child_pid: Any, standard_input: Any, standard_output: Any, standard_error: Any):Boolean = js.native
     def spawn_check_exit_status(exit_status: Any):Boolean = js.native
     def spawn_close_pid(pid: Any):Unit = js.native
     def spawn_command_line_async(command_line: String):Boolean = js.native
     def spawn_command_line_sync(command_line: String, standard_output: js.Array[Any], standard_error: js.Array[Any], exit_status: Any):Boolean = js.native
     def spawn_error_quark():Any = js.native
     def spawn_exit_error_quark():Any = js.native
-    def spawn_sync(working_directory: String, argv: js.Array[String], envp: js.Array[String], flags: Any, child_setup: Any, user_data: Object, standard_output: js.Array[Any], standard_error: js.Array[Any], exit_status: Any):Boolean = js.native
+    def spawn_sync(working_directory: String, argv: js.Array[String], envp: js.Array[String], flags: Double, child_setup: Any, user_data: Object, standard_output: js.Array[Any], standard_error: js.Array[Any], exit_status: Any):Boolean = js.native
     def sprintf(string: String, format: String, rest:Any*):Any = js.native
     def stpcpy(dest: String, src: String):String = js.native
     def str_equal(v1: Object, v2: Object):Boolean = js.native
@@ -524,19 +524,19 @@ object GLib extends js.Object {
     def test_assert_expected_messages_internal(domain: String, file: String, line: Any, func: String):Unit = js.native
     def test_bug(bug_uri_snippet: String):Unit = js.native
     def test_bug_base(uri_pattern: String):Unit = js.native
-    def test_build_filename(file_type0: Any, first_path: String, rest:Any*):String = js.native
+    def test_build_filename(file_type0: Double, first_path: String, rest:Any*):String = js.native
     def test_create_case(test_name: String, data_size: Any, test_data: Object, data_setup: Any, data_test: Any, data_teardown: Any):Any = js.native
     def test_create_suite(suite_name: String):Any = js.native
-    def test_expect_message(log_domain: String, log_level: Any, pattern: String):Unit = js.native
+    def test_expect_message(log_domain: String, log_level: Double, pattern: String):Unit = js.native
     def test_fail():Unit = js.native
     def test_failed():Boolean = js.native
-    def test_get_dir(file_type0: Any):String = js.native
-    def test_get_filename(file_type0: Any, first_path: String, rest:Any*):String = js.native
+    def test_get_dir(file_type0: Double):String = js.native
+    def test_get_filename(file_type0: Double, first_path: String, rest:Any*):String = js.native
     def test_get_root():Any = js.native
     def test_incomplete(msg: String):Unit = js.native
     def test_init(argc: Any, argv: String, rest:Any*):Unit = js.native
     def test_log_set_fatal_handler(log_func: Any, user_data: Object):Unit = js.native
-    def test_log_type_name(log_type0: Any):String = js.native
+    def test_log_type_name(log_type0: Double):String = js.native
     def test_maximized_result(maximized_quantity: Any, format: String, rest:Any*):Unit = js.native
     def test_message(format: String, rest:Any*):Unit = js.native
     def test_minimized_result(minimized_quantity: Any, format: String, rest:Any*):Unit = js.native
@@ -555,10 +555,10 @@ object GLib extends js.Object {
     def test_timer_last():Any = js.native
     def test_timer_start():Unit = js.native
     def test_trap_assertions(domain: String, file: String, line: Any, func: String, assertion_flags: Any, pattern: String):Unit = js.native
-    def test_trap_fork(usec_timeout: Any, test_trap_flags: Any):Boolean = js.native
+    def test_trap_fork(usec_timeout: Any, test_trap_flags: Double):Boolean = js.native
     def test_trap_has_passed():Boolean = js.native
     def test_trap_reached_timeout():Boolean = js.native
-    def test_trap_subprocess(test_path: String, usec_timeout: Any, test_flags: Any):Unit = js.native
+    def test_trap_subprocess(test_path: String, usec_timeout: Any, test_flags: Double):Unit = js.native
     def thread_error_quark():Any = js.native
     def thread_exit(retval0: Object):Unit = js.native
     def thread_pool_get_max_idle_time():Any = js.native
@@ -586,14 +586,14 @@ object GLib extends js.Object {
     def try_realloc_n(mem: Object, n_blocks: Any, n_block_bytes: Any):Object = js.native
     def ucs4_to_utf16(str: Any, len: Any, items_read: Any, items_written: Any):Any = js.native
     def ucs4_to_utf8(str: Any, len: Any, items_read: Any, items_written: Any):String = js.native
-    def unichar_break_type(c: Any):Any = js.native
+    def unichar_break_type(c: Any):Double = js.native
     def unichar_combining_class(uc: Any):Any = js.native
     def unichar_compose(a: Any, b: Any, ch: Any):Boolean = js.native
     def unichar_decompose(ch: Any, a: Any, b: Any):Boolean = js.native
     def unichar_digit_value(c: Any):Any = js.native
     def unichar_fully_decompose(ch: Any, compat: Boolean, result: Any, result_len: Any):Any = js.native
     def unichar_get_mirror_char(ch: Any, mirrored_ch: Any):Boolean = js.native
-    def unichar_get_script(ch: Any):Any = js.native
+    def unichar_get_script(ch: Any):Double = js.native
     def unichar_isalnum(c: Any):Boolean = js.native
     def unichar_isalpha(c: Any):Boolean = js.native
     def unichar_iscntrl(c: Any):Boolean = js.native
@@ -615,17 +615,17 @@ object GLib extends js.Object {
     def unichar_tolower(c: Any):Any = js.native
     def unichar_totitle(c: Any):Any = js.native
     def unichar_toupper(c: Any):Any = js.native
-    def unichar_type(c: Any):Any = js.native
+    def unichar_type(c: Any):Double = js.native
     def unichar_validate(ch: Any):Boolean = js.native
     def unichar_xdigit_value(c: Any):Any = js.native
     def unicode_canonical_decomposition(ch: Any, result_len: Any):Any = js.native
     def unicode_canonical_ordering(string: Any, len: Any):Unit = js.native
-    def unicode_script_from_iso15924(iso15924: Any):Any = js.native
-    def unicode_script_to_iso15924(script: Any):Any = js.native
+    def unicode_script_from_iso15924(iso15924: Any):Double = js.native
+    def unicode_script_to_iso15924(script: Double):Any = js.native
     def unix_error_quark():Any = js.native
-    def unix_fd_add(fd: Any, condition: Any, function0: Any, user_data: Object):Any = js.native
-    def unix_fd_add_full(priority: Any, fd: Any, condition: Any, function0: Any, user_data: Object, notify: Any):Any = js.native
-    def unix_fd_source_new(fd: Any, condition: Any):Any = js.native
+    def unix_fd_add(fd: Any, condition: Double, function0: Any, user_data: Object):Any = js.native
+    def unix_fd_add_full(priority: Any, fd: Any, condition: Double, function0: Any, user_data: Object, notify: Any):Any = js.native
+    def unix_fd_source_new(fd: Any, condition: Double):Any = js.native
     def unix_open_pipe(fds: Any, flags: Any):Boolean = js.native
     def unix_set_fd_nonblocking(fd: Any, nonblock: Boolean):Boolean = js.native
     def unix_signal_add(signum: Any, handler: Any, user_data: Object):Any = js.native
@@ -649,7 +649,7 @@ object GLib extends js.Object {
     def utf8_find_prev_char(str: String, p: String):String = js.native
     def utf8_get_char(p: String):Any = js.native
     def utf8_get_char_validated(p: String, max_len: Any):Any = js.native
-    def utf8_normalize(str: String, len: Any, mode: Any):String = js.native
+    def utf8_normalize(str: String, len: Any, mode: Double):String = js.native
     def utf8_offset_to_pointer(str: String, offset: Any):String = js.native
     def utf8_pointer_to_offset(str: String, pos: String):Any = js.native
     def utf8_prev_char(p: String):String = js.native
@@ -683,789 +683,789 @@ object GLib extends js.Object {
     def warn_message(domain: String, file: String, line: Any, func: String, warnexpr: String):Unit = js.native
     @js.native
     object BookmarkFileError extends js.Object {
-        val INVALID_URI:js.Dynamic = js.native
-        val INVALID_VALUE:js.Dynamic = js.native
-        val APP_NOT_REGISTERED:js.Dynamic = js.native
-        val URI_NOT_FOUND:js.Dynamic = js.native
-        val READ:js.Dynamic = js.native
-        val UNKNOWN_ENCODING:js.Dynamic = js.native
-        val WRITE:js.Dynamic = js.native
-        val FILE_NOT_FOUND:js.Dynamic = js.native
+        val INVALID_URI:Double = js.native
+        val INVALID_VALUE:Double = js.native
+        val APP_NOT_REGISTERED:Double = js.native
+        val URI_NOT_FOUND:Double = js.native
+        val READ:Double = js.native
+        val UNKNOWN_ENCODING:Double = js.native
+        val WRITE:Double = js.native
+        val FILE_NOT_FOUND:Double = js.native
     }
     @js.native
     object ChecksumType extends js.Object {
-        val MD5:js.Dynamic = js.native
-        val SHA1:js.Dynamic = js.native
-        val SHA256:js.Dynamic = js.native
-        val SHA512:js.Dynamic = js.native
+        val MD5:Double = js.native
+        val SHA1:Double = js.native
+        val SHA256:Double = js.native
+        val SHA512:Double = js.native
     }
     @js.native
     object ConvertError extends js.Object {
-        val NO_CONVERSION:js.Dynamic = js.native
-        val ILLEGAL_SEQUENCE:js.Dynamic = js.native
-        val FAILED:js.Dynamic = js.native
-        val PARTIAL_INPUT:js.Dynamic = js.native
-        val BAD_URI:js.Dynamic = js.native
-        val NOT_ABSOLUTE_PATH:js.Dynamic = js.native
-        val NO_MEMORY:js.Dynamic = js.native
+        val NO_CONVERSION:Double = js.native
+        val ILLEGAL_SEQUENCE:Double = js.native
+        val FAILED:Double = js.native
+        val PARTIAL_INPUT:Double = js.native
+        val BAD_URI:Double = js.native
+        val NOT_ABSOLUTE_PATH:Double = js.native
+        val NO_MEMORY:Double = js.native
     }
     @js.native
     object DateDMY extends js.Object {
-        val DAY:js.Dynamic = js.native
-        val MONTH:js.Dynamic = js.native
-        val YEAR:js.Dynamic = js.native
+        val DAY:Double = js.native
+        val MONTH:Double = js.native
+        val YEAR:Double = js.native
     }
     @js.native
     object DateMonth extends js.Object {
-        val BAD_MONTH:js.Dynamic = js.native
-        val JANUARY:js.Dynamic = js.native
-        val FEBRUARY:js.Dynamic = js.native
-        val MARCH:js.Dynamic = js.native
-        val APRIL:js.Dynamic = js.native
-        val MAY:js.Dynamic = js.native
-        val JUNE:js.Dynamic = js.native
-        val JULY:js.Dynamic = js.native
-        val AUGUST:js.Dynamic = js.native
-        val SEPTEMBER:js.Dynamic = js.native
-        val OCTOBER:js.Dynamic = js.native
-        val NOVEMBER:js.Dynamic = js.native
-        val DECEMBER:js.Dynamic = js.native
+        val BAD_MONTH:Double = js.native
+        val JANUARY:Double = js.native
+        val FEBRUARY:Double = js.native
+        val MARCH:Double = js.native
+        val APRIL:Double = js.native
+        val MAY:Double = js.native
+        val JUNE:Double = js.native
+        val JULY:Double = js.native
+        val AUGUST:Double = js.native
+        val SEPTEMBER:Double = js.native
+        val OCTOBER:Double = js.native
+        val NOVEMBER:Double = js.native
+        val DECEMBER:Double = js.native
     }
     @js.native
     object DateWeekday extends js.Object {
-        val BAD_WEEKDAY:js.Dynamic = js.native
-        val MONDAY:js.Dynamic = js.native
-        val TUESDAY:js.Dynamic = js.native
-        val WEDNESDAY:js.Dynamic = js.native
-        val THURSDAY:js.Dynamic = js.native
-        val FRIDAY:js.Dynamic = js.native
-        val SATURDAY:js.Dynamic = js.native
-        val SUNDAY:js.Dynamic = js.native
+        val BAD_WEEKDAY:Double = js.native
+        val MONDAY:Double = js.native
+        val TUESDAY:Double = js.native
+        val WEDNESDAY:Double = js.native
+        val THURSDAY:Double = js.native
+        val FRIDAY:Double = js.native
+        val SATURDAY:Double = js.native
+        val SUNDAY:Double = js.native
     }
     @js.native
     object ErrorType extends js.Object {
-        val UNKNOWN:js.Dynamic = js.native
-        val UNEXP_EOF:js.Dynamic = js.native
-        val UNEXP_EOF_IN_STRING:js.Dynamic = js.native
-        val UNEXP_EOF_IN_COMMENT:js.Dynamic = js.native
-        val NON_DIGIT_IN_CONST:js.Dynamic = js.native
-        val DIGIT_RADIX:js.Dynamic = js.native
-        val FLOAT_RADIX:js.Dynamic = js.native
-        val FLOAT_MALFORMED:js.Dynamic = js.native
+        val UNKNOWN:Double = js.native
+        val UNEXP_EOF:Double = js.native
+        val UNEXP_EOF_IN_STRING:Double = js.native
+        val UNEXP_EOF_IN_COMMENT:Double = js.native
+        val NON_DIGIT_IN_CONST:Double = js.native
+        val DIGIT_RADIX:Double = js.native
+        val FLOAT_RADIX:Double = js.native
+        val FLOAT_MALFORMED:Double = js.native
     }
     @js.native
     object FileError extends js.Object {
-        val EXIST:js.Dynamic = js.native
-        val ISDIR:js.Dynamic = js.native
-        val ACCES:js.Dynamic = js.native
-        val NAMETOOLONG:js.Dynamic = js.native
-        val NOENT:js.Dynamic = js.native
-        val NOTDIR:js.Dynamic = js.native
-        val NXIO:js.Dynamic = js.native
-        val NODEV:js.Dynamic = js.native
-        val ROFS:js.Dynamic = js.native
-        val TXTBSY:js.Dynamic = js.native
-        val FAULT:js.Dynamic = js.native
-        val LOOP:js.Dynamic = js.native
-        val NOSPC:js.Dynamic = js.native
-        val NOMEM:js.Dynamic = js.native
-        val MFILE:js.Dynamic = js.native
-        val NFILE:js.Dynamic = js.native
-        val BADF:js.Dynamic = js.native
-        val INVAL:js.Dynamic = js.native
-        val PIPE:js.Dynamic = js.native
-        val AGAIN:js.Dynamic = js.native
-        val INTR:js.Dynamic = js.native
-        val IO:js.Dynamic = js.native
-        val PERM:js.Dynamic = js.native
-        val NOSYS:js.Dynamic = js.native
-        val FAILED:js.Dynamic = js.native
+        val EXIST:Double = js.native
+        val ISDIR:Double = js.native
+        val ACCES:Double = js.native
+        val NAMETOOLONG:Double = js.native
+        val NOENT:Double = js.native
+        val NOTDIR:Double = js.native
+        val NXIO:Double = js.native
+        val NODEV:Double = js.native
+        val ROFS:Double = js.native
+        val TXTBSY:Double = js.native
+        val FAULT:Double = js.native
+        val LOOP:Double = js.native
+        val NOSPC:Double = js.native
+        val NOMEM:Double = js.native
+        val MFILE:Double = js.native
+        val NFILE:Double = js.native
+        val BADF:Double = js.native
+        val INVAL:Double = js.native
+        val PIPE:Double = js.native
+        val AGAIN:Double = js.native
+        val INTR:Double = js.native
+        val IO:Double = js.native
+        val PERM:Double = js.native
+        val NOSYS:Double = js.native
+        val FAILED:Double = js.native
     }
     @js.native
     object IOChannelError extends js.Object {
-        val FBIG:js.Dynamic = js.native
-        val INVAL:js.Dynamic = js.native
-        val IO:js.Dynamic = js.native
-        val ISDIR:js.Dynamic = js.native
-        val NOSPC:js.Dynamic = js.native
-        val NXIO:js.Dynamic = js.native
-        val OVERFLOW:js.Dynamic = js.native
-        val PIPE:js.Dynamic = js.native
-        val FAILED:js.Dynamic = js.native
+        val FBIG:Double = js.native
+        val INVAL:Double = js.native
+        val IO:Double = js.native
+        val ISDIR:Double = js.native
+        val NOSPC:Double = js.native
+        val NXIO:Double = js.native
+        val OVERFLOW:Double = js.native
+        val PIPE:Double = js.native
+        val FAILED:Double = js.native
     }
     @js.native
     object IOError extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val AGAIN:js.Dynamic = js.native
-        val INVAL:js.Dynamic = js.native
-        val UNKNOWN:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val AGAIN:Double = js.native
+        val INVAL:Double = js.native
+        val UNKNOWN:Double = js.native
     }
     @js.native
     object IOStatus extends js.Object {
-        val ERROR:js.Dynamic = js.native
-        val NORMAL:js.Dynamic = js.native
-        val EOF:js.Dynamic = js.native
-        val AGAIN:js.Dynamic = js.native
+        val ERROR:Double = js.native
+        val NORMAL:Double = js.native
+        val EOF:Double = js.native
+        val AGAIN:Double = js.native
     }
     @js.native
     object KeyFileError extends js.Object {
-        val UNKNOWN_ENCODING:js.Dynamic = js.native
-        val PARSE:js.Dynamic = js.native
-        val NOT_FOUND:js.Dynamic = js.native
-        val KEY_NOT_FOUND:js.Dynamic = js.native
-        val GROUP_NOT_FOUND:js.Dynamic = js.native
-        val INVALID_VALUE:js.Dynamic = js.native
+        val UNKNOWN_ENCODING:Double = js.native
+        val PARSE:Double = js.native
+        val NOT_FOUND:Double = js.native
+        val KEY_NOT_FOUND:Double = js.native
+        val GROUP_NOT_FOUND:Double = js.native
+        val INVALID_VALUE:Double = js.native
     }
     @js.native
     object MarkupError extends js.Object {
-        val BAD_UTF8:js.Dynamic = js.native
-        val EMPTY:js.Dynamic = js.native
-        val PARSE:js.Dynamic = js.native
-        val UNKNOWN_ELEMENT:js.Dynamic = js.native
-        val UNKNOWN_ATTRIBUTE:js.Dynamic = js.native
-        val INVALID_CONTENT:js.Dynamic = js.native
-        val MISSING_ATTRIBUTE:js.Dynamic = js.native
+        val BAD_UTF8:Double = js.native
+        val EMPTY:Double = js.native
+        val PARSE:Double = js.native
+        val UNKNOWN_ELEMENT:Double = js.native
+        val UNKNOWN_ATTRIBUTE:Double = js.native
+        val INVALID_CONTENT:Double = js.native
+        val MISSING_ATTRIBUTE:Double = js.native
     }
     @js.native
     object NormalizeMode extends js.Object {
-        val DEFAULT:js.Dynamic = js.native
-        val NFD:js.Dynamic = js.native
-        val DEFAULT_COMPOSE:js.Dynamic = js.native
-        val NFC:js.Dynamic = js.native
-        val ALL:js.Dynamic = js.native
-        val NFKD:js.Dynamic = js.native
-        val ALL_COMPOSE:js.Dynamic = js.native
-        val NFKC:js.Dynamic = js.native
+        val DEFAULT:Double = js.native
+        val NFD:Double = js.native
+        val DEFAULT_COMPOSE:Double = js.native
+        val NFC:Double = js.native
+        val ALL:Double = js.native
+        val NFKD:Double = js.native
+        val ALL_COMPOSE:Double = js.native
+        val NFKC:Double = js.native
     }
     @js.native
     object OnceStatus extends js.Object {
-        val NOTCALLED:js.Dynamic = js.native
-        val PROGRESS:js.Dynamic = js.native
-        val READY:js.Dynamic = js.native
+        val NOTCALLED:Double = js.native
+        val PROGRESS:Double = js.native
+        val READY:Double = js.native
     }
     @js.native
     object OptionArg extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val STRING:js.Dynamic = js.native
-        val INT:js.Dynamic = js.native
-        val CALLBACK:js.Dynamic = js.native
-        val FILENAME:js.Dynamic = js.native
-        val STRING_ARRAY:js.Dynamic = js.native
-        val FILENAME_ARRAY:js.Dynamic = js.native
-        val DOUBLE:js.Dynamic = js.native
-        val INT64:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val STRING:Double = js.native
+        val INT:Double = js.native
+        val CALLBACK:Double = js.native
+        val FILENAME:Double = js.native
+        val STRING_ARRAY:Double = js.native
+        val FILENAME_ARRAY:Double = js.native
+        val DOUBLE:Double = js.native
+        val INT64:Double = js.native
     }
     @js.native
     object OptionError extends js.Object {
-        val UNKNOWN_OPTION:js.Dynamic = js.native
-        val BAD_VALUE:js.Dynamic = js.native
-        val FAILED:js.Dynamic = js.native
+        val UNKNOWN_OPTION:Double = js.native
+        val BAD_VALUE:Double = js.native
+        val FAILED:Double = js.native
     }
     @js.native
     object RegexError extends js.Object {
-        val COMPILE:js.Dynamic = js.native
-        val OPTIMIZE:js.Dynamic = js.native
-        val REPLACE:js.Dynamic = js.native
-        val MATCH:js.Dynamic = js.native
-        val INTERNAL:js.Dynamic = js.native
-        val STRAY_BACKSLASH:js.Dynamic = js.native
-        val MISSING_CONTROL_CHAR:js.Dynamic = js.native
-        val UNRECOGNIZED_ESCAPE:js.Dynamic = js.native
-        val QUANTIFIERS_OUT_OF_ORDER:js.Dynamic = js.native
-        val QUANTIFIER_TOO_BIG:js.Dynamic = js.native
-        val UNTERMINATED_CHARACTER_CLASS:js.Dynamic = js.native
-        val INVALID_ESCAPE_IN_CHARACTER_CLASS:js.Dynamic = js.native
-        val RANGE_OUT_OF_ORDER:js.Dynamic = js.native
-        val NOTHING_TO_REPEAT:js.Dynamic = js.native
-        val UNRECOGNIZED_CHARACTER:js.Dynamic = js.native
-        val POSIX_NAMED_CLASS_OUTSIDE_CLASS:js.Dynamic = js.native
-        val UNMATCHED_PARENTHESIS:js.Dynamic = js.native
-        val INEXISTENT_SUBPATTERN_REFERENCE:js.Dynamic = js.native
-        val UNTERMINATED_COMMENT:js.Dynamic = js.native
-        val EXPRESSION_TOO_LARGE:js.Dynamic = js.native
-        val MEMORY_ERROR:js.Dynamic = js.native
-        val VARIABLE_LENGTH_LOOKBEHIND:js.Dynamic = js.native
-        val MALFORMED_CONDITION:js.Dynamic = js.native
-        val TOO_MANY_CONDITIONAL_BRANCHES:js.Dynamic = js.native
-        val ASSERTION_EXPECTED:js.Dynamic = js.native
-        val UNKNOWN_POSIX_CLASS_NAME:js.Dynamic = js.native
-        val POSIX_COLLATING_ELEMENTS_NOT_SUPPORTED:js.Dynamic = js.native
-        val HEX_CODE_TOO_LARGE:js.Dynamic = js.native
-        val INVALID_CONDITION:js.Dynamic = js.native
-        val SINGLE_BYTE_MATCH_IN_LOOKBEHIND:js.Dynamic = js.native
-        val INFINITE_LOOP:js.Dynamic = js.native
-        val MISSING_SUBPATTERN_NAME_TERMINATOR:js.Dynamic = js.native
-        val DUPLICATE_SUBPATTERN_NAME:js.Dynamic = js.native
-        val MALFORMED_PROPERTY:js.Dynamic = js.native
-        val UNKNOWN_PROPERTY:js.Dynamic = js.native
-        val SUBPATTERN_NAME_TOO_LONG:js.Dynamic = js.native
-        val TOO_MANY_SUBPATTERNS:js.Dynamic = js.native
-        val INVALID_OCTAL_VALUE:js.Dynamic = js.native
-        val TOO_MANY_BRANCHES_IN_DEFINE:js.Dynamic = js.native
-        val DEFINE_REPETION:js.Dynamic = js.native
-        val INCONSISTENT_NEWLINE_OPTIONS:js.Dynamic = js.native
-        val MISSING_BACK_REFERENCE:js.Dynamic = js.native
-        val INVALID_RELATIVE_REFERENCE:js.Dynamic = js.native
-        val BACKTRACKING_CONTROL_VERB_ARGUMENT_FORBIDDEN:js.Dynamic = js.native
-        val UNKNOWN_BACKTRACKING_CONTROL_VERB:js.Dynamic = js.native
-        val NUMBER_TOO_BIG:js.Dynamic = js.native
-        val MISSING_SUBPATTERN_NAME:js.Dynamic = js.native
-        val MISSING_DIGIT:js.Dynamic = js.native
-        val INVALID_DATA_CHARACTER:js.Dynamic = js.native
-        val EXTRA_SUBPATTERN_NAME:js.Dynamic = js.native
-        val BACKTRACKING_CONTROL_VERB_ARGUMENT_REQUIRED:js.Dynamic = js.native
-        val INVALID_CONTROL_CHAR:js.Dynamic = js.native
-        val MISSING_NAME:js.Dynamic = js.native
-        val NOT_SUPPORTED_IN_CLASS:js.Dynamic = js.native
-        val TOO_MANY_FORWARD_REFERENCES:js.Dynamic = js.native
-        val NAME_TOO_LONG:js.Dynamic = js.native
-        val CHARACTER_VALUE_TOO_LARGE:js.Dynamic = js.native
+        val COMPILE:Double = js.native
+        val OPTIMIZE:Double = js.native
+        val REPLACE:Double = js.native
+        val MATCH:Double = js.native
+        val INTERNAL:Double = js.native
+        val STRAY_BACKSLASH:Double = js.native
+        val MISSING_CONTROL_CHAR:Double = js.native
+        val UNRECOGNIZED_ESCAPE:Double = js.native
+        val QUANTIFIERS_OUT_OF_ORDER:Double = js.native
+        val QUANTIFIER_TOO_BIG:Double = js.native
+        val UNTERMINATED_CHARACTER_CLASS:Double = js.native
+        val INVALID_ESCAPE_IN_CHARACTER_CLASS:Double = js.native
+        val RANGE_OUT_OF_ORDER:Double = js.native
+        val NOTHING_TO_REPEAT:Double = js.native
+        val UNRECOGNIZED_CHARACTER:Double = js.native
+        val POSIX_NAMED_CLASS_OUTSIDE_CLASS:Double = js.native
+        val UNMATCHED_PARENTHESIS:Double = js.native
+        val INEXISTENT_SUBPATTERN_REFERENCE:Double = js.native
+        val UNTERMINATED_COMMENT:Double = js.native
+        val EXPRESSION_TOO_LARGE:Double = js.native
+        val MEMORY_ERROR:Double = js.native
+        val VARIABLE_LENGTH_LOOKBEHIND:Double = js.native
+        val MALFORMED_CONDITION:Double = js.native
+        val TOO_MANY_CONDITIONAL_BRANCHES:Double = js.native
+        val ASSERTION_EXPECTED:Double = js.native
+        val UNKNOWN_POSIX_CLASS_NAME:Double = js.native
+        val POSIX_COLLATING_ELEMENTS_NOT_SUPPORTED:Double = js.native
+        val HEX_CODE_TOO_LARGE:Double = js.native
+        val INVALID_CONDITION:Double = js.native
+        val SINGLE_BYTE_MATCH_IN_LOOKBEHIND:Double = js.native
+        val INFINITE_LOOP:Double = js.native
+        val MISSING_SUBPATTERN_NAME_TERMINATOR:Double = js.native
+        val DUPLICATE_SUBPATTERN_NAME:Double = js.native
+        val MALFORMED_PROPERTY:Double = js.native
+        val UNKNOWN_PROPERTY:Double = js.native
+        val SUBPATTERN_NAME_TOO_LONG:Double = js.native
+        val TOO_MANY_SUBPATTERNS:Double = js.native
+        val INVALID_OCTAL_VALUE:Double = js.native
+        val TOO_MANY_BRANCHES_IN_DEFINE:Double = js.native
+        val DEFINE_REPETION:Double = js.native
+        val INCONSISTENT_NEWLINE_OPTIONS:Double = js.native
+        val MISSING_BACK_REFERENCE:Double = js.native
+        val INVALID_RELATIVE_REFERENCE:Double = js.native
+        val BACKTRACKING_CONTROL_VERB_ARGUMENT_FORBIDDEN:Double = js.native
+        val UNKNOWN_BACKTRACKING_CONTROL_VERB:Double = js.native
+        val NUMBER_TOO_BIG:Double = js.native
+        val MISSING_SUBPATTERN_NAME:Double = js.native
+        val MISSING_DIGIT:Double = js.native
+        val INVALID_DATA_CHARACTER:Double = js.native
+        val EXTRA_SUBPATTERN_NAME:Double = js.native
+        val BACKTRACKING_CONTROL_VERB_ARGUMENT_REQUIRED:Double = js.native
+        val INVALID_CONTROL_CHAR:Double = js.native
+        val MISSING_NAME:Double = js.native
+        val NOT_SUPPORTED_IN_CLASS:Double = js.native
+        val TOO_MANY_FORWARD_REFERENCES:Double = js.native
+        val NAME_TOO_LONG:Double = js.native
+        val CHARACTER_VALUE_TOO_LARGE:Double = js.native
     }
     @js.native
     object SeekType extends js.Object {
-        val CUR:js.Dynamic = js.native
-        val SET:js.Dynamic = js.native
-        val END:js.Dynamic = js.native
+        val CUR:Double = js.native
+        val SET:Double = js.native
+        val END:Double = js.native
     }
     @js.native
     object ShellError extends js.Object {
-        val BAD_QUOTING:js.Dynamic = js.native
-        val EMPTY_STRING:js.Dynamic = js.native
-        val FAILED:js.Dynamic = js.native
+        val BAD_QUOTING:Double = js.native
+        val EMPTY_STRING:Double = js.native
+        val FAILED:Double = js.native
     }
     @js.native
     object SliceConfig extends js.Object {
-        val ALWAYS_MALLOC:js.Dynamic = js.native
-        val BYPASS_MAGAZINES:js.Dynamic = js.native
-        val WORKING_SET_MSECS:js.Dynamic = js.native
-        val COLOR_INCREMENT:js.Dynamic = js.native
-        val CHUNK_SIZES:js.Dynamic = js.native
-        val CONTENTION_COUNTER:js.Dynamic = js.native
+        val ALWAYS_MALLOC:Double = js.native
+        val BYPASS_MAGAZINES:Double = js.native
+        val WORKING_SET_MSECS:Double = js.native
+        val COLOR_INCREMENT:Double = js.native
+        val CHUNK_SIZES:Double = js.native
+        val CONTENTION_COUNTER:Double = js.native
     }
     @js.native
     object SpawnError extends js.Object {
-        val FORK:js.Dynamic = js.native
-        val READ:js.Dynamic = js.native
-        val CHDIR:js.Dynamic = js.native
-        val ACCES:js.Dynamic = js.native
-        val PERM:js.Dynamic = js.native
-        val TOO_BIG:js.Dynamic = js.native
-        val _2BIG:js.Dynamic = js.native
-        val NOEXEC:js.Dynamic = js.native
-        val NAMETOOLONG:js.Dynamic = js.native
-        val NOENT:js.Dynamic = js.native
-        val NOMEM:js.Dynamic = js.native
-        val NOTDIR:js.Dynamic = js.native
-        val LOOP:js.Dynamic = js.native
-        val TXTBUSY:js.Dynamic = js.native
-        val IO:js.Dynamic = js.native
-        val NFILE:js.Dynamic = js.native
-        val MFILE:js.Dynamic = js.native
-        val INVAL:js.Dynamic = js.native
-        val ISDIR:js.Dynamic = js.native
-        val LIBBAD:js.Dynamic = js.native
-        val FAILED:js.Dynamic = js.native
+        val FORK:Double = js.native
+        val READ:Double = js.native
+        val CHDIR:Double = js.native
+        val ACCES:Double = js.native
+        val PERM:Double = js.native
+        val TOO_BIG:Double = js.native
+        val _2BIG:Double = js.native
+        val NOEXEC:Double = js.native
+        val NAMETOOLONG:Double = js.native
+        val NOENT:Double = js.native
+        val NOMEM:Double = js.native
+        val NOTDIR:Double = js.native
+        val LOOP:Double = js.native
+        val TXTBUSY:Double = js.native
+        val IO:Double = js.native
+        val NFILE:Double = js.native
+        val MFILE:Double = js.native
+        val INVAL:Double = js.native
+        val ISDIR:Double = js.native
+        val LIBBAD:Double = js.native
+        val FAILED:Double = js.native
     }
     @js.native
     object TestFileType extends js.Object {
-        val DIST:js.Dynamic = js.native
-        val BUILT:js.Dynamic = js.native
+        val DIST:Double = js.native
+        val BUILT:Double = js.native
     }
     @js.native
     object TestLogType extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val ERROR:js.Dynamic = js.native
-        val START_BINARY:js.Dynamic = js.native
-        val LIST_CASE:js.Dynamic = js.native
-        val SKIP_CASE:js.Dynamic = js.native
-        val START_CASE:js.Dynamic = js.native
-        val STOP_CASE:js.Dynamic = js.native
-        val MIN_RESULT:js.Dynamic = js.native
-        val MAX_RESULT:js.Dynamic = js.native
-        val MESSAGE:js.Dynamic = js.native
-        val START_SUITE:js.Dynamic = js.native
-        val STOP_SUITE:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val ERROR:Double = js.native
+        val START_BINARY:Double = js.native
+        val LIST_CASE:Double = js.native
+        val SKIP_CASE:Double = js.native
+        val START_CASE:Double = js.native
+        val STOP_CASE:Double = js.native
+        val MIN_RESULT:Double = js.native
+        val MAX_RESULT:Double = js.native
+        val MESSAGE:Double = js.native
+        val START_SUITE:Double = js.native
+        val STOP_SUITE:Double = js.native
     }
     @js.native
     object ThreadError extends js.Object {
-        val THREAD_ERROR_AGAIN:js.Dynamic = js.native
+        val THREAD_ERROR_AGAIN:Double = js.native
     }
     @js.native
     object TimeType extends js.Object {
-        val STANDARD:js.Dynamic = js.native
-        val DAYLIGHT:js.Dynamic = js.native
-        val UNIVERSAL:js.Dynamic = js.native
+        val STANDARD:Double = js.native
+        val DAYLIGHT:Double = js.native
+        val UNIVERSAL:Double = js.native
     }
     @js.native
     object TokenType extends js.Object {
-        val EOF:js.Dynamic = js.native
-        val LEFT_PAREN:js.Dynamic = js.native
-        val RIGHT_PAREN:js.Dynamic = js.native
-        val LEFT_CURLY:js.Dynamic = js.native
-        val RIGHT_CURLY:js.Dynamic = js.native
-        val LEFT_BRACE:js.Dynamic = js.native
-        val RIGHT_BRACE:js.Dynamic = js.native
-        val EQUAL_SIGN:js.Dynamic = js.native
-        val COMMA:js.Dynamic = js.native
-        val NONE:js.Dynamic = js.native
-        val ERROR:js.Dynamic = js.native
-        val CHAR:js.Dynamic = js.native
-        val BINARY:js.Dynamic = js.native
-        val OCTAL:js.Dynamic = js.native
-        val INT:js.Dynamic = js.native
-        val HEX:js.Dynamic = js.native
-        val FLOAT:js.Dynamic = js.native
-        val STRING:js.Dynamic = js.native
-        val SYMBOL:js.Dynamic = js.native
-        val IDENTIFIER:js.Dynamic = js.native
-        val IDENTIFIER_NULL:js.Dynamic = js.native
-        val COMMENT_SINGLE:js.Dynamic = js.native
-        val COMMENT_MULTI:js.Dynamic = js.native
+        val EOF:Double = js.native
+        val LEFT_PAREN:Double = js.native
+        val RIGHT_PAREN:Double = js.native
+        val LEFT_CURLY:Double = js.native
+        val RIGHT_CURLY:Double = js.native
+        val LEFT_BRACE:Double = js.native
+        val RIGHT_BRACE:Double = js.native
+        val EQUAL_SIGN:Double = js.native
+        val COMMA:Double = js.native
+        val NONE:Double = js.native
+        val ERROR:Double = js.native
+        val CHAR:Double = js.native
+        val BINARY:Double = js.native
+        val OCTAL:Double = js.native
+        val INT:Double = js.native
+        val HEX:Double = js.native
+        val FLOAT:Double = js.native
+        val STRING:Double = js.native
+        val SYMBOL:Double = js.native
+        val IDENTIFIER:Double = js.native
+        val IDENTIFIER_NULL:Double = js.native
+        val COMMENT_SINGLE:Double = js.native
+        val COMMENT_MULTI:Double = js.native
     }
     @js.native
     object TraverseType extends js.Object {
-        val IN_ORDER:js.Dynamic = js.native
-        val PRE_ORDER:js.Dynamic = js.native
-        val POST_ORDER:js.Dynamic = js.native
-        val LEVEL_ORDER:js.Dynamic = js.native
+        val IN_ORDER:Double = js.native
+        val PRE_ORDER:Double = js.native
+        val POST_ORDER:Double = js.native
+        val LEVEL_ORDER:Double = js.native
     }
     @js.native
     object UnicodeBreakType extends js.Object {
-        val MANDATORY:js.Dynamic = js.native
-        val CARRIAGE_RETURN:js.Dynamic = js.native
-        val LINE_FEED:js.Dynamic = js.native
-        val COMBINING_MARK:js.Dynamic = js.native
-        val SURROGATE:js.Dynamic = js.native
-        val ZERO_WIDTH_SPACE:js.Dynamic = js.native
-        val INSEPARABLE:js.Dynamic = js.native
-        val NON_BREAKING_GLUE:js.Dynamic = js.native
-        val CONTINGENT:js.Dynamic = js.native
-        val SPACE:js.Dynamic = js.native
-        val AFTER:js.Dynamic = js.native
-        val BEFORE:js.Dynamic = js.native
-        val BEFORE_AND_AFTER:js.Dynamic = js.native
-        val HYPHEN:js.Dynamic = js.native
-        val NON_STARTER:js.Dynamic = js.native
-        val OPEN_PUNCTUATION:js.Dynamic = js.native
-        val CLOSE_PUNCTUATION:js.Dynamic = js.native
-        val QUOTATION:js.Dynamic = js.native
-        val EXCLAMATION:js.Dynamic = js.native
-        val IDEOGRAPHIC:js.Dynamic = js.native
-        val NUMERIC:js.Dynamic = js.native
-        val INFIX_SEPARATOR:js.Dynamic = js.native
-        val SYMBOL:js.Dynamic = js.native
-        val ALPHABETIC:js.Dynamic = js.native
-        val PREFIX:js.Dynamic = js.native
-        val POSTFIX:js.Dynamic = js.native
-        val COMPLEX_CONTEXT:js.Dynamic = js.native
-        val AMBIGUOUS:js.Dynamic = js.native
-        val UNKNOWN:js.Dynamic = js.native
-        val NEXT_LINE:js.Dynamic = js.native
-        val WORD_JOINER:js.Dynamic = js.native
-        val HANGUL_L_JAMO:js.Dynamic = js.native
-        val HANGUL_V_JAMO:js.Dynamic = js.native
-        val HANGUL_T_JAMO:js.Dynamic = js.native
-        val HANGUL_LV_SYLLABLE:js.Dynamic = js.native
-        val HANGUL_LVT_SYLLABLE:js.Dynamic = js.native
-        val CLOSE_PARANTHESIS:js.Dynamic = js.native
-        val CONDITIONAL_JAPANESE_STARTER:js.Dynamic = js.native
-        val HEBREW_LETTER:js.Dynamic = js.native
-        val REGIONAL_INDICATOR:js.Dynamic = js.native
+        val MANDATORY:Double = js.native
+        val CARRIAGE_RETURN:Double = js.native
+        val LINE_FEED:Double = js.native
+        val COMBINING_MARK:Double = js.native
+        val SURROGATE:Double = js.native
+        val ZERO_WIDTH_SPACE:Double = js.native
+        val INSEPARABLE:Double = js.native
+        val NON_BREAKING_GLUE:Double = js.native
+        val CONTINGENT:Double = js.native
+        val SPACE:Double = js.native
+        val AFTER:Double = js.native
+        val BEFORE:Double = js.native
+        val BEFORE_AND_AFTER:Double = js.native
+        val HYPHEN:Double = js.native
+        val NON_STARTER:Double = js.native
+        val OPEN_PUNCTUATION:Double = js.native
+        val CLOSE_PUNCTUATION:Double = js.native
+        val QUOTATION:Double = js.native
+        val EXCLAMATION:Double = js.native
+        val IDEOGRAPHIC:Double = js.native
+        val NUMERIC:Double = js.native
+        val INFIX_SEPARATOR:Double = js.native
+        val SYMBOL:Double = js.native
+        val ALPHABETIC:Double = js.native
+        val PREFIX:Double = js.native
+        val POSTFIX:Double = js.native
+        val COMPLEX_CONTEXT:Double = js.native
+        val AMBIGUOUS:Double = js.native
+        val UNKNOWN:Double = js.native
+        val NEXT_LINE:Double = js.native
+        val WORD_JOINER:Double = js.native
+        val HANGUL_L_JAMO:Double = js.native
+        val HANGUL_V_JAMO:Double = js.native
+        val HANGUL_T_JAMO:Double = js.native
+        val HANGUL_LV_SYLLABLE:Double = js.native
+        val HANGUL_LVT_SYLLABLE:Double = js.native
+        val CLOSE_PARANTHESIS:Double = js.native
+        val CONDITIONAL_JAPANESE_STARTER:Double = js.native
+        val HEBREW_LETTER:Double = js.native
+        val REGIONAL_INDICATOR:Double = js.native
     }
     @js.native
     object UnicodeScript extends js.Object {
-        val INVALID_CODE:js.Dynamic = js.native
-        val COMMON:js.Dynamic = js.native
-        val INHERITED:js.Dynamic = js.native
-        val ARABIC:js.Dynamic = js.native
-        val ARMENIAN:js.Dynamic = js.native
-        val BENGALI:js.Dynamic = js.native
-        val BOPOMOFO:js.Dynamic = js.native
-        val CHEROKEE:js.Dynamic = js.native
-        val COPTIC:js.Dynamic = js.native
-        val CYRILLIC:js.Dynamic = js.native
-        val DESERET:js.Dynamic = js.native
-        val DEVANAGARI:js.Dynamic = js.native
-        val ETHIOPIC:js.Dynamic = js.native
-        val GEORGIAN:js.Dynamic = js.native
-        val GOTHIC:js.Dynamic = js.native
-        val GREEK:js.Dynamic = js.native
-        val GUJARATI:js.Dynamic = js.native
-        val GURMUKHI:js.Dynamic = js.native
-        val HAN:js.Dynamic = js.native
-        val HANGUL:js.Dynamic = js.native
-        val HEBREW:js.Dynamic = js.native
-        val HIRAGANA:js.Dynamic = js.native
-        val KANNADA:js.Dynamic = js.native
-        val KATAKANA:js.Dynamic = js.native
-        val KHMER:js.Dynamic = js.native
-        val LAO:js.Dynamic = js.native
-        val LATIN:js.Dynamic = js.native
-        val MALAYALAM:js.Dynamic = js.native
-        val MONGOLIAN:js.Dynamic = js.native
-        val MYANMAR:js.Dynamic = js.native
-        val OGHAM:js.Dynamic = js.native
-        val OLD_ITALIC:js.Dynamic = js.native
-        val ORIYA:js.Dynamic = js.native
-        val RUNIC:js.Dynamic = js.native
-        val SINHALA:js.Dynamic = js.native
-        val SYRIAC:js.Dynamic = js.native
-        val TAMIL:js.Dynamic = js.native
-        val TELUGU:js.Dynamic = js.native
-        val THAANA:js.Dynamic = js.native
-        val THAI:js.Dynamic = js.native
-        val TIBETAN:js.Dynamic = js.native
-        val CANADIAN_ABORIGINAL:js.Dynamic = js.native
-        val YI:js.Dynamic = js.native
-        val TAGALOG:js.Dynamic = js.native
-        val HANUNOO:js.Dynamic = js.native
-        val BUHID:js.Dynamic = js.native
-        val TAGBANWA:js.Dynamic = js.native
-        val BRAILLE:js.Dynamic = js.native
-        val CYPRIOT:js.Dynamic = js.native
-        val LIMBU:js.Dynamic = js.native
-        val OSMANYA:js.Dynamic = js.native
-        val SHAVIAN:js.Dynamic = js.native
-        val LINEAR_B:js.Dynamic = js.native
-        val TAI_LE:js.Dynamic = js.native
-        val UGARITIC:js.Dynamic = js.native
-        val NEW_TAI_LUE:js.Dynamic = js.native
-        val BUGINESE:js.Dynamic = js.native
-        val GLAGOLITIC:js.Dynamic = js.native
-        val TIFINAGH:js.Dynamic = js.native
-        val SYLOTI_NAGRI:js.Dynamic = js.native
-        val OLD_PERSIAN:js.Dynamic = js.native
-        val KHAROSHTHI:js.Dynamic = js.native
-        val UNKNOWN:js.Dynamic = js.native
-        val BALINESE:js.Dynamic = js.native
-        val CUNEIFORM:js.Dynamic = js.native
-        val PHOENICIAN:js.Dynamic = js.native
-        val PHAGS_PA:js.Dynamic = js.native
-        val NKO:js.Dynamic = js.native
-        val KAYAH_LI:js.Dynamic = js.native
-        val LEPCHA:js.Dynamic = js.native
-        val REJANG:js.Dynamic = js.native
-        val SUNDANESE:js.Dynamic = js.native
-        val SAURASHTRA:js.Dynamic = js.native
-        val CHAM:js.Dynamic = js.native
-        val OL_CHIKI:js.Dynamic = js.native
-        val VAI:js.Dynamic = js.native
-        val CARIAN:js.Dynamic = js.native
-        val LYCIAN:js.Dynamic = js.native
-        val LYDIAN:js.Dynamic = js.native
-        val AVESTAN:js.Dynamic = js.native
-        val BAMUM:js.Dynamic = js.native
-        val EGYPTIAN_HIEROGLYPHS:js.Dynamic = js.native
-        val IMPERIAL_ARAMAIC:js.Dynamic = js.native
-        val INSCRIPTIONAL_PAHLAVI:js.Dynamic = js.native
-        val INSCRIPTIONAL_PARTHIAN:js.Dynamic = js.native
-        val JAVANESE:js.Dynamic = js.native
-        val KAITHI:js.Dynamic = js.native
-        val LISU:js.Dynamic = js.native
-        val MEETEI_MAYEK:js.Dynamic = js.native
-        val OLD_SOUTH_ARABIAN:js.Dynamic = js.native
-        val OLD_TURKIC:js.Dynamic = js.native
-        val SAMARITAN:js.Dynamic = js.native
-        val TAI_THAM:js.Dynamic = js.native
-        val TAI_VIET:js.Dynamic = js.native
-        val BATAK:js.Dynamic = js.native
-        val BRAHMI:js.Dynamic = js.native
-        val MANDAIC:js.Dynamic = js.native
-        val CHAKMA:js.Dynamic = js.native
-        val MEROITIC_CURSIVE:js.Dynamic = js.native
-        val MEROITIC_HIEROGLYPHS:js.Dynamic = js.native
-        val MIAO:js.Dynamic = js.native
-        val SHARADA:js.Dynamic = js.native
-        val SORA_SOMPENG:js.Dynamic = js.native
-        val TAKRI:js.Dynamic = js.native
-        val BASSA_VAH:js.Dynamic = js.native
-        val CAUCASIAN_ALBANIAN:js.Dynamic = js.native
-        val DUPLOYAN:js.Dynamic = js.native
-        val ELBASAN:js.Dynamic = js.native
-        val GRANTHA:js.Dynamic = js.native
-        val KHOJKI:js.Dynamic = js.native
-        val KHUDAWADI:js.Dynamic = js.native
-        val LINEAR_A:js.Dynamic = js.native
-        val MAHAJANI:js.Dynamic = js.native
-        val MANICHAEAN:js.Dynamic = js.native
-        val MENDE_KIKAKUI:js.Dynamic = js.native
-        val MODI:js.Dynamic = js.native
-        val MRO:js.Dynamic = js.native
-        val NABATAEAN:js.Dynamic = js.native
-        val OLD_NORTH_ARABIAN:js.Dynamic = js.native
-        val OLD_PERMIC:js.Dynamic = js.native
-        val PAHAWH_HMONG:js.Dynamic = js.native
-        val PALMYRENE:js.Dynamic = js.native
-        val PAU_CIN_HAU:js.Dynamic = js.native
-        val PSALTER_PAHLAVI:js.Dynamic = js.native
-        val SIDDHAM:js.Dynamic = js.native
-        val TIRHUTA:js.Dynamic = js.native
-        val WARANG_CITI:js.Dynamic = js.native
-        val AHOM:js.Dynamic = js.native
-        val ANATOLIAN_HIEROGLYPHS:js.Dynamic = js.native
-        val HATRAN:js.Dynamic = js.native
-        val MULTANI:js.Dynamic = js.native
-        val OLD_HUNGARIAN:js.Dynamic = js.native
-        val SIGNWRITING:js.Dynamic = js.native
+        val INVALID_CODE:Double = js.native
+        val COMMON:Double = js.native
+        val INHERITED:Double = js.native
+        val ARABIC:Double = js.native
+        val ARMENIAN:Double = js.native
+        val BENGALI:Double = js.native
+        val BOPOMOFO:Double = js.native
+        val CHEROKEE:Double = js.native
+        val COPTIC:Double = js.native
+        val CYRILLIC:Double = js.native
+        val DESERET:Double = js.native
+        val DEVANAGARI:Double = js.native
+        val ETHIOPIC:Double = js.native
+        val GEORGIAN:Double = js.native
+        val GOTHIC:Double = js.native
+        val GREEK:Double = js.native
+        val GUJARATI:Double = js.native
+        val GURMUKHI:Double = js.native
+        val HAN:Double = js.native
+        val HANGUL:Double = js.native
+        val HEBREW:Double = js.native
+        val HIRAGANA:Double = js.native
+        val KANNADA:Double = js.native
+        val KATAKANA:Double = js.native
+        val KHMER:Double = js.native
+        val LAO:Double = js.native
+        val LATIN:Double = js.native
+        val MALAYALAM:Double = js.native
+        val MONGOLIAN:Double = js.native
+        val MYANMAR:Double = js.native
+        val OGHAM:Double = js.native
+        val OLD_ITALIC:Double = js.native
+        val ORIYA:Double = js.native
+        val RUNIC:Double = js.native
+        val SINHALA:Double = js.native
+        val SYRIAC:Double = js.native
+        val TAMIL:Double = js.native
+        val TELUGU:Double = js.native
+        val THAANA:Double = js.native
+        val THAI:Double = js.native
+        val TIBETAN:Double = js.native
+        val CANADIAN_ABORIGINAL:Double = js.native
+        val YI:Double = js.native
+        val TAGALOG:Double = js.native
+        val HANUNOO:Double = js.native
+        val BUHID:Double = js.native
+        val TAGBANWA:Double = js.native
+        val BRAILLE:Double = js.native
+        val CYPRIOT:Double = js.native
+        val LIMBU:Double = js.native
+        val OSMANYA:Double = js.native
+        val SHAVIAN:Double = js.native
+        val LINEAR_B:Double = js.native
+        val TAI_LE:Double = js.native
+        val UGARITIC:Double = js.native
+        val NEW_TAI_LUE:Double = js.native
+        val BUGINESE:Double = js.native
+        val GLAGOLITIC:Double = js.native
+        val TIFINAGH:Double = js.native
+        val SYLOTI_NAGRI:Double = js.native
+        val OLD_PERSIAN:Double = js.native
+        val KHAROSHTHI:Double = js.native
+        val UNKNOWN:Double = js.native
+        val BALINESE:Double = js.native
+        val CUNEIFORM:Double = js.native
+        val PHOENICIAN:Double = js.native
+        val PHAGS_PA:Double = js.native
+        val NKO:Double = js.native
+        val KAYAH_LI:Double = js.native
+        val LEPCHA:Double = js.native
+        val REJANG:Double = js.native
+        val SUNDANESE:Double = js.native
+        val SAURASHTRA:Double = js.native
+        val CHAM:Double = js.native
+        val OL_CHIKI:Double = js.native
+        val VAI:Double = js.native
+        val CARIAN:Double = js.native
+        val LYCIAN:Double = js.native
+        val LYDIAN:Double = js.native
+        val AVESTAN:Double = js.native
+        val BAMUM:Double = js.native
+        val EGYPTIAN_HIEROGLYPHS:Double = js.native
+        val IMPERIAL_ARAMAIC:Double = js.native
+        val INSCRIPTIONAL_PAHLAVI:Double = js.native
+        val INSCRIPTIONAL_PARTHIAN:Double = js.native
+        val JAVANESE:Double = js.native
+        val KAITHI:Double = js.native
+        val LISU:Double = js.native
+        val MEETEI_MAYEK:Double = js.native
+        val OLD_SOUTH_ARABIAN:Double = js.native
+        val OLD_TURKIC:Double = js.native
+        val SAMARITAN:Double = js.native
+        val TAI_THAM:Double = js.native
+        val TAI_VIET:Double = js.native
+        val BATAK:Double = js.native
+        val BRAHMI:Double = js.native
+        val MANDAIC:Double = js.native
+        val CHAKMA:Double = js.native
+        val MEROITIC_CURSIVE:Double = js.native
+        val MEROITIC_HIEROGLYPHS:Double = js.native
+        val MIAO:Double = js.native
+        val SHARADA:Double = js.native
+        val SORA_SOMPENG:Double = js.native
+        val TAKRI:Double = js.native
+        val BASSA_VAH:Double = js.native
+        val CAUCASIAN_ALBANIAN:Double = js.native
+        val DUPLOYAN:Double = js.native
+        val ELBASAN:Double = js.native
+        val GRANTHA:Double = js.native
+        val KHOJKI:Double = js.native
+        val KHUDAWADI:Double = js.native
+        val LINEAR_A:Double = js.native
+        val MAHAJANI:Double = js.native
+        val MANICHAEAN:Double = js.native
+        val MENDE_KIKAKUI:Double = js.native
+        val MODI:Double = js.native
+        val MRO:Double = js.native
+        val NABATAEAN:Double = js.native
+        val OLD_NORTH_ARABIAN:Double = js.native
+        val OLD_PERMIC:Double = js.native
+        val PAHAWH_HMONG:Double = js.native
+        val PALMYRENE:Double = js.native
+        val PAU_CIN_HAU:Double = js.native
+        val PSALTER_PAHLAVI:Double = js.native
+        val SIDDHAM:Double = js.native
+        val TIRHUTA:Double = js.native
+        val WARANG_CITI:Double = js.native
+        val AHOM:Double = js.native
+        val ANATOLIAN_HIEROGLYPHS:Double = js.native
+        val HATRAN:Double = js.native
+        val MULTANI:Double = js.native
+        val OLD_HUNGARIAN:Double = js.native
+        val SIGNWRITING:Double = js.native
     }
     @js.native
     object UnicodeType extends js.Object {
-        val CONTROL:js.Dynamic = js.native
-        val FORMAT:js.Dynamic = js.native
-        val UNASSIGNED:js.Dynamic = js.native
-        val PRIVATE_USE:js.Dynamic = js.native
-        val SURROGATE:js.Dynamic = js.native
-        val LOWERCASE_LETTER:js.Dynamic = js.native
-        val MODIFIER_LETTER:js.Dynamic = js.native
-        val OTHER_LETTER:js.Dynamic = js.native
-        val TITLECASE_LETTER:js.Dynamic = js.native
-        val UPPERCASE_LETTER:js.Dynamic = js.native
-        val SPACING_MARK:js.Dynamic = js.native
-        val ENCLOSING_MARK:js.Dynamic = js.native
-        val NON_SPACING_MARK:js.Dynamic = js.native
-        val DECIMAL_NUMBER:js.Dynamic = js.native
-        val LETTER_NUMBER:js.Dynamic = js.native
-        val OTHER_NUMBER:js.Dynamic = js.native
-        val CONNECT_PUNCTUATION:js.Dynamic = js.native
-        val DASH_PUNCTUATION:js.Dynamic = js.native
-        val CLOSE_PUNCTUATION:js.Dynamic = js.native
-        val FINAL_PUNCTUATION:js.Dynamic = js.native
-        val INITIAL_PUNCTUATION:js.Dynamic = js.native
-        val OTHER_PUNCTUATION:js.Dynamic = js.native
-        val OPEN_PUNCTUATION:js.Dynamic = js.native
-        val CURRENCY_SYMBOL:js.Dynamic = js.native
-        val MODIFIER_SYMBOL:js.Dynamic = js.native
-        val MATH_SYMBOL:js.Dynamic = js.native
-        val OTHER_SYMBOL:js.Dynamic = js.native
-        val LINE_SEPARATOR:js.Dynamic = js.native
-        val PARAGRAPH_SEPARATOR:js.Dynamic = js.native
-        val SPACE_SEPARATOR:js.Dynamic = js.native
+        val CONTROL:Double = js.native
+        val FORMAT:Double = js.native
+        val UNASSIGNED:Double = js.native
+        val PRIVATE_USE:Double = js.native
+        val SURROGATE:Double = js.native
+        val LOWERCASE_LETTER:Double = js.native
+        val MODIFIER_LETTER:Double = js.native
+        val OTHER_LETTER:Double = js.native
+        val TITLECASE_LETTER:Double = js.native
+        val UPPERCASE_LETTER:Double = js.native
+        val SPACING_MARK:Double = js.native
+        val ENCLOSING_MARK:Double = js.native
+        val NON_SPACING_MARK:Double = js.native
+        val DECIMAL_NUMBER:Double = js.native
+        val LETTER_NUMBER:Double = js.native
+        val OTHER_NUMBER:Double = js.native
+        val CONNECT_PUNCTUATION:Double = js.native
+        val DASH_PUNCTUATION:Double = js.native
+        val CLOSE_PUNCTUATION:Double = js.native
+        val FINAL_PUNCTUATION:Double = js.native
+        val INITIAL_PUNCTUATION:Double = js.native
+        val OTHER_PUNCTUATION:Double = js.native
+        val OPEN_PUNCTUATION:Double = js.native
+        val CURRENCY_SYMBOL:Double = js.native
+        val MODIFIER_SYMBOL:Double = js.native
+        val MATH_SYMBOL:Double = js.native
+        val OTHER_SYMBOL:Double = js.native
+        val LINE_SEPARATOR:Double = js.native
+        val PARAGRAPH_SEPARATOR:Double = js.native
+        val SPACE_SEPARATOR:Double = js.native
     }
     @js.native
     object UserDirectory extends js.Object {
-        val DIRECTORY_DESKTOP:js.Dynamic = js.native
-        val DIRECTORY_DOCUMENTS:js.Dynamic = js.native
-        val DIRECTORY_DOWNLOAD:js.Dynamic = js.native
-        val DIRECTORY_MUSIC:js.Dynamic = js.native
-        val DIRECTORY_PICTURES:js.Dynamic = js.native
-        val DIRECTORY_PUBLIC_SHARE:js.Dynamic = js.native
-        val DIRECTORY_TEMPLATES:js.Dynamic = js.native
-        val DIRECTORY_VIDEOS:js.Dynamic = js.native
-        val N_DIRECTORIES:js.Dynamic = js.native
+        val DIRECTORY_DESKTOP:Double = js.native
+        val DIRECTORY_DOCUMENTS:Double = js.native
+        val DIRECTORY_DOWNLOAD:Double = js.native
+        val DIRECTORY_MUSIC:Double = js.native
+        val DIRECTORY_PICTURES:Double = js.native
+        val DIRECTORY_PUBLIC_SHARE:Double = js.native
+        val DIRECTORY_TEMPLATES:Double = js.native
+        val DIRECTORY_VIDEOS:Double = js.native
+        val N_DIRECTORIES:Double = js.native
     }
     @js.native
     object VariantClass extends js.Object {
-        val BOOLEAN:js.Dynamic = js.native
-        val BYTE:js.Dynamic = js.native
-        val INT16:js.Dynamic = js.native
-        val UINT16:js.Dynamic = js.native
-        val INT32:js.Dynamic = js.native
-        val UINT32:js.Dynamic = js.native
-        val INT64:js.Dynamic = js.native
-        val UINT64:js.Dynamic = js.native
-        val HANDLE:js.Dynamic = js.native
-        val DOUBLE:js.Dynamic = js.native
-        val STRING:js.Dynamic = js.native
-        val OBJECT_PATH:js.Dynamic = js.native
-        val SIGNATURE:js.Dynamic = js.native
-        val VARIANT:js.Dynamic = js.native
-        val MAYBE:js.Dynamic = js.native
-        val ARRAY:js.Dynamic = js.native
-        val TUPLE:js.Dynamic = js.native
-        val DICT_ENTRY:js.Dynamic = js.native
+        val BOOLEAN:Double = js.native
+        val BYTE:Double = js.native
+        val INT16:Double = js.native
+        val UINT16:Double = js.native
+        val INT32:Double = js.native
+        val UINT32:Double = js.native
+        val INT64:Double = js.native
+        val UINT64:Double = js.native
+        val HANDLE:Double = js.native
+        val DOUBLE:Double = js.native
+        val STRING:Double = js.native
+        val OBJECT_PATH:Double = js.native
+        val SIGNATURE:Double = js.native
+        val VARIANT:Double = js.native
+        val MAYBE:Double = js.native
+        val ARRAY:Double = js.native
+        val TUPLE:Double = js.native
+        val DICT_ENTRY:Double = js.native
     }
     @js.native
     object VariantParseError extends js.Object {
-        val FAILED:js.Dynamic = js.native
-        val BASIC_TYPE_EXPECTED:js.Dynamic = js.native
-        val CANNOT_INFER_TYPE:js.Dynamic = js.native
-        val DEFINITE_TYPE_EXPECTED:js.Dynamic = js.native
-        val INPUT_NOT_AT_END:js.Dynamic = js.native
-        val INVALID_CHARACTER:js.Dynamic = js.native
-        val INVALID_FORMAT_STRING:js.Dynamic = js.native
-        val INVALID_OBJECT_PATH:js.Dynamic = js.native
-        val INVALID_SIGNATURE:js.Dynamic = js.native
-        val INVALID_TYPE_STRING:js.Dynamic = js.native
-        val NO_COMMON_TYPE:js.Dynamic = js.native
-        val NUMBER_OUT_OF_RANGE:js.Dynamic = js.native
-        val NUMBER_TOO_BIG:js.Dynamic = js.native
-        val TYPE_ERROR:js.Dynamic = js.native
-        val UNEXPECTED_TOKEN:js.Dynamic = js.native
-        val UNKNOWN_KEYWORD:js.Dynamic = js.native
-        val UNTERMINATED_STRING_CONSTANT:js.Dynamic = js.native
-        val VALUE_EXPECTED:js.Dynamic = js.native
+        val FAILED:Double = js.native
+        val BASIC_TYPE_EXPECTED:Double = js.native
+        val CANNOT_INFER_TYPE:Double = js.native
+        val DEFINITE_TYPE_EXPECTED:Double = js.native
+        val INPUT_NOT_AT_END:Double = js.native
+        val INVALID_CHARACTER:Double = js.native
+        val INVALID_FORMAT_STRING:Double = js.native
+        val INVALID_OBJECT_PATH:Double = js.native
+        val INVALID_SIGNATURE:Double = js.native
+        val INVALID_TYPE_STRING:Double = js.native
+        val NO_COMMON_TYPE:Double = js.native
+        val NUMBER_OUT_OF_RANGE:Double = js.native
+        val NUMBER_TOO_BIG:Double = js.native
+        val TYPE_ERROR:Double = js.native
+        val UNEXPECTED_TOKEN:Double = js.native
+        val UNKNOWN_KEYWORD:Double = js.native
+        val UNTERMINATED_STRING_CONSTANT:Double = js.native
+        val VALUE_EXPECTED:Double = js.native
     }
     @js.native
     object AsciiType extends js.Object {
-        val ALNUM:js.Dynamic = js.native
-        val ALPHA:js.Dynamic = js.native
-        val CNTRL:js.Dynamic = js.native
-        val DIGIT:js.Dynamic = js.native
-        val GRAPH:js.Dynamic = js.native
-        val LOWER:js.Dynamic = js.native
-        val PRINT:js.Dynamic = js.native
-        val PUNCT:js.Dynamic = js.native
-        val SPACE:js.Dynamic = js.native
-        val UPPER:js.Dynamic = js.native
-        val XDIGIT:js.Dynamic = js.native
+        val ALNUM:Double = js.native
+        val ALPHA:Double = js.native
+        val CNTRL:Double = js.native
+        val DIGIT:Double = js.native
+        val GRAPH:Double = js.native
+        val LOWER:Double = js.native
+        val PRINT:Double = js.native
+        val PUNCT:Double = js.native
+        val SPACE:Double = js.native
+        val UPPER:Double = js.native
+        val XDIGIT:Double = js.native
     }
     @js.native
     object FileTest extends js.Object {
-        val IS_REGULAR:js.Dynamic = js.native
-        val IS_SYMLINK:js.Dynamic = js.native
-        val IS_DIR:js.Dynamic = js.native
-        val IS_EXECUTABLE:js.Dynamic = js.native
-        val EXISTS:js.Dynamic = js.native
+        val IS_REGULAR:Double = js.native
+        val IS_SYMLINK:Double = js.native
+        val IS_DIR:Double = js.native
+        val IS_EXECUTABLE:Double = js.native
+        val EXISTS:Double = js.native
     }
     @js.native
     object FormatSizeFlags extends js.Object {
-        val DEFAULT:js.Dynamic = js.native
-        val LONG_FORMAT:js.Dynamic = js.native
-        val IEC_UNITS:js.Dynamic = js.native
+        val DEFAULT:Double = js.native
+        val LONG_FORMAT:Double = js.native
+        val IEC_UNITS:Double = js.native
     }
     @js.native
     object HookFlagMask extends js.Object {
-        val ACTIVE:js.Dynamic = js.native
-        val IN_CALL:js.Dynamic = js.native
-        val MASK:js.Dynamic = js.native
+        val ACTIVE:Double = js.native
+        val IN_CALL:Double = js.native
+        val MASK:Double = js.native
     }
     @js.native
     object IOCondition extends js.Object {
-        val IN:js.Dynamic = js.native
-        val OUT:js.Dynamic = js.native
-        val PRI:js.Dynamic = js.native
-        val ERR:js.Dynamic = js.native
-        val HUP:js.Dynamic = js.native
-        val NVAL:js.Dynamic = js.native
+        val IN:Double = js.native
+        val OUT:Double = js.native
+        val PRI:Double = js.native
+        val ERR:Double = js.native
+        val HUP:Double = js.native
+        val NVAL:Double = js.native
     }
     @js.native
     object IOFlags extends js.Object {
-        val APPEND:js.Dynamic = js.native
-        val NONBLOCK:js.Dynamic = js.native
-        val IS_READABLE:js.Dynamic = js.native
-        val IS_WRITABLE:js.Dynamic = js.native
-        val IS_WRITEABLE:js.Dynamic = js.native
-        val IS_SEEKABLE:js.Dynamic = js.native
-        val MASK:js.Dynamic = js.native
-        val GET_MASK:js.Dynamic = js.native
-        val SET_MASK:js.Dynamic = js.native
+        val APPEND:Double = js.native
+        val NONBLOCK:Double = js.native
+        val IS_READABLE:Double = js.native
+        val IS_WRITABLE:Double = js.native
+        val IS_WRITEABLE:Double = js.native
+        val IS_SEEKABLE:Double = js.native
+        val MASK:Double = js.native
+        val GET_MASK:Double = js.native
+        val SET_MASK:Double = js.native
     }
     @js.native
     object KeyFileFlags extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val KEEP_COMMENTS:js.Dynamic = js.native
-        val KEEP_TRANSLATIONS:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val KEEP_COMMENTS:Double = js.native
+        val KEEP_TRANSLATIONS:Double = js.native
     }
     @js.native
     object LogLevelFlags extends js.Object {
-        val FLAG_RECURSION:js.Dynamic = js.native
-        val FLAG_FATAL:js.Dynamic = js.native
-        val LEVEL_ERROR:js.Dynamic = js.native
-        val LEVEL_CRITICAL:js.Dynamic = js.native
-        val LEVEL_WARNING:js.Dynamic = js.native
-        val LEVEL_MESSAGE:js.Dynamic = js.native
-        val LEVEL_INFO:js.Dynamic = js.native
-        val LEVEL_DEBUG:js.Dynamic = js.native
-        val LEVEL_MASK:js.Dynamic = js.native
+        val FLAG_RECURSION:Double = js.native
+        val FLAG_FATAL:Double = js.native
+        val LEVEL_ERROR:Double = js.native
+        val LEVEL_CRITICAL:Double = js.native
+        val LEVEL_WARNING:Double = js.native
+        val LEVEL_MESSAGE:Double = js.native
+        val LEVEL_INFO:Double = js.native
+        val LEVEL_DEBUG:Double = js.native
+        val LEVEL_MASK:Double = js.native
     }
     @js.native
     object MarkupCollectType extends js.Object {
-        val INVALID:js.Dynamic = js.native
-        val STRING:js.Dynamic = js.native
-        val STRDUP:js.Dynamic = js.native
-        val BOOLEAN:js.Dynamic = js.native
-        val TRISTATE:js.Dynamic = js.native
-        val OPTIONAL:js.Dynamic = js.native
+        val INVALID:Double = js.native
+        val STRING:Double = js.native
+        val STRDUP:Double = js.native
+        val BOOLEAN:Double = js.native
+        val TRISTATE:Double = js.native
+        val OPTIONAL:Double = js.native
     }
     @js.native
     object MarkupParseFlags extends js.Object {
-        val DO_NOT_USE_THIS_UNSUPPORTED_FLAG:js.Dynamic = js.native
-        val TREAT_CDATA_AS_TEXT:js.Dynamic = js.native
-        val PREFIX_ERROR_POSITION:js.Dynamic = js.native
-        val IGNORE_QUALIFIED:js.Dynamic = js.native
+        val DO_NOT_USE_THIS_UNSUPPORTED_FLAG:Double = js.native
+        val TREAT_CDATA_AS_TEXT:Double = js.native
+        val PREFIX_ERROR_POSITION:Double = js.native
+        val IGNORE_QUALIFIED:Double = js.native
     }
     @js.native
     object OptionFlags extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val HIDDEN:js.Dynamic = js.native
-        val IN_MAIN:js.Dynamic = js.native
-        val REVERSE:js.Dynamic = js.native
-        val NO_ARG:js.Dynamic = js.native
-        val FILENAME:js.Dynamic = js.native
-        val OPTIONAL_ARG:js.Dynamic = js.native
-        val NOALIAS:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val HIDDEN:Double = js.native
+        val IN_MAIN:Double = js.native
+        val REVERSE:Double = js.native
+        val NO_ARG:Double = js.native
+        val FILENAME:Double = js.native
+        val OPTIONAL_ARG:Double = js.native
+        val NOALIAS:Double = js.native
     }
     @js.native
     object RegexCompileFlags extends js.Object {
-        val CASELESS:js.Dynamic = js.native
-        val MULTILINE:js.Dynamic = js.native
-        val DOTALL:js.Dynamic = js.native
-        val EXTENDED:js.Dynamic = js.native
-        val ANCHORED:js.Dynamic = js.native
-        val DOLLAR_ENDONLY:js.Dynamic = js.native
-        val UNGREEDY:js.Dynamic = js.native
-        val RAW:js.Dynamic = js.native
-        val NO_AUTO_CAPTURE:js.Dynamic = js.native
-        val OPTIMIZE:js.Dynamic = js.native
-        val FIRSTLINE:js.Dynamic = js.native
-        val DUPNAMES:js.Dynamic = js.native
-        val NEWLINE_CR:js.Dynamic = js.native
-        val NEWLINE_LF:js.Dynamic = js.native
-        val NEWLINE_CRLF:js.Dynamic = js.native
-        val NEWLINE_ANYCRLF:js.Dynamic = js.native
-        val BSR_ANYCRLF:js.Dynamic = js.native
-        val JAVASCRIPT_COMPAT:js.Dynamic = js.native
+        val CASELESS:Double = js.native
+        val MULTILINE:Double = js.native
+        val DOTALL:Double = js.native
+        val EXTENDED:Double = js.native
+        val ANCHORED:Double = js.native
+        val DOLLAR_ENDONLY:Double = js.native
+        val UNGREEDY:Double = js.native
+        val RAW:Double = js.native
+        val NO_AUTO_CAPTURE:Double = js.native
+        val OPTIMIZE:Double = js.native
+        val FIRSTLINE:Double = js.native
+        val DUPNAMES:Double = js.native
+        val NEWLINE_CR:Double = js.native
+        val NEWLINE_LF:Double = js.native
+        val NEWLINE_CRLF:Double = js.native
+        val NEWLINE_ANYCRLF:Double = js.native
+        val BSR_ANYCRLF:Double = js.native
+        val JAVASCRIPT_COMPAT:Double = js.native
     }
     @js.native
     object RegexMatchFlags extends js.Object {
-        val ANCHORED:js.Dynamic = js.native
-        val NOTBOL:js.Dynamic = js.native
-        val NOTEOL:js.Dynamic = js.native
-        val NOTEMPTY:js.Dynamic = js.native
-        val PARTIAL:js.Dynamic = js.native
-        val NEWLINE_CR:js.Dynamic = js.native
-        val NEWLINE_LF:js.Dynamic = js.native
-        val NEWLINE_CRLF:js.Dynamic = js.native
-        val NEWLINE_ANY:js.Dynamic = js.native
-        val NEWLINE_ANYCRLF:js.Dynamic = js.native
-        val BSR_ANYCRLF:js.Dynamic = js.native
-        val BSR_ANY:js.Dynamic = js.native
-        val PARTIAL_SOFT:js.Dynamic = js.native
-        val PARTIAL_HARD:js.Dynamic = js.native
-        val NOTEMPTY_ATSTART:js.Dynamic = js.native
+        val ANCHORED:Double = js.native
+        val NOTBOL:Double = js.native
+        val NOTEOL:Double = js.native
+        val NOTEMPTY:Double = js.native
+        val PARTIAL:Double = js.native
+        val NEWLINE_CR:Double = js.native
+        val NEWLINE_LF:Double = js.native
+        val NEWLINE_CRLF:Double = js.native
+        val NEWLINE_ANY:Double = js.native
+        val NEWLINE_ANYCRLF:Double = js.native
+        val BSR_ANYCRLF:Double = js.native
+        val BSR_ANY:Double = js.native
+        val PARTIAL_SOFT:Double = js.native
+        val PARTIAL_HARD:Double = js.native
+        val NOTEMPTY_ATSTART:Double = js.native
     }
     @js.native
     object SpawnFlags extends js.Object {
-        val DEFAULT:js.Dynamic = js.native
-        val LEAVE_DESCRIPTORS_OPEN:js.Dynamic = js.native
-        val DO_NOT_REAP_CHILD:js.Dynamic = js.native
-        val SEARCH_PATH:js.Dynamic = js.native
-        val STDOUT_TO_DEV_NULL:js.Dynamic = js.native
-        val STDERR_TO_DEV_NULL:js.Dynamic = js.native
-        val CHILD_INHERITS_STDIN:js.Dynamic = js.native
-        val FILE_AND_ARGV_ZERO:js.Dynamic = js.native
-        val SEARCH_PATH_FROM_ENVP:js.Dynamic = js.native
-        val CLOEXEC_PIPES:js.Dynamic = js.native
+        val DEFAULT:Double = js.native
+        val LEAVE_DESCRIPTORS_OPEN:Double = js.native
+        val DO_NOT_REAP_CHILD:Double = js.native
+        val SEARCH_PATH:Double = js.native
+        val STDOUT_TO_DEV_NULL:Double = js.native
+        val STDERR_TO_DEV_NULL:Double = js.native
+        val CHILD_INHERITS_STDIN:Double = js.native
+        val FILE_AND_ARGV_ZERO:Double = js.native
+        val SEARCH_PATH_FROM_ENVP:Double = js.native
+        val CLOEXEC_PIPES:Double = js.native
     }
     @js.native
     object TestSubprocessFlags extends js.Object {
-        val STDIN:js.Dynamic = js.native
-        val STDOUT:js.Dynamic = js.native
-        val STDERR:js.Dynamic = js.native
+        val STDIN:Double = js.native
+        val STDOUT:Double = js.native
+        val STDERR:Double = js.native
     }
     @js.native
     object TestTrapFlags extends js.Object {
-        val SILENCE_STDOUT:js.Dynamic = js.native
-        val SILENCE_STDERR:js.Dynamic = js.native
-        val INHERIT_STDIN:js.Dynamic = js.native
+        val SILENCE_STDOUT:Double = js.native
+        val SILENCE_STDERR:Double = js.native
+        val INHERIT_STDIN:Double = js.native
     }
     @js.native
     object TraverseFlags extends js.Object {
-        val LEAVES:js.Dynamic = js.native
-        val NON_LEAVES:js.Dynamic = js.native
-        val ALL:js.Dynamic = js.native
-        val MASK:js.Dynamic = js.native
-        val LEAFS:js.Dynamic = js.native
-        val NON_LEAFS:js.Dynamic = js.native
+        val LEAVES:Double = js.native
+        val NON_LEAVES:Double = js.native
+        val ALL:Double = js.native
+        val MASK:Double = js.native
+        val LEAFS:Double = js.native
+        val NON_LEAFS:Double = js.native
     }
 }

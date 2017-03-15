@@ -17,5 +17,4 @@ bin/example
 
 ## stuff
 
-println() doesn't work. use global.print()
-
+Scala enums are objects, c enums are longs. As compromise, gir enums are objects that have readonly numbers as properties, sort of like the way you fake enums in java. 

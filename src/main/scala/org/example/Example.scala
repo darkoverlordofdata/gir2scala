@@ -70,15 +70,15 @@ class Example() {
     }
     
     def data2Config(data:String): Config = {
-        val config = new Config()
-        if (data != null && data != "null") {
-            val p = g.JSON.parse(data)
-            config.appName = p.appName.asInstanceOf[String]
-            config.base = p.base.asInstanceOf[String]
-            config.url = p.url.asInstanceOf[String]
-            config.darkTheme = p.darkTheme.asInstanceOf[Boolean]
-            config.themeName = p.themeName.asInstanceOf[String]
-        }
+        val config = new Config(data)
+        // if (data != null && data != "null") {
+        //     val p = g.JSON.parse(data)
+        //     config.appName = p.appName.asInstanceOf[String]
+        //     config.base = p.base.asInstanceOf[String]
+        //     config.url = p.url.asInstanceOf[String]
+        //     config.darkTheme = p.darkTheme.asInstanceOf[Boolean]
+        //     config.themeName = p.themeName.asInstanceOf[String]
+        // }
         return config        
 
     }

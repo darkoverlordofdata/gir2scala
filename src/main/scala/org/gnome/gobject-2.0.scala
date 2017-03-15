@@ -54,10 +54,10 @@ object GObject extends js.Object {
     def cclosure_marshal_VOID__VOID(closure: Any, return_value: Any, n_param_values: Any, param_values: Any, invocation_hint: Object, marshal_data: Object):Unit = js.native
     def cclosure_marshal_generic(closure: Any, return_gvalue: Any, n_param_values: Any, param_values: Any, invocation_hint: Object, marshal_data: Object):Unit = js.native
     def cclosure_new(callback_func: Any, user_data: Object, destroy_data: Any):Any = js.native
-    def cclosure_new_object(callback_func: Any, object0: Any):Any = js.native
-    def cclosure_new_object_swap(callback_func: Any, object0: Any):Any = js.native
+    def cclosure_new_object(callback_func: Any, object0: Object):Any = js.native
+    def cclosure_new_object_swap(callback_func: Any, object0: Object):Any = js.native
     def cclosure_new_swap(callback_func: Any, user_data: Object, destroy_data: Any):Any = js.native
-    def clear_object(object_ptr: Any):Unit = js.native
+    def clear_object(object_ptr: Object):Unit = js.native
     def enum_complete_type_info(g_enum_type0: Any, info: Any, const_values: Any):Unit = js.native
     def enum_get_value(enum_class: Any, value: Any):Any = js.native
     def enum_get_value_by_name(enum_class: Any, name: String):Any = js.native
@@ -69,76 +69,76 @@ object GObject extends js.Object {
     def flags_get_value_by_nick(flags_class: Any, nick: String):Any = js.native
     def flags_register_static(name: String, const_static_values: Any):Any = js.native
     def gtype_get_type():Any = js.native
-    def param_spec_Boolean(name: String, nick: String, blurb: String, default_value: Boolean, flags: Any):Any = js.native
-    def param_spec_boxed(name: String, nick: String, blurb: String, boxed_type0: Any, flags: Any):Any = js.native
-    def param_spec_char(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Any):Any = js.native
-    def param_spec_double(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Any):Any = js.native
-    def param_spec_enum(name: String, nick: String, blurb: String, enum_type0: Any, default_value: Any, flags: Any):Any = js.native
-    def param_spec_flags(name: String, nick: String, blurb: String, flags_type0: Any, default_value: Any, flags: Any):Any = js.native
-    def param_spec_float(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Any):Any = js.native
-    def param_spec_gtype(name: String, nick: String, blurb: String, is_a_type0: Any, flags: Any):Any = js.native
-    def param_spec_int(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Any):Any = js.native
-    def param_spec_int64(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Any):Any = js.native
-    def param_spec_long(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Any):Any = js.native
-    def param_spec_object(name: String, nick: String, blurb: String, object_type0: Any, flags: Any):Any = js.native
-    def param_spec_override(name: String, overridden: Any):Any = js.native
-    def param_spec_param(name: String, nick: String, blurb: String, param_type0: Any, flags: Any):Any = js.native
-    def param_spec_pointer(name: String, nick: String, blurb: String, flags: Any):Any = js.native
+    def param_spec_Boolean(name: String, nick: String, blurb: String, default_value: Boolean, flags: Double):ParamSpec = js.native
+    def param_spec_boxed(name: String, nick: String, blurb: String, boxed_type0: Any, flags: Double):ParamSpec = js.native
+    def param_spec_char(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Double):ParamSpec = js.native
+    def param_spec_double(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Double):ParamSpec = js.native
+    def param_spec_enum(name: String, nick: String, blurb: String, enum_type0: Any, default_value: Any, flags: Double):ParamSpec = js.native
+    def param_spec_flags(name: String, nick: String, blurb: String, flags_type0: Any, default_value: Any, flags: Double):ParamSpec = js.native
+    def param_spec_float(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Double):ParamSpec = js.native
+    def param_spec_gtype(name: String, nick: String, blurb: String, is_a_type0: Any, flags: Double):ParamSpec = js.native
+    def param_spec_int(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Double):ParamSpec = js.native
+    def param_spec_int64(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Double):ParamSpec = js.native
+    def param_spec_long(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Double):ParamSpec = js.native
+    def param_spec_object(name: String, nick: String, blurb: String, object_type0: Any, flags: Double):ParamSpec = js.native
+    def param_spec_override(name: String, overridden: ParamSpec):ParamSpec = js.native
+    def param_spec_param(name: String, nick: String, blurb: String, param_type0: Any, flags: Double):ParamSpec = js.native
+    def param_spec_pointer(name: String, nick: String, blurb: String, flags: Double):ParamSpec = js.native
     def param_spec_pool_new(type_prefixing: Boolean):Any = js.native
-    def param_spec_string(name: String, nick: String, blurb: String, default_value: String, flags: Any):Any = js.native
-    def param_spec_uchar(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Any):Any = js.native
-    def param_spec_uint(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Any):Any = js.native
-    def param_spec_uint64(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Any):Any = js.native
-    def param_spec_ulong(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Any):Any = js.native
-    def param_spec_unichar(name: String, nick: String, blurb: String, default_value: Any, flags: Any):Any = js.native
-    def param_spec_value_array(name: String, nick: String, blurb: String, element_spec: Any, flags: Any):Any = js.native
-    def param_spec_variant(name: String, nick: String, blurb: String, type0: Any, default_value: Any, flags: Any):Any = js.native
+    def param_spec_string(name: String, nick: String, blurb: String, default_value: String, flags: Double):ParamSpec = js.native
+    def param_spec_uchar(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Double):ParamSpec = js.native
+    def param_spec_uint(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Double):ParamSpec = js.native
+    def param_spec_uint64(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Double):ParamSpec = js.native
+    def param_spec_ulong(name: String, nick: String, blurb: String, minimum: Any, maximum: Any, default_value: Any, flags: Double):ParamSpec = js.native
+    def param_spec_unichar(name: String, nick: String, blurb: String, default_value: Any, flags: Double):ParamSpec = js.native
+    def param_spec_value_array(name: String, nick: String, blurb: String, element_spec: ParamSpec, flags: Double):ParamSpec = js.native
+    def param_spec_variant(name: String, nick: String, blurb: String, type0: Any, default_value: Any, flags: Double):ParamSpec = js.native
     def param_type_register_static(name: String, pspec_info: Any):Any = js.native
-    def param_value_convert(pspec: Any, src_value: Any, dest_value: Any, strict_validation: Boolean):Boolean = js.native
-    def param_value_defaults(pspec: Any, value: Any):Boolean = js.native
-    def param_value_set_default(pspec: Any, value: Any):Unit = js.native
-    def param_value_validate(pspec: Any, value: Any):Boolean = js.native
-    def param_values_cmp(pspec: Any, value1: Any, value2: Any):Any = js.native
+    def param_value_convert(pspec: ParamSpec, src_value: Any, dest_value: Any, strict_validation: Boolean):Boolean = js.native
+    def param_value_defaults(pspec: ParamSpec, value: Any):Boolean = js.native
+    def param_value_set_default(pspec: ParamSpec, value: Any):Unit = js.native
+    def param_value_validate(pspec: ParamSpec, value: Any):Boolean = js.native
+    def param_values_cmp(pspec: ParamSpec, value1: Any, value2: Any):Any = js.native
     def pointer_type_register_static(name: String):Any = js.native
     def signal_accumulator_first_wins(ihint: Any, return_accu: Any, handler_return: Any, dummy: Object):Boolean = js.native
     def signal_accumulator_true_handled(ihint: Any, return_accu: Any, handler_return: Any, dummy: Object):Boolean = js.native
     def signal_add_emission_hook(signal_id: Any, detail: Any, hook_func: Any, hook_data: Object, data_destroy: Any):Any = js.native
     def signal_chain_from_overridden(instance_and_params: js.Array[Any], return_value: Any):Unit = js.native
     def signal_chain_from_overridden_handler(instance: Object, rest:Any*):Unit = js.native
-    def signal_connect_closure(instance: Any, detailed_signal: String, closure: Any, after: Boolean):Any = js.native
-    def signal_connect_closure_by_id(instance: Any, signal_id: Any, detail: Any, closure: Any, after: Boolean):Any = js.native
-    def signal_connect_data(instance: Any, detailed_signal: String, c_handler: Any, data: Object, destroy_data: Any, connect_flags: Any):Any = js.native
-    def signal_connect_object(instance: Object, detailed_signal: String, c_handler: Any, gobject0: Object, connect_flags: Any):Any = js.native
-    def signal_emit(instance: Any, signal_id: Any, detail: Any, rest:Any*):Unit = js.native
-    def signal_emit_by_name(instance: Any, detailed_signal: String, rest:Any*):Unit = js.native
+    def signal_connect_closure(instance: Object, detailed_signal: String, closure: Any, after: Boolean):Any = js.native
+    def signal_connect_closure_by_id(instance: Object, signal_id: Any, detail: Any, closure: Any, after: Boolean):Any = js.native
+    def signal_connect_data(instance: Object, detailed_signal: String, c_handler: Any, data: Object, destroy_data: Any, connect_flags: Double):Any = js.native
+    def signal_connect_object(instance: Object, detailed_signal: String, c_handler: Any, gobject0: Object, connect_flags: Double):Any = js.native
+    def signal_emit(instance: Object, signal_id: Any, detail: Any, rest:Any*):Unit = js.native
+    def signal_emit_by_name(instance: Object, detailed_signal: String, rest:Any*):Unit = js.native
     def signal_emit_valist(instance: Object, signal_id: Any, detail: Any, var_args: Any):Unit = js.native
     def signal_emitv(instance_and_params: js.Array[Any], signal_id: Any, detail: Any, return_value: Any):Unit = js.native
-    def signal_get_invocation_hint(instance: Any):Any = js.native
-    def signal_handler_block(instance: Any, handler_id: Any):Unit = js.native
-    def signal_handler_disconnect(instance: Any, handler_id: Any):Unit = js.native
-    def signal_handler_find(instance: Any, mask: Any, signal_id: Any, detail: Any, closure: Any, func: Object, data: Object):Any = js.native
-    def signal_handler_is_connected(instance: Any, handler_id: Any):Boolean = js.native
-    def signal_handler_unblock(instance: Any, handler_id: Any):Unit = js.native
-    def signal_handlers_block_matched(instance: Any, mask: Any, signal_id: Any, detail: Any, closure: Any, func: Object, data: Object):Any = js.native
-    def signal_handlers_destroy(instance: Any):Unit = js.native
-    def signal_handlers_disconnect_matched(instance: Any, mask: Any, signal_id: Any, detail: Any, closure: Any, func: Object, data: Object):Any = js.native
-    def signal_handlers_unblock_matched(instance: Any, mask: Any, signal_id: Any, detail: Any, closure: Any, func: Object, data: Object):Any = js.native
-    def signal_has_handler_pending(instance: Any, signal_id: Any, detail: Any, may_be_blocked: Boolean):Boolean = js.native
+    def signal_get_invocation_hint(instance: Object):Any = js.native
+    def signal_handler_block(instance: Object, handler_id: Any):Unit = js.native
+    def signal_handler_disconnect(instance: Object, handler_id: Any):Unit = js.native
+    def signal_handler_find(instance: Object, mask: Double, signal_id: Any, detail: Any, closure: Any, func: Object, data: Object):Any = js.native
+    def signal_handler_is_connected(instance: Object, handler_id: Any):Boolean = js.native
+    def signal_handler_unblock(instance: Object, handler_id: Any):Unit = js.native
+    def signal_handlers_block_matched(instance: Object, mask: Double, signal_id: Any, detail: Any, closure: Any, func: Object, data: Object):Any = js.native
+    def signal_handlers_destroy(instance: Object):Unit = js.native
+    def signal_handlers_disconnect_matched(instance: Object, mask: Double, signal_id: Any, detail: Any, closure: Any, func: Object, data: Object):Any = js.native
+    def signal_handlers_unblock_matched(instance: Object, mask: Double, signal_id: Any, detail: Any, closure: Any, func: Object, data: Object):Any = js.native
+    def signal_has_handler_pending(instance: Object, signal_id: Any, detail: Any, may_be_blocked: Boolean):Boolean = js.native
     def signal_list_ids(itype0: Any, n_ids: Any):js.Array[Any] = js.native
     def signal_lookup(name: String, itype0: Any):Any = js.native
     def signal_name(signal_id: Any):String = js.native
-    def signal_new(signal_name: String, itype0: Any, signal_flags: Any, class_offset: Any, accumulator: Any, accu_data: Object, c_marshaller: Any, return_type0: Any, n_params: Any, rest:Any*):Any = js.native
-    def signal_new_class_handler(signal_name: String, itype0: Any, signal_flags: Any, class_handler: Any, accumulator: Any, accu_data: Object, c_marshaller: Any, return_type0: Any, n_params: Any, rest:Any*):Any = js.native
-    def signal_new_valist(signal_name: String, itype0: Any, signal_flags: Any, class_closure: Any, accumulator: Any, accu_data: Object, c_marshaller: Any, return_type0: Any, n_params: Any, args: Any):Any = js.native
-    def signal_newv(signal_name: String, itype0: Any, signal_flags: Any, class_closure: Any, accumulator: Any, accu_data: Object, c_marshaller: Any, return_type0: Any, n_params: Any, param_types: js.Array[Any]):Any = js.native
+    def signal_new(signal_name: String, itype0: Any, signal_flags: Double, class_offset: Any, accumulator: Any, accu_data: Object, c_marshaller: Any, return_type0: Any, n_params: Any, rest:Any*):Any = js.native
+    def signal_new_class_handler(signal_name: String, itype0: Any, signal_flags: Double, class_handler: Any, accumulator: Any, accu_data: Object, c_marshaller: Any, return_type0: Any, n_params: Any, rest:Any*):Any = js.native
+    def signal_new_valist(signal_name: String, itype0: Any, signal_flags: Double, class_closure: Any, accumulator: Any, accu_data: Object, c_marshaller: Any, return_type0: Any, n_params: Any, args: Any):Any = js.native
+    def signal_newv(signal_name: String, itype0: Any, signal_flags: Double, class_closure: Any, accumulator: Any, accu_data: Object, c_marshaller: Any, return_type0: Any, n_params: Any, param_types: js.Array[Any]):Any = js.native
     def signal_override_class_closure(signal_id: Any, instance_type0: Any, class_closure: Any):Unit = js.native
     def signal_override_class_handler(signal_name: String, instance_type0: Any, class_handler: Any):Unit = js.native
     def signal_parse_name(detailed_signal: String, itype0: Any, signal_id_p: Any, detail_p: Any, force_detail_quark: Boolean):Boolean = js.native
     def signal_query(signal_id: Any, query: Any):Unit = js.native
     def signal_remove_emission_hook(signal_id: Any, hook_id: Any):Unit = js.native
     def signal_set_va_marshaller(signal_id: Any, instance_type0: Any, va_marshaller: Any):Unit = js.native
-    def signal_stop_emission(instance: Any, signal_id: Any, detail: Any):Unit = js.native
-    def signal_stop_emission_by_name(instance: Any, detailed_signal: String):Unit = js.native
+    def signal_stop_emission(instance: Object, signal_id: Any, detail: Any):Unit = js.native
+    def signal_stop_emission_by_name(instance: Object, detailed_signal: String):Unit = js.native
     def signal_type_cclosure_new(itype0: Any, struct_offset: Any):Any = js.native
     def source_set_closure(source: Any, closure: Any):Unit = js.native
     def source_set_dummy_callback(source: Any):Unit = js.native
@@ -180,7 +180,7 @@ object GObject extends js.Object {
     def type_get_qdata(type0: Any, quark: Any):Object = js.native
     def type_get_type_registration_serial():Any = js.native
     def type_init():Unit = js.native
-    def type_init_with_debug_flags(debug_flags: Any):Unit = js.native
+    def type_init_with_debug_flags(debug_flags: Double):Unit = js.native
     def type_interface_add_prerequisite(interface_type0: Any, prerequisite_type0: Any):Unit = js.native
     def type_interface_get_plugin(instance_type0: Any, interface_type0: Any):Any = js.native
     def type_interface_peek(instance_class: Any, iface_type0: Any):Any = js.native
@@ -194,10 +194,10 @@ object GObject extends js.Object {
     def type_parent(type0: Any):Any = js.native
     def type_qname(type0: Any):Any = js.native
     def type_query(type0: Any, query: Any):Unit = js.native
-    def type_register_dynamic(parent_type0: Any, type_name: String, plugin: Any, flags: Any):Any = js.native
-    def type_register_fundamental(type_id: Any, type_name: String, info: Any, finfo: Any, flags: Any):Any = js.native
-    def type_register_static(parent_type0: Any, type_name: String, info: Any, flags: Any):Any = js.native
-    def type_register_static_simple(parent_type0: Any, type_name: String, class_size: Any, class_init: Any, instance_size: Any, instance_init: Any, flags: Any):Any = js.native
+    def type_register_dynamic(parent_type0: Any, type_name: String, plugin: Any, flags: Double):Any = js.native
+    def type_register_fundamental(type_id: Any, type_name: String, info: Any, finfo: Any, flags: Double):Any = js.native
+    def type_register_static(parent_type0: Any, type_name: String, info: Any, flags: Double):Any = js.native
+    def type_register_static_simple(parent_type0: Any, type_name: String, class_size: Any, class_init: Any, instance_size: Any, instance_init: Any, flags: Double):Any = js.native
     def type_remove_class_cache_func(cache_data: Object, cache_func: Any):Unit = js.native
     def type_remove_interface_check(check_data: Object, check_func: Any):Unit = js.native
     def type_set_qdata(type0: Any, quark: Any, data: Object):Unit = js.native
@@ -208,78 +208,78 @@ object GObject extends js.Object {
     def value_type_transformable(src_type0: Any, dest_type0: Any):Boolean = js.native
     @js.native
     object BindingFlags extends js.Object {
-        val DEFAULT:js.Dynamic = js.native
-        val BIDIRECTIONAL:js.Dynamic = js.native
-        val SYNC_CREATE:js.Dynamic = js.native
-        val INVERT_BOOLEAN:js.Dynamic = js.native
+        val DEFAULT:Double = js.native
+        val BIDIRECTIONAL:Double = js.native
+        val SYNC_CREATE:Double = js.native
+        val INVERT_BOOLEAN:Double = js.native
     }
     @js.native
     object ConnectFlags extends js.Object {
-        val AFTER:js.Dynamic = js.native
-        val SWAPPED:js.Dynamic = js.native
+        val AFTER:Double = js.native
+        val SWAPPED:Double = js.native
     }
     @js.native
     object ParamFlags extends js.Object {
-        val READABLE:js.Dynamic = js.native
-        val WRITABLE:js.Dynamic = js.native
-        val READWRITE:js.Dynamic = js.native
-        val CONSTRUCT:js.Dynamic = js.native
-        val CONSTRUCT_ONLY:js.Dynamic = js.native
-        val LAX_VALIDATION:js.Dynamic = js.native
-        val STATIC_NAME:js.Dynamic = js.native
-        val PRIVATE:js.Dynamic = js.native
-        val STATIC_NICK:js.Dynamic = js.native
-        val STATIC_BLURB:js.Dynamic = js.native
-        val EXPLICIT_NOTIFY:js.Dynamic = js.native
-        val DEPRECATED:js.Dynamic = js.native
+        val READABLE:Double = js.native
+        val WRITABLE:Double = js.native
+        val READWRITE:Double = js.native
+        val CONSTRUCT:Double = js.native
+        val CONSTRUCT_ONLY:Double = js.native
+        val LAX_VALIDATION:Double = js.native
+        val STATIC_NAME:Double = js.native
+        val PRIVATE:Double = js.native
+        val STATIC_NICK:Double = js.native
+        val STATIC_BLURB:Double = js.native
+        val EXPLICIT_NOTIFY:Double = js.native
+        val DEPRECATED:Double = js.native
     }
     @js.native
     object SignalFlags extends js.Object {
-        val RUN_FIRST:js.Dynamic = js.native
-        val RUN_LAST:js.Dynamic = js.native
-        val RUN_CLEANUP:js.Dynamic = js.native
-        val NO_RECURSE:js.Dynamic = js.native
-        val DETAILED:js.Dynamic = js.native
-        val ACTION:js.Dynamic = js.native
-        val NO_HOOKS:js.Dynamic = js.native
-        val MUST_COLLECT:js.Dynamic = js.native
-        val DEPRECATED:js.Dynamic = js.native
+        val RUN_FIRST:Double = js.native
+        val RUN_LAST:Double = js.native
+        val RUN_CLEANUP:Double = js.native
+        val NO_RECURSE:Double = js.native
+        val DETAILED:Double = js.native
+        val ACTION:Double = js.native
+        val NO_HOOKS:Double = js.native
+        val MUST_COLLECT:Double = js.native
+        val DEPRECATED:Double = js.native
     }
     @js.native
     object SignalMatchType extends js.Object {
-        val ID:js.Dynamic = js.native
-        val DETAIL:js.Dynamic = js.native
-        val CLOSURE:js.Dynamic = js.native
-        val FUNC:js.Dynamic = js.native
-        val DATA:js.Dynamic = js.native
-        val UNBLOCKED:js.Dynamic = js.native
+        val ID:Double = js.native
+        val DETAIL:Double = js.native
+        val CLOSURE:Double = js.native
+        val FUNC:Double = js.native
+        val DATA:Double = js.native
+        val UNBLOCKED:Double = js.native
     }
     @js.native
     object TypeDebugFlags extends js.Object {
-        val NONE:js.Dynamic = js.native
-        val OBJECTS:js.Dynamic = js.native
-        val SIGNALS:js.Dynamic = js.native
-        val INSTANCE_COUNT:js.Dynamic = js.native
-        val MASK:js.Dynamic = js.native
+        val NONE:Double = js.native
+        val OBJECTS:Double = js.native
+        val SIGNALS:Double = js.native
+        val INSTANCE_COUNT:Double = js.native
+        val MASK:Double = js.native
     }
     @js.native
     object TypeFlags extends js.Object {
-        val ABSTRACT:js.Dynamic = js.native
-        val VALUE_ABSTRACT:js.Dynamic = js.native
+        val ABSTRACT:Double = js.native
+        val VALUE_ABSTRACT:Double = js.native
     }
     @js.native
     object TypeFundamentalFlags extends js.Object {
-        val CLASSED:js.Dynamic = js.native
-        val INSTANTIATABLE:js.Dynamic = js.native
-        val DERIVABLE:js.Dynamic = js.native
-        val DEEP_DERIVABLE:js.Dynamic = js.native
+        val CLASSED:Double = js.native
+        val INSTANTIATABLE:Double = js.native
+        val DERIVABLE:Double = js.native
+        val DEEP_DERIVABLE:Double = js.native
     }
     @js.native
     class Binding extends GObject.Object {
-        def get_flags():Any = js.native
-        def get_source():Any = js.native
+        def get_flags():Double = js.native
+        def get_source():Object = js.native
         def get_source_property():String = js.native
-        def get_target():Any = js.native
+        def get_target():Object = js.native
         def get_target_property():String = js.native
         def unbind():Unit = js.native
     }
@@ -297,9 +297,9 @@ object GObject extends js.Object {
         def set_valist(args:Any*):Unit = js.native
         def add_toggle_ref(notify: Any, data: Object):Unit = js.native
         def add_weak_pointer(weak_pointer_location: Object):Unit = js.native
-        def bind_property(source_property: String, target: Any, target_property: String, flags: Any):Any = js.native
-        def bind_property_full(source_property: String, target: Any, target_property: String, flags: Any, transform_to: Any, transform_from: Any, user_data: Object, notify: Any):Any = js.native
-        def bind_property_with_closures(source_property: String, target: Any, target_property: String, flags: Any, transform_to: Any, transform_from: Any):Any = js.native
+        def bind_property(source_property: String, target: Object, target_property: String, flags: Double):Binding = js.native
+        def bind_property_full(source_property: String, target: Object, target_property: String, flags: Double, transform_to: Any, transform_from: Any, user_data: Object, notify: Any):Binding = js.native
+        def bind_property_with_closures(source_property: String, target: Object, target_property: String, flags: Double, transform_to: Any, transform_from: Any):Binding = js.native
         def dup_data(key: String, dup_func: Any, user_data: Object):Object = js.native
         def dup_qdata(quark: Any, dup_func: Any, user_data: Object):Object = js.native
         def force_floating():Unit = js.native
@@ -310,9 +310,9 @@ object GObject extends js.Object {
         def get_valist(first_property_name: String, var_args: Any):Unit = js.native
         def is_floating():Boolean = js.native
         def notify(property_name: String):Unit = js.native
-        def notify_by_pspec(pspec: Any):Unit = js.native
-        def ref():Any = js.native
-        def ref_sink():Any = js.native
+        def notify_by_pspec(pspec: ParamSpec):Unit = js.native
+        def ref():Object = js.native
+        def ref_sink():Object = js.native
         def remove_toggle_ref(notify: Any, data: Object):Unit = js.native
         def remove_weak_pointer(weak_pointer_location: Object):Unit = js.native
         def replace_data(key: String, oldval0: Object, newval0: Object, destroy: Any, old_destroy: Any):Boolean = js.native
@@ -338,9 +338,9 @@ object GObject extends js.Object {
         def connect(object0: Object, signal_spec: String, rest:Any*):Object = js.native
         def disconnect(object0: Object, signal_spec: String, rest:Any*):Unit = js.native
         def get(object0: Object, first_property_name: String, rest:Any*):Unit = js.native
-        def interface_find_property(g_iface: Object, property_name: String):Any = js.native
-        def interface_install_property(g_iface: Object, pspec: Any):Unit = js.native
-        def interface_list_properties(g_iface: Object, n_properties_p: Any):js.Array[Any] = js.native
+        def interface_find_property(g_iface: Object, property_name: String):ParamSpec = js.native
+        def interface_install_property(g_iface: Object, pspec: ParamSpec):Unit = js.native
+        def interface_list_properties(g_iface: Object, n_properties_p: Any):js.Array[ParamSpec] = js.native
         def set(object0: Object, first_property_name: String, rest:Any*):Unit = js.native
         def new_valist(object_type0: Any, first_property_name: String, var_args: Any):Object = js.native
         def newv(args:Any*):Object = js.native
@@ -353,9 +353,9 @@ object GObject extends js.Object {
         def get_name_quark():Any = js.native
         def get_nick():String = js.native
         override def get_qdata(quark: Any):Object = js.native
-        def get_redirect_target():Any = js.native
-        override def ref():Any = js.native
-        override def ref_sink():Any = js.native
+        def get_redirect_target():ParamSpec = js.native
+        override def ref():ParamSpec = js.native
+        override def ref_sink():ParamSpec = js.native
         override def set_qdata(quark: Any, data: Object):Unit = js.native
         override def set_qdata_full(quark: Any, data: Object, destroy: Any):Unit = js.native
         def sink():Unit = js.native
@@ -364,7 +364,7 @@ object GObject extends js.Object {
     }
     @js.native
     object ParamSpec extends js.Object {
-        def internal(param_type0: Any, name: String, nick: String, blurb: String, flags: Any):Object = js.native
+        def internal(param_type0: Any, name: String, nick: String, blurb: String, flags: Double):Object = js.native
     }
     @js.native
     class ParamSpecBoolean extends ParamSpec {
@@ -440,7 +440,7 @@ object GObject extends js.Object {
         def add_interface(instance_type0: Any, interface_type0: Any, interface_info: Any):Unit = js.native
         def register_enum(name: String, const_static_values: Any):Any = js.native
         def register_flags(name: String, const_static_values: Any):Any = js.native
-        def register_type(parent_type0: Any, type_name: String, type_info: Any, flags: Any):Any = js.native
+        def register_type(parent_type0: Any, type_name: String, type_info: Any, flags: Double):Any = js.native
         def set_name(name: String):Unit = js.native
         def unuse():Unit = js.native
         def use():Boolean = js.native
